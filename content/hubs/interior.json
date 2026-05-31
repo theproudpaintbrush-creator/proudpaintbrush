@@ -1,0 +1,38 @@
+{
+  "parent": "interior",
+  "title": "Interior Painting in Sugar Land, TX | The Proud Paintbrush",
+  "metaDescription": "Professional interior painting in Sugar Land & Fort Bend County — walls, ceilings, cabinets, trim & more. Prep-first crews, warranty-backed. Free estimate.",
+  "h1": "Interior Painting in Sugar Land, TX",
+  "heroImage": "/images/int-hero-gray-missouri.jpg",
+  "heroAlt": "Freshly painted interior living space in a Sugar Land, TX home by The Proud Paintbrush",
+  "intro": [
+    "Clean work, detailed prep, and a finish that actually lasts — interior painting built for how Sugar Land families really live.",
+    "The Proud Paintbrush has painted interiors across Sugar Land, Missouri City, Richmond, Katy, and the rest of Fort Bend County since 2020. Whether you are refreshing one room, repainting a whole home, or updating tired cabinets before a sale, the difference between a job that looks good on day one and one that still looks good in five years comes down to preparation. That is where we focus.",
+    "Below you will find every interior surface we handle. Each has its own page covering the specific prep, products, and finishes we use — because a bathroom ceiling and a stained-wood staircase are not the same job."
+  ],
+  "servicesHeading": "Interior Painting Services We Offer",
+  "servicesIntro": "From whole rooms to specialty surfaces, here is everything we paint inside your home. Tap any service for the full details.",
+  "whyHeading": "Why Sugar Land Homeowners Choose Us",
+  "whyCards": [
+    { "title": "Prep-First, Always", "desc": "We do not skip steps. Cleaning, sanding, patching, and priming are what separate a finish that lasts two years from one that lasts ten." },
+    { "title": "Clean, Respectful Work", "desc": "We protect floors and furniture, contain dust room by room, and clean up at the end of every day so you can keep living in your home." },
+    { "title": "Warranty-Backed", "desc": "Every project carries our written workmanship warranty, available in 2-year and 4-year packages — real accountability, in writing." },
+    { "title": "Local & Owner-Run", "desc": "Locally owned, licensed, and insured. The person who gives you the estimate is involved in the work — not a rotating franchise crew." }
+  ],
+  "processHeading": "Our Interior Painting Process",
+  "process": [
+    { "title": "Home Protection First", "desc": "We cover floors, move and protect furniture, and mask everything that is not getting painted before any work begins." },
+    { "title": "Surface Prep & Repairs", "desc": "We fill nail holes, fix drywall imperfections, and address cracks so the final finish is not compromised from underneath." },
+    { "title": "Sanding & Conditioning", "desc": "One of the most-skipped steps in the trade. We sand for proper adhesion and to eliminate texture inconsistencies." },
+    { "title": "Priming Where It Matters", "desc": "Not every surface needs primer — but the ones that do will fail without it. We apply the right products exactly where they are needed." },
+    { "title": "Precision Application", "desc": "Even coats applied with the correct tools and technique to avoid lap marks, flashing, and uneven sheen." },
+    { "title": "Cleanup & Walkthrough", "desc": "We leave your home clean and walk the finished project with you to make sure every detail meets expectations." }
+  ],
+  "faqs": [
+    { "q": "How much does interior painting cost in Sugar Land?", "a": "It depends on square footage, the prep required, and trim and detail level. For a breakdown, see our interior painting prices page, or book a free on-site estimate for exact numbers." },
+    { "q": "How long does an interior painting project take?", "a": "Most projects take 1–5 days depending on size and complexity. Larger homes or detailed cabinet and trim work take longer — we give you a clear timeline up front." },
+    { "q": "Do I need to move my furniture?", "a": "We handle most of it. We will guide you on what to clear, and we protect everything that stays with drop cloths and plastic." },
+    { "q": "What kind of paint do you use?", "a": "We primarily use high-performance coatings from trusted brands like Sherwin-Williams, matched to each surface and room for durability and a clean finish." },
+    { "q": "Can you help me choose colors?", "a": "Yes. We guide practical decisions based on your lighting, layout, and finishes, and offer a dedicated color consultation when you want deeper help." }
+  ]
+}

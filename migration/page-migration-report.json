@@ -1,0 +1,170 @@
+[
+  {
+    "key": "warranty",
+    "words": 1472,
+    "titleLen": 55,
+    "metaLen": 151
+  },
+  {
+    "key": "financing",
+    "words": 784,
+    "titleLen": 58,
+    "metaLen": 155
+  },
+  {
+    "key": "color-consultation",
+    "words": 1918,
+    "titleLen": 44,
+    "metaLen": 139
+  },
+  {
+    "key": "project-expectations",
+    "words": 614,
+    "titleLen": 51,
+    "metaLen": 145
+  },
+  {
+    "key": "budget",
+    "words": 669,
+    "titleLen": 56,
+    "metaLen": 123
+  },
+  {
+    "key": "checklist",
+    "words": 208,
+    "titleLen": 51,
+    "metaLen": 149
+  },
+  {
+    "key": "careers",
+    "words": 379,
+    "titleLen": 58,
+    "metaLen": 156
+  },
+  {
+    "key": "paint-it-forward",
+    "words": 1119,
+    "titleLen": 55,
+    "metaLen": 149
+  },
+  {
+    "key": "services",
+    "words": 843,
+    "titleLen": 58,
+    "metaLen": 151
+  },
+  {
+    "key": "pricing",
+    "words": 1019,
+    "titleLen": 57,
+    "metaLen": 150
+  },
+  {
+    "key": "pricing/interior-prices",
+    "words": 845,
+    "titleLen": 56,
+    "metaLen": 154
+  },
+  {
+    "key": "pricing/exterior-prices",
+    "words": 823,
+    "titleLen": 56,
+    "metaLen": 154
+  },
+  {
+    "key": "pricing/cabinet-prices",
+    "words": 756,
+    "titleLen": 59,
+    "metaLen": 152
+  },
+  {
+    "key": "preparation-process",
+    "words": 551,
+    "titleLen": 39,
+    "metaLen": 160
+  },
+  {
+    "key": "preparation-process/interior",
+    "words": 723,
+    "titleLen": 60,
+    "metaLen": 146
+  },
+  {
+    "key": "preparation-process/exterior",
+    "words": 623,
+    "titleLen": 60,
+    "metaLen": 160
+  },
+  {
+    "key": "portfolio",
+    "words": 435,
+    "titleLen": 52,
+    "metaLen": 152
+  },
+  {
+    "key": "portfolio/interior-painting",
+    "words": 319,
+    "titleLen": 50,
+    "metaLen": 155
+  },
+  {
+    "key": "portfolio/exterior-painting",
+    "words": 287,
+    "titleLen": 50,
+    "metaLen": 151
+  },
+  {
+    "key": "service-areas",
+    "words": 421,
+    "titleLen": 40,
+    "metaLen": 152
+  },
+  {
+    "key": "service-areas/sugar-land",
+    "words": 836,
+    "titleLen": 58,
+    "metaLen": 151
+  },
+  {
+    "key": "service-areas/missouri-city",
+    "words": 766,
+    "titleLen": 51,
+    "metaLen": 154
+  },
+  {
+    "key": "service-areas/richmond",
+    "words": 736,
+    "titleLen": 56,
+    "metaLen": 149
+  },
+  {
+    "key": "service-areas/katy",
+    "words": 730,
+    "titleLen": 52,
+    "metaLen": 159
+  },
+  {
+    "key": "service-areas/fulshear",
+    "words": 709,
+    "titleLen": 56,
+    "metaLen": 149
+  },
+  {
+    "key": "service-areas/rosenberg",
+    "words": 702,
+    "titleLen": 57,
+    "metaLen": 150
+  },
+  {
+    "key": "service-areas/west-houston",
+    "words": 765,
+    "titleLen": 60,
+    "metaLen": 153
+  },
+  {
+    "key": "service-areas/southwest-houston",
+    "words": 781,
+    "titleLen": 55,
+    "metaLen": 152
+  }
+]

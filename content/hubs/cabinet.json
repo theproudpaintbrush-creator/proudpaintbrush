@@ -1,0 +1,41 @@
+{
+  "parent": "cabinet",
+  "title": "Cabinet Painting in Sugar Land, TX | Proud Paintbrush",
+  "metaDescription": "Cabinet painting in Sugar Land, TX — kitchen & bath cabinets refinished with degrease, sand, bonding primer & sprayed factory-smooth enamel. Free estimate.",
+  "h1": "Cabinet Painting in Sugar Land, TX",
+  "heroImage": "/images/happy-customer-cabinet-painting-katy-tx.jpg",
+  "heroAlt": "Freshly painted white kitchen cabinets in a Sugar Land, TX home by The Proud Paintbrush",
+  "intro": [
+    "A factory-smooth cabinet finish — at a fraction of the cost of replacement, and in a fraction of the time.",
+    "Cabinet painting is one of the most requested projects we run across Sugar Land and Fort Bend County, and for good reason: it transforms a kitchen or bath more than almost anything else you can do for the money. The catch is that cabinets are the hardest finish in the home to get right. They are handled constantly, exposed to grease and moisture, and every brush mark shows. A durable, smooth result depends entirely on prep and the right coating system — which is exactly what we specialize in.",
+    "We refinish kitchen cabinets, bathroom vanities, built-ins, and islands in painted and stained finishes. Every door and drawer front is labeled, removed, and sprayed for an even, hardware-store-smooth finish you cannot get with a brush and roller alone."
+  ],
+  "servicesHeading": "",
+  "servicesIntro": "",
+  "whyHeading": "Why Our Cabinet Finish Lasts",
+  "whyCards": [
+    { "title": "Degrease & Sand", "desc": "Kitchen cabinets carry a film of cooking grease that paint will not bond to. We degrease and scuff-sand every surface first — the step shortcut crews skip." },
+    { "title": "Bonding Primer", "desc": "A specialty bonding primer locks onto slick factory and stained surfaces so the topcoat does not chip or peel at the edges." },
+    { "title": "Sprayed Enamel", "desc": "We spray a hard cabinet-grade enamel for a smooth, self-leveling finish that stands up to daily handling and cleaning." },
+    { "title": "Warranty-Backed", "desc": "Backed by our written workmanship warranty in 2-year and 4-year packages — locally owned, licensed, and insured." }
+  ],
+  "processHeading": "Our Cabinet Painting Process",
+  "process": [
+    { "title": "Consultation & Color", "desc": "We assess your cabinets, discuss finish and color, and put a clear scope in writing." },
+    { "title": "Label & Remove", "desc": "Every door, drawer front, and piece of hardware is labeled and removed so it goes back exactly where it belongs." },
+    { "title": "Degrease, Sand & Prime", "desc": "We degrease, scuff-sand, and apply a bonding primer to both the boxes and the removed fronts." },
+    { "title": "Spray, Cure & Reinstall", "desc": "We spray cabinet-grade enamel, allow full cure time between coats, then reinstall and adjust for a clean, aligned result." }
+  ],
+  "faqs": [
+    { "q": "How much does cabinet painting cost in Sugar Land?", "a": "It depends on the number of doors and drawers, the finish, and condition. See our cabinet painting prices page, or book a free on-site estimate for exact numbers." },
+    { "q": "How long does cabinet painting take?", "a": "Most kitchens take 3–5 days including proper cure time between coats. We sequence the work so your kitchen is usable as much as possible throughout." },
+    { "q": "Can you paint stained or wood cabinets white?", "a": "Yes. With degreasing, sanding, and a bonding primer, stained and wood cabinets take a sprayed enamel beautifully — one of our most popular requests." },
+    { "q": "Will the finish hold up to daily kitchen use?", "a": "Yes. A sprayed cabinet-grade enamel over proper prep is far more durable than a brushed wall paint, and it wipes clean of everyday grease and fingerprints." }
+  ],
+  "relatedLinks": [
+    { "href": "/interior-painting/kitchen-painting", "label": "Kitchen Painting" },
+    { "href": "/color-consultation", "label": "Color Consultation" },
+    { "href": "/pricing/cabinet-prices", "label": "Cabinet Painting Prices" },
+    { "href": "/interior-painting", "label": "All Interior Painting" }
+  ]
+}

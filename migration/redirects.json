@@ -1,0 +1,392 @@
+[
+  {
+    "source": "/the-proud-paintbrush",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/painting-services",
+    "destination": "/services",
+    "permanent": true
+  },
+  {
+    "source": "/sitemap",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/painting-services/interior-painting",
+    "destination": "/interior-painting",
+    "permanent": true
+  },
+  {
+    "source": "/painting-services/exterior-painting",
+    "destination": "/exterior-painting",
+    "permanent": true
+  },
+  {
+    "source": "/painting-services/cabinet-painting",
+    "destination": "/cabinet-painting",
+    "permanent": true
+  },
+  {
+    "source": "/painting-services/residential-painters",
+    "destination": "/services",
+    "permanent": true
+  },
+  {
+    "source": "/exterior-painting/exterior-house-painters",
+    "destination": "/exterior-painting",
+    "permanent": true
+  },
+  {
+    "source": "/exterior-painting/exterior-painters",
+    "destination": "/exterior-painting",
+    "permanent": true
+  },
+  {
+    "source": "/exterior-painting/stucco-maintenance/stucco-painting",
+    "destination": "/exterior-painting/stucco-painting",
+    "permanent": true
+  },
+  {
+    "source": "/exterior-painting/stucco-maintenance/stucco-repairs",
+    "destination": "/exterior-painting/stucco-repairs",
+    "permanent": true
+  },
+  {
+    "source": "/painting-services/portfolio/interior-painting",
+    "destination": "/portfolio/interior-painting",
+    "permanent": true
+  },
+  {
+    "source": "/painting-services/portfolio/exterior-painting",
+    "destination": "/portfolio/exterior-painting",
+    "permanent": true
+  },
+  {
+    "source": "/preperation-process",
+    "destination": "/preparation-process",
+    "permanent": true
+  },
+  {
+    "source": "/preperation-process/interior",
+    "destination": "/preparation-process/interior",
+    "permanent": true
+  },
+  {
+    "source": "/preperation-process/exterior",
+    "destination": "/preparation-process/exterior",
+    "permanent": true
+  },
+  {
+    "source": "/blog/ev5rl48r6sewhkhx3n6l9ycvlqiore",
+    "destination": "/blog/best-exterior-paint-texas",
+    "permanent": true
+  },
+  {
+    "source": "/blog/hll1sta1kz9wkoq5kv4p81vkfla0sf",
+    "destination": "/blog/is-behr-paint-good",
+    "permanent": true
+  },
+  {
+    "source": "/blog/blog-post-title-four-xhrcm",
+    "destination": "/blog/cost-to-paint-bathroom",
+    "permanent": true
+  },
+  {
+    "source": "/blog/-whats-the-best-paint-for-cabinets",
+    "destination": "/blog/-whats-the-best-paint-brand-for-cabinets",
+    "permanent": true
+  },
+  {
+    "source": "/blog/who-owns-behr-paint-company",
+    "destination": "/blog/-who-owns-behr-paint-company",
+    "permanent": true
+  },
+  {
+    "source": "/staining-lacquering-sealing",
+    "destination": "/interior-painting/staining-lacquering-sealing",
+    "permanent": true
+  },
+  {
+    "source": "/painting-services/service-areas",
+    "destination": "/service-areas",
+    "permanent": true
+  },
+  {
+    "source": "/painting-services/portfolio",
+    "destination": "/portfolio",
+    "permanent": true
+  },
+  {
+    "source": "/prep",
+    "destination": "/preparation-process",
+    "permanent": true
+  },
+  {
+    "source": "/exterior-painting/prep",
+    "destination": "/preparation-process/exterior",
+    "permanent": true
+  },
+  {
+    "source": "/interior-prices",
+    "destination": "/pricing/interior-prices",
+    "permanent": true
+  },
+  {
+    "source": "/corevalues",
+    "destination": "/core-values",
+    "permanent": true
+  },
+  {
+    "source": "/wall-painting",
+    "destination": "/interior-painting/wall-painting",
+    "permanent": true
+  },
+  {
+    "source": "/stucco-maintenance",
+    "destination": "/exterior-painting/stucco-maintenance",
+    "permanent": true
+  },
+  {
+    "source": "/pressure-washing",
+    "destination": "/exterior-painting/pressure-washing",
+    "permanent": true
+  },
+  {
+    "source": "/railings",
+    "destination": "/exterior-painting/railings",
+    "permanent": true
+  },
+  {
+    "source": "/painting-vinyl-siding",
+    "destination": "/exterior-painting/vinyl-siding-painting",
+    "permanent": true
+  },
+  {
+    "source": "/residential-painters",
+    "destination": "/services",
+    "permanent": true
+  },
+  {
+    "source": "/brick-painting",
+    "destination": "/exterior-painting/brick-painting",
+    "permanent": true
+  },
+  {
+    "source": "/exterior-brick",
+    "destination": "/exterior-painting/brick-painting",
+    "permanent": true
+  },
+  {
+    "source": "/paint-garage-doors",
+    "destination": "/exterior-painting/garage-door-painting",
+    "permanent": true
+  },
+  {
+    "source": "/fence-staining",
+    "destination": "/exterior-painting/fence-staining",
+    "permanent": true
+  },
+  {
+    "source": "/our-team",
+    "destination": "/our-story",
+    "permanent": true
+  },
+  {
+    "source": "/our-team-1",
+    "destination": "/our-story",
+    "permanent": true
+  },
+  {
+    "source": "/paintitforward",
+    "destination": "/paint-it-forward",
+    "permanent": true
+  },
+  {
+    "source": "/commercial-portfolio",
+    "destination": "/portfolio",
+    "permanent": true
+  },
+  {
+    "source": "/patio-sealing",
+    "destination": "/exterior-painting/deck-painting-and-staining",
+    "permanent": true
+  },
+  {
+    "source": "/exterior-painters-sugar-land",
+    "destination": "/exterior-painting",
+    "permanent": true
+  },
+  {
+    "source": "/exterior-house-painter",
+    "destination": "/exterior-painting",
+    "permanent": true
+  },
+  {
+    "source": "/blog/tag/houston painter",
+    "destination": "/blog",
+    "permanent": true
+  },
+  {
+    "source": "/blog/tag/interior painting",
+    "destination": "/blog",
+    "permanent": true
+  },
+  {
+    "source": "/blog/tag/houston local business",
+    "destination": "/blog",
+    "permanent": true
+  },
+  {
+    "source": "/blog/tag/hosuton painter",
+    "destination": "/blog",
+    "permanent": true
+  },
+  {
+    "source": "/blog/tag/locally owned and operated",
+    "destination": "/blog",
+    "permanent": true
+  },
+  {
+    "source": "/blog/tag/sugar land painter",
+    "destination": "/blog",
+    "permanent": true
+  },
+  {
+    "source": "/kitchen-painting",
+    "destination": "/interior-painting/kitchen-painting",
+    "permanent": true
+  },
+  {
+    "source": "/bathroom-painting",
+    "destination": "/interior-painting/bathroom-painting",
+    "permanent": true
+  },
+  {
+    "source": "/bedroom-painting",
+    "destination": "/interior-painting/bedroom-painting",
+    "permanent": true
+  },
+  {
+    "source": "/living-room-painting",
+    "destination": "/interior-painting/living-room-painting",
+    "permanent": true
+  },
+  {
+    "source": "/dining-room-painting",
+    "destination": "/interior-painting/dining-room-painting",
+    "permanent": true
+  },
+  {
+    "source": "/ceiling-painting",
+    "destination": "/interior-painting/ceiling-painting",
+    "permanent": true
+  },
+  {
+    "source": "/hallway-and-staircase-painting",
+    "destination": "/interior-painting/hallway-and-staircase-painting",
+    "permanent": true
+  },
+  {
+    "source": "/kids-room-painting",
+    "destination": "/interior-painting/kids-room-painting",
+    "permanent": true
+  },
+  {
+    "source": "/millwork-painting",
+    "destination": "/interior-painting/millwork-painting",
+    "permanent": true
+  },
+  {
+    "source": "/finish-carpentry",
+    "destination": "/interior-painting/finish-carpentry",
+    "permanent": true
+  },
+  {
+    "source": "/accent-wall-painting",
+    "destination": "/interior-painting/accent-wall-painting",
+    "permanent": true
+  },
+  {
+    "source": "/office-room-painting",
+    "destination": "/interior-painting/office-painting",
+    "permanent": true
+  },
+  {
+    "source": "/nursery-room-painting",
+    "destination": "/interior-painting/nursery-painting",
+    "permanent": true
+  },
+  {
+    "source": "/media-room-painting",
+    "destination": "/interior-painting",
+    "permanent": true
+  },
+  {
+    "source": "/wallpaper-services",
+    "destination": "/interior-painting",
+    "permanent": true
+  },
+  {
+    "source": "/deck-painting-and-staining",
+    "destination": "/exterior-painting/deck-painting-and-staining",
+    "permanent": true
+  },
+  {
+    "source": "/stucco-painting",
+    "destination": "/exterior-painting/stucco-painting",
+    "permanent": true
+  },
+  {
+    "source": "/stucco-repairs",
+    "destination": "/exterior-painting/stucco-repairs",
+    "permanent": true
+  },
+  {
+    "source": "/garage-door-painting",
+    "destination": "/exterior-painting/garage-door-painting",
+    "permanent": true
+  },
+  {
+    "source": "/door-refinishing",
+    "destination": "/exterior-painting/door-refinishing",
+    "permanent": true
+  },
+  {
+    "source": "/fiber-cement-siding-painting",
+    "destination": "/exterior-painting/fiber-cement-siding-painting",
+    "permanent": true
+  },
+  {
+    "source": "/vinyl-siding-painting",
+    "destination": "/exterior-painting/vinyl-siding-painting",
+    "permanent": true
+  },
+  {
+    "source": "/exterior-prices",
+    "destination": "/pricing/exterior-prices",
+    "permanent": true
+  },
+  {
+    "source": "/cabinet-prices",
+    "destination": "/pricing/cabinet-prices",
+    "permanent": true
+  },
+  {
+    "source": "/about",
+    "destination": "/our-story",
+    "permanent": true
+  },
+  {
+    "source": "/employees",
+    "destination": "/careers",
+    "permanent": true
+  },
+  {
+    "source": "/blog/tag/:slug*",
+    "destination": "/blog",
+    "permanent": true
+  }
+]

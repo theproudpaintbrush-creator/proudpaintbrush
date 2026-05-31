@@ -1,0 +1,38 @@
+{
+  "parent": "exterior",
+  "title": "Exterior Painting in Sugar Land, TX | Proud Paintbrush",
+  "metaDescription": "Exterior painting in Sugar Land & Fort Bend County — siding, brick, stucco, decks, doors & more. Texas-grade prep, HOA-ready, warranty-backed. Free estimate.",
+  "h1": "Exterior Painting in Sugar Land, TX",
+  "heroImage": "/images/ext-customer-katy.jpg",
+  "heroAlt": "Freshly painted brick home exterior in the Sugar Land, TX area by The Proud Paintbrush",
+  "intro": [
+    "Exterior painting built for Texas — UV, humidity, clay-soil movement, and HOA palettes all handled by a local prep-first crew.",
+    "The Proud Paintbrush has repainted homes across Sugar Land, Katy, Richmond, Missouri City, and the rest of Fort Bend County since 2020. A Gulf Coast exterior takes a beating most regions never see: relentless summer sun on south- and west-facing walls, humidity that drives mildew into shaded brick and trim, and clay soil that shifts and stresses caulk lines and fascia every season. Paint alone does not solve that — the prep underneath does.",
+    "Every surface on your home has different needs, so we have a dedicated page for each. Find yours below for the specific prep, products, and approach we use."
+  ],
+  "servicesHeading": "Exterior Painting Services We Offer",
+  "servicesIntro": "Every exterior surface and project type we handle — tap any one for the full details on prep, products, and process.",
+  "whyHeading": "Why Sugar Land Homeowners Choose Us",
+  "whyCards": [
+    { "title": "Texas-Grade Prep", "desc": "Pressure washing, scraping, carpentry repair, re-caulking, and spot-priming — the steps that decide whether a repaint lasts three years or ten." },
+    { "title": "HOA-Ready", "desc": "We know the color-approval processes for Riverstone, Sienna, Cinco Ranch and more, and can prepare the documentation boards expect." },
+    { "title": "Warranty-Backed", "desc": "Every exterior project carries our written workmanship warranty, available in 2-year and 4-year packages." },
+    { "title": "Local & Owner-Run", "desc": "Locally owned, licensed, and insured — not a national franchise. The estimator runs your job and stands behind it." }
+  ],
+  "processHeading": "Our Exterior Painting Process",
+  "process": [
+    { "title": "Walk-Through & Estimate", "desc": "We assess your specific elevation, identify failure points, and put the full scope — color, product, prep, timeline — in writing." },
+    { "title": "Wash & Surface Prep", "desc": "Pressure wash to remove pollen and mildew, then scrape and sand failing coating back to a sound surface." },
+    { "title": "Repairs & Caulking", "desc": "Replace rotted trim and fascia, patch stucco cracks, and re-caulk every dynamic joint before any coating goes down." },
+    { "title": "Priming", "desc": "Spot-prime bare wood, stucco patches, and chalky surfaces individually so the topcoat bonds and lasts." },
+    { "title": "Application", "desc": "Gulf-Coast-rated coatings applied with the right technique, timed around heat and humidity to cure properly." },
+    { "title": "Final Walkthrough", "desc": "We walk the finished exterior with you and address anything before the job is considered done." }
+  ],
+  "faqs": [
+    { "q": "How much does exterior painting cost in Sugar Land?", "a": "It varies with home size, surface type, and the amount of prep and carpentry needed. See our exterior painting prices page, or book a free on-site estimate for exact numbers." },
+    { "q": "How long does an exterior paint job last here?", "a": "With proper prep and quality coatings, seven to ten years on Hardie and brick, and five to eight on stucco. South- and west-facing walls weather faster." },
+    { "q": "Do you handle HOA color approvals?", "a": "Yes. We are familiar with the approval processes across Fort Bend's master-planned communities and can prepare the color codes, specs, and photos boards typically require." },
+    { "q": "When is the best time to paint an exterior in Texas?", "a": "October through May is ideal — lower humidity and stable temperatures help coatings cure. We work year-round but plan summer projects carefully around the heat." },
+    { "q": "Do you repair rotted wood and stucco cracks before painting?", "a": "Yes. Carpentry repair and stucco crack repair are standard parts of our exterior projects, written into the estimate before we start." }
+  ]
+}
