@@ -106,6 +106,14 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Feature image */}
+      {post.image && (
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={post.image} alt={post.title} className="w-full rounded-xl shadow-md object-cover max-h-[460px]" />
+        </div>
+      )}
+
       {/* Article body */}
       <article className="py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -117,7 +125,8 @@ export default async function BlogPostPage({ params }: PageProps) {
               [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul_li]:mb-1
               [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4 [&_ol_li]:mb-1
               [&_strong]:text-[#1a2e44] [&_strong]:font-semibold
-              [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline"
+              [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline
+              [&_img]:rounded-xl [&_img]:my-6 [&_img]:w-full [&_img]:shadow-sm"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>

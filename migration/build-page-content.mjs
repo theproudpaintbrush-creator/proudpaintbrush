@@ -43,21 +43,47 @@ function frontmatter(md) {
   return fm;
 }
 
-const ALLOWED = new Set(["h2", "h3", "h4", "p", "ul", "ol", "li", "strong", "em", "blockquote", "br", "a", "table", "thead", "tbody", "tr", "th", "td"]);
+const IMG = JSON.parse(fs.readFileSync("migration/image-map.json", "utf8"));
+const imgUrl = (attrs) => ((attrs.match(/data-image="([^"]+)"/i) || attrs.match(/data-src="([^"]+)"/i) || attrs.match(/\ssrc="([^"]+)"/i) || [])[1] || "").split("?")[0];
+const ALLOWED = new Set(["h2", "h3", "h4", "p", "ul", "ol", "li", "strong", "em", "blockquote", "br", "a", "img", "table", "thead", "tbody", "tr", "th", "td"]);
+
+// Portfolio galleries: merge the sparse /portfolio page with the image-rich
+// /painting-services/portfolio page (which we 301 away but whose photos we keep).
+const PORTFOLIO_SOURCES = {
+  "portfolio/interior-painting": ["portfolio/interior-painting", "painting-services/portfolio/interior-painting"],
+  "portfolio/exterior-painting": ["portfolio/exterior-painting", "painting-services/portfolio/exterior-painting"],
+  "portfolio": ["painting-services/portfolio/interior-painting", "painting-services/portfolio/exterior-painting", "portfolio"],
+};
+function galleryFrom(html) {
+  const out = [];
+  for (const tag of html.match(/<img[^>]*>/gi) || []) {
+    const local = IMG[imgUrl(tag)];
+    if (!local || /unsplash|logo|favicon|icon/i.test(local)) continue;
+    const alt = (tag.match(/alt="([^"]*)"/i) || [])[1] || "";
+    out.push({ src: local, alt });
+  }
+  return out;
+}
 const CRUFT = /^(book my free estimate|more (interior|exterior) services|learn more|get started today|schedule[^<]*|take pride in your home|our fabulous crew.*|previous|next|home|interior painting|exterior painting|cabinet painting)$/i;
 
 function cleanHtml(raw) {
   let s = raw
     .replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<style[\s\S]*?<\/style>/gi, "")
     .replace(/<svg[\s\S]*?<\/svg>/gi, "").replace(/<noscript[\s\S]*?<\/noscript>/gi, "")
-    .replace(/<img[^>]*>/gi, "").replace(/<!--[\s\S]*?-->/g, "");
+    .replace(/<!--[\s\S]*?-->/g, "");
   s = s.replace(/<(\/?)([a-z0-9]+)([^>]*)>/gi, (full, slash, tagRaw, attrs) => {
     let tag = tagRaw.toLowerCase();
     if (tag === "h1") tag = "h2";
     if (tag === "b") tag = "strong";
     if (tag === "i") tag = "em";
     if (!ALLOWED.has(tag)) return "";
-    if (slash) return `</${tag}>`;
+    if (slash) return tag === "img" ? "" : `</${tag}>`;
+    if (tag === "img") {
+      const local = IMG[imgUrl(attrs)];
+      if (!local) return "";
+      const alt = (attrs.match(/alt="([^"]*)"/i) || [])[1] || "";
+      return `<img src="${local}" alt="${alt.replace(/"/g, "")}" loading="lazy">`;
+    }
     if (tag === "a") {
       const href = (attrs.match(/href\s*=\s*"([^"]*)"/i) || [])[1] || "";
       if (!href || /^javascript:/i.test(href)) return "";
@@ -101,13 +127,27 @@ for (const [key, src] of PAGES) {
   const fm = fs.existsSync(mdFile) ? frontmatter(fs.readFileSync(mdFile, "utf8")) : {};
   const html = fs.readFileSync(rawFile, "utf8");
   const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
-  const body = cleanHtml(mainMatch ? mainMatch[1] : html);
+  let body = cleanHtml(mainMatch ? mainMatch[1] : html);
+  { const seenImg = new Set(); body = body.replace(/<img src="([^"]+)"[^>]*>/g, (mm, src) => (seenImg.has(src) ? "" : (seenImg.add(src), mm))); }
+  let gallery = [];
+  if (key.startsWith("portfolio")) {
+    const seen = new Set();
+    for (const s of PORTFOLIO_SOURCES[key] || [src]) {
+      const sf = `scrape/raw/${s}.html`;
+      if (!fs.existsSync(sf)) continue;
+      for (const g of galleryFrom(fs.readFileSync(sf, "utf8"))) {
+        if (!seen.has(g.src)) { seen.add(g.src); gallery.push(g); }
+      }
+    }
+    if (key === "portfolio") gallery = gallery.slice(0, 36); // hub: curated preview, full sets on sub-pages
+    body = body.replace(/<img[^>]*>/g, ""); // images shown as grid, not inline
+  }
   const titleCase = key.split("/").pop().replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
   const rawTitle = (fm.title || titleCase).replace(/\s*[—-]\s*The Proud Paintbrush.*$/i, "").trim();
   const h1 = fm.h1 || rawTitle || titleCase;
   const title = clampTitle(rawTitle, h1);
   const words = body.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
-  const rec = { key, title, metaDescription: clampMeta(fm.metaDescription || ""), h1, bodyHtml: body, faqs: [] };
+  const rec = { key, title, metaDescription: clampMeta(fm.metaDescription || ""), h1, bodyHtml: body, faqs: [], gallery };
   fs.mkdirSync(path.dirname(`content/pages/${key}.json`), { recursive: true });
   fs.writeFileSync(`content/pages/${key}.json`, JSON.stringify(rec, null, 2));
   written++;

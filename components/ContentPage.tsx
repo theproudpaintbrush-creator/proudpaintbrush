@@ -46,11 +46,29 @@ export default function ContentPage({ page }: { page: PageContent }) {
               [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul_li]:mb-1
               [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4 [&_ol_li]:mb-1
               [&_strong]:text-[#1a2e44] [&_strong]:font-semibold
-              [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline"
+              [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline
+              [&_img]:rounded-xl [&_img]:my-6 [&_img]:w-full [&_img]:shadow-sm
+              [&_table]:w-full [&_table]:my-6 [&_table]:text-sm [&_th]:bg-gray-100 [&_th]:p-2 [&_th]:text-left [&_td]:border [&_td]:border-gray-200 [&_td]:p-2 [&_th]:border [&_th]:border-gray-200"
             dangerouslySetInnerHTML={{ __html: page.bodyHtml }}
           />
         </div>
       </article>
+
+      {/* GALLERY (portfolio) */}
+      {page.gallery && page.gallery.length > 0 && (
+        <section className="bg-white pb-14">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+              {page.gallery.map((img, i) => (
+                <figure key={`${img.src}-${i}`} className="relative aspect-square overflow-hidden rounded-lg bg-gray-100">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQs */}
       {page.faqs.length > 0 && (

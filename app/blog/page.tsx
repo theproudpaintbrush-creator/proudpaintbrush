@@ -47,8 +47,14 @@ export default function BlogIndexPage() {
               {posts.map((post) => (
                 <article
                   key={post.slug}
-                  className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow"
+                  className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow flex flex-col"
                 >
+                  <Link href={`/blog/${post.slug}`} className="block aspect-[16/10] overflow-hidden bg-gray-100">
+                    {post.image && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={post.image} alt={post.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+                    )}
+                  </Link>
                   <div className="p-6">
                     <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
                       <time dateTime={post.date}>

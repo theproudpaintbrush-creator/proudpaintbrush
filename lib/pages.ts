@@ -9,6 +9,7 @@ export type PageContent = {
   h1: string;
   bodyHtml: string;
   faqs: PageFaq[];
+  gallery?: { src: string; alt: string }[];
 };
 
 const pagesDir = path.join(process.cwd(), "content", "pages");

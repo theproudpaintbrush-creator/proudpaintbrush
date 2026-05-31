@@ -60,8 +60,20 @@ export default function ServiceDetail({
         </div>
       </section>
 
+      {/* FEATURE IMAGE */}
+      {service.ogImage && (
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={service.ogImage}
+            alt={`${service.name} project in Sugar Land, TX by The Proud Paintbrush`}
+            className="w-full rounded-xl shadow-md object-cover max-h-[460px]"
+          />
+        </div>
+      )}
+
       {/* BODY */}
-      <article className="py-14">
+      <article className="py-14 pt-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className="prose prose-lg max-w-none text-gray-700

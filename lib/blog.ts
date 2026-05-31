@@ -9,6 +9,7 @@ export interface BlogPost {
   author: string;
   content: string;
   readTime: number;
+  image?: string;
 }
 
 export interface BlogPostMeta {
@@ -18,6 +19,7 @@ export interface BlogPostMeta {
   date: string;
   author: string;
   readTime: number;
+  image?: string;
 }
 
 const blogDir = path.join(process.cwd(), "content", "blog");
@@ -44,6 +46,7 @@ export function getAllPosts(): BlogPostMeta[] {
       date: data.date,
       author: data.author,
       readTime: data.readTime,
+      image: data.image,
     };
   });
 

@@ -8,6 +8,7 @@ import path from "node:path";
 const RAW_DIR = "scrape/raw/blog";
 const OUT_DIR = "content/blog";
 fs.mkdirSync(OUT_DIR, { recursive: true });
+const IMG = JSON.parse(fs.readFileSync("migration/image-map.json", "utf8")); // CDN URL -> local path
 
 // ---- build skip set: redirect sources + existing posts ----
 const skip = new Set();
@@ -17,7 +18,7 @@ if (fs.existsSync("migration/redirects.json")) {
   for (const r of JSON.parse(fs.readFileSync("migration/redirects.json", "utf8")))
     if (r.source.startsWith("/blog/")) skip.add(r.source.replace("/blog/", ""));
 }
-for (const f of fs.readdirSync(OUT_DIR)) if (f.endsWith(".json")) skip.add(f.replace(/\.json$/, "")); // don't overwrite existing
+// (regenerating all from scrape this pass to add images; junk auto-slugs still skipped above)
 
 const dec = (s) => (s || "")
   .replace(/&amp;/g, "&").replace(/&#39;|&rsquo;|&lsquo;|&apos;/g, "’").replace(/&quot;|&ldquo;|&rdquo;/g, '"')
@@ -42,14 +43,14 @@ function extractBody(html) {
   return html.slice(start);
 }
 
-const ALLOWED = new Set(["h2", "h3", "h4", "p", "ul", "ol", "li", "strong", "em", "blockquote", "br", "a"]);
+const ALLOWED = new Set(["h2", "h3", "h4", "p", "ul", "ol", "li", "strong", "em", "blockquote", "br", "a", "img"]);
+const imgUrl = (attrs) => ((attrs.match(/data-image="([^"]+)"/i) || attrs.match(/data-src="([^"]+)"/i) || attrs.match(/\ssrc="([^"]+)"/i) || [])[1] || "").split("?")[0];
 function cleanHtml(raw) {
   let s = raw
     .replace(/<script[\s\S]*?<\/script>/gi, "")
     .replace(/<style[\s\S]*?<\/style>/gi, "")
     .replace(/<svg[\s\S]*?<\/svg>/gi, "")
     .replace(/<noscript[\s\S]*?<\/noscript>/gi, "")
-    .replace(/<img[^>]*>/gi, "")            // drop images (lazy-load placeholders)
     .replace(/<!--[\s\S]*?-->/g, "");
   s = s.replace(/<(\/?)([a-z0-9]+)([^>]*)>/gi, (full, slash, tagRaw, attrs) => {
     let tag = tagRaw.toLowerCase();
@@ -57,7 +58,13 @@ function cleanHtml(raw) {
     if (tag === "b") tag = "strong";
     if (tag === "i") tag = "em";
     if (!ALLOWED.has(tag)) return "";
-    if (slash) return `</${tag}>`;
+    if (slash) return tag === "img" ? "" : `</${tag}>`;
+    if (tag === "img") {
+      const local = IMG[imgUrl(attrs)];
+      if (!local) return "";
+      const alt = (attrs.match(/alt="([^"]*)"/i) || [])[1] || "";
+      return `<img src="${local}" alt="${alt.replace(/"/g, "")}" loading="lazy">`;
+    }
     if (tag === "a") {
       const href = (attrs.match(/href\s*=\s*"([^"]*)"/i) || [])[1] || "";
       if (!href || /^javascript:/i.test(href)) return "";
@@ -84,10 +91,16 @@ for (const file of fs.readdirSync(RAW_DIR).filter((f) => f.endsWith(".html"))) {
   const description = dec(firstMatch(html, /<meta[^>]+name="description"[^>]+content="([^"]*)"/i));
   const date = (firstMatch(html, /"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})/) || "2024-01-01");
   const author = dec(firstMatch(html, /"author"\s*:\s*\{[^}]*"name"\s*:\s*"([^"]+)"/)) || "The Proud Paintbrush Team";
-  const content = cleanHtml(extractBody(html));
-  const words = content.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+  let content = cleanHtml(extractBody(html));
+  { const seenImg = new Set(); content = content.replace(/<img src="([^"]+)"[^>]*>/g, (mm, src) => (seenImg.has(src) ? "" : (seenImg.add(src), mm))); }
+  const ogImg = firstMatch(html, /<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i).split("?")[0];
+  const firstBody = (content.match(/<img src="([^"]+)"/) || [])[1] || "";
+  const image = IMG[ogImg] || firstBody || "";
+  // if the feature image is also the first body image, drop the body copy (shown as hero)
+  const body = image && firstBody === image ? content.replace(/<img\s[^>]*>/i, "") : content;
+  const words = body.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
   if (words < 80) { skipped++; report.push({ slug, skipped: "thin", words }); continue; }
-  const rec = { slug, title, description, date, author, readTime: Math.max(1, Math.ceil(words / 200)), content };
+  const rec = { slug, title, description, date, author, readTime: Math.max(1, Math.ceil(words / 200)), image, content: body };
   fs.writeFileSync(path.join(OUT_DIR, slug + ".json"), JSON.stringify(rec, null, 2));
   written++;
   report.push({ slug, words, date, title: title.slice(0, 50) });
