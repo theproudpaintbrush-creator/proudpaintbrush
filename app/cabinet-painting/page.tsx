@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { CITIES } from "@/lib/cities";
 import { getHub } from "@/lib/services";
 import { buildHubSchemas } from "@/lib/serviceSchema";
 import ServiceHub from "@/components/ServiceHub";
@@ -22,8 +23,8 @@ export function generateMetadata(): Metadata {
 export default function CabinetPaintingHub() {
   const hub = getHub("cabinet");
   if (!hub) notFound();
-  // Cabinet is a pillar with no sub-service spokes and no per-city route;
-  // it links out via relatedLinks instead (no city grid to avoid 404 links).
+  // Cabinet has no sub-service spokes, but now has per-city pages to link to.
+  const cities = CITIES.map((c) => ({ slug: c.slug, name: c.name }));
   const schemas = buildHubSchemas("cabinet", hub.title, hub.metaDescription, hub.faqs, []);
 
   return (
@@ -31,7 +32,7 @@ export default function CabinetPaintingHub() {
       {schemas.map((s, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
-      <ServiceHub hub={hub} subServices={[]} cities={[]} />
+      <ServiceHub hub={hub} subServices={[]} cities={cities} />
     </>
   );
 }

@@ -35,6 +35,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.95,
   }));
 
+  const cabinetCityPages: MetadataRoute.Sitemap = CITIES.map((c) => ({
+    url: `${BASE_URL}/cabinet-painting/${c.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
+  }));
+
   const interiorServicePages: MetadataRoute.Sitemap = getServiceSlugs("interior").map((slug) => ({
     url: `${BASE_URL}/interior-painting/${slug}`,
     lastModified: new Date(),
@@ -68,6 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticPages,
     ...exteriorCityPages,
     ...interiorCityPages,
+    ...cabinetCityPages,
     ...interiorServicePages,
     ...exteriorServicePages,
     ...contentPages,
