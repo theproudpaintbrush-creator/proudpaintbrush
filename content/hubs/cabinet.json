@@ -36,6 +36,7 @@
     { "href": "/interior-painting/kitchen-painting", "label": "Kitchen Painting" },
     { "href": "/color-consultation", "label": "Color Consultation" },
     { "href": "/pricing/cabinet-prices", "label": "Cabinet Painting Prices" },
+    { "href": "/portfolio/cabinet-painting", "label": "Cabinet Portfolio" },
     { "href": "/interior-painting", "label": "All Interior Painting" }
   ]
 }
