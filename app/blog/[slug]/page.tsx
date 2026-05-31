@@ -52,9 +52,27 @@ export default async function BlogPostPage({ params }: PageProps) {
   if (!post) notFound();
 
   const allPosts = getAllPosts();
+  // topically-relevant related posts (shared significant title words), newest as tiebreak
+  const STOP = new Set(["the","a","an","to","of","in","on","for","and","or","is","are","your","you","how","what","why","with","do","does","should","it","this","that","be","paint","painting","painters","painter"]);
+  const words = (s: string) =>
+    new Set(s.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter((w) => w.length > 3 && !STOP.has(w)));
+  const myWords = words(`${post.title} ${slug}`);
   const relatedPosts = allPosts
     .filter((p) => p.slug !== slug)
-    .slice(0, 3);
+    .map((p) => ({ p, score: [...words(p.title)].filter((w) => myWords.has(w)).length }))
+    .sort((a, b) => b.score - a.score || new Date(b.p.date).getTime() - new Date(a.p.date).getTime())
+    .slice(0, 3)
+    .map((x) => x.p);
+
+  // contextual service spotlight based on the post topic
+  const t = `${slug} ${post.title}`.toLowerCase();
+  const spotlight =
+    /cabinet|kitchen/.test(t) ? { href: "/cabinet-painting", label: "Cabinet Painting" }
+    : /exterior|stucco|fence|deck|brick|siding|hoa|curb|hurricane/.test(t) ? { href: "/exterior-painting", label: "Exterior Painting" }
+    : /color|undertone|sheen|hue|palette|psycholog/.test(t) ? { href: "/color-consultation", label: "Color Consultation" }
+    : /cost|price|pay|quote|budget|charge|worth|finance/.test(t) ? { href: "/pricing", label: "Painting Prices" }
+    : /interior|wall|ceiling|trim|bedroom|living|drywall|nursery|office/.test(t) ? { href: "/interior-painting", label: "Interior Painting" }
+    : { href: "/contact", label: "a Free Estimate" };
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -146,6 +164,28 @@ export default async function BlogPostPage({ params }: PageProps) {
           />
         </div>
       </article>
+
+      {/* Contextual service spotlight */}
+      <section className="py-2">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#4B83B2] text-white rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <p className="text-white/80 text-sm font-semibold uppercase tracking-widest mb-1">Thinking about a project?</p>
+              <p className="text-lg font-bold">
+                See our {spotlight.label}{spotlight.href === "/contact" ? "" : " services"} — or get a free, no-pressure estimate.
+              </p>
+            </div>
+            <div className="flex flex-shrink-0 gap-3">
+              <Link href={spotlight.href} className="bg-white text-[#4B83B2] hover:bg-[#1a2e44] hover:text-white font-semibold px-5 py-3 rounded-lg transition-colors whitespace-nowrap">
+                {spotlight.href === "/contact" ? "Free Estimate" : spotlight.label}
+              </Link>
+              <Link href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-5 py-3 rounded-lg transition-colors whitespace-nowrap">
+                Get a Quote
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Author bio */}
       <section className="bg-[#f8f9fa] py-10">
