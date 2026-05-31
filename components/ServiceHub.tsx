@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { HubContent, ServiceParent } from "@/lib/services";
+import TrustBar from "@/components/TrustBar";
 
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const PHONE = "(832) 605-0493";
@@ -53,6 +54,8 @@ export default function ServiceHub({
           </div>
         </div>
       </section>
+
+      <TrustBar />
 
       {/* INTRO (remaining paragraphs) */}
       {hub.intro.length > 1 && (

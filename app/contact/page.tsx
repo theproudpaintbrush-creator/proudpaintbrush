@@ -64,13 +64,11 @@ export default function ContactPage() {
           {[
             { label: "Call or Text", value: PHONE, href: `tel:${PHONE_TEL}`, note: "The fastest way to reach us." },
             { label: "Email", value: EMAIL, href: `mailto:${EMAIL}`, note: "We reply within one business day." },
-            { label: "Book Online", value: "Schedule a walkthrough", href: BOOKING_URL, note: "Pick a time that works for you.", external: true },
+            { label: "Book Online", value: "Schedule a walkthrough", href: "#book", note: "Pick a time that works for you." },
           ].map((m) => (
             <a
               key={m.label}
               href={m.href}
-              target={m.external ? "_blank" : undefined}
-              rel={m.external ? "noopener noreferrer" : undefined}
               className="block border border-gray-200 hover:border-[#4B83B2] p-6 transition-colors text-center"
             >
               <div className="text-sm font-semibold uppercase tracking-widest text-[#4B83B2] mb-2">{m.label}</div>
@@ -81,22 +79,29 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* BOOKING CTA */}
-      <section className="bg-gray-50 py-16 px-4 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] mb-4">Request Your Free Estimate</h2>
-          <p className="text-gray-600 mb-8">
-            Licensed, insured, and locally owned since 2020. Every estimate is honest, detailed, and no-pressure.
+      {/* BOOKING EMBED */}
+      <section id="book" className="bg-gray-50 py-16 px-4">
+        <div className="max-w-3xl mx-auto text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] mb-3">Request Your Free Estimate</h2>
+          <p className="text-gray-600">
+            Pick a time below — licensed, insured, and locally owned since 2020. Every estimate is honest, detailed, and no-pressure.
           </p>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#4B83B2] hover:bg-[#3a6a96] text-white font-semibold px-10 py-4 text-lg transition-colors rounded-lg"
-          >
-            Book a Free Walkthrough &rarr;
-          </a>
         </div>
+        <div className="max-w-3xl mx-auto bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+          <iframe
+            title="Book a free painting estimate with The Proud Paintbrush"
+            src="https://theproudpaintbrush.youcanbook.me/?noframe=true&skipHeaderFooter=true"
+            className="w-full"
+            style={{ minHeight: "780px", border: 0 }}
+            loading="lazy"
+          />
+        </div>
+        <p className="text-center text-sm text-gray-500 mt-4">
+          Prefer a new tab?{" "}
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-[#4B83B2] font-medium hover:underline">
+            Open the scheduler &rarr;
+          </a>
+        </p>
       </section>
 
       {/* SERVICE AREAS */}

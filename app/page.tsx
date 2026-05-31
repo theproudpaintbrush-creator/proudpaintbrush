@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import TrustBar from "@/components/TrustBar";
+import ProudProcess from "@/components/ProudProcess";
 
 export const metadata: Metadata = {
   title: "Sugar Land Painting Contractor",
@@ -82,6 +84,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <TrustBar />
+
       {/* ── DR. TEPPER VIDEO TESTIMONIAL BANNER ── */}
       <section className="bg-[#4B83B2] text-white pt-10 pb-0">
         <div className="max-w-6xl mx-auto px-4 pb-10">
@@ -138,6 +142,8 @@ export default function HomePage() {
         </div>
         <WaveDown from="bg-[#111111]" to="#ffffff" />
       </section>
+
+      <ProudProcess />
 
       {/* ── INTERIOR PAINTING + 2 VIDEO TESTIMONIALS ── */}
       <section className="bg-white py-20">

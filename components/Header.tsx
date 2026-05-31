@@ -41,6 +41,22 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
+      {/* Trust / rating strip */}
+      <div className="bg-[#1a2e44] text-white text-xs sm:text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between">
+          <Link href="/testimonials" className="flex items-center gap-1.5 hover:text-white/80">
+            <span className="text-yellow-400 tracking-tight" aria-hidden>★★★★★</span>
+            <span className="font-semibold">5.0</span>
+            <span className="hidden sm:inline text-white/70">· Trusted by Fort Bend homeowners</span>
+          </Link>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <a href="tel:+18326050493" className="hover:text-white/80 font-medium">(832) 605-0493</a>
+            <Link href="/contact" className="hidden sm:inline bg-[#4B83B2] hover:bg-[#3a6a96] px-3 py-1 rounded font-semibold transition-colors">
+              Free Estimate
+            </Link>
+          </div>
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
