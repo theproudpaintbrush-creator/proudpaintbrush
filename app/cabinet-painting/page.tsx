@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CITIES } from "@/lib/cities";
 import { getHub } from "@/lib/services";
+import { getAllPosts } from "@/lib/blog";
 import { buildHubSchemas } from "@/lib/serviceSchema";
 import ServiceHub from "@/components/ServiceHub";
+
+const TOPIC = /cabinet|kitchen|aqua coat|grain/i;
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
 
@@ -25,6 +28,7 @@ export default function CabinetPaintingHub() {
   if (!hub) notFound();
   // Cabinet has no sub-service spokes, but now has per-city pages to link to.
   const cities = CITIES.map((c) => ({ slug: c.slug, name: c.name }));
+  const relatedPosts = getAllPosts().filter((p) => TOPIC.test(`${p.title} ${p.slug}`)).slice(0, 3).map((p) => ({ slug: p.slug, title: p.title }));
   const schemas = buildHubSchemas("cabinet", hub.title, hub.metaDescription, hub.faqs, []);
 
   return (
@@ -32,7 +36,7 @@ export default function CabinetPaintingHub() {
       {schemas.map((s, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
-      <ServiceHub hub={hub} subServices={[]} cities={cities} />
+      <ServiceHub hub={hub} subServices={[]} cities={cities} relatedPosts={relatedPosts} />
     </>
   );
 }

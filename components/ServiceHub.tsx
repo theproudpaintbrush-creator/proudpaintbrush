@@ -22,10 +22,12 @@ export default function ServiceHub({
   hub,
   subServices,
   cities,
+  relatedPosts = [],
 }: {
   hub: HubContent;
   subServices: { slug: string; name: string }[];
   cities: { slug: string; name: string }[];
+  relatedPosts?: { slug: string; title: string }[];
 }) {
   const parentPath = PARENT_PATH[hub.parent];
   const parentLabel = PARENT_LABEL[hub.parent];
@@ -171,6 +173,22 @@ export default function ServiceHub({
                   <h3 className="font-bold text-[#111111] mb-2 text-lg">{f.q}</h3>
                   <p className="text-gray-700 leading-relaxed">{f.a}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FROM THE BLOG */}
+      {relatedPosts.length > 0 && (
+        <section className="bg-white py-16">
+          <div className="max-w-5xl mx-auto px-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] text-center mb-8">From the Blog</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {relatedPosts.map((p) => (
+                <Link key={p.slug} href={`/blog/${p.slug}`} className="block bg-gray-50 border border-gray-200 hover:border-[#4B83B2] p-5 transition-colors">
+                  <span className="text-[#111111] font-medium text-sm hover:text-[#4B83B2] leading-snug">{p.title}</span>
+                </Link>
               ))}
             </div>
           </div>
