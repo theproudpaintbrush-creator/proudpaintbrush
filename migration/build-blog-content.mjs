@@ -33,6 +33,25 @@ function altText(src) {
   return (w.charAt(0).toUpperCase() + w.slice(1)).replace(/\b(tx|usa|hoa|diy)\b/gi, (x) => x.toUpperCase());
 }
 
+// SERP overrides for high-impression / low-CTR posts (better titles & complete metas)
+const OVERRIDES = {
+  "cost-to-paint-bathroom": {
+    title: "How Much to Paint a Bathroom? (2026 Cost Guide)",
+    description: "How much does it cost to paint a bathroom? See 2026 price ranges by size, plus how prep, ceilings, trim, and vanities change the total. Free estimate.",
+  },
+  "how-to-tell-if-paint-is-oil-based-or-latex-without-guessing": {
+    description: "Not sure if your paint is oil-based or latex? Here's the simple cotton-ball test and what to do next, so your repaint actually bonds and lasts.",
+  },
+  "who-owns-benjamin-moore-paint-company": {
+    title: "Who Owns Benjamin Moore Paint Company?",
+    description: "Who owns Benjamin Moore? Here's the parent company, how it stacks up against Behr and Sherwin-Williams, and which paint is the right pick for your home.",
+  },
+  "-whats-the-best-paint-brand-for-cabinets": {
+    title: "Best Paint for Cabinets in 2026 (Pro Picks Ranked)",
+    description: "The best paint for kitchen cabinets in 2026, ranked by pros. Compare Sherwin-Williams, Benjamin Moore & more for a hard, factory-smooth finish.",
+  },
+};
+
 // ---- build skip set: redirect sources + existing posts ----
 const skip = new Set();
 const nextcfg = fs.readFileSync("next.config.ts", "utf8");
@@ -123,7 +142,8 @@ for (const file of fs.readdirSync(RAW_DIR).filter((f) => f.endsWith(".html"))) {
   const body = image && firstBody === image ? content.replace(/<img\s[^>]*>/i, "") : content;
   const words = body.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
   if (words < 80) { skipped++; report.push({ slug, skipped: "thin", words }); continue; }
-  const rec = { slug, title, description, date, author, readTime: Math.max(1, Math.ceil(words / 200)), image, content: body };
+  const ov = OVERRIDES[slug] || {};
+  const rec = { slug, title: ov.title || title, description: ov.description || description, date, author, readTime: Math.max(1, Math.ceil(words / 200)), image, content: body };
   fs.writeFileSync(path.join(OUT_DIR, slug + ".json"), JSON.stringify(rec, null, 2));
   written++;
   report.push({ slug, words, date, title: title.slice(0, 50) });

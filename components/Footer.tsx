@@ -19,8 +19,9 @@ const navLinks = [
   { label: "About", href: "/our-story" },
   { label: "Blog", href: "/blog" },
   { label: "Testimonials", href: "/testimonials" },
-  { label: "Service Areas", href: "/exterior-painting" },
+  { label: "Service Areas", href: "/service-areas" },
   { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const serviceAreas = [

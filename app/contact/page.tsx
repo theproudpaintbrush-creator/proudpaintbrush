@@ -1,0 +1,123 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { CITIES } from "@/lib/cities";
+
+const BASE_URL = "https://www.theproudpaintbrush.com";
+const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
+const PHONE = "(832) 605-0493";
+const PHONE_TEL = "+18326050493";
+const EMAIL = "info@theproudpaintbrush.com";
+
+export const metadata: Metadata = {
+  title: "Contact The Proud Paintbrush | Sugar Land, TX Painters",
+  description:
+    "Contact The Proud Paintbrush for a free painting estimate in Sugar Land & Fort Bend County. Call (832) 605-0493, email us, or book a walkthrough online.",
+  alternates: { canonical: `${BASE_URL}/contact` },
+  openGraph: {
+    title: "Contact The Proud Paintbrush | Sugar Land, TX Painters",
+    description: "Free painting estimates across Sugar Land & Fort Bend County. Call, email, or book online.",
+    url: `${BASE_URL}/contact`,
+    type: "website",
+  },
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "The Proud Paintbrush",
+  url: `${BASE_URL}/contact`,
+  telephone: PHONE_TEL,
+  email: EMAIL,
+  priceRange: "$$",
+  address: { "@type": "PostalAddress", addressLocality: "Sugar Land", addressRegion: "TX", postalCode: "77498", addressCountry: "US" },
+  areaServed: CITIES.map((c) => ({ "@type": "City", name: c.name })),
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: PHONE_TEL,
+    email: EMAIL,
+    contactType: "customer service",
+    areaServed: "US-TX",
+    availableLanguage: "English",
+  },
+  aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 87 },
+};
+
+export default function ContactPage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
+      {/* HERO */}
+      <section className="bg-[#1a2e44] text-white py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Contact The Proud Paintbrush</h1>
+          <p className="text-white/85 text-lg max-w-2xl mx-auto">
+            Ready for a free estimate, or have a question about your project? We&apos;d love to hear from you — we
+            serve Sugar Land and all of Fort Bend County.
+          </p>
+        </div>
+      </section>
+
+      {/* CONTACT METHODS */}
+      <section className="bg-white py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { label: "Call or Text", value: PHONE, href: `tel:${PHONE_TEL}`, note: "The fastest way to reach us." },
+            { label: "Email", value: EMAIL, href: `mailto:${EMAIL}`, note: "We reply within one business day." },
+            { label: "Book Online", value: "Schedule a walkthrough", href: BOOKING_URL, note: "Pick a time that works for you.", external: true },
+          ].map((m) => (
+            <a
+              key={m.label}
+              href={m.href}
+              target={m.external ? "_blank" : undefined}
+              rel={m.external ? "noopener noreferrer" : undefined}
+              className="block border border-gray-200 hover:border-[#4B83B2] p-6 transition-colors text-center"
+            >
+              <div className="text-sm font-semibold uppercase tracking-widest text-[#4B83B2] mb-2">{m.label}</div>
+              <div className="text-lg font-bold text-[#1a2e44] mb-1">{m.value}</div>
+              <div className="text-sm text-gray-500">{m.note}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* BOOKING CTA */}
+      <section className="bg-gray-50 py-16 px-4 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] mb-4">Request Your Free Estimate</h2>
+          <p className="text-gray-600 mb-8">
+            Licensed, insured, and locally owned since 2020. Every estimate is honest, detailed, and no-pressure.
+          </p>
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#4B83B2] hover:bg-[#3a6a96] text-white font-semibold px-10 py-4 text-lg transition-colors rounded-lg"
+          >
+            Book a Free Walkthrough &rarr;
+          </a>
+        </div>
+      </section>
+
+      {/* SERVICE AREAS */}
+      <section className="bg-white py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl font-bold text-[#1a2e44] mb-3">Areas We Serve</h2>
+          <p className="text-gray-600 mb-8">Proudly painting homes across Fort Bend County and West Houston:</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {CITIES.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/service-areas/${c.slug}`}
+                className="border border-gray-200 hover:border-[#4B83B2] hover:text-[#4B83B2] text-[#1a2e44] text-sm font-medium px-4 py-2 transition-colors"
+              >
+                {c.name}
+              </Link>
+            ))}
+          </div>
+          <p className="text-gray-500 text-sm mt-8">Based in Sugar Land, TX 77498 · {PHONE}</p>
+        </div>
+      </section>
+    </>
+  );
+}
