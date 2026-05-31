@@ -71,7 +71,7 @@ function cleanHtml(raw) {
     if (slash) return tag === "img" ? "" : `</${tag}>`;
     if (tag === "img") {
       const local = IMG[imgUrl(attrs)];
-      if (!local) return "";
+      if (!local || /avatar|thirdpartymember|logo|favicon/i.test(local)) return "";
       const alt = (attrs.match(/alt="([^"]*)"/i) || [])[1] || "";
       return `<img src="${local}" alt="${alt.replace(/"/g, "")}" loading="lazy">`;
     }
@@ -100,7 +100,7 @@ for (const file of fs.readdirSync(RAW_DIR).filter((f) => f.endsWith(".html"))) {
   const title = dec(firstMatch(html, /<title[^>]*>([\s\S]*?)<\/title>/i)).replace(/\s*[—-]\s*The Proud Paintbrush.*$/i, "").trim();
   const description = dec(firstMatch(html, /<meta[^>]+name="description"[^>]+content="([^"]*)"/i));
   const date = (firstMatch(html, /"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})/) || "2024-01-01");
-  const author = dec(firstMatch(html, /"author"\s*:\s*\{[^}]*"name"\s*:\s*"([^"]+)"/)) || "The Proud Paintbrush Team";
+  const author = dec(firstMatch(html, /class="blog-author-name"[^>]*>([^<]+)/)) || dec(firstMatch(html, /"author":"([^"]+)"/)) || "The Proud Paintbrush Team";
   let content = cleanHtml(extractBody(html));
   { const seenImg = new Set(); content = content.replace(/<img src="([^"]+)"[^>]*>/g, (mm, src) => { const h = fileHash(src); return seenImg.has(h) ? "" : (seenImg.add(h), mm); }); }
   const ogImg = firstMatch(html, /<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i).split("?")[0];
