@@ -47,7 +47,7 @@ export default function ContentPage({ page }: { page: PageContent }) {
               [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4 [&_ol_li]:mb-1
               [&_strong]:text-[#1a2e44] [&_strong]:font-semibold
               [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline
-              [&_img]:rounded-xl [&_img]:my-6 [&_img]:w-full [&_img]:shadow-sm
+              [&_img]:rounded-xl [&_img]:my-6 [&_img]:w-full [&_img]:h-auto [&_img]:shadow-sm
               [&_table]:w-full [&_table]:my-6 [&_table]:text-sm [&_th]:bg-gray-100 [&_th]:p-2 [&_th]:text-left [&_td]:border [&_td]:border-gray-200 [&_td]:p-2 [&_th]:border [&_th]:border-gray-200"
             dangerouslySetInnerHTML={{ __html: page.bodyHtml }}
           />

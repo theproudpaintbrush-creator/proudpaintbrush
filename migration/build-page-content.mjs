@@ -69,6 +69,7 @@ function frontmatter(md) {
 }
 
 const IMG = JSON.parse(fs.readFileSync("migration/image-map.json", "utf8"));
+const DIMS = JSON.parse(fs.readFileSync("migration/image-dims.json", "utf8"));
 const imgUrl = (attrs) => ((attrs.match(/data-image="([^"]+)"/i) || attrs.match(/data-src="([^"]+)"/i) || attrs.match(/\ssrc="([^"]+)"/i) || [])[1] || "").split("?")[0];
 function altText(src) {
   const base = src.split("/").pop().replace(/\.webp$/, "").replace(/-[a-z0-9]{6}$/, "");
@@ -127,7 +128,9 @@ function cleanHtml(raw) {
       const local = IMG[imgUrl(attrs)];
       if (!local) return "";
       const alt = (((attrs.match(/alt="([^"]*)"/i) || [])[1] || "").trim()) || altText(local);
-      return `<img src="${local}" alt="${alt.replace(/"/g, "")}" loading="lazy">`;
+      const d = DIMS[local];
+      const dim = d ? ` width="${d.w}" height="${d.h}"` : "";
+      return `<img src="${local}" alt="${alt.replace(/"/g, "")}"${dim} loading="lazy">`;
     }
     if (tag === "a") {
       const href = (attrs.match(/href\s*=\s*"([^"]*)"/i) || [])[1] || "";

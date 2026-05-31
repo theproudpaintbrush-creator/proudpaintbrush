@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPostBySlug, getAllPosts, getAllSlugs } from "@/lib/blog";
+import { imageDims } from "@/lib/imageDims";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -146,7 +147,12 @@ export default async function BlogPostPage({ params }: PageProps) {
       {post.image && (
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={post.image} alt={post.title} className="w-full rounded-xl shadow-md object-cover max-h-[460px]" />
+          <img
+            src={post.image}
+            alt={post.title}
+            {...(() => { const d = imageDims(post.image); return d ? { width: d.w, height: d.h } : {}; })()}
+            className="w-full h-auto rounded-xl shadow-md object-cover max-h-[460px]"
+          />
         </div>
       )}
 
@@ -162,7 +168,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4 [&_ol_li]:mb-1
               [&_strong]:text-[#1a2e44] [&_strong]:font-semibold
               [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline
-              [&_img]:rounded-xl [&_img]:my-6 [&_img]:w-full [&_img]:shadow-sm"
+              [&_img]:rounded-xl [&_img]:my-6 [&_img]:w-full [&_img]:h-auto [&_img]:shadow-sm"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>

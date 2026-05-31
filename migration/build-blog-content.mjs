@@ -19,6 +19,7 @@ const RAW_DIR = "scrape/raw/blog";
 const OUT_DIR = "content/blog";
 fs.mkdirSync(OUT_DIR, { recursive: true });
 const IMG = JSON.parse(fs.readFileSync("migration/image-map.json", "utf8")); // CDN URL -> local path
+const DIMS = JSON.parse(fs.readFileSync("migration/image-dims.json", "utf8")); // local path -> {w,h}
 
 function clampMeta(m) {
   if (!m) return "";
@@ -105,7 +106,9 @@ function cleanHtml(raw) {
       const local = IMG[imgUrl(attrs)];
       if (!local || /avatar|thirdpartymember|logo|favicon/i.test(local)) return "";
       const alt = (((attrs.match(/alt="([^"]*)"/i) || [])[1] || "").trim()) || altText(local);
-      return `<img src="${local}" alt="${alt.replace(/"/g, "")}" loading="lazy">`;
+      const d = DIMS[local];
+      const dim = d ? ` width="${d.w}" height="${d.h}"` : "";
+      return `<img src="${local}" alt="${alt.replace(/"/g, "")}"${dim} loading="lazy">`;
     }
     if (tag === "a") {
       const href = (attrs.match(/href\s*=\s*"([^"]*)"/i) || [])[1] || "";

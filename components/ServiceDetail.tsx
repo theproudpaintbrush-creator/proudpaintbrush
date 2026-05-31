@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ServiceContent, ServiceParent } from "@/lib/services";
+import { imageDims } from "@/lib/imageDims";
 
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const PHONE = "(832) 605-0493";
@@ -67,7 +68,8 @@ export default function ServiceDetail({
           <img
             src={service.ogImage}
             alt={`${service.name} project in Sugar Land, TX by The Proud Paintbrush`}
-            className="w-full rounded-xl shadow-md object-cover max-h-[460px]"
+            {...(() => { const d = imageDims(service.ogImage); return d ? { width: d.w, height: d.h } : {}; })()}
+            className="w-full h-auto rounded-xl shadow-md object-cover max-h-[460px]"
           />
         </div>
       )}
