@@ -16,12 +16,14 @@ export async function generateMetadata({ params }: { params: Promise<RouteParams
   const page = getPage(slug.join("/"));
   if (!page) return {};
   const url = `${BASE_URL}/${page.key}`;
+  const ogPath = (page.bodyHtml.match(/<img src="([^"]+)"/) || [])[1] || page.gallery?.[0]?.src || "/images/hero-stucco-richmond.webp";
+  const ogImage = `${BASE_URL}${ogPath}`;
   return {
     title: page.title,
     description: page.metaDescription,
     alternates: { canonical: url },
-    openGraph: { title: page.title, description: page.metaDescription, url, type: "website" },
-    twitter: { card: "summary_large_image", title: page.title, description: page.metaDescription },
+    openGraph: { title: page.title, description: page.metaDescription, url, type: "website", images: [{ url: ogImage }] },
+    twitter: { card: "summary_large_image", title: page.title, description: page.metaDescription, images: [ogImage] },
   };
 }
 

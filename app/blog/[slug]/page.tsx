@@ -32,6 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = getPostBySlug(slug);
   if (!post) return {};
 
+  const ogImage = `https://www.theproudpaintbrush.com${post.image || "/images/hero-stucco-richmond.webp"}`;
   return {
     title: post.title,
     description: post.description,
@@ -42,7 +43,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
+      images: [{ url: ogImage }],
     },
+    twitter: { card: "summary_large_image", title: post.title, description: post.description, images: [ogImage] },
   };
 }
 

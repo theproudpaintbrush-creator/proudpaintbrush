@@ -77,6 +77,19 @@ function altText(src) {
   const w = base.replace(/[-_]+/g, " ").trim();
   return (w.charAt(0).toUpperCase() + w.slice(1)).replace(/\b(tx|usa|hoa|diy)\b/gi, (x) => x.toUpperCase());
 }
+// Pull FAQ pairs from question-style headings (text ends in "?") + following content,
+// for FAQPage schema. Content stays visible in the body (Google-compliant).
+function extractPageFaqs(html) {
+  const faqs = [];
+  const re = /<(h2|h3|h4)>([^<]*\?)<\/\1>([\s\S]*?)(?=<h2>|<h3>|<h4>|$)/g;
+  let m;
+  while ((m = re.exec(html)) && faqs.length < 12) {
+    const q = m[2].replace(/&amp;/g, "&").trim();
+    const a = m[3].replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+    if (q.length > 8 && a.length > 40) faqs.push({ q, a: a.length > 320 ? a.slice(0, 317).replace(/\s+\S*$/, "") + "…" : a });
+  }
+  return faqs;
+}
 const ALLOWED = new Set(["h2", "h3", "h4", "p", "ul", "ol", "li", "strong", "em", "blockquote", "br", "a", "img", "table", "thead", "tbody", "tr", "th", "td"]);
 
 // Portfolio galleries: merge the sparse /portfolio page with the image-rich
@@ -181,7 +194,7 @@ for (const [key, src] of PAGES) {
   const h1 = fm.h1 || rawTitle || titleCase;
   const title = clampTitle(rawTitle, h1);
   const words = body.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
-  const rec = { key, title, metaDescription: clampMeta(fm.metaDescription || ""), h1, bodyHtml: body, faqs: [], gallery };
+  const rec = { key, title, metaDescription: clampMeta(fm.metaDescription || ""), h1, bodyHtml: body, faqs: key.startsWith("portfolio") ? [] : extractPageFaqs(body), gallery };
   fs.mkdirSync(path.dirname(`content/pages/${key}.json`), { recursive: true });
   fs.writeFileSync(`content/pages/${key}.json`, JSON.stringify(rec, null, 2));
   written++;

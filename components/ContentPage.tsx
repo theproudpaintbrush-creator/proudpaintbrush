@@ -70,22 +70,8 @@ export default function ContentPage({ page }: { page: PageContent }) {
         </section>
       )}
 
-      {/* FAQs */}
-      {page.faqs.length > 0 && (
-        <section className="bg-gray-50 py-14">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] text-center mb-10">Frequently Asked Questions</h2>
-            <div className="space-y-5">
-              {page.faqs.map((f) => (
-                <div key={f.q} className="bg-white border border-gray-200 p-6">
-                  <h3 className="font-bold text-[#1a2e44] mb-2 text-lg">{f.q}</h3>
-                  <p className="text-gray-700 leading-relaxed">{f.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* FAQ Q&A already appears inline in the body above; FAQPage schema is
+          emitted from page.faqs in the route (no duplicate visible section). */}
 
       {/* CTA */}
       <section className="bg-[#4B83B2] text-white py-14 px-4 text-center">

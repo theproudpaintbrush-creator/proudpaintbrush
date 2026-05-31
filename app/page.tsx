@@ -6,12 +6,21 @@ import TrustBar from "@/components/TrustBar";
 import ProudProcess from "@/components/ProudProcess";
 
 export const metadata: Metadata = {
-  title: "Sugar Land Painting Contractor",
+  title: "The Proud Paintbrush | Sugar Land Painting Contractor",
   description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Licensed, insured, 2-year warranty. Get your free estimate today.",
+  alternates: { canonical: "https://www.theproudpaintbrush.com" },
   openGraph: {
     title: "The Proud Paintbrush | Sugar Land Painting Contractor",
     description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Licensed, insured, 2-year warranty. Get your free estimate today.",
     url: "https://www.theproudpaintbrush.com",
+    type: "website",
+    images: [{ url: "https://www.theproudpaintbrush.com/images/hero-stucco-richmond.webp" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Proud Paintbrush | Sugar Land Painting Contractor",
+    description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Free estimate today.",
+    images: ["https://www.theproudpaintbrush.com/images/hero-stucco-richmond.webp"],
   },
 };
 

@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     description: "Free painting estimates across Sugar Land & Fort Bend County. Call, email, or book online.",
     url: `${BASE_URL}/contact`,
     type: "website",
+    images: [{ url: `${BASE_URL}/images/hero-stucco-richmond.webp` }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact The Proud Paintbrush | Sugar Land, TX Painters",
+    description: "Free painting estimates across Sugar Land & Fort Bend County. Call, email, or book online.",
+    images: [`${BASE_URL}/images/hero-stucco-richmond.webp`],
   },
 };
 
