@@ -13,8 +13,10 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
+    // Page titles already include the brand, so no "%s | brand" template
+    // (that double-appended it). Pages without a title fall back to `default`.
     default: "The Proud Paintbrush | Sugar Land Painting Contractor",
-    template: "%s | The Proud Paintbrush",
+    template: "%s",
   },
   description:
     "Professional residential & commercial painting in Sugar Land, Fort Bend County & West Houston. Licensed, insured, 2-year warranty. Call (832) 605-0493.",

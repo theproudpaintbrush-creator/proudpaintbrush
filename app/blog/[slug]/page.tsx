@@ -7,6 +7,21 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+const AUTHOR_BIOS: Record<string, { initials: string; bio: string }> = {
+  "Chris Petkau": {
+    initials: "CP",
+    bio: "Chris Petkau is the founder of The Proud Paintbrush, a locally owned painting company serving Sugar Land and Fort Bend County since 2020. He writes about prep-first workmanship, durable finishes, and getting a paint job that actually lasts.",
+  },
+  "Aliza Momin": {
+    initials: "AM",
+    bio: "Aliza Momin writes for The Proud Paintbrush on interior color, design trends, and helping Fort Bend County homeowners get the most out of their painting projects.",
+  },
+};
+const DEFAULT_BIO = {
+  initials: "PP",
+  bio: "The Proud Paintbrush is Fort Bend County's trusted painting contractor — serving Sugar Land, Richmond, Katy, and surrounding communities with residential and commercial painting.",
+};
+
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
   return slugs.map((slug) => ({ slug }));
@@ -137,14 +152,12 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-start gap-4 bg-white rounded-xl p-6 shadow-sm">
             <div className="w-12 h-12 bg-[#4B83B2] rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
-              PP
+              {(AUTHOR_BIOS[post.author] || DEFAULT_BIO).initials}
             </div>
             <div>
               <p className="font-bold text-[#1a2e44]">{post.author}</p>
               <p className="text-sm text-gray-600 mt-1">
-                The Proud Paintbrush is Fort Bend County&apos;s trusted painting
-                contractor — serving Sugar Land, Richmond, Katy, and surrounding
-                communities with residential and commercial painting services.
+                {(AUTHOR_BIOS[post.author] || DEFAULT_BIO).bio}
               </p>
             </div>
           </div>

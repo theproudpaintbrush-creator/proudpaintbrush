@@ -71,8 +71,15 @@ export default function HomePage() {
           priority
           quality={90}
         />
-        <div className="absolute inset-0 bg-black/25" />
-        <div className="relative z-10" />
+        <div className="absolute inset-0 bg-black/45" />
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 drop-shadow">
+            House Painters in Sugar Land &amp; Fort Bend County
+          </h1>
+          <p className="text-lg sm:text-xl text-white/90 drop-shadow">
+            Interior, exterior &amp; cabinet painting done right — prep-first, warranty-backed, locally owned.
+          </p>
+        </div>
       </section>
 
       {/* ── DR. TEPPER VIDEO TESTIMONIAL BANNER ── */}

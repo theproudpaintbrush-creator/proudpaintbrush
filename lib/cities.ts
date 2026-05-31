@@ -63,7 +63,7 @@ export const CITIES: City[] = [
     exterior: {
       title: "Exterior Painting in Sugar Land TX | Proud Paintbrush",
       description:
-        "Exterior painting in Sugar Land, TX built for Riverstone, Telfair, First Colony & New Territory. HOA-compliant colors, Texas-grade prep. Free estimate: (832) 605-0493.",
+        "Exterior painting in Sugar Land, TX for Riverstone, Telfair & First Colony. HOA-compliant colors, Texas-grade prep. Free estimate: (832) 605-0493.",
       h1: "Exterior Painting in Sugar Land, Texas",
       introParagraphs: [
         "Sugar Land homes work hard. Between August humidity that sits above 80 percent for weeks, sudden hard freezes like the one that hit Riverstone and Telfair in February 2021, and clay soil that shifts every dry summer, the paint on a Sugar Land exterior is under constant pressure. The Proud Paintbrush is based right here in 77498, and exterior painting is the work we do most. We know what fails first on a Sugar Land home and how to keep it from failing again.",
@@ -221,7 +221,7 @@ export const CITIES: City[] = [
     exterior: {
       title: "Exterior Painting in Missouri City TX | Proud Paintbrush",
       description:
-        "Exterior painting in Missouri City, TX serving Sienna, Quail Valley & Lake Olympia. Stucco repair, HOA-ready color matching, Texas-tough prep. Call (832) 605-0493.",
+        "Exterior painting in Missouri City, TX serving Sienna, Quail Valley & Lake Olympia. Stucco repair, HOA-ready prep. Call (832) 605-0493.",
       h1: "Exterior Painting in Missouri City, Texas",
       introParagraphs: [
         "Missouri City exteriors face a very specific set of conditions: heavy clay soil shifting under foundations, full-sun Texas summers that bleach south-facing elevations, and stucco-heavy home designs throughout Sienna that need a different approach than the brick-and-Hardie homes in older Quail Valley. The Proud Paintbrush services all of 77459 and 77489, and exterior painting is the work we are best known for in Missouri City.",
@@ -847,7 +847,7 @@ export const CITIES: City[] = [
     exterior: {
       title: "Exterior Painting in Fulshear TX | The Proud Paintbrush",
       description:
-        "Exterior painting in Fulshear, TX serving Cross Creek Ranch, Fulbrook & Jordan Ranch. Newer-construction touch-up and full repaints. Free estimate: (832) 605-0493.",
+        "Exterior painting in Fulshear, TX serving Cross Creek Ranch, Fulbrook & Jordan Ranch. New-build touch-ups & full repaints. Call (832) 605-0493.",
       h1: "Exterior Painting in Fulshear, Texas",
       introParagraphs: [
         "Fulshear is one of the fastest-growing communities in Fort Bend County, and most of the housing here is newer — Cross Creek Ranch, Fulbrook on Fulshear Creek, and Jordan Ranch hold thousands of homes built since 2010. That changes what an exterior project looks like compared to Sugar Land or Pecan Grove. The Proud Paintbrush services all of 77441, and we do a steady volume of Fulshear exterior work — both first-time repaints on the oldest homes in Cross Creek and targeted touch-up projects on newer builds.",

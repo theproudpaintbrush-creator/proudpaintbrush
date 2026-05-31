@@ -20,6 +20,19 @@ const OUT_DIR = "content/blog";
 fs.mkdirSync(OUT_DIR, { recursive: true });
 const IMG = JSON.parse(fs.readFileSync("migration/image-map.json", "utf8")); // CDN URL -> local path
 
+function clampMeta(m) {
+  if (!m) return "";
+  if (m.length <= 160) return m;
+  return m.slice(0, 158).replace(/\s+\S*$/, "").replace(/[,;:\s]+$/, "");
+}
+function altText(src) {
+  const base = src.split("/").pop().replace(/\.webp$/, "").replace(/-[a-z0-9]{6}$/, "");
+  if (/^(photo|img|image|unsplash|screenshot|dsc|pxl|thirdparty|\d)/i.test(base) || base.length < 6)
+    return "Painting project by The Proud Paintbrush in Sugar Land, TX";
+  const w = base.replace(/[-_]+/g, " ").trim();
+  return (w.charAt(0).toUpperCase() + w.slice(1)).replace(/\b(tx|usa|hoa|diy)\b/gi, (x) => x.toUpperCase());
+}
+
 // ---- build skip set: redirect sources + existing posts ----
 const skip = new Set();
 const nextcfg = fs.readFileSync("next.config.ts", "utf8");
@@ -72,7 +85,7 @@ function cleanHtml(raw) {
     if (tag === "img") {
       const local = IMG[imgUrl(attrs)];
       if (!local || /avatar|thirdpartymember|logo|favicon/i.test(local)) return "";
-      const alt = (attrs.match(/alt="([^"]*)"/i) || [])[1] || "";
+      const alt = (((attrs.match(/alt="([^"]*)"/i) || [])[1] || "").trim()) || altText(local);
       return `<img src="${local}" alt="${alt.replace(/"/g, "")}" loading="lazy">`;
     }
     if (tag === "a") {
@@ -98,7 +111,7 @@ for (const file of fs.readdirSync(RAW_DIR).filter((f) => f.endsWith(".html"))) {
   if (skip.has(slug)) { skipped++; continue; }
   const html = fs.readFileSync(path.join(RAW_DIR, file), "utf8");
   const title = dec(firstMatch(html, /<title[^>]*>([\s\S]*?)<\/title>/i)).replace(/\s*[—-]\s*The Proud Paintbrush.*$/i, "").trim();
-  const description = dec(firstMatch(html, /<meta[^>]+name="description"[^>]+content="([^"]*)"/i));
+  const description = clampMeta(dec(firstMatch(html, /<meta[^>]+name="description"[^>]+content="([^"]*)"/i)));
   const date = (firstMatch(html, /"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})/) || "2024-01-01");
   const author = dec(firstMatch(html, /class="blog-author-name"[^>]*>([^<]+)/)) || dec(firstMatch(html, /"author":"([^"]+)"/)) || "The Proud Paintbrush Team";
   let content = cleanHtml(extractBody(html));

@@ -4,6 +4,20 @@
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+import sharp from "sharp";
+
+// Gallery images display small in a grid — serve ~720px thumbnails instead of full 1600px.
+async function ensureThumb(src) {
+  const name = src.split("/").pop();
+  const thumbRel = `/images/migrated/thumbs/${name}`;
+  const out = "public" + thumbRel;
+  if (!fs.existsSync(out)) {
+    fs.mkdirSync("public/images/migrated/thumbs", { recursive: true });
+    try { await sharp("public" + src).resize({ width: 720, withoutEnlargement: true }).webp({ quality: 72 }).toFile(out); }
+    catch { return src; }
+  }
+  return thumbRel;
+}
 
 // hash a local image's bytes so the same photo saved under different filenames dedupes
 const _hashCache = new Map();
@@ -56,6 +70,13 @@ function frontmatter(md) {
 
 const IMG = JSON.parse(fs.readFileSync("migration/image-map.json", "utf8"));
 const imgUrl = (attrs) => ((attrs.match(/data-image="([^"]+)"/i) || attrs.match(/data-src="([^"]+)"/i) || attrs.match(/\ssrc="([^"]+)"/i) || [])[1] || "").split("?")[0];
+function altText(src) {
+  const base = src.split("/").pop().replace(/\.webp$/, "").replace(/-[a-z0-9]{6}$/, "");
+  if (/^(photo|img|image|unsplash|screenshot|dsc|pxl|thirdparty|\d)/i.test(base) || base.length < 6)
+    return "Painting project by The Proud Paintbrush in Sugar Land, TX";
+  const w = base.replace(/[-_]+/g, " ").trim();
+  return (w.charAt(0).toUpperCase() + w.slice(1)).replace(/\b(tx|usa|hoa|diy)\b/gi, (x) => x.toUpperCase());
+}
 const ALLOWED = new Set(["h2", "h3", "h4", "p", "ul", "ol", "li", "strong", "em", "blockquote", "br", "a", "img", "table", "thead", "tbody", "tr", "th", "td"]);
 
 // Portfolio galleries: merge the sparse /portfolio page with the image-rich
@@ -70,7 +91,7 @@ function galleryFrom(html) {
   for (const tag of html.match(/<img[^>]*>/gi) || []) {
     const local = IMG[imgUrl(tag)];
     if (!local || /unsplash|logo|favicon|icon/i.test(local)) continue;
-    const alt = (tag.match(/alt="([^"]*)"/i) || [])[1] || "";
+    const alt = (((tag.match(/alt="([^"]*)"/i) || [])[1] || "").trim()) || altText(local);
     out.push({ src: local, alt });
   }
   return out;
@@ -92,7 +113,7 @@ function cleanHtml(raw) {
     if (tag === "img") {
       const local = IMG[imgUrl(attrs)];
       if (!local) return "";
-      const alt = (attrs.match(/alt="([^"]*)"/i) || [])[1] || "";
+      const alt = (((attrs.match(/alt="([^"]*)"/i) || [])[1] || "").trim()) || altText(local);
       return `<img src="${local}" alt="${alt.replace(/"/g, "")}" loading="lazy">`;
     }
     if (tag === "a") {
@@ -152,6 +173,7 @@ for (const [key, src] of PAGES) {
       }
     }
     if (key === "portfolio") gallery = gallery.slice(0, 36); // hub: curated preview, full sets on sub-pages
+    for (const g of gallery) g.src = await ensureThumb(g.src); // serve lightweight thumbnails in the grid
     body = body.replace(/<img[^>]*>/g, ""); // images shown as grid, not inline
   }
   const titleCase = key.split("/").pop().replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
