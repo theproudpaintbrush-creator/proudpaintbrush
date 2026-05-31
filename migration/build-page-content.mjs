@@ -3,6 +3,17 @@
 // (tables kept for pricing). Fixes the /preperation-process spelling in the new key.
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
+
+// hash a local image's bytes so the same photo saved under different filenames dedupes
+const _hashCache = new Map();
+function fileHash(src) {
+  if (_hashCache.has(src)) return _hashCache.get(src);
+  let h = src;
+  try { h = crypto.createHash("md5").update(fs.readFileSync("public" + src)).digest("hex"); } catch {}
+  _hashCache.set(src, h);
+  return h;
+}
 
 const CITIES = ["sugar-land", "missouri-city", "richmond", "katy", "fulshear", "rosenberg", "west-houston", "southwest-houston"];
 
@@ -128,7 +139,7 @@ for (const [key, src] of PAGES) {
   const html = fs.readFileSync(rawFile, "utf8");
   const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
   let body = cleanHtml(mainMatch ? mainMatch[1] : html);
-  { const seenImg = new Set(); body = body.replace(/<img src="([^"]+)"[^>]*>/g, (mm, src) => (seenImg.has(src) ? "" : (seenImg.add(src), mm))); }
+  { const seenImg = new Set(); body = body.replace(/<img src="([^"]+)"[^>]*>/g, (mm, src) => { const h = fileHash(src); return seenImg.has(h) ? "" : (seenImg.add(h), mm); }); }
   let gallery = [];
   if (key.startsWith("portfolio")) {
     const seen = new Set();
@@ -136,7 +147,8 @@ for (const [key, src] of PAGES) {
       const sf = `scrape/raw/${s}.html`;
       if (!fs.existsSync(sf)) continue;
       for (const g of galleryFrom(fs.readFileSync(sf, "utf8"))) {
-        if (!seen.has(g.src)) { seen.add(g.src); gallery.push(g); }
+        const h = fileHash(g.src);
+        if (!seen.has(h)) { seen.add(h); gallery.push(g); }
       }
     }
     if (key === "portfolio") gallery = gallery.slice(0, 36); // hub: curated preview, full sets on sub-pages

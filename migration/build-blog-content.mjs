@@ -4,6 +4,16 @@
 // overwrites a hand-authored post that already exists.
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
+
+const _hashCache = new Map();
+function fileHash(src) {
+  if (_hashCache.has(src)) return _hashCache.get(src);
+  let h = src;
+  try { h = crypto.createHash("md5").update(fs.readFileSync("public" + src)).digest("hex"); } catch {}
+  _hashCache.set(src, h);
+  return h;
+}
 
 const RAW_DIR = "scrape/raw/blog";
 const OUT_DIR = "content/blog";
@@ -92,7 +102,7 @@ for (const file of fs.readdirSync(RAW_DIR).filter((f) => f.endsWith(".html"))) {
   const date = (firstMatch(html, /"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})/) || "2024-01-01");
   const author = dec(firstMatch(html, /"author"\s*:\s*\{[^}]*"name"\s*:\s*"([^"]+)"/)) || "The Proud Paintbrush Team";
   let content = cleanHtml(extractBody(html));
-  { const seenImg = new Set(); content = content.replace(/<img src="([^"]+)"[^>]*>/g, (mm, src) => (seenImg.has(src) ? "" : (seenImg.add(src), mm))); }
+  { const seenImg = new Set(); content = content.replace(/<img src="([^"]+)"[^>]*>/g, (mm, src) => { const h = fileHash(src); return seenImg.has(h) ? "" : (seenImg.add(h), mm); }); }
   const ogImg = firstMatch(html, /<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i).split("?")[0];
   const firstBody = (content.match(/<img src="([^"]+)"/) || [])[1] || "";
   const image = IMG[ogImg] || firstBody || "";
