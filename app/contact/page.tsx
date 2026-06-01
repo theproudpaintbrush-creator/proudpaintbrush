@@ -46,7 +46,7 @@ const schema = {
     areaServed: "US-TX",
     availableLanguage: "English",
   },
-  aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 87 },
+  aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 113 },
 };
 
 export default function ContactPage() {

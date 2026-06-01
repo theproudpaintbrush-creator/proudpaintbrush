@@ -4,7 +4,7 @@ const BADGES = [
   "Licensed & Insured",
   "2 & 4-Year Warranties",
   "Sherwin-Williams Pro",
-  "5.0★ · 87 Reviews",
+  "5.0★ · 113 Reviews",
   "Locally Owned Since 2020",
 ];
 

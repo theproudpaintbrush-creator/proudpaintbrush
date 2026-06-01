@@ -8,9 +8,8 @@ const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
 
-// NOTE: reviewCount is a placeholder — set this to the real Google review
-// count before launch so the aggregateRating schema reflects actual reviews.
-const AGGREGATE_RATING = { value: "5.0", count: 47 };
+// Real Google review count as of 2026-06-01 (5.0★). Update when it grows.
+const AGGREGATE_RATING = { value: "5.0", count: 113 };
 
 export const metadata: Metadata = {
   title: "Customer Reviews & Testimonials",
