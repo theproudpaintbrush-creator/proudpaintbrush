@@ -40,10 +40,37 @@ export const metadata: Metadata = {
   },
 };
 
-// Real video testimonials already in use elsewhere on the site.
+// Real customer video testimonials (scraped from the live site + existing).
+// Featured (Teppers) is shown separately above. Named customers labeled where known.
 const authenticVideos = [
-  { youtubeId: "4K_j8zfo2zQ", customerNeighborhood: "Sugar Land" },
-  { youtubeId: "gxB9xw9m34U", customerNeighborhood: "Fort Bend County" },
+  { youtubeId: "4K_j8zfo2zQ", customerNeighborhood: "The Olsons" },
+  { youtubeId: "gxB9xw9m34U", customerNeighborhood: "The Lopezs" },
+  { youtubeId: "LNmUGCgmTS0", customerNeighborhood: "Avan" },
+  { youtubeId: "sbTOOc-S7nE", customerNeighborhood: "Edwin" },
+  { youtubeId: "W96cOO6v1LA", customerNeighborhood: "Mei" },
+  { youtubeId: "zT_z3yxJcL0", customerNeighborhood: "Karmyn" },
+  { youtubeId: "bzbgrgyHxow", customerNeighborhood: "Clemment" },
+  { youtubeId: "E_GicxQ676A", customerNeighborhood: "Mrs. Phillips" },
+  { youtubeId: "shzynACJsEw", customerNeighborhood: "Kerry" },
+  { youtubeId: "3rIAxmF9ow0" },
+  { youtubeId: "5rhZR2sQC2g" },
+  { youtubeId: "AnJpFabDhOw" },
+  { youtubeId: "gY1VnnU308o" },
+  { youtubeId: "jF9-nlPZAYE" },
+  { youtubeId: "SItjnyqD0o8" },
+  { youtubeId: "tLfUJtXRwss" },
+  { youtubeId: "XHhGMUESFL8" },
+  { youtubeId: "yrbeE2EwCcA" },
+  { youtubeId: "6P4_4GHaYP8" },
+  { youtubeId: "a20JwINRrNc" },
+  { youtubeId: "B3mAxVXwDoM" },
+  { youtubeId: "-bnDu_8HApE" },
+  { youtubeId: "dzUzGhht6F8" },
+  { youtubeId: "gN2iVF5ig_8" },
+  { youtubeId: "gzCLxCBP1o0" },
+  { youtubeId: "JqY3L7IJOOY" },
+  { youtubeId: "xHFK54C4mc0" },
+  { youtubeId: "Z208PaNZY4U" },
 ];
 
 function WaveDown({ from, to }: { from: string; to: string }) {
@@ -171,7 +198,8 @@ export default function TestimonialsPage() {
             More Customers, In Their Own Words
           </h2>
           <p className="text-center text-white/70 mb-10 max-w-2xl mx-auto">
-            Short, unscripted video reviews from Fort Bend County homeowners.
+            Short, unscripted video reviews from Fort Bend County homeowners. Tap any
+            thumbnail to play.
           </p>
           <AuthenticVideoGrid videos={authenticVideos} city="Sugar Land" />
         </div>

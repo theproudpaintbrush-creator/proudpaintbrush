@@ -13,6 +13,12 @@ const nextConfig: NextConfig = {
         hostname: "images.squarespace-cdn.com",
         pathname: "/**",
       },
+      {
+        // YouTube video thumbnails for click-to-play testimonial facades
+        protocol: "https",
+        hostname: "i.ytimg.com",
+        pathname: "/**",
+      },
     ],
   },
   async redirects() {

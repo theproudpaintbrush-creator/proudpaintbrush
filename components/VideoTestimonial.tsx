@@ -1,4 +1,5 @@
 import Image from "next/image";
+import LiteYouTube from "./LiteYouTube";
 
 export type VideoTestimonialProps = {
   variant: "featured" | "authentic";
@@ -85,13 +86,9 @@ function AuthenticGridItem({ youtubeId, customerNeighborhood, city }: Omit<Video
           <span className="font-mono text-[10px] opacity-70">{youtubeId}</span>
         </div>
       ) : (
-        <iframe
-          className="absolute inset-0 w-full h-full"
-          src={`https://www.youtube.com/embed/${youtubeId}?rel=0`}
-          title={`Customer testimonial${customerNeighborhood ? ` from ${customerNeighborhood}` : ""}${city ? ` — ${city}` : ""}`}
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
+        <LiteYouTube
+          id={youtubeId}
+          label={`Customer testimonial${customerNeighborhood ? ` from ${customerNeighborhood}` : ""}${city ? ` — ${city}` : ""}`}
         />
       )}
     </div>
