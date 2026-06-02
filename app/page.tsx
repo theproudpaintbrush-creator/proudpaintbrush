@@ -57,23 +57,13 @@ const services = [
 
 const serviceAreas = ["Sugar Land", "Richmond", "Katy", "Missouri City", "Fulshear", "Rosenberg", "West Houston", "Southwest Houston"];
 
-const homepageSchema = {
-  "@context": "https://schema.org",
-  "@type": "PaintingContractor",
-  "@id": "https://www.theproudpaintbrush.com/#business",
-  name: "The Proud Paintbrush",
-  url: "https://www.theproudpaintbrush.com",
-  telephone: "+1-832-605-0493",
-  address: { "@type": "PostalAddress", addressLocality: "Sugar Land", addressRegion: "TX", postalCode: "77498", addressCountry: "US" },
-  areaServed: serviceAreas.map((a) => `${a}, TX`),
-  aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 113 },
-};
+// The canonical business entity (@id #business) is emitted once globally in
+// app/layout.tsx and referenced by every page's Service/Breadcrumb nodes, so
+// the homepage does not redefine it here.
 
 export default function HomePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }} />
-
       {/* ── HERO ── */}
       <section className="relative w-full h-[90vh] min-h-[560px] flex items-center justify-center overflow-hidden">
         <Image

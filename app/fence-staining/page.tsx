@@ -19,18 +19,7 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Fence Staining",
-  provider: {
-    "@type": "LocalBusiness",
-    name: "The Proud Paintbrush",
-    telephone: "+18326050493",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Sugar Land",
-      addressRegion: "TX",
-      postalCode: "77498",
-      addressCountry: "US",
-    },
-  },
+  provider: { "@id": "https://www.theproudpaintbrush.com/#business" },
   areaServed: [
     "Houston, TX",
     "Sugar Land, TX",

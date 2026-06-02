@@ -31,8 +31,9 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": `${BASE_URL}/#business`,
   name: "The Proud Paintbrush",
-  url: `${BASE_URL}/contact`,
+  url: BASE_URL,
   telephone: PHONE_TEL,
   email: EMAIL,
   priceRange: "$$",
