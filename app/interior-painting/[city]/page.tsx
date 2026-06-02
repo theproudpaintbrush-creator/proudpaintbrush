@@ -128,45 +128,12 @@ export default async function InteriorCityPage({
   const hero = content.hero ?? city.hero;
   const ogImage = content.ogImage ?? city.ogImage;
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${url}#localbusiness`,
-    name: "The Proud Paintbrush",
-    image: `${BASE_URL}${ogImage}`,
-    url,
-    telephone: PHONE_TEL,
-    priceRange: "$$",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Sugar Land",
-      addressRegion: "TX",
-      postalCode: "77498",
-      addressCountry: "US",
-    },
-    areaServed: {
-      "@type": "City",
-      name: city.name,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: city.name,
-        addressRegion: "TX",
-        addressCountry: "US",
-      },
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: city.aggregateRating.value,
-      reviewCount: city.aggregateRating.count,
-    },
-  };
-
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: `Interior Painting in ${city.name}`,
     serviceType: "Interior Painting",
-    provider: { "@id": `${url}#localbusiness` },
+    provider: { "@id": `${BASE_URL}/#business` },
     areaServed: {
       "@type": "City",
       name: city.name,
@@ -202,7 +169,6 @@ export default async function InteriorCityPage({
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />

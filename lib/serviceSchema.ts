@@ -1,7 +1,7 @@
 import type { ServiceContent, ServiceParent } from "@/lib/services";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
-const PHONE_TEL = "+18326050493";
+const BUSINESS_ID = `${BASE_URL}/#business`;
 
 const PARENT_LABEL: Record<ServiceParent, string> = {
   interior: "Interior Painting",
@@ -22,31 +22,12 @@ export function buildServiceSchemas(service: ServiceContent, opts?: { areaServed
   const url = `${BASE_URL}${parentPath}/${service.slug}`;
   const areaCity = opts?.areaServedCity ?? "Sugar Land";
 
-  const localBusiness = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${url}#localbusiness`,
-    name: "The Proud Paintbrush",
-    image: service.ogImage || `${BASE_URL}/images/logo.png`,
-    url,
-    telephone: PHONE_TEL,
-    priceRange: "$$",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Sugar Land",
-      addressRegion: "TX",
-      postalCode: "77498",
-      addressCountry: "US",
-    },
-    aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 113 },
-  };
-
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: service.name,
     serviceType: parentLabel,
-    provider: { "@id": `${url}#localbusiness` },
+    provider: { "@id": BUSINESS_ID },
     areaServed: { "@type": "City", name: areaCity, address: { "@type": "PostalAddress", addressRegion: "TX", addressCountry: "US" } },
     description: service.metaDescription,
   };
@@ -73,7 +54,7 @@ export function buildServiceSchemas(service: ServiceContent, opts?: { areaServed
     ],
   };
 
-  return [localBusiness, serviceSchema, faqSchema, breadcrumb].filter(Boolean);
+  return [serviceSchema, faqSchema, breadcrumb].filter(Boolean);
 }
 
 // JSON-LD for a service HUB page: LocalBusiness, Service, FAQPage (optional),
@@ -89,23 +70,12 @@ export function buildHubSchemas(
   const parentPath = PARENT_PATH[parent];
   const url = `${BASE_URL}${parentPath}`;
 
-  const localBusiness = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${url}#localbusiness`,
-    name: "The Proud Paintbrush",
-    url,
-    telephone: PHONE_TEL,
-    priceRange: "$$",
-    address: { "@type": "PostalAddress", addressLocality: "Sugar Land", addressRegion: "TX", postalCode: "77498", addressCountry: "US" },
-    aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 113 },
-  };
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: parentLabel,
     serviceType: parentLabel,
-    provider: { "@id": `${url}#localbusiness` },
+    provider: { "@id": BUSINESS_ID },
     areaServed: { "@type": "City", name: "Sugar Land", address: { "@type": "PostalAddress", addressRegion: "TX", addressCountry: "US" } },
     description: metaDescription,
   };
@@ -136,5 +106,5 @@ export function buildHubSchemas(
       { "@type": "ListItem", position: 2, name: parentLabel, item: url },
     ],
   };
-  return [localBusiness, serviceSchema, itemList, faqSchema, breadcrumb].filter(Boolean);
+  return [serviceSchema, itemList, faqSchema, breadcrumb].filter(Boolean);
 }

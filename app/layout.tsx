@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "PaintingContractor"],
+  "@id": "https://www.theproudpaintbrush.com/#business",
   name: "The Proud Paintbrush",
   image:
     "https://images.squarespace-cdn.com/content/v1/6245121c345d9b583ef8e7b7/8ab85515-fa22-4454-a968-a8b8add58e5b/Logo-06-1+png.png",
@@ -64,6 +65,7 @@ const localBusinessSchema = {
     "Southwest Houston, TX",
   ],
   priceRange: "$$",
+  aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 113 },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

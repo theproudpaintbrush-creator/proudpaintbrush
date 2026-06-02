@@ -60,6 +60,7 @@ const serviceAreas = ["Sugar Land", "Richmond", "Katy", "Missouri City", "Fulshe
 const homepageSchema = {
   "@context": "https://schema.org",
   "@type": "PaintingContractor",
+  "@id": "https://www.theproudpaintbrush.com/#business",
   name: "The Proud Paintbrush",
   url: "https://www.theproudpaintbrush.com",
   telephone: "+1-832-605-0493",
