@@ -80,7 +80,7 @@ export default function ContactPage() {
               className="block border border-gray-200 hover:border-[#4B83B2] p-6 transition-colors text-center"
             >
               <div className="text-sm font-semibold uppercase tracking-widest text-[#4B83B2] mb-2">{m.label}</div>
-              <div className="text-lg font-bold text-[#1a2e44] mb-1">{m.value}</div>
+              <div className="text-base sm:text-lg font-bold text-[#1a2e44] mb-1 break-words">{m.value}</div>
               <div className="text-sm text-gray-500">{m.note}</div>
             </a>
           ))}
