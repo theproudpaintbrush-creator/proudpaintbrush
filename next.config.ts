@@ -109,7 +109,6 @@ const nextConfig: NextConfig = {
       { source: "/vinyl-siding-painting", destination: "/exterior-painting/vinyl-siding-painting", permanent: true },
       { source: "/exterior-prices", destination: "/pricing/exterior-prices", permanent: true },
       { source: "/cabinet-prices", destination: "/pricing/cabinet-prices", permanent: true },
-      { source: "/about", destination: "/our-story", permanent: true },
       { source: "/employees", destination: "/careers", permanent: true },
       { source: "/blog/tag/:slug*", destination: "/blog", permanent: true },
     ];
