@@ -43,6 +43,7 @@ export const metadata: Metadata = {
 // Real customer video testimonials (scraped from the live site + existing).
 // Featured (Teppers) is shown separately above. Named customers labeled where known.
 const authenticVideos = [
+  { youtubeId: "N9c6vXqTht4", customerNeighborhood: "Cabinet Painting" },
   { youtubeId: "4K_j8zfo2zQ", customerNeighborhood: "The Olsons" },
   { youtubeId: "gxB9xw9m34U", customerNeighborhood: "The Lopezs" },
   { youtubeId: "LNmUGCgmTS0", customerNeighborhood: "Avan" },
