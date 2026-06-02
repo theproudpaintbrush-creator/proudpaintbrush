@@ -96,7 +96,7 @@ function WaveUp({ from, to }: { from: string; to: string }) {
 const testimonialsSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "PaintingContractor"],
-  "@id": `${BASE_URL}/testimonials#localbusiness`,
+  "@id": `${BASE_URL}/#business`,
   name: "The Proud Paintbrush",
   image: `${BASE_URL}/images/happy-customers-the-proud-paintbrush-sugar-land-tx.jpg`,
   url: `${BASE_URL}/testimonials`,
@@ -126,6 +126,16 @@ const testimonialsSchema = {
     bestRating: "5",
     worstRating: "1",
   },
+  // Genuine customer review (Dr. Tepper, Avalon exterior repaint). Only real,
+  // attributable quotes are marked up here — do not add fabricated reviews.
+  review: [
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Dr. Tepper" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
+      reviewBody: "You guys did great.",
+    },
+  ],
 };
 
 export default function TestimonialsPage() {
