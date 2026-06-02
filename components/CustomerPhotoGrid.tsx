@@ -12,7 +12,8 @@ function isPlaceholder(src: string) {
 }
 
 export default function CustomerPhotoGrid({ photos, city, heading, subheading }: CustomerPhotoGridProps) {
-  if (!photos?.length) return null;
+  const realPhotos = (photos ?? []).filter((p) => !isPlaceholder(p.src));
+  if (!realPhotos.length) return null;
 
   return (
     <div className="max-w-6xl mx-auto px-4">
@@ -32,7 +33,7 @@ export default function CustomerPhotoGrid({ photos, city, heading, subheading }:
       )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {photos.map((photo, idx) => {
+        {realPhotos.map((photo, idx) => {
           const placeholder = isPlaceholder(photo.src);
           return (
             <figure
@@ -73,11 +74,14 @@ export function BeforeAfterGrid({
   pairs: { before: { src: string; alt: string }; after: { src: string; alt: string } }[];
   city?: string;
 }) {
-  if (!pairs?.length) return null;
+  const realPairs = (pairs ?? []).filter(
+    (p) => !isPlaceholder(p.before.src) && !isPlaceholder(p.after.src)
+  );
+  if (!realPairs.length) return null;
   return (
     <div className="max-w-6xl mx-auto px-4">
       <div className="space-y-10">
-        {pairs.map((pair, idx) => (
+        {realPairs.map((pair, idx) => (
           <div key={idx} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <BeforeAfterImage label="Before" img={pair.before} city={city} />
             <BeforeAfterImage label="After" img={pair.after} city={city} />

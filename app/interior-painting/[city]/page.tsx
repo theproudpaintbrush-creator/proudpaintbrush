@@ -336,7 +336,7 @@ export default async function InteriorCityPage({
       </section>
 
       {/* BEFORE/AFTER */}
-      {content.beforeAfterPhotos?.length > 0 && (
+      {content.beforeAfterPhotos?.some((p) => !p.before.src.includes("TODO_") && !p.after.src.includes("TODO_")) && (
         <section className="bg-gray-50 py-20">
           <div className="max-w-6xl mx-auto px-4 text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#111111] mb-3">
