@@ -12,6 +12,39 @@
   ],
   "servicesHeading": "",
   "servicesIntro": "",
+  "sections": [
+    {
+      "heading": "Why We Spray Cabinets Instead of Brushing Them",
+      "body": [
+        "The single biggest difference between a cabinet job that looks like furniture and one that looks like painted wood is how the finish is applied. Brushing and rolling leave stipple, brush drag, and lap marks that catch the light on a flat cabinet door — exactly where the eye lands every time you walk into the kitchen. We spray a cabinet-grade enamel that self-levels into a smooth, hard shell with no texture, the same way a factory finishes new cabinetry.",
+        "Getting there is a process, not a coat of paint. Every door and drawer front comes off and is sprayed flat in a controlled space, the boxes are masked and sprayed in place, and we allow full cure time between coats so the enamel hardens instead of staying soft and tacky. The result wipes clean of fingerprints and kitchen grease and stands up to daily opening, closing, and bumping for years."
+      ]
+    },
+    {
+      "heading": "Painting vs. Replacing Cabinets — The Honest Math",
+      "body": [
+        "New custom cabinets for an average Fort Bend kitchen routinely run $15,000–$30,000 and take weeks of demolition and installation. Refinishing the cabinets you already have — when the boxes are structurally sound — delivers the same dramatic visual change for a fraction of that, usually in under a week, with no tear-out and no new countertops or backsplash work forced on you.",
+        "Painting makes the most sense when your layout works and the cabinet boxes are solid wood or quality plywood. Replacement is the better call only when the boxes are water-damaged, falling apart, or you are gutting the kitchen anyway. If you are not sure which camp you are in, we will tell you honestly at the free estimate — we would rather point you to the right decision than sell you the wrong one."
+      ]
+    }
+  ],
+  "galleryHeading": "Recent Cabinet Projects",
+  "galleryIntro": "A few kitchens and vanities we have refinished across Sugar Land, Richmond, Katy, and Fort Bend County. Every one was sprayed for a factory-smooth finish.",
+  "gallery": [
+    { "src": "/images/cab-white-kitchen.jpg", "alt": "White shaker kitchen cabinets refinished with a sprayed enamel in Sugar Land, TX", "caption": "Crisp White Kitchen · Sugar Land" },
+    { "src": "/images/cab-dark-navy.jpg", "alt": "Navy blue kitchen island cabinets painted by The Proud Paintbrush in Fort Bend County", "caption": "Navy Island · Fort Bend County" },
+    { "src": "/images/cab-two-tone.jpg", "alt": "Two-tone white and green kitchen cabinets sprayed in a Fort Bend County home", "caption": "Two-Tone White & Green" },
+    { "src": "/images/cab-gray-blue.jpg", "alt": "Gray-blue kitchen cabinets refinished in Richmond, TX", "caption": "Gray-Blue Kitchen · Richmond" },
+    { "src": "/images/cab-bathroom-vanity.jpg", "alt": "Bathroom vanity cabinet repainted with a factory-smooth finish in Sugar Land, TX", "caption": "Bathroom Vanity · Sugar Land" },
+    { "src": "/images/kitchen-island.jpg", "alt": "Freshly painted kitchen island cabinetry in a Fort Bend County home", "caption": "Kitchen Island Refinish" }
+  ],
+  "priceTeaser": {
+    "heading": "What Does Cabinet Painting Cost in Sugar Land?",
+    "range": "$2,000 – $10,000+",
+    "note": "What most homeowners invest to refinish kitchen or bath cabinets, depending on the number of doors and drawers, cabinet condition, and finish level — a fraction of the cost of replacement. Every quote is exact and in writing.",
+    "href": "/pricing/cabinet-prices",
+    "linkLabel": "See Detailed Cabinet Pricing"
+  },
   "whyHeading": "Why Our Cabinet Finish Lasts",
   "whyCards": [
     { "title": "Degrease & Sand", "desc": "Kitchen cabinets carry a film of cooking grease that paint will not bond to. We degrease and scuff-sand every surface first — the step shortcut crews skip." },
@@ -30,13 +63,17 @@
     { "q": "How much does cabinet painting cost in Sugar Land?", "a": "It depends on the number of doors and drawers, the finish, and condition. See our cabinet painting prices page, or book a free on-site estimate for exact numbers." },
     { "q": "How long does cabinet painting take?", "a": "Most kitchens take 3–5 days including proper cure time between coats. We sequence the work so your kitchen is usable as much as possible throughout." },
     { "q": "Can you paint stained or wood cabinets white?", "a": "Yes. With degreasing, sanding, and a bonding primer, stained and wood cabinets take a sprayed enamel beautifully — one of our most popular requests." },
-    { "q": "Will the finish hold up to daily kitchen use?", "a": "Yes. A sprayed cabinet-grade enamel over proper prep is far more durable than a brushed wall paint, and it wipes clean of everyday grease and fingerprints." }
+    { "q": "Will the finish hold up to daily kitchen use?", "a": "Yes. A sprayed cabinet-grade enamel over proper prep is far more durable than a brushed wall paint, and it wipes clean of everyday grease and fingerprints." },
+    { "q": "Do I have to replace my cabinets, or can you just paint them?", "a": "If your cabinet boxes are structurally sound, painting delivers a dramatic change for a fraction of the cost and time of replacement. We'll tell you honestly at the free estimate whether refinishing or replacing is the right call for your kitchen." },
+    { "q": "Can I use my kitchen while you paint the cabinets?", "a": "Mostly, yes. Doors and drawer fronts are removed and sprayed separately, and we sequence the boxes so your kitchen stays as usable as possible. Most kitchens take 3–5 days including full cure time between coats." }
   ],
   "relatedLinks": [
     { "href": "/interior-painting/kitchen-painting", "label": "Kitchen Painting" },
     { "href": "/color-consultation", "label": "Color Consultation" },
     { "href": "/pricing/cabinet-prices", "label": "Cabinet Painting Prices" },
     { "href": "/portfolio/cabinet-painting", "label": "Cabinet Portfolio" },
-    { "href": "/interior-painting", "label": "All Interior Painting" }
+    { "href": "/interior-painting", "label": "Interior Painting" },
+    { "href": "/exterior-painting", "label": "Exterior Painting" },
+    { "href": "/testimonials", "label": "Customer Reviews" }
   ]
 }

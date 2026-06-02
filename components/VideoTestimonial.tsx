@@ -120,8 +120,16 @@ export function AuthenticVideoGrid({
   className?: string;
 }) {
   if (!videos?.length) return null;
+  // Adapt columns to count so 1–2 videos stay centered instead of left-aligning
+  // against an empty third column.
+  const colClass =
+    videos.length === 1
+      ? "sm:grid-cols-1 max-w-md mx-auto"
+      : videos.length === 2
+        ? "sm:grid-cols-2 max-w-3xl mx-auto"
+        : "sm:grid-cols-2 lg:grid-cols-3";
   return (
-    <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ${className ?? ""}`}>
+    <div className={`grid grid-cols-1 ${colClass} gap-4 ${className ?? ""}`}>
       {videos.map((v) => (
         <AuthenticGridItem key={v.youtubeId} {...v} city={city} />
       ))}

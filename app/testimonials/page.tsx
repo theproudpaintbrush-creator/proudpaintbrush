@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import VideoTestimonial, { AuthenticVideoGrid } from "@/components/VideoTestimonial";
+import { TESTIMONIAL_VIDEOS } from "@/lib/testimonialVideos";
+import { getReviews } from "@/lib/reviews";
+import ReviewCards from "@/components/ReviewCards";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
@@ -12,7 +15,7 @@ const PHONE_TEL = "+18326050493";
 const AGGREGATE_RATING = { value: "5.0", count: 113 };
 
 export const metadata: Metadata = {
-  title: "Customer Reviews & Testimonials",
+  title: "Customer Reviews & Testimonials | Sugar Land Painter",
   description:
     "See why Sugar Land & Fort Bend County homeowners trust The Proud Paintbrush. Real video reviews, photos & 5-star testimonials. Get your free estimate today.",
   alternates: { canonical: `${BASE_URL}/testimonials` },
@@ -39,40 +42,6 @@ export const metadata: Metadata = {
     images: [`${BASE_URL}/images/happy-customers-the-proud-paintbrush-sugar-land-tx.jpg`],
   },
 };
-
-// Real customer video testimonials (scraped from the live site + existing).
-// Featured (Teppers) is shown separately above. Named customers labeled where known.
-const authenticVideos = [
-  { youtubeId: "N9c6vXqTht4", customerNeighborhood: "Cabinet Painting" },
-  { youtubeId: "4K_j8zfo2zQ", customerNeighborhood: "The Olsons" },
-  { youtubeId: "gxB9xw9m34U", customerNeighborhood: "The Lopezs" },
-  { youtubeId: "LNmUGCgmTS0", customerNeighborhood: "Avan" },
-  { youtubeId: "sbTOOc-S7nE", customerNeighborhood: "Edwin" },
-  { youtubeId: "W96cOO6v1LA", customerNeighborhood: "Mei" },
-  { youtubeId: "zT_z3yxJcL0", customerNeighborhood: "Karmyn" },
-  { youtubeId: "bzbgrgyHxow", customerNeighborhood: "Clemment" },
-  { youtubeId: "E_GicxQ676A", customerNeighborhood: "Mrs. Phillips" },
-  { youtubeId: "shzynACJsEw", customerNeighborhood: "Kerry" },
-  { youtubeId: "3rIAxmF9ow0" },
-  { youtubeId: "5rhZR2sQC2g" },
-  { youtubeId: "AnJpFabDhOw" },
-  { youtubeId: "gY1VnnU308o" },
-  { youtubeId: "jF9-nlPZAYE" },
-  { youtubeId: "SItjnyqD0o8" },
-  { youtubeId: "tLfUJtXRwss" },
-  { youtubeId: "XHhGMUESFL8" },
-  { youtubeId: "yrbeE2EwCcA" },
-  { youtubeId: "6P4_4GHaYP8" },
-  { youtubeId: "a20JwINRrNc" },
-  { youtubeId: "B3mAxVXwDoM" },
-  { youtubeId: "-bnDu_8HApE" },
-  { youtubeId: "dzUzGhht6F8" },
-  { youtubeId: "gN2iVF5ig_8" },
-  { youtubeId: "gzCLxCBP1o0" },
-  { youtubeId: "JqY3L7IJOOY" },
-  { youtubeId: "xHFK54C4mc0" },
-  { youtubeId: "Z208PaNZY4U" },
-];
 
 function WaveDown({ from, to }: { from: string; to: string }) {
   return (
@@ -127,19 +96,18 @@ const testimonialsSchema = {
     bestRating: "5",
     worstRating: "1",
   },
-  // Genuine customer review (Dr. Tepper, Avalon exterior repaint). Only real,
-  // attributable quotes are marked up here — do not add fabricated reviews.
-  review: [
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Dr. Tepper" },
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
-      reviewBody: "You guys did great.",
-    },
-  ],
+  // Real, attributable reviews from content/reviews.json. Never fabricate.
+  review: getReviews().map((r) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: r.author },
+    reviewRating: { "@type": "Rating", ratingValue: String(r.rating), bestRating: "5", worstRating: "1" },
+    ...(r.date ? { datePublished: r.date } : {}),
+    reviewBody: r.text,
+  })),
 };
 
 export default function TestimonialsPage() {
+  const reviews = getReviews();
   return (
     <>
       <script
@@ -150,6 +118,11 @@ export default function TestimonialsPage() {
       {/* HERO */}
       <section className="bg-[#4B83B2] text-white pt-20 pb-4">
         <div className="max-w-4xl mx-auto px-4 text-center">
+          <nav aria-label="Breadcrumb" className="mb-4 text-xs sm:text-sm text-white/60 tracking-wide uppercase">
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span className="mx-2">/</span>
+            <span className="text-white">Reviews &amp; Testimonials</span>
+          </nav>
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70 mb-3">
             Reviews &amp; Testimonials
           </p>
@@ -204,6 +177,18 @@ export default function TestimonialsPage() {
           />
         </div>
       </section>
+      {/* AUTHENTIC VIDEO GRID — videos grouped above the written review cards */}
+      <section className="bg-[#111111] text-white py-20 border-t border-white/10">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
+            More Customers, In Their Own Words
+          </h2>
+          <p className="text-center text-white/70 mb-10 max-w-2xl mx-auto">
+            Short, unscripted video reviews from Fort Bend County homeowners. Tap any thumbnail to play.
+          </p>
+          <AuthenticVideoGrid videos={TESTIMONIAL_VIDEOS} city="Sugar Land" />
+        </div>
+      </section>
       <WaveUp from="bg-[#111111]" to="#ffffff" />
 
       {/* PHOTO CAROUSEL */}
@@ -219,21 +204,17 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
-      {/* AUTHENTIC VIDEO GRID */}
-      <WaveDown from="bg-white" to="#111111" />
-      <section className="bg-[#111111] text-white py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-            More Customers, In Their Own Words
-          </h2>
-          <p className="text-center text-white/70 mb-10 max-w-2xl mx-auto">
-            Short, unscripted video reviews from Fort Bend County homeowners. Tap any
-            thumbnail to play.
-          </p>
-          <AuthenticVideoGrid videos={authenticVideos} city="Sugar Land" />
-        </div>
-      </section>
-      <WaveUp from="bg-[#111111]" to="#ffffff" />
+      {/* WRITTEN REVIEWS (Google review cards) */}
+      {reviews.length > 0 && (
+        <section className="bg-gray-50 py-20">
+          <ReviewCards
+            reviews={reviews}
+            heading="In Their Own Words"
+            intro={`A sample of our ${AGGREGATE_RATING.count}+ five-star Google reviews from Sugar Land and Fort Bend County homeowners.`}
+            masonry
+          />
+        </section>
+      )}
 
       {/* CTA */}
       <section className="bg-[#4B83B2] text-white py-20 px-4 text-center">
@@ -262,9 +243,14 @@ export default function TestimonialsPage() {
             </a>
           </div>
           <p className="text-white/70 text-sm mt-8">
-            <Link href="/exterior-painting" className="underline hover:text-white">
-              Explore our exterior painting services
-            </Link>
+            Explore our services:{" "}
+            <Link href="/interior-painting" className="underline hover:text-white">Interior</Link>
+            {" · "}
+            <Link href="/exterior-painting" className="underline hover:text-white">Exterior</Link>
+            {" · "}
+            <Link href="/cabinet-painting" className="underline hover:text-white">Cabinets</Link>
+            {" · "}
+            <Link href="/portfolio" className="underline hover:text-white">Portfolio</Link>
           </p>
         </div>
       </section>

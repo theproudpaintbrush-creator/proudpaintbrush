@@ -4,6 +4,7 @@ import { CITIES } from "@/lib/cities";
 import { getHub, getServicesByParent } from "@/lib/services";
 import { getAllPosts } from "@/lib/blog";
 import { buildHubSchemas } from "@/lib/serviceSchema";
+import { getReviewsForService, buildReviewSchema } from "@/lib/reviews";
 import ServiceHub from "@/components/ServiceHub";
 
 const TOPIC = /exterior|stucco|fence|deck|brick|siding|hoa|hurricane|fade|curb|prep/i;
@@ -29,14 +30,15 @@ export default function ExteriorPaintingHub() {
   const subServices = getServicesByParent("exterior").map((s) => ({ slug: s.slug, name: s.name }));
   const cities = CITIES.map((c) => ({ slug: c.slug, name: c.name }));
   const relatedPosts = getAllPosts().filter((p) => TOPIC.test(`${p.title} ${p.slug}`)).slice(0, 3).map((p) => ({ slug: p.slug, title: p.title }));
-  const schemas = buildHubSchemas("exterior", hub.title, hub.metaDescription, hub.faqs, subServices);
+  const reviews = getReviewsForService("exterior");
+  const schemas = [...buildHubSchemas("exterior", hub.title, hub.metaDescription, hub.faqs, subServices), ...buildReviewSchema(reviews)];
 
   return (
     <>
       {schemas.map((s, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
-      <ServiceHub hub={hub} subServices={subServices} cities={cities} relatedPosts={relatedPosts} />
+      <ServiceHub hub={hub} subServices={subServices} cities={cities} relatedPosts={relatedPosts} reviews={reviews} />
     </>
   );
 }

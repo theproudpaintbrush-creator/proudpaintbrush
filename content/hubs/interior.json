@@ -12,6 +12,23 @@
   ],
   "servicesHeading": "Interior Painting Services We Offer",
   "servicesIntro": "From whole rooms to specialty surfaces, here is everything we paint inside your home. Tap any service for the full details.",
+  "galleryHeading": "Recent Interior Projects",
+  "galleryIntro": "Living spaces, bedrooms, trim, and ceilings we have refreshed in homes across Sugar Land, Missouri City, Richmond, and Fort Bend County.",
+  "gallery": [
+    { "src": "/images/migrated/bedroom-painting-soft-blue-sugar-land.webp", "alt": "Bedroom painted a soft blue-gray with crisp white trim in a Sugar Land, TX home", "caption": "Soft Blue Bedroom · Sugar Land" },
+    { "src": "/images/migrated/missouri-city-tx-color-drenching-bedroom-design.webp", "alt": "Warm color-drenched bedroom with greige walls and pendant lighting in a Missouri City, TX home", "caption": "Color-Drenched Bedroom · Missouri City" },
+    { "src": "/images/feature-wall-bedroom.jpg", "alt": "Bedroom feature wall repaint in a Fort Bend County home", "caption": "Bedroom Feature Wall" },
+    { "src": "/images/migrated/entryway-dining-color-drenched-off-white-missouri-city-tx.webp", "alt": "Color-drenched off-white entryway and dining room with vaulted ceiling in a Missouri City, TX home", "caption": "Color-Drenched Off-White · Missouri City" },
+    { "src": "/images/living-room-accent-wall.webp", "alt": "Living room accent wall painted by The Proud Paintbrush in Fort Bend County", "caption": "Accent Wall" },
+    { "src": "/images/migrated/photo-2022-11-27-12-50-12.webp", "alt": "Kitchen with a bold black chevron accent wall and white cabinets painted by The Proud Paintbrush in Fort Bend County", "caption": "Black Accent Wall · Kitchen" }
+  ],
+  "priceTeaser": {
+    "heading": "What Does Interior Painting Cost in Sugar Land?",
+    "range": "$3,000 – $20,000+",
+    "note": "What most Fort Bend County homeowners invest in an interior project, depending on home size, prep required, and trim and detail level. Every quote is exact and in writing.",
+    "href": "/pricing/interior-prices",
+    "linkLabel": "See Detailed Interior Pricing"
+  },
   "whyHeading": "Why Sugar Land Homeowners Choose Us",
   "whyCards": [
     { "title": "Prep-First, Always", "desc": "We do not skip steps. Cleaning, sanding, patching, and priming are what separate a finish that lasts two years from one that lasts ten." },
@@ -33,6 +50,15 @@
     { "q": "How long does an interior painting project take?", "a": "Most projects take 1–5 days depending on size and complexity. Larger homes or detailed cabinet and trim work take longer — we give you a clear timeline up front." },
     { "q": "Do I need to move my furniture?", "a": "We handle most of it. We will guide you on what to clear, and we protect everything that stays with drop cloths and plastic." },
     { "q": "What kind of paint do you use?", "a": "We primarily use high-performance coatings from trusted brands like Sherwin-Williams, matched to each surface and room for durability and a clean finish." },
-    { "q": "Can you help me choose colors?", "a": "Yes. We guide practical decisions based on your lighting, layout, and finishes, and offer a dedicated color consultation when you want deeper help." }
+    { "q": "Can you help me choose colors?", "a": "Yes. We guide practical decisions based on your lighting, layout, and finishes, and offer a dedicated color consultation when you want deeper help." },
+    { "q": "Do you offer free interior painting estimates, and are you licensed and insured?", "a": "Yes. Every estimate is free, on-site, and no-pressure, and The Proud Paintbrush is fully licensed and insured. You get the scope, products, and price in writing before any work begins." },
+    { "q": "Can my family stay home while you paint the interior?", "a": "Yes. We work room by room, mask and protect floors and furniture, contain dust, and clean up at the end of each day, so most families live in the home throughout the project." }
+  ],
+  "relatedLinks": [
+    { "href": "/cabinet-painting", "label": "Cabinet Painting" },
+    { "href": "/exterior-painting", "label": "Exterior Painting" },
+    { "href": "/pricing/interior-prices", "label": "Interior Painting Prices" },
+    { "href": "/color-consultation", "label": "Color Consultation" },
+    { "href": "/testimonials", "label": "Customer Reviews" }
   ]
 }

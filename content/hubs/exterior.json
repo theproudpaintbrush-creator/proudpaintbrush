@@ -12,6 +12,23 @@
   ],
   "servicesHeading": "Exterior Painting Services We Offer",
   "servicesIntro": "Every exterior surface and project type we handle — tap any one for the full details on prep, products, and process.",
+  "galleryHeading": "Recent Exterior Projects",
+  "galleryIntro": "Brick, Hardie, stucco, fences, and front doors we have repainted across Sugar Land, Katy, Richmond, and the rest of Fort Bend County.",
+  "gallery": [
+    { "src": "/images/exterior-house-painting-happy-customer-sugar-land-tx.jpg", "alt": "Happy homeowners in front of their freshly painted Mediterranean-style home in Sugar Land, TX", "caption": "Happy Customers · Sugar Land" },
+    { "src": "/images/exterior-painting-happy-customer-sugar-land-tx.jpg", "alt": "Satisfied customer holding a 100% satisfied sign in front of a freshly painted home in Sugar Land, TX", "caption": "Satisfied Homeowner · Sugar Land" },
+    { "src": "/images/happy-customer-exterior-brick-painting-katy-tc.jpg", "alt": "Happy customer in front of a freshly painted white brick home in Katy, TX", "caption": "Painted Brick · Katy" },
+    { "src": "/images/hero-stucco-richmond.webp", "alt": "Freshly painted two-story stucco home exterior in Richmond, TX", "caption": "Stucco Repaint · Richmond" },
+    { "src": "/images/migrated/brick-house-exterior-painting-front-sugar-land.webp", "alt": "Freshly painted two-story home with white siding and black trim in Sugar Land, TX", "caption": "Siding & Trim · Sugar Land" },
+    { "src": "/images/migrated/bright-stucco-home-painting-sugar-land-portfolio.webp", "alt": "Bright white stucco home with black trim repainted by The Proud Paintbrush in Sugar Land, TX", "caption": "Stucco & Trim · Sugar Land" }
+  ],
+  "priceTeaser": {
+    "heading": "What Does Exterior Painting Cost in Sugar Land?",
+    "range": "$2,500 – $16,000+",
+    "note": "What most Fort Bend County homeowners invest in an exterior project, depending on home size, surface type, and the amount of prep and carpentry needed. Every quote is exact and in writing.",
+    "href": "/pricing/exterior-prices",
+    "linkLabel": "See Detailed Exterior Pricing"
+  },
   "whyHeading": "Why Sugar Land Homeowners Choose Us",
   "whyCards": [
     { "title": "Texas-Grade Prep", "desc": "Pressure washing, scraping, carpentry repair, re-caulking, and spot-priming — the steps that decide whether a repaint lasts three years or ten." },
@@ -33,6 +50,15 @@
     { "q": "How long does an exterior paint job last here?", "a": "With proper prep and quality coatings, seven to ten years on Hardie and brick, and five to eight on stucco. South- and west-facing walls weather faster." },
     { "q": "Do you handle HOA color approvals?", "a": "Yes. We are familiar with the approval processes across Fort Bend's master-planned communities and can prepare the color codes, specs, and photos boards typically require." },
     { "q": "When is the best time to paint an exterior in Texas?", "a": "October through May is ideal — lower humidity and stable temperatures help coatings cure. We work year-round but plan summer projects carefully around the heat." },
-    { "q": "Do you repair rotted wood and stucco cracks before painting?", "a": "Yes. Carpentry repair and stucco crack repair are standard parts of our exterior projects, written into the estimate before we start." }
+    { "q": "Do you repair rotted wood and stucco cracks before painting?", "a": "Yes. Carpentry repair and stucco crack repair are standard parts of our exterior projects, written into the estimate before we start." },
+    { "q": "Do you offer free exterior painting estimates?", "a": "Yes — every exterior estimate is free and on-site, with the color, products, prep, and price laid out in writing before we start. The Proud Paintbrush is fully licensed and insured." },
+    { "q": "How long does an exterior painting project take?", "a": "Most Fort Bend County exteriors take three to six working days depending on home size, surface type, and the amount of carpentry and prep involved. We give you a firm timeline in writing up front." }
+  ],
+  "relatedLinks": [
+    { "href": "/interior-painting", "label": "Interior Painting" },
+    { "href": "/cabinet-painting", "label": "Cabinet Painting" },
+    { "href": "/pricing/exterior-prices", "label": "Exterior Painting Prices" },
+    { "href": "/warranty", "label": "Our Warranty" },
+    { "href": "/testimonials", "label": "Customer Reviews" }
   ]
 }

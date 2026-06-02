@@ -55,6 +55,13 @@ export type HubContent = {
   process: { title: string; desc: string }[];
   faqs: ServiceFaq[];
   relatedLinks?: { href: string; label: string }[];
+  galleryHeading?: string;
+  galleryIntro?: string;
+  gallery?: { src: string; alt: string; caption?: string }[];
+  priceTeaser?: { heading: string; range: string; note: string; href: string; linkLabel: string };
+  // Optional extra prose section rendered after the intro (used by the cabinet
+  // hub to expand thin content with spray-vs-brush / repaint-vs-replace copy).
+  sections?: { heading: string; body: string[] }[];
 };
 
 export function getHub(parent: ServiceParent): HubContent | null {

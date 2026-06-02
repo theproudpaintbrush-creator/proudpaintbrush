@@ -3,6 +3,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GlobalVideoTestimonials from "@/components/GlobalVideoTestimonials";
+import MobileCTABar from "@/components/MobileCTABar";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -102,11 +104,13 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="min-h-full flex flex-col font-[family-name:var(--font-poppins)] antialiased"
+        className="min-h-full flex flex-col font-[family-name:var(--font-poppins)] antialiased pb-[60px] xl:pb-0"
       >
         <Header />
         <main className="flex-1">{children}</main>
+        <GlobalVideoTestimonials />
         <Footer />
+        <MobileCTABar />
       </body>
     </html>
   );

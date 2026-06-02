@@ -2,6 +2,32 @@ import Image from "next/image";
 import Link from "next/link";
 import type { HubContent, ServiceParent } from "@/lib/services";
 import TrustBar from "@/components/TrustBar";
+import ProjectGallery from "@/components/ProjectGallery";
+import PricingBand from "@/components/PricingBand";
+import ReviewCards from "@/components/ReviewCards";
+import type { Review } from "@/lib/reviews";
+
+// Pick a simple line-icon for a "why choose us" card based on its title.
+function CardIcon({ title }: { title: string }) {
+  const t = title.toLowerCase();
+  let path: string;
+  if (/warrant/.test(t)) {
+    path = "M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"; // shield
+  } else if (/local|owner|hoa|area/.test(t)) {
+    path = "M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"; // map pin
+  } else if (/clean|respect/.test(t)) {
+    path = "M12 2l1.8 4.6L18 8l-4.2 1.4L12 14l-1.8-4.6L6 8l4.2-1.4L12 2z"; // sparkle
+  } else if (/bond|primer|degrease|sand/.test(t)) {
+    path = "M4 7l8-4 8 4-8 4-8-4zm0 5l8 4 8-4m-16 5l8 4 8-4"; // layers
+  } else {
+    path = "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"; // check-badge (prep / default)
+  }
+  return (
+    <svg className="w-7 h-7 text-[#4B83B2] mb-3" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d={path} />
+    </svg>
+  );
+}
 
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const PHONE = "(832) 605-0493";
@@ -23,11 +49,13 @@ export default function ServiceHub({
   subServices,
   cities,
   relatedPosts = [],
+  reviews = [],
 }: {
   hub: HubContent;
   subServices: { slug: string; name: string }[];
   cities: { slug: string; name: string }[];
   relatedPosts?: { slug: string; title: string }[];
+  reviews?: Review[];
 }) {
   const parentPath = PARENT_PATH[hub.parent];
   const parentLabel = PARENT_LABEL[hub.parent];
@@ -54,6 +82,17 @@ export default function ServiceHub({
               Call {PHONE}
             </a>
           </div>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-white/90">
+            <span className="flex items-center gap-1.5">
+              <span className="text-yellow-400" aria-hidden>★★★★★</span>
+              <span className="font-semibold">5.0</span>
+              <span className="text-white/70">· 113 Google reviews</span>
+            </span>
+            <span className="text-white/40" aria-hidden>•</span>
+            <span>Licensed &amp; Insured</span>
+            <span className="text-white/40" aria-hidden>•</span>
+            <span>Locally Owned Since 2020</span>
+          </div>
         </div>
       </section>
 
@@ -68,6 +107,31 @@ export default function ServiceHub({
             ))}
           </div>
         </section>
+      )}
+
+      {/* EXTRA PROSE SECTIONS (e.g. cabinet spray-vs-brush, repaint-vs-replace) */}
+      {hub.sections && hub.sections.length > 0 && (
+        <section className="bg-white pb-4">
+          <div className="max-w-4xl mx-auto px-4">
+            {hub.sections.map((s) => (
+              <div key={s.heading} className="mb-10">
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] mb-4">{s.heading}</h2>
+                {s.body.map((p, i) => (
+                  <p key={i} className="text-gray-700 leading-relaxed mb-4 text-lg">{p}</p>
+                ))}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* PROJECT GALLERY (real finished-work photos) */}
+      {hub.gallery && hub.gallery.length > 0 && (
+        <ProjectGallery
+          heading={hub.galleryHeading ?? "Recent Projects"}
+          intro={hub.galleryIntro}
+          items={hub.gallery}
+        />
       )}
 
       {/* SUB-SERVICE GRID (the hub → spoke links) */}
@@ -99,7 +163,8 @@ export default function ServiceHub({
             <h2 className="text-3xl sm:text-4xl font-bold text-[#111111] text-center mb-12">{hub.whyHeading}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {hub.whyCards.map((c) => (
-                <div key={c.title} className="border border-gray-200 p-6">
+                <div key={c.title} className="border border-gray-200 p-6 hover:border-[#4B83B2] transition-colors">
+                  <CardIcon title={c.title} />
                   <h3 className="font-bold text-[#111111] mb-3 text-lg">{c.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{c.desc}</p>
                 </div>
@@ -125,6 +190,34 @@ export default function ServiceHub({
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* INVESTMENT & GUARANTEE (price range + credentials) */}
+      {hub.priceTeaser && (
+        <PricingBand
+          heading={hub.priceTeaser.heading}
+          range={hub.priceTeaser.range}
+          note={hub.priceTeaser.note}
+          href={hub.priceTeaser.href}
+          linkLabel={hub.priceTeaser.linkLabel}
+        />
+      )}
+
+      {/* WRITTEN REVIEWS (social proof on the service page itself) */}
+      {reviews.length > 0 && (
+        <section className="bg-white py-20">
+          <ReviewCards
+            reviews={reviews}
+            heading="What Your Neighbors Say"
+            intro="Real reviews from Fort Bend County homeowners we've worked with."
+            columns={2}
+          />
+          <div className="text-center mt-8">
+            <Link href="/testimonials" className="text-[#4B83B2] font-semibold hover:underline">
+              Read all 113 reviews &rarr;
+            </Link>
           </div>
         </section>
       )}
