@@ -46,6 +46,7 @@ const menus: NavMenu[] = [
   {
     label: "About",
     items: [
+      { label: "About Us", href: "/about" },
       { label: "Our Story", href: "/our-story" },
       { label: "Our Vision", href: "/our-vision" },
       { label: "Core Values", href: "/core-values" },
