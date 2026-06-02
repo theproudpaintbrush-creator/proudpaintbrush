@@ -106,11 +106,17 @@ export default function Header() {
       {/* Trust / rating strip */}
       <div className="bg-[#1a2e44] text-white text-xs sm:text-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between">
-          <Link href="/testimonials" className="flex items-center gap-1.5 hover:text-white/80">
+          <a
+            href="https://share.google/03zEeHzRVJW7NvE2Z"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 hover:text-white/80"
+            aria-label="Read our 5.0-star Google reviews (opens in a new tab)"
+          >
             <span className="text-yellow-400 tracking-tight" aria-hidden>★★★★★</span>
             <span className="font-semibold">5.0</span>
-            <span className="hidden sm:inline text-white/70">· Trusted by Fort Bend homeowners</span>
-          </Link>
+            <span className="hidden sm:inline text-white/70">· Read our Google reviews</span>
+          </a>
           <div className="flex items-center gap-3 sm:gap-4">
             <a href="tel:+18326050493" className="hover:text-white/80 font-medium">(832) 605-0493</a>
             <Link href="/contact" className="hidden sm:inline bg-[#4B83B2] hover:bg-[#3a6a96] px-3 py-1 rounded font-semibold transition-colors">

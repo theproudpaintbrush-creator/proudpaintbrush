@@ -152,6 +152,24 @@ export default function TestimonialsPage() {
           <p className="text-white/80 text-sm">
             {AGGREGATE_RATING.value}★ average from {AGGREGATE_RATING.count}+ reviews · Licensed · Insured · Locally owned
           </p>
+          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <a
+              href="https://share.google/03zEeHzRVJW7NvE2Z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-[#4B83B2] hover:bg-[#111111] hover:text-white font-semibold px-6 py-3 transition-colors"
+            >
+              Read our Google reviews
+            </a>
+            <a
+              href="https://g.page/r/CaafH5ZU7h7cEBM/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-6 py-3 transition-colors"
+            >
+              Leave a Google review
+            </a>
+          </div>
         </div>
         <WaveDown from="bg-[#4B83B2]" to="#111111" />
       </section>
