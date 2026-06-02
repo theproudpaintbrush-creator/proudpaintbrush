@@ -111,6 +111,34 @@ export default function ContactPage() {
         </p>
       </section>
 
+      {/* GOOGLE REVIEW CTA */}
+      <section className="bg-[#4B83B2] text-white py-12 px-4 text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-2xl font-bold mb-3">Already worked with us?</h2>
+          <p className="text-white/90 mb-6">
+            A quick Google review helps other Fort Bend homeowners find us — and it means the world to our team.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <a
+              href="https://g.page/r/CaafH5ZU7h7cEBM/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-[#4B83B2] hover:bg-[#1a2e44] hover:text-white font-semibold px-6 py-3 transition-colors"
+            >
+              Leave a Google review
+            </a>
+            <a
+              href="https://share.google/03zEeHzRVJW7NvE2Z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-6 py-3 transition-colors"
+            >
+              Read our reviews
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICE AREAS */}
       <section className="bg-white py-14">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
