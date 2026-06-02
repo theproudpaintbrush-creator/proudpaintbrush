@@ -116,27 +116,28 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        <WaveDown from="bg-[#4B83B2]" to="#eef1f5" />
       </section>
 
       {/* ── REQUEST A FREE ESTIMATE (booking embed) ── */}
-      <section className="bg-[#4B83B2] text-white pt-0 pb-0">
+      <section className="bg-[#eef1f5] text-[#1a2e44] pt-12 pb-0">
         <div className="max-w-4xl mx-auto px-4 pb-14 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-3">Request Your Free Estimate</h2>
-          <p className="text-white/85 text-lg max-w-2xl mx-auto mb-8">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-8">
             Pick a time that works for you — most estimates take 30&ndash;40 minutes. We&apos;ll walk the
             space with you, answer every question, and leave you with a clear, honest quote.
           </p>
-          <div className="bg-white rounded-xl shadow-2xl overflow-hidden max-w-3xl mx-auto">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-3xl mx-auto p-3 sm:p-6">
             <iframe
               src="https://theproudpaintbrush.youcanbook.me/?noframe=true&skipHeaderFooter=true"
               title="Book your free painting estimate — The Proud Paintbrush"
-              className="w-full"
+              className="w-full rounded-lg overflow-hidden"
               style={{ minHeight: "640px", border: "none" }}
               loading="lazy"
             />
           </div>
         </div>
-        <WaveDown from="bg-[#4B83B2]" to="#111111" />
+        <WaveDown from="bg-[#eef1f5]" to="#111111" />
       </section>
 
       {/* ── SERVICES on black ── */}
