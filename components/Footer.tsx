@@ -32,6 +32,7 @@ const serviceAreas = [
   "Fulshear",
   "Rosenberg",
   "West Houston",
+  "Southwest Houston",
 ];
 
 const socials = [
@@ -190,7 +191,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
-          &copy; 2024 The Proud Paintbrush LLC. All rights reserved.
+          &copy; {new Date().getFullYear()} The Proud Paintbrush LLC. All rights reserved.
         </div>
       </div>
     </footer>

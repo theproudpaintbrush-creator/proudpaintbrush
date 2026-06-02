@@ -7,11 +7,11 @@ import ProudProcess from "@/components/ProudProcess";
 
 export const metadata: Metadata = {
   title: "The Proud Paintbrush | Sugar Land Painting Contractor",
-  description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Licensed, insured, 2-year warranty. Get your free estimate today.",
+  description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Licensed, insured, 2-5 year warranty. Get your free estimate today.",
   alternates: { canonical: "https://www.theproudpaintbrush.com" },
   openGraph: {
     title: "The Proud Paintbrush | Sugar Land Painting Contractor",
-    description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Licensed, insured, 2-year warranty. Get your free estimate today.",
+    description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Licensed, insured, 2-5 year warranty. Get your free estimate today.",
     url: "https://www.theproudpaintbrush.com",
     type: "website",
     images: [{ url: "https://www.theproudpaintbrush.com/images/hero-stucco-richmond.webp" }],
@@ -65,6 +65,7 @@ const homepageSchema = {
   telephone: "+1-832-605-0493",
   address: { "@type": "PostalAddress", addressLocality: "Sugar Land", addressRegion: "TX", postalCode: "77498", addressCountry: "US" },
   areaServed: serviceAreas.map((a) => `${a}, TX`),
+  aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 113 },
 };
 
 export default function HomePage() {

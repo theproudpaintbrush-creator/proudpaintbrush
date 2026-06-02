@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Our Story | The Proud Paintbrush Sugar Land",
   description:
     "The story behind The Proud Paintbrush — a family business founded by Chris Petkau in Sugar Land, TX. Built on faith, perseverance, and pride in every home.",
+  alternates: { canonical: "https://www.theproudpaintbrush.com/our-story" },
 };
 
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";

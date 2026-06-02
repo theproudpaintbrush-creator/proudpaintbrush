@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Core Values | The Proud Paintbrush Sugar Land TX",
   description:
     "The Proud Paintbrush is built on Care for People, Attention to Detail, and Hard Work. See how our values shape every painting project in Sugar Land.",
+  alternates: { canonical: "https://www.theproudpaintbrush.com/core-values" },
 };
 
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";

@@ -41,6 +41,21 @@ export default async function CatchAllContentPage({ params }: { params: Promise<
     description: page.metaDescription,
     url,
   };
+  const segs = page.key.split("/");
+  const titleCase = (s: string) => s.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      ...segs.map((s, i) => ({
+        "@type": "ListItem",
+        position: i + 2,
+        name: titleCase(s),
+        item: `${BASE_URL}/${segs.slice(0, i + 1).join("/")}`,
+      })),
+    ],
+  };
   const faqSchema = page.faqs.length
     ? {
         "@context": "https://schema.org",
@@ -52,6 +67,7 @@ export default async function CatchAllContentPage({ params }: { params: Promise<
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
       <ContentPage page={page} />
     </>

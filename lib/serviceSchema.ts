@@ -16,10 +16,11 @@ const PARENT_PATH: Record<ServiceParent, string> = {
 
 // Builds the JSON-LD graph for a service detail page:
 // LocalBusiness (+aggregateRating), Service, optional FAQPage, BreadcrumbList.
-export function buildServiceSchemas(service: ServiceContent) {
+export function buildServiceSchemas(service: ServiceContent, opts?: { areaServedCity?: string }) {
   const parentPath = PARENT_PATH[service.parent];
   const parentLabel = PARENT_LABEL[service.parent];
   const url = `${BASE_URL}${parentPath}/${service.slug}`;
+  const areaCity = opts?.areaServedCity ?? "Sugar Land";
 
   const localBusiness = {
     "@context": "https://schema.org",
@@ -37,7 +38,7 @@ export function buildServiceSchemas(service: ServiceContent) {
       postalCode: "77498",
       addressCountry: "US",
     },
-    aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 87 },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 113 },
   };
 
   const serviceSchema = {
@@ -46,7 +47,7 @@ export function buildServiceSchemas(service: ServiceContent) {
     name: service.name,
     serviceType: parentLabel,
     provider: { "@id": `${url}#localbusiness` },
-    areaServed: { "@type": "City", name: "Sugar Land", address: { "@type": "PostalAddress", addressRegion: "TX", addressCountry: "US" } },
+    areaServed: { "@type": "City", name: areaCity, address: { "@type": "PostalAddress", addressRegion: "TX", addressCountry: "US" } },
     description: service.metaDescription,
   };
 
@@ -97,7 +98,7 @@ export function buildHubSchemas(
     telephone: PHONE_TEL,
     priceRange: "$$",
     address: { "@type": "PostalAddress", addressLocality: "Sugar Land", addressRegion: "TX", postalCode: "77498", addressCountry: "US" },
-    aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 87 },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 113 },
   };
   const serviceSchema = {
     "@context": "https://schema.org",

@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: post.title,
     description: post.description,
+    alternates: { canonical: `https://www.theproudpaintbrush.com/blog/${post.slug}` },
     openGraph: {
       title: `${post.title} | The Proud Paintbrush`,
       description: post.description,
@@ -83,11 +84,18 @@ export default async function BlogPostPage({ params }: PageProps) {
     "@type": "Article",
     headline: post.title,
     description: post.description,
-    author: {
-      "@type": "Organization",
-      name: post.author,
-      url: "https://www.theproudpaintbrush.com",
-    },
+    author: AUTHOR_BIOS[post.author]
+      ? {
+          "@type": "Person",
+          name: post.author,
+          description: AUTHOR_BIOS[post.author].bio,
+          url: "https://www.theproudpaintbrush.com/blog",
+        }
+      : {
+          "@type": "Organization",
+          name: post.author,
+          url: "https://www.theproudpaintbrush.com",
+        },
     publisher: {
       "@type": "Organization",
       name: "The Proud Paintbrush",
@@ -106,11 +114,25 @@ export default async function BlogPostPage({ params }: PageProps) {
     },
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.theproudpaintbrush.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.theproudpaintbrush.com/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://www.theproudpaintbrush.com/blog/${post.slug}` },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero */}

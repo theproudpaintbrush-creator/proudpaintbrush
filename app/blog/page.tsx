@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Painting Tips & Advice Blog",
   description:
     "Painting tips, color advice, and home improvement insights from The Proud Paintbrush — Sugar Land's trusted painting contractor.",
+  alternates: { canonical: "https://www.theproudpaintbrush.com/blog" },
   openGraph: {
     title: "Painting Tips & Advice Blog | The Proud Paintbrush",
     description:

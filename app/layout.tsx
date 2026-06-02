@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Professional residential & commercial painting in Sugar Land, Fort Bend County & West Houston. Licensed, insured, 2-year warranty. Call (832) 605-0493.",
+    "Professional residential & commercial painting in Sugar Land, Fort Bend County & West Houston. Licensed, insured, 2-5 year warranty. Call (832) 605-0493.",
   metadataBase: new URL("https://www.theproudpaintbrush.com"),
   openGraph: {
     type: "website",
@@ -61,6 +61,7 @@ const localBusinessSchema = {
     "Fulshear, TX",
     "Rosenberg, TX",
     "West Houston, TX",
+    "Southwest Houston, TX",
   ],
   priceRange: "$$",
   openingHoursSpecification: [

@@ -48,7 +48,7 @@ export default async function CabinetCityPage({ params }: { params: Promise<Rout
     .map((s) => getCity(s))
     .filter((x): x is ServiceContent => !!x)
     .map((x) => ({ slug: x.slug, name: x.name }));
-  const schemas = buildServiceSchemas(c);
+  const schemas = buildServiceSchemas(c, { areaServedCity: c.name });
 
   return (
     <>
