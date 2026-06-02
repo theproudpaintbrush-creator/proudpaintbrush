@@ -116,6 +116,26 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ── REQUEST A FREE ESTIMATE (booking embed) ── */}
+      <section className="bg-[#4B83B2] text-white pt-0 pb-0">
+        <div className="max-w-4xl mx-auto px-4 pb-14 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3">Request Your Free Estimate</h2>
+          <p className="text-white/85 text-lg max-w-2xl mx-auto mb-8">
+            Pick a time that works for you — most estimates take 30&ndash;40 minutes. We&apos;ll walk the
+            space with you, answer every question, and leave you with a clear, honest quote.
+          </p>
+          <div className="bg-white rounded-xl shadow-2xl overflow-hidden max-w-3xl mx-auto">
+            <iframe
+              src="https://theproudpaintbrush.youcanbook.me/?noframe=true&skipHeaderFooter=true"
+              title="Book your free painting estimate — The Proud Paintbrush"
+              className="w-full"
+              style={{ minHeight: "640px", border: "none" }}
+              loading="lazy"
+            />
+          </div>
+        </div>
         <WaveDown from="bg-[#4B83B2]" to="#111111" />
       </section>
 
