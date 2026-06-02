@@ -272,14 +272,12 @@ export default async function ExteriorCityPage({
             What {city.name} Homeowners Say
           </h2>
           <p className="text-center text-white/70 mb-10 max-w-2xl mx-auto">
-            A featured testimonial from a recent {ext.featuredVideo.customerNeighborhood ?? city.name} customer.
+            A featured testimonial from one of our recent customers.
           </p>
           <VideoTestimonial
             variant="featured"
             youtubeId={ext.featuredVideo.youtubeId}
             posterImage={ext.featuredVideo.posterImage ?? city.ogImage}
-            customerName={ext.featuredVideo.customerName}
-            customerNeighborhood={ext.featuredVideo.customerNeighborhood}
             city={city.name}
           />
         </div>
@@ -365,10 +363,10 @@ export default async function ExteriorCityPage({
       <section className="bg-[#111111] text-white py-20">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-            More {city.name} Customers, In Their Own Words
+            More Happy Customers, In Their Own Words
           </h2>
           <p className="text-center text-white/70 mb-10 max-w-2xl mx-auto">
-            Short, unscripted video reviews from {city.name} homeowners.
+            Short, unscripted video reviews from our Fort Bend County customers.
           </p>
           <AuthenticVideoGrid videos={ext.authenticVideos} city={city.name} />
         </div>

@@ -105,14 +105,14 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_SUGAR_LAND_FEATURED_VIDEO_ID",
+        youtubeId: "HkXdwkgfhCI",
         customerName: "Featured Sugar Land customer",
         customerNeighborhood: "Riverstone",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_SUGAR_LAND_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_SUGAR_LAND_AUTHENTIC_2" },
-        { variant: "authentic", youtubeId: "TODO_SUGAR_LAND_AUTHENTIC_3" },
+        { variant: "authentic", youtubeId: "4K_j8zfo2zQ" },
+        { variant: "authentic", youtubeId: "gxB9xw9m34U" },
+        { variant: "authentic", youtubeId: "LNmUGCgmTS0" },
       ],
       customerPhotos: [
         { src: "/images/exterior-painting-happy-customer-sugar-land-tx.jpg", alt: "Happy customer in front of freshly painted Sugar Land TX home holding 100% satisfied sign" },
@@ -178,13 +178,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_SUGAR_LAND_INTERIOR_FEATURED_VIDEO_ID",
+        youtubeId: "sbTOOc-S7nE",
         customerName: "Featured Sugar Land interior customer",
         customerNeighborhood: "Riverstone",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_SUGAR_LAND_INTERIOR_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_SUGAR_LAND_INTERIOR_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "W96cOO6v1LA" },
+        { variant: "authentic", youtubeId: "zT_z3yxJcL0" },
       ],
       customerPhotos: [
         { src: "/images/interior-painting-happy-customer-sugar-land-tx.jpg", alt: "Happy interior painting customer in Sugar Land TX holding 100% satisfied sign" },
@@ -263,13 +263,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_MISSOURI_CITY_FEATURED_VIDEO_ID",
+        youtubeId: "bzbgrgyHxow",
         customerName: "Featured Missouri City customer",
         customerNeighborhood: "Sienna",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_MISSOURI_CITY_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_MISSOURI_CITY_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "E_GicxQ676A" },
+        { variant: "authentic", youtubeId: "shzynACJsEw" },
       ],
       customerPhotos: [
         { src: "/images/customer-missouri-city.webp", alt: "Missouri City TX exterior painting customer holding 100% satisfied sign" },
@@ -334,13 +334,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_MISSOURI_CITY_INTERIOR_FEATURED_VIDEO_ID",
+        youtubeId: "3rIAxmF9ow0",
         customerName: "Featured Missouri City interior customer",
         customerNeighborhood: "Sienna",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_MISSOURI_CITY_INTERIOR_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_MISSOURI_CITY_INTERIOR_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "5rhZR2sQC2g" },
+        { variant: "authentic", youtubeId: "AnJpFabDhOw" },
       ],
       customerPhotos: [
         { src: "/images/customer-satisfied-interior.jpg", alt: "Satisfied Missouri City TX homeowner after interior painting" },
@@ -419,14 +419,14 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_KATY_FEATURED_VIDEO_ID",
+        youtubeId: "gY1VnnU308o",
         customerName: "Featured Katy customer",
         customerNeighborhood: "Cinco Ranch",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_KATY_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_KATY_AUTHENTIC_2" },
-        { variant: "authentic", youtubeId: "TODO_KATY_AUTHENTIC_3" },
+        { variant: "authentic", youtubeId: "jF9-nlPZAYE" },
+        { variant: "authentic", youtubeId: "SItjnyqD0o8" },
+        { variant: "authentic", youtubeId: "tLfUJtXRwss" },
       ],
       customerPhotos: [
         { src: "/images/ext-customer-katy.jpg", alt: "Katy TX exterior painting customer holding 100% satisfied sign" },
@@ -492,13 +492,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_KATY_INTERIOR_FEATURED_VIDEO_ID",
+        youtubeId: "XHhGMUESFL8",
         customerName: "Featured Katy interior customer",
         customerNeighborhood: "Cinco Ranch",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_KATY_INTERIOR_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_KATY_INTERIOR_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "yrbeE2EwCcA" },
+        { variant: "authentic", youtubeId: "6P4_4GHaYP8" },
       ],
       customerPhotos: [
         { src: "/images/happy-customer-cabinet-painting-katy-tx.jpg", alt: "Happy Katy TX customer after kitchen cabinet painting" },
@@ -577,13 +577,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_ROSENBERG_FEATURED_VIDEO_ID",
+        youtubeId: "a20JwINRrNc",
         customerName: "Featured Rosenberg customer",
         customerNeighborhood: "Bonbrook Plantation",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_ROSENBERG_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_ROSENBERG_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "B3mAxVXwDoM" },
+        { variant: "authentic", youtubeId: "-bnDu_8HApE" },
       ],
       customerPhotos: [
         { src: "/images/customer-happy-home.jpg", alt: "Rosenberg TX exterior painting customer holding 100% satisfied sign" },
@@ -648,13 +648,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_ROSENBERG_INTERIOR_FEATURED_VIDEO_ID",
+        youtubeId: "dzUzGhht6F8",
         customerName: "Featured Rosenberg interior customer",
         customerNeighborhood: "Kingdom Heights",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_ROSENBERG_INTERIOR_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_ROSENBERG_INTERIOR_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "gN2iVF5ig_8" },
+        { variant: "authentic", youtubeId: "gzCLxCBP1o0" },
       ],
       customerPhotos: [
         { src: "/images/warranty-white-cabinets.jpg", alt: "Crisp white cabinets after interior painting in a Rosenberg TX home" },
@@ -733,13 +733,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_RICHMOND_FEATURED_VIDEO_ID",
+        youtubeId: "JqY3L7IJOOY",
         customerName: "Featured Richmond customer",
         customerNeighborhood: "Aliana",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_RICHMOND_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_RICHMOND_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "xHFK54C4mc0" },
+        { variant: "authentic", youtubeId: "Z208PaNZY4U" },
       ],
       customerPhotos: [
         { src: "/images/exterior-painting-happy-customer-richmond-tx.jpg", alt: "Richmond TX exterior painting customer holding 100% satisfied sign" },
@@ -804,13 +804,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_RICHMOND_INTERIOR_FEATURED_VIDEO_ID",
+        youtubeId: "HkXdwkgfhCI",
         customerName: "Featured Richmond interior customer",
         customerNeighborhood: "Long Meadow Farms",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_RICHMOND_INTERIOR_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_RICHMOND_INTERIOR_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "4K_j8zfo2zQ" },
+        { variant: "authentic", youtubeId: "gxB9xw9m34U" },
       ],
       customerPhotos: [
         { src: "/images/cabinet-kitchen-richmond.jpg", alt: "Freshly painted kitchen cabinets in a Richmond TX home" },
@@ -889,13 +889,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_FULSHEAR_FEATURED_VIDEO_ID",
+        youtubeId: "LNmUGCgmTS0",
         customerName: "Featured Fulshear customer",
         customerNeighborhood: "Cross Creek Ranch",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_FULSHEAR_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_FULSHEAR_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "sbTOOc-S7nE" },
+        { variant: "authentic", youtubeId: "W96cOO6v1LA" },
       ],
       customerPhotos: [
         { src: "/images/happy-customer-fulshear-tx-door-refinishing.jpg", alt: "Fulshear TX exterior painting customer holding 100% satisfied sign" },
@@ -960,13 +960,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_FULSHEAR_INTERIOR_FEATURED_VIDEO_ID",
+        youtubeId: "zT_z3yxJcL0",
         customerName: "Featured Fulshear interior customer",
         customerNeighborhood: "Cross Creek Ranch",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_FULSHEAR_INTERIOR_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_FULSHEAR_INTERIOR_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "bzbgrgyHxow" },
+        { variant: "authentic", youtubeId: "E_GicxQ676A" },
       ],
       customerPhotos: [
         { src: "/images/cabinet-fulshear.webp", alt: "Freshly painted kitchen cabinets in a Fulshear TX home" },
@@ -1045,13 +1045,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_WEST_HOUSTON_FEATURED_VIDEO_ID",
+        youtubeId: "shzynACJsEw",
         customerName: "Featured West Houston customer",
         customerNeighborhood: "Memorial",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_WEST_HOUSTON_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_WEST_HOUSTON_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "3rIAxmF9ow0" },
+        { variant: "authentic", youtubeId: "5rhZR2sQC2g" },
       ],
       customerPhotos: [
         { src: "/images/commerical-interior-painting-happy-customer-west-houston.jpg", alt: "West Houston TX painting customer holding 100% satisfied sign" },
@@ -1116,13 +1116,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_WEST_HOUSTON_INTERIOR_FEATURED_VIDEO_ID",
+        youtubeId: "AnJpFabDhOw",
         customerName: "Featured West Houston interior customer",
         customerNeighborhood: "Memorial",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_WEST_HOUSTON_INTERIOR_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_WEST_HOUSTON_INTERIOR_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "gY1VnnU308o" },
+        { variant: "authentic", youtubeId: "jF9-nlPZAYE" },
       ],
       customerPhotos: [
         { src: "/images/commerical-interior-painting-happy-customer-west-houston.jpg", alt: "Happy West Houston TX customer after interior painting project" },
@@ -1201,13 +1201,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_SOUTHWEST_HOUSTON_FEATURED_VIDEO_ID",
+        youtubeId: "SItjnyqD0o8",
         customerName: "Featured Southwest Houston customer",
         customerNeighborhood: "Meyerland",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_SOUTHWEST_HOUSTON_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_SOUTHWEST_HOUSTON_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "tLfUJtXRwss" },
+        { variant: "authentic", youtubeId: "XHhGMUESFL8" },
       ],
       customerPhotos: [
         { src: "/images/ext-sw-houston.jpg", alt: "Southwest Houston TX exterior painting customer holding 100% satisfied sign" },
@@ -1272,13 +1272,13 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "TODO_SOUTHWEST_HOUSTON_INTERIOR_FEATURED_VIDEO_ID",
+        youtubeId: "yrbeE2EwCcA",
         customerName: "Featured Southwest Houston interior customer",
         customerNeighborhood: "Meyerland",
       },
       authenticVideos: [
-        { variant: "authentic", youtubeId: "TODO_SOUTHWEST_HOUSTON_INTERIOR_AUTHENTIC_1" },
-        { variant: "authentic", youtubeId: "TODO_SOUTHWEST_HOUSTON_INTERIOR_AUTHENTIC_2" },
+        { variant: "authentic", youtubeId: "6P4_4GHaYP8" },
+        { variant: "authentic", youtubeId: "a20JwINRrNc" },
       ],
       customerPhotos: [
         { src: "/images/interior-crown-molding.jpg", alt: "Hand-painted crown molding in a Southwest Houston TX character home" },
