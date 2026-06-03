@@ -115,9 +115,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "LNmUGCgmTS0" },
       ],
       customerPhotos: [
-        { src: "/images/exterior-painting-happy-customer-sugar-land-tx.jpg", alt: "Happy customer in front of freshly painted Sugar Land TX home holding 100% satisfied sign" },
-        { src: "/images/exterior-home-painting-happy-customers-sugar-land-tx.jpg", alt: "Satisfied homeowners after exterior painting in Sugar Land TX" },
-        { src: "/images/exterior-house-painting-happy-customer-sugar-land-tx.jpg", alt: "Sugar Land TX exterior painting customer with 100% satisfied sign" },
+        { src: "/images/migrated/white-modern-farmhouse-exterior-sugar-land-tx.webp", alt: "White modern farmhouse exterior freshly painted in Sugar Land, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/tan-stucco-exterior-repaint-sugar-land-tx.webp", alt: "Large tan stucco home exterior repainted in Sugar Land, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/brick-ranch-home-exterior-sugar-land-tx.webp", alt: "Brick ranch home exterior with fresh trim paint in Sugar Land, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -272,8 +272,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "shzynACJsEw" },
       ],
       customerPhotos: [
-        { src: "/images/customer-missouri-city.webp", alt: "Missouri City TX exterior painting customer holding 100% satisfied sign" },
-        { src: "/images/TODO_MISSOURI_CITY_CUSTOMER_2.jpg", alt: "Happy Missouri City TX homeowner after exterior repaint" },
+        { src: "/images/migrated/white-modern-farmhouse-exterior-missouri-city-tx.webp", alt: "White modern farmhouse exterior freshly painted in Missouri City, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/stucco-stone-home-exterior-missouri-city-tx.webp", alt: "Stucco and stone home exterior repainted in Missouri City, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/white-black-stucco-exterior-repaint-missouri-city-tx.webp", alt: "White and black stucco two-story home exterior in Missouri City, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -429,9 +430,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "tLfUJtXRwss" },
       ],
       customerPhotos: [
-        { src: "/images/ext-customer-katy.jpg", alt: "Katy TX exterior painting customer holding 100% satisfied sign" },
-        { src: "/images/happy-customer-exterior-brick-painting-katy-tc.jpg", alt: "Happy Katy TX homeowner after brick exterior repainting" },
-        { src: "/images/happy-customer-cabinet-painting-katy-tx.jpg", alt: "Satisfied Katy TX customer after exterior project" },
+        { src: "/images/migrated/white-brick-two-story-exterior-katy-tx.webp", alt: "White painted brick two-story home exterior in Katy, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/two-story-brick-home-exterior-katy-tx.webp", alt: "Two-story brick home exterior freshly painted in Katy, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/stucco-courtyard-tile-patio-katy-tx.webp", alt: "Stucco home with courtyard and tile patio painted in Katy, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -586,8 +587,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "-bnDu_8HApE" },
       ],
       customerPhotos: [
-        { src: "/images/customer-happy-home.jpg", alt: "Rosenberg TX exterior painting customer holding 100% satisfied sign" },
-        { src: "/images/customer-happy-2.jpg", alt: "Happy Rosenberg TX homeowner after exterior repaint" },
+        { src: "/images/migrated/modern-stone-exterior-pool-patio-rosenberg-tx.webp", alt: "Modern stone home exterior with pool patio in Rosenberg, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/brick-stone-home-exterior-rosenberg-tx.webp", alt: "Brick and stone two-story home exterior in Rosenberg, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/white-stucco-exterior-repaint-rosenberg-tx.webp", alt: "White stucco home exterior with stone base repainted in Rosenberg, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -742,8 +744,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "Z208PaNZY4U" },
       ],
       customerPhotos: [
-        { src: "/images/exterior-painting-happy-customer-richmond-tx.jpg", alt: "Richmond TX exterior painting customer holding 100% satisfied sign" },
-        { src: "/images/warranty-customer-richmond.jpg", alt: "Happy Richmond TX homeowner after exterior repaint" },
+        { src: "/images/migrated/richmond-tx-spanish-style-exterior-house-painting.webp", alt: "Spanish-style stucco home exterior freshly painted in Richmond, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/backyard-pool-home-exterior-richmond-tx.webp", alt: "Brick home exterior with backyard pool in Richmond, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/richmond-tx-large-exterior-house-painting.webp", alt: "Large home exterior repainted in Richmond, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -898,8 +901,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "W96cOO6v1LA" },
       ],
       customerPhotos: [
-        { src: "/images/happy-customer-fulshear-tx-door-refinishing.jpg", alt: "Fulshear TX exterior painting customer holding 100% satisfied sign" },
-        { src: "/images/cabinet-fulshear.webp", alt: "Happy Fulshear TX homeowner after exterior project" },
+        { src: "/images/migrated/tan-stucco-two-story-home-exterior-fulshear-tx.webp", alt: "Tan stucco two-story home exterior freshly painted in Fulshear, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/stucco-stone-limewash-exterior-fulshear-tx.webp", alt: "Limewashed stucco and stone home exterior in Fulshear, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/brick-two-story-home-exterior-fulshear-tx.webp", alt: "Brick two-story home exterior repainted in Fulshear, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -1054,8 +1058,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "5rhZR2sQC2g" },
       ],
       customerPhotos: [
-        { src: "/images/commerical-interior-painting-happy-customer-west-houston.jpg", alt: "West Houston TX painting customer holding 100% satisfied sign" },
-        { src: "/images/exterior-west-houston.jpg", alt: "Happy West Houston TX homeowner after exterior repaint" },
+        { src: "/images/migrated/tan-stucco-luxury-home-exterior-repaint-west-houston-tx.webp", alt: "Tan stucco luxury home exterior repainted in West Houston, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/gray-brick-exterior-repaint-west-houston-tx.webp", alt: "Gray painted brick two-story home exterior in West Houston, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/brick-home-backyard-pool-patio-west-houston-tx.webp", alt: "Brick home exterior with backyard pool patio in West Houston, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -1210,8 +1215,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "XHhGMUESFL8" },
       ],
       customerPhotos: [
-        { src: "/images/ext-sw-houston.jpg", alt: "Southwest Houston TX exterior painting customer holding 100% satisfied sign" },
-        { src: "/images/commercial-interior-painting-happy-customer-sugar-land-tx.jpg", alt: "Happy Southwest Houston TX homeowner after exterior repaint" },
+        { src: "/images/migrated/white-stucco-exterior-two-story-home-southwest-houston-tx.webp", alt: "White stucco two-story home exterior freshly painted in Southwest Houston, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/red-brick-house-black-shutters-southwest-houston-tx.webp", alt: "Red brick home with black shutters in Southwest Houston, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/tan-two-story-home-exterior-southwest-houston-tx.webp", alt: "Tan two-story home exterior repainted in Southwest Houston, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {

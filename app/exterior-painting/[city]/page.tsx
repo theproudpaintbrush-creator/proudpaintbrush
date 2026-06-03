@@ -292,8 +292,8 @@ export default async function ExteriorCityPage({
         <CustomerPhotoGrid
           photos={ext.customerPhotos}
           city={city.name}
-          heading={`Real ${city.name} Customers, Real Finished Homes`}
-          subheading={`Every job ends the same way — a homeowner standing in front of a freshly painted home. Here are a few from ${city.name}.`}
+          heading={`Freshly Painted ${city.name} Exteriors`}
+          subheading={`A look at exterior repaints we have completed across ${city.name}.`}
         />
       </section>
 
