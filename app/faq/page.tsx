@@ -44,11 +44,11 @@ const faqGroups: FaqGroup[] = [
     faqs: [
       {
         q: "What types of painting services do you offer?",
-        a: "We offer interior painting, exterior painting, cabinet painting, drywall repair, fence staining, surface preparation, and related residential painting services.",
+        a: 'We offer <a href="/interior-painting">interior painting</a>, <a href="/exterior-painting">exterior painting</a>, <a href="/cabinet-painting">cabinet painting</a>, <a href="/interior-painting/drywall-repair">drywall repair</a>, <a href="/exterior-painting/fence-staining">fence staining</a>, surface preparation, and related residential painting services.',
       },
       {
         q: "What areas do you serve?",
-        a: "We serve Sugar Land, Missouri City, Richmond, Katy, Rosenberg, Stafford, Fulshear, Pearland, West Houston, Southwest Houston, and surrounding Fort Bend County communities.",
+        a: 'We serve <a href="/service-areas">Sugar Land, Missouri City, Richmond, Katy, Rosenberg, Fulshear, West Houston, and Southwest Houston</a>, plus Stafford, Pearland, and surrounding Fort Bend County communities.',
       },
       {
         q: "Do you offer free estimates?",
@@ -73,7 +73,7 @@ const faqGroups: FaqGroup[] = [
       },
       {
         q: "How do I choose the right paint color?",
-        a: "We offer color consultations and can help you test samples on your walls so you can confidently choose the perfect color.",
+        a: 'We offer a <a href="/color-consultation">color consultation</a> and can help you test samples on your walls so you can confidently choose the perfect color.',
       },
     ],
   },
@@ -103,7 +103,7 @@ const faqGroups: FaqGroup[] = [
     faqs: [
       {
         q: "How much does it cost to paint a house interior?",
-        a: "Most interior projects range from $3,000 to $20,000+ depending on size, prep, and detail.",
+        a: 'Most interior projects range from $3,000 to $20,000+ depending on size, prep, and detail. See our <a href="/pricing/interior-prices">interior painting prices</a> for a fuller breakdown.',
       },
       {
         q: "How much does it cost to paint kitchen cabinets?",
@@ -132,7 +132,7 @@ const faqGroups: FaqGroup[] = [
       },
       {
         q: "What kind of warranty do you offer?",
-        a: "We offer both 2-year and 5-year workmanship warranties depending on the project scope.",
+        a: 'We offer both 2-year and 5-year <a href="/warranty">workmanship warranties</a> depending on the project scope.',
       },
       {
         q: "Do you actually honor your painting warranty?",
@@ -158,7 +158,7 @@ const faqSchema = {
   mainEntity: allFaqs.map((f) => ({
     "@type": "Question",
     name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
+    acceptedAnswer: { "@type": "Answer", text: f.a.replace(/<[^>]+>/g, "") },
   })),
 };
 
@@ -209,7 +209,10 @@ export default function FaqPage() {
                 {group.faqs.map((faq) => (
                   <div key={faq.q} className="border-b border-gray-200 pb-6 last:border-0">
                     <h3 className="font-semibold text-lg text-[#111111] mb-2">{faq.q}</h3>
-                    <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+                    <p
+                      className="text-gray-600 leading-relaxed [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline"
+                      dangerouslySetInnerHTML={{ __html: faq.a }}
+                    />
                   </div>
                 ))}
               </div>

@@ -190,17 +190,34 @@ export default function ContentPage({ page }: { page: PageContent }) {
       {/* FAQ Q&A already appears inline in the body above; FAQPage schema is
           emitted from page.faqs in the route (no duplicate visible section). */}
 
-      {/* CTA */}
-      <section className="bg-[#4B83B2] text-white py-14 px-4 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-white/90 mb-8">Get a free, no-pressure estimate from Sugar Land&apos;s top-rated, locally owned painting company.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#4B83B2] hover:bg-[#1a2e44] hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors">Request a Free Estimate</a>
-            <a href={`tel:${PHONE_TEL}`} className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-8 py-3 rounded-lg transition-colors">Call {PHONE}</a>
+      {/* CTA — custom (e.g. careers "Apply") replaces the default estimate CTA */}
+      {page.cta ? (
+        <section className="bg-[#1a2e44] text-white py-16 px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">{page.cta.heading ?? "Ready to Get Started?"}</h2>
+            {page.cta.note && <p className="text-white/85 text-lg mb-9 max-w-2xl mx-auto">{page.cta.note}</p>}
+            <a
+              href={page.cta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#4B83B2] hover:bg-white hover:text-[#1a2e44] text-white font-bold text-xl sm:text-2xl px-14 py-6 rounded-xl shadow-xl ring-2 ring-white/30 transition-colors"
+            >
+              {page.cta.label} <span aria-hidden>&rarr;</span>
+            </a>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <section className="bg-[#4B83B2] text-white py-14 px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Get Started?</h2>
+            <p className="text-white/90 mb-8">Get a free, no-pressure estimate from Sugar Land&apos;s top-rated, locally owned painting company.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#4B83B2] hover:bg-[#1a2e44] hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors">Request a Free Estimate</a>
+              <a href={`tel:${PHONE_TEL}`} className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-8 py-3 rounded-lg transition-colors">Call {PHONE}</a>
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }
