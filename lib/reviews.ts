@@ -42,6 +42,26 @@ export function getReviewsForService(parent: ServiceParent, limit = 2): Review[]
   return [...matched, ...general].slice(0, limit);
 }
 
+// Reviews selected for a generic content page (e.g. the service-areas pages),
+// driven by the optional `reviews` spec in the page JSON. Lets each city page
+// show a hand-picked, varied set of real reviews (by author) so no two pages
+// render an identical block, while still falling back to service/limit logic.
+export function getReviewsForPage(spec?: {
+  authors?: string[];
+  service?: ServiceParent | string;
+  limit?: number;
+}): Review[] {
+  if (!spec) return [];
+  const all = getReviews();
+  if (spec.authors?.length) {
+    return spec.authors
+      .map((name) => all.find((r) => r.author === name))
+      .filter((r): r is Review => Boolean(r));
+  }
+  if (spec.service) return getReviewsForService(spec.service as ServiceParent, spec.limit ?? 3);
+  return all.slice(0, spec.limit ?? 3);
+}
+
 // JSON-LD Review[] objects attached to the LocalBusiness node by @id.
 export function buildReviewSchema(reviews: Review[]) {
   return reviews.map((r) => ({

@@ -1,5 +1,8 @@
 import Link from "next/link";
 import type { PageContent } from "@/lib/pages";
+import { getReviewsForPage } from "@/lib/reviews";
+import ReviewCards from "@/components/ReviewCards";
+import PricingBand from "@/components/PricingBand";
 
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const PHONE = "(832) 605-0493";
@@ -12,6 +15,7 @@ function titleCase(seg: string) {
 export default function ContentPage({ page }: { page: PageContent }) {
   const segs = page.key.split("/");
   const crumbs = segs.map((s, i) => ({ label: titleCase(s), href: "/" + segs.slice(0, i + 1).join("/") }));
+  const reviewList = getReviewsForPage(page.reviews);
 
   return (
     <>
@@ -35,6 +39,24 @@ export default function ContentPage({ page }: { page: PageContent }) {
         </div>
       </section>
 
+      {/* TRUST ROW (opt-in) */}
+      {page.trustRow && (
+        <div className="bg-white border-b border-gray-100">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-gray-600">
+            <span className="flex items-center gap-1.5">
+              <span className="text-yellow-400 tracking-tight" aria-hidden>★★★★★</span>
+              <strong className="text-[#1a2e44]">5.0</strong>
+            </span>
+            <span className="hidden sm:inline text-gray-300" aria-hidden>·</span>
+            <span>113 Google reviews</span>
+            <span className="hidden sm:inline text-gray-300" aria-hidden>·</span>
+            <span>Licensed &amp; Insured</span>
+            <span className="hidden sm:inline text-gray-300" aria-hidden>·</span>
+            <span>Locally Owned Since 2020</span>
+          </div>
+        </div>
+      )}
+
       {/* BODY */}
       <article className="py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,6 +75,101 @@ export default function ContentPage({ page }: { page: PageContent }) {
           />
         </div>
       </article>
+
+      {/* CITY CARDS — photo directory of service-area cities (opt-in, hub page) */}
+      {page.cityCards && page.cityCards.cards.length > 0 && (
+        <section className="bg-white pb-4 pt-2">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            {page.cityCards.heading && (
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] text-center mb-2">{page.cityCards.heading}</h2>
+            )}
+            {page.cityCards.intro && (
+              <p className="text-center text-gray-600 max-w-2xl mx-auto mb-8">{page.cityCards.intro}</p>
+            )}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {page.cityCards.cards.map((c) => (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  className="group block overflow-hidden rounded-xl border border-gray-200 bg-white hover:border-[#4B83B2] hover:shadow-md transition-all"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={c.image.src}
+                      alt={c.image.alt}
+                      width={c.image.width}
+                      height={c.image.height}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <span className="text-base font-bold text-[#1a2e44]">
+                      {c.label} <span aria-hidden>&rarr;</span>
+                    </span>
+                    {c.description && <p className="mt-1 text-sm leading-snug text-gray-600">{c.description}</p>}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* RELATED LINKS — funnel down to rich service x city pages (opt-in) */}
+      {page.relatedLinks && page.relatedLinks.links.length > 0 && (
+        <section className="bg-gray-50 py-14 border-t border-gray-100">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            {page.relatedLinks.heading && (
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] text-center mb-2">
+                {page.relatedLinks.heading}
+              </h2>
+            )}
+            {page.relatedLinks.intro && (
+              <p className="text-center text-gray-600 max-w-2xl mx-auto mb-9">{page.relatedLinks.intro}</p>
+            )}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {page.relatedLinks.links.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="block bg-white border border-gray-200 rounded-xl p-6 hover:border-[#4B83B2] hover:shadow-md transition-all"
+                >
+                  <span className="text-lg font-bold text-[#1a2e44]">
+                    {l.label} <span aria-hidden>&rarr;</span>
+                  </span>
+                  {l.description && <p className="mt-2 text-sm leading-relaxed text-gray-600">{l.description}</p>}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* REVIEWS (opt-in) */}
+      {reviewList.length > 0 && (
+        <section className="bg-white py-14">
+          <ReviewCards
+            reviews={reviewList}
+            heading={page.reviews?.heading}
+            intro={page.reviews?.intro}
+            columns={3}
+            masonry
+          />
+        </section>
+      )}
+
+      {/* PRICING BAND (opt-in) */}
+      {page.priceTeaser && (
+        <PricingBand
+          heading={page.priceTeaser.heading}
+          range={page.priceTeaser.range}
+          note={page.priceTeaser.note}
+          href={page.priceTeaser.href}
+          linkLabel={page.priceTeaser.linkLabel}
+        />
+      )}
 
       {/* GALLERY (portfolio) */}
       {page.gallery && page.gallery.length > 0 && (

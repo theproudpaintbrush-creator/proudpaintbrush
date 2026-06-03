@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPage, getAllPageKeys } from "@/lib/pages";
+import { getReviewsForPage, buildReviewSchema } from "@/lib/reviews";
 import ContentPage from "@/components/ContentPage";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
@@ -63,12 +64,17 @@ export default async function CatchAllContentPage({ params }: { params: Promise<
         mainEntity: page.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
       }
     : null;
+  // Real customer reviews tied to the global business entity (opt-in via page.reviews)
+  const reviewSchema = page.reviews ? buildReviewSchema(getReviewsForPage(page.reviews)) : [];
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+      {reviewSchema.map((s, i) => (
+        <script key={`rev-${i}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
       <ContentPage page={page} />
     </>
   );
