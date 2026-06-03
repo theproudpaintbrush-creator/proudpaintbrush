@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CITIES, getCityBySlug } from "@/lib/cities";
 import { getService, getServiceSlugs, getServicesByParent } from "@/lib/services";
-import VideoTestimonial, { AuthenticVideoGrid } from "@/components/VideoTestimonial";
+import VideoTestimonial from "@/components/VideoTestimonial";
 import CustomerPhotoGrid, { BeforeAfterGrid } from "@/components/CustomerPhotoGrid";
 import ServiceDetail from "@/components/ServiceDetail";
 import { buildServiceSchemas } from "@/lib/serviceSchema";
@@ -327,21 +327,6 @@ export default async function InteriorCityPage({
           </p>
         </div>
       </section>
-
-      {/* AUTHENTIC VIDEO GRID (black bg) */}
-      <WaveDown from="bg-white" to="#111111" />
-      <section className="bg-[#111111] text-white py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-            More Happy Customers, In Their Own Words
-          </h2>
-          <p className="text-center text-white/70 mb-10 max-w-2xl mx-auto">
-            Short, unscripted video reviews from our Fort Bend County customers.
-          </p>
-          <AuthenticVideoGrid videos={content.authenticVideos} city={city.name} />
-        </div>
-      </section>
-      <WaveUp from="bg-[#111111]" to="#ffffff" />
 
       {/* WHY LOCAL */}
       <section className="bg-white py-20">
