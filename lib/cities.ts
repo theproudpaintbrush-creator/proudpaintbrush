@@ -178,7 +178,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "sbTOOc-S7nE",
+        youtubeId: "shzynACJsEw",
         customerName: "Featured Sugar Land interior customer",
         customerNeighborhood: "Riverstone",
       },
@@ -335,7 +335,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "3rIAxmF9ow0",
+        youtubeId: "yrbeE2EwCcA",
         customerName: "Featured Missouri City interior customer",
         customerNeighborhood: "Sienna",
       },
@@ -493,7 +493,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "XHhGMUESFL8",
+        youtubeId: "JqY3L7IJOOY",
         customerName: "Featured Katy interior customer",
         customerNeighborhood: "Cinco Ranch",
       },
@@ -650,7 +650,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "dzUzGhht6F8",
+        youtubeId: "gY1VnnU308o",
         customerName: "Featured Rosenberg interior customer",
         customerNeighborhood: "Kingdom Heights",
       },
@@ -807,7 +807,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "HkXdwkgfhCI",
+        youtubeId: "Z208PaNZY4U",
         customerName: "Featured Richmond interior customer",
         customerNeighborhood: "Long Meadow Farms",
       },
@@ -964,7 +964,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "zT_z3yxJcL0",
+        youtubeId: "4K_j8zfo2zQ",
         customerName: "Featured Fulshear interior customer",
         customerNeighborhood: "Cross Creek Ranch",
       },
@@ -1121,7 +1121,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "AnJpFabDhOw",
+        youtubeId: "tLfUJtXRwss",
         customerName: "Featured West Houston interior customer",
         customerNeighborhood: "Memorial",
       },
@@ -1278,7 +1278,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "yrbeE2EwCcA",
+        youtubeId: "zT_z3yxJcL0",
         customerName: "Featured Southwest Houston interior customer",
         customerNeighborhood: "Meyerland",
       },
