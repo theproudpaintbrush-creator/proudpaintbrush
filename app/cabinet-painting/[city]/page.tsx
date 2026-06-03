@@ -4,10 +4,32 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ServiceContent } from "@/lib/services";
 import { buildServiceSchemas } from "@/lib/serviceSchema";
+import { getReviews, buildReviewSchema, type Review } from "@/lib/reviews";
 import ServiceDetail from "@/components/ServiceDetail";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
 const DIR = path.join(process.cwd(), "content", "cabinet-cities");
+
+// Three real Google reviews per cabinet city page — each mentions cabinet or
+// interior work. Catherine Harter (cabinet) appears on every page; the interior
+// reviews rotate so no two pages are identical.
+const CABINET_REVIEW_AUTHORS: Record<string, string[]> = {
+  "fulshear": ["Catherine Harter", "Jeff Deurlein", "Morgan Fritchie"],
+  "katy": ["Catherine Harter", "Joshua D. Randall", "Dr. Jamie Russell Sr."],
+  "missouri-city": ["Catherine Harter", "Jeff Deurlein", "Joshua D. Randall"],
+  "richmond": ["Catherine Harter", "Morgan Fritchie", "Dr. Jamie Russell Sr."],
+  "rosenberg": ["Catherine Harter", "Jeff Deurlein", "Dr. Jamie Russell Sr."],
+  "southwest-houston": ["Catherine Harter", "Morgan Fritchie", "Joshua D. Randall"],
+  "sugar-land": ["Catherine Harter", "Jeff Deurlein", "Morgan Fritchie"],
+  "west-houston": ["Catherine Harter", "Joshua D. Randall", "Dr. Jamie Russell Sr."],
+};
+
+function reviewsForCity(slug: string): Review[] {
+  const all = getReviews();
+  return (CABINET_REVIEW_AUTHORS[slug] ?? [])
+    .map((author) => all.find((r) => r.author === author))
+    .filter((r): r is Review => Boolean(r));
+}
 
 type RouteParams = { city: string };
 
@@ -49,13 +71,18 @@ export default async function CabinetCityPage({ params }: { params: Promise<Rout
     .filter((x): x is ServiceContent => !!x)
     .map((x) => ({ slug: x.slug, name: x.name }));
   const schemas = buildServiceSchemas(c, { areaServedCity: c.name });
+  const reviews = reviewsForCity(city);
+  const reviewSchema = buildReviewSchema(reviews);
 
   return (
     <>
       {schemas.map((s, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
-      <ServiceDetail service={c} related={related} />
+      {reviewSchema.map((s, i) => (
+        <script key={`rev-${i}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
+      <ServiceDetail service={c} related={related} reviews={reviews} />
     </>
   );
 }

@@ -29,7 +29,7 @@ export default function GlobalVideoTestimonials() {
   ];
   const parts = pathname.split("/");
   if (
-    (parts[1] === "exterior-painting" || parts[1] === "interior-painting") &&
+    (parts[1] === "exterior-painting" || parts[1] === "interior-painting" || parts[1] === "cabinet-painting") &&
     CITY_SLUGS.includes(parts[2])
   )
     return null;

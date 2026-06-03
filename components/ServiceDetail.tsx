@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { ServiceContent, ServiceParent } from "@/lib/services";
 import { imageDims } from "@/lib/imageDims";
+import ReviewCards from "@/components/ReviewCards";
+import type { Review } from "@/lib/reviews";
 
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const PHONE = "(832) 605-0493";
@@ -20,9 +22,11 @@ const PARENT_PATH: Record<ServiceParent, string> = {
 export default function ServiceDetail({
   service,
   related,
+  reviews,
 }: {
   service: ServiceContent;
   related: { slug: string; name: string }[];
+  reviews?: Review[];
 }) {
   const parentLabel = PARENT_LABEL[service.parent];
   const parentPath = PARENT_PATH[service.parent];
@@ -128,6 +132,19 @@ export default function ServiceDetail({
               ))}
             </div>
           </div>
+        </section>
+      )}
+
+      {/* GOOGLE REVIEWS (opt-in) */}
+      {reviews && reviews.length > 0 && (
+        <section className="bg-white py-14">
+          <ReviewCards
+            reviews={reviews}
+            heading="What Our Cabinet & Interior Customers Say"
+            intro="Verified five-star Google reviews from real Proud Paintbrush customers."
+            columns={3}
+            masonry
+          />
         </section>
       )}
 
