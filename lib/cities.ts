@@ -263,7 +263,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "bzbgrgyHxow",
+        youtubeId: "E_GicxQ676A",
         customerName: "Featured Missouri City customer",
         customerNeighborhood: "Sienna",
       },
@@ -1049,7 +1049,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "shzynACJsEw",
+        youtubeId: "3rIAxmF9ow0",
         customerName: "Featured West Houston customer",
         customerNeighborhood: "Memorial",
       },

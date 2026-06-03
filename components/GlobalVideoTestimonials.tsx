@@ -20,6 +20,16 @@ export default function GlobalVideoTestimonials() {
   const pathname = usePathname();
   if (pathname === "/testimonials") return null;
 
+  // The exterior city pages (e.g. /exterior-painting/sugar-land) show a single
+  // featured testimonial of their own, so the sitewide strip is suppressed there
+  // to keep one testimonial per page.
+  const CITY_SLUGS = [
+    "sugar-land", "missouri-city", "katy", "richmond",
+    "rosenberg", "fulshear", "west-houston", "southwest-houston",
+  ];
+  const parts = pathname.split("/");
+  if (parts[1] === "exterior-painting" && CITY_SLUGS.includes(parts[2])) return null;
+
   const service = pathname.startsWith("/interior-painting")
     ? "interior"
     : pathname.startsWith("/exterior-painting")
