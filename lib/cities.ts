@@ -187,9 +187,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "zT_z3yxJcL0" },
       ],
       customerPhotos: [
-        { src: "/images/interior-painting-happy-customer-sugar-land-tx.jpg", alt: "Happy interior painting customer in Sugar Land TX holding 100% satisfied sign" },
-        { src: "/images/interior-painting-project-happy-customer-sugar-land-tx.jpg", alt: "Freshly painted interior project in a Sugar Land TX home" },
-        { src: "/images/commercial-interior-painting-happy-customer-sugar-land-tx.jpg", alt: "Satisfied Sugar Land TX customer after interior painting project" },
+        { src: "/images/migrated/arched-window-living-room-repaint-sugar-land-tx.webp", alt: "Living room with arched windows freshly painted in Sugar Land, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/white-kitchen-marble-island-repaint-sugar-land-tx.webp", alt: "Bright kitchen with white cabinets and marble island painted in Sugar Land, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/white-brick-fireplace-repaint-sugar-land-tx.webp", alt: "Whitewashed brick fireplace painted in a Sugar Land, TX home by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -344,9 +344,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "AnJpFabDhOw" },
       ],
       customerPhotos: [
-        { src: "/images/customer-satisfied-interior.jpg", alt: "Satisfied Missouri City TX homeowner after interior painting" },
-        { src: "/images/interior-crown-molding.jpg", alt: "Freshly painted crown molding and ceiling in a Missouri City TX home" },
-        { src: "/images/closet-interior.jpg", alt: "Freshly painted interior closet in a Missouri City TX home" },
+        { src: "/images/migrated/white-living-room-marble-floor-repaint-missouri-city-tx.webp", alt: "White living room with marble floors freshly painted in Missouri City, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/cream-formal-living-room-repaint-missouri-city-tx.webp", alt: "Cream formal living room repainted in a Missouri City, TX home by The Proud Paintbrush" },
+        { src: "/images/migrated/gray-media-room-striped-accent-wall-missouri-city-tx.webp", alt: "Media room with gray striped accent wall painted in Missouri City, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -502,9 +502,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "6P4_4GHaYP8" },
       ],
       customerPhotos: [
-        { src: "/images/happy-customer-cabinet-painting-katy-tx.jpg", alt: "Happy Katy TX customer after kitchen cabinet painting" },
-        { src: "/images/service-cabinet.jpg", alt: "Freshly painted kitchen cabinets in a Katy TX home" },
-        { src: "/images/pricing-interior.jpg", alt: "Interior walls and trim painted in a Katy TX home" },
+        { src: "/images/migrated/greige-living-room-tray-ceiling-repaint-katy-tx.webp", alt: "Living room with greige walls and tray ceiling painted in Katy, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/cream-living-room-fireplace-repaint-katy-tx.jpg", alt: "Cream living room with fireplace repainted in a Katy, TX home by The Proud Paintbrush" },
+        { src: "/images/migrated/gray-blue-kitchen-cabinet-repaint-katy-tx.webp", alt: "Kitchen with gray-blue painted cabinets in Katy, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -659,9 +659,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "gzCLxCBP1o0" },
       ],
       customerPhotos: [
-        { src: "/images/warranty-white-cabinets.jpg", alt: "Crisp white cabinets after interior painting in a Rosenberg TX home" },
-        { src: "/images/service-interior.jpg", alt: "Interior wall and trim painting in a Rosenberg TX home" },
-        { src: "/images/customer-satisfied-interior.jpg", alt: "Satisfied Rosenberg TX homeowner after interior painting" },
+        { src: "/images/migrated/rosenberg-tx-luxury-neutral-living-room-painting.webp", alt: "Neutral luxury living room repainted in a Rosenberg, TX home by The Proud Paintbrush" },
+        { src: "/images/migrated/master-bedroom-ceiling-walls-trim-crown-rosenberg-tx.webp", alt: "Master bedroom walls, ceiling, trim, and crown molding painted in Rosenberg, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/color-drenched-living-room-walls-ceiling-trim-rosenberg-tx.webp", alt: "Color-drenched living room with painted walls, ceiling, and trim in Rosenberg, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -816,9 +816,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "gxB9xw9m34U" },
       ],
       customerPhotos: [
-        { src: "/images/cabinet-kitchen-richmond.jpg", alt: "Freshly painted kitchen cabinets in a Richmond TX home" },
-        { src: "/images/warranty-white-cabinets.jpg", alt: "Crisp white cabinets after interior painting in a Richmond TX home" },
-        { src: "/images/service-drywall.jpg", alt: "Drywall repair and interior wall painting in a Richmond TX home" },
+        { src: "/images/migrated/great-room-kitchen-neutral-walls-richmond-tx.webp", alt: "Great room and kitchen with neutral walls painted in Richmond, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/gray-two-story-living-room-repaint-richmond-tx.webp", alt: "Two-story living room with gray walls repainted in Richmond, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/cream-dining-room-vaulted-ceiling-repaint-richmond-tx.webp", alt: "Cream dining room with vaulted ceiling repainted in Richmond, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -973,9 +973,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "E_GicxQ676A" },
       ],
       customerPhotos: [
-        { src: "/images/cabinet-fulshear.webp", alt: "Freshly painted kitchen cabinets in a Fulshear TX home" },
-        { src: "/images/pricing-cabinets.jpg", alt: "Cabinet painting project in a Fulshear TX kitchen" },
-        { src: "/images/closet-interior-2.jpg", alt: "Freshly painted interior closet in a Fulshear TX home" },
+        { src: "/images/migrated/fulshear-tx-warm-inviting-living-room-painting.webp", alt: "Warm, inviting living room freshly painted in Fulshear, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/game-room-pool-table-fulshear-tx.webp", alt: "Game room with pool table freshly painted in Fulshear, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/white-shiplap-fireplace-vaulted-ceiling-fulshear-tx.webp", alt: "White shiplap fireplace with vaulted ceiling painted in Fulshear, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -1130,9 +1130,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "jF9-nlPZAYE" },
       ],
       customerPhotos: [
-        { src: "/images/commerical-interior-painting-happy-customer-west-houston.jpg", alt: "Happy West Houston TX customer after interior painting project" },
-        { src: "/images/interior-crown-molding.jpg", alt: "Hand-painted crown molding detail in a West Houston TX home" },
-        { src: "/images/pricing-interior.jpg", alt: "Interior wall and trim painting in a West Houston TX home" },
+        { src: "/images/migrated/taupe-dining-room-wall-repaint-west-houston-tx.jpg", alt: "Dining room with taupe walls repainted in West Houston, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/living-room-brick-fireplace-repaint-west-houston-tx.webp", alt: "Living room with brick fireplace and built-ins painted in West Houston, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/upstairs-game-loft-painted-west-houston-tx.webp", alt: "Upstairs game loft freshly painted in a West Houston, TX home by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {
@@ -1287,9 +1287,9 @@ export const CITIES: City[] = [
         { variant: "authentic", youtubeId: "a20JwINRrNc" },
       ],
       customerPhotos: [
-        { src: "/images/interior-crown-molding.jpg", alt: "Hand-painted crown molding in a Southwest Houston TX character home" },
-        { src: "/images/closet-interior-2.jpg", alt: "Freshly painted interior closet in a Southwest Houston TX home" },
-        { src: "/images/customer-satisfied-interior.jpg", alt: "Satisfied Southwest Houston TX homeowner after interior painting" },
+        { src: "/images/migrated/open-concept-living-dining-room-southwest-houston-tx.webp", alt: "Open-concept living and dining room freshly painted in Southwest Houston, TX by The Proud Paintbrush" },
+        { src: "/images/migrated/curved-staircase-foyer-repaint-southwest-houston-tx.webp", alt: "Curved staircase foyer repainted in a Southwest Houston, TX home by The Proud Paintbrush" },
+        { src: "/images/migrated/gray-living-room-repaint-southwest-houston-tx.webp", alt: "Living room with gray accent walls repainted in Southwest Houston, TX by The Proud Paintbrush" },
       ],
       beforeAfterPhotos: [
         {

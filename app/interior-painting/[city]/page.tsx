@@ -296,8 +296,8 @@ export default async function InteriorCityPage({
         <CustomerPhotoGrid
           photos={content.customerPhotos}
           city={city.name}
-          heading={`Real ${city.name} Customers, Real Finished Interiors`}
-          subheading={`Every job ends the same way — a homeowner happy with a freshly painted home. Here are a few from ${city.name}.`}
+          heading={`Freshly Painted ${city.name} Interiors`}
+          subheading={`A look at interior repaints we have completed across ${city.name}.`}
         />
       </section>
 
