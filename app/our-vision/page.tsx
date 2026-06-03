@@ -94,8 +94,8 @@ export default function OurVisionPage() {
       {/* HERO */}
       <section className="relative w-full h-[90vh] min-h-[560px] flex items-center justify-center overflow-hidden">
         <Image
-          src="/images/vision-team.jpg"
-          alt="The Proud Paintbrush painting team in Sugar Land, TX"
+          src="/images/migrated/satisfied-customer-richmond-exterior-painting.webp"
+          alt="Satisfied Richmond, TX homeowners in front of their freshly painted home by The Proud Paintbrush"
           fill
           className="object-cover object-center"
           priority
