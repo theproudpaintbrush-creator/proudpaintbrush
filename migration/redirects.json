@@ -384,9 +384,23 @@
     "destination": "/careers",
     "permanent": true
   },
+  { "source": "/employees/:slug*", "destination": "/careers", "permanent": true },
   {
     "source": "/blog/tag/:slug*",
     "destination": "/blog",
     "permanent": true
-  }
+  },
+  { "source": "/blog/the-truth-about-interior-painting-prices", "destination": "/blog/everything-you-need-to-know-about-how-much-it-costs-to-paint-a-room-in-sugar-land", "permanent": true },
+  { "source": "/blog/the-ultimate-guide-to-price-painting-your-home", "destination": "/blog/everything-you-need-to-know-about-how-much-it-costs-to-paint-a-room-in-sugar-land", "permanent": true },
+  { "source": "/blog/what-really-drives-the-cost-of-interior-painting-without-talking-prices", "destination": "/blog/everything-you-need-to-know-about-how-much-it-costs-to-paint-a-room-in-sugar-land", "permanent": true },
+  { "source": "/blog/how-much-should-you-really-pay-for-bedroom-painting", "destination": "/blog/everything-you-need-to-know-about-how-much-it-costs-to-paint-a-room-in-sugar-land", "permanent": true },
+  { "source": "/blog/exterior-painting-prices", "destination": "/pricing/exterior-prices", "permanent": true },
+  { "source": "/blog/exterior-painting-its-all-about-prep", "destination": "/blog/what-matters-more-paint-brand-or-prep-work", "permanent": true },
+  { "source": "/blog/prepitright", "destination": "/blog/what-matters-more-paint-brand-or-prep-work", "permanent": true },
+  { "source": "/blog/what-proper-prep-really-means-and-why-most-quotes-skip-it", "destination": "/blog/what-matters-more-paint-brand-or-prep-work", "permanent": true },
+  { "source": "/blog/this-is-why-your-paint-failed", "destination": "/blog/why-paint-jobs-fail-after-23-years-and-how-to-avoid-it", "permanent": true },
+  { "source": "/blog/this-is-why-your-paint-is-fading", "destination": "/blog/why-paint-jobs-fail-after-23-years-and-how-to-avoid-it", "permanent": true },
+  { "source": "/blog/should-you-paint-yourself-or-hire-a-pro-a-clear-decision-guide", "destination": "/blog/diy-vs-professional-painting-when-to-hire-a-pro", "permanent": true },
+  { "source": "/blog/when-is-the-best-time-to-paint-my-interior", "destination": "/blog/when-is-the-best-time-to-paint-my-exterior", "permanent": true },
+  { "source": "/blog/the-ultimate-guide-for-when-to-paint", "destination": "/blog/when-is-the-best-time-to-paint-my-exterior", "permanent": true }
 ]

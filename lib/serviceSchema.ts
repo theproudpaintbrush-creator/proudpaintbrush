@@ -16,10 +16,21 @@ const PARENT_PATH: Record<ServiceParent, string> = {
 
 // Builds the JSON-LD graph for a service detail page:
 // LocalBusiness (+aggregateRating), Service, optional FAQPage, BreadcrumbList.
-export function buildServiceSchemas(service: ServiceContent, opts?: { areaServedCity?: string }) {
+export function buildServiceSchemas(
+  service: ServiceContent,
+  opts?: {
+    areaServedCity?: string;
+    // Override the canonical path (default `${parentPath}/${slug}`). Used by
+    // nested pages like fence-staining city pages at /exterior-painting/fence-staining/<city>.
+    urlPath?: string;
+    // Insert an extra breadcrumb level between the parent hub and this page
+    // (e.g. "Fence Staining" → /exterior-painting/fence-staining).
+    breadcrumbParent?: { name: string; path: string };
+  }
+) {
   const parentPath = PARENT_PATH[service.parent];
   const parentLabel = PARENT_LABEL[service.parent];
-  const url = `${BASE_URL}${parentPath}/${service.slug}`;
+  const url = opts?.urlPath ? `${BASE_URL}${opts.urlPath}` : `${BASE_URL}${parentPath}/${service.slug}`;
   const areaCity = opts?.areaServedCity ?? "Sugar Land";
 
   const serviceSchema = {
@@ -44,14 +55,18 @@ export function buildServiceSchemas(service: ServiceContent, opts?: { areaServed
       }
     : null;
 
+  const crumbs = [
+    { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+    { "@type": "ListItem", position: 2, name: parentLabel, item: `${BASE_URL}${parentPath}` },
+  ];
+  if (opts?.breadcrumbParent) {
+    crumbs.push({ "@type": "ListItem", position: 3, name: opts.breadcrumbParent.name, item: `${BASE_URL}${opts.breadcrumbParent.path}` });
+  }
+  crumbs.push({ "@type": "ListItem", position: crumbs.length + 1, name: service.name, item: url });
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
-      { "@type": "ListItem", position: 2, name: parentLabel, item: `${BASE_URL}${parentPath}` },
-      { "@type": "ListItem", position: 3, name: service.name, item: url },
-    ],
+    itemListElement: crumbs,
   };
 
   return [serviceSchema, faqSchema, breadcrumb].filter(Boolean);

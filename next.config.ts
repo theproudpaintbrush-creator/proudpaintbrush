@@ -33,6 +33,26 @@ const nextConfig: NextConfig = {
       { source: "/blog/f5o7v4ayzmbn2dcyewyv6ciuone5hx", destination: "/blog/what-your-walls-say-about-you", permanent: true },
       { source: "/blog/cicpzh2q9ju9mp7a9ybdj823fk24zn", destination: "/blog/we-love-serving-fort-bend", permanent: true },
       { source: "/blog/qtzdhzuvu422ivwrb8v6jqa41989nu", destination: "/blog/little-known-hoa-requirements-for-exterior-painting", permanent: true },
+      // ---- Phase 4: cannibalization consolidation (fold weak posts into cluster pillars) ----
+      // Pricing cluster -> local pillar (Sugar Land room-cost); strongest posts kept live & cross-linked
+      { source: "/blog/the-truth-about-interior-painting-prices", destination: "/blog/everything-you-need-to-know-about-how-much-it-costs-to-paint-a-room-in-sugar-land", permanent: true },
+      { source: "/blog/the-ultimate-guide-to-price-painting-your-home", destination: "/blog/everything-you-need-to-know-about-how-much-it-costs-to-paint-a-room-in-sugar-land", permanent: true },
+      { source: "/blog/what-really-drives-the-cost-of-interior-painting-without-talking-prices", destination: "/blog/everything-you-need-to-know-about-how-much-it-costs-to-paint-a-room-in-sugar-land", permanent: true },
+      { source: "/blog/how-much-should-you-really-pay-for-bedroom-painting", destination: "/blog/everything-you-need-to-know-about-how-much-it-costs-to-paint-a-room-in-sugar-land", permanent: true },
+      // Exterior-prices blog post -> exterior pricing money page (deliberate blog->money consolidation)
+      { source: "/blog/exterior-painting-prices", destination: "/pricing/exterior-prices", permanent: true },
+      // Prep cluster -> "what matters more: paint brand or prep" pillar (best ranker)
+      { source: "/blog/exterior-painting-its-all-about-prep", destination: "/blog/what-matters-more-paint-brand-or-prep-work", permanent: true },
+      { source: "/blog/prepitright", destination: "/blog/what-matters-more-paint-brand-or-prep-work", permanent: true },
+      { source: "/blog/what-proper-prep-really-means-and-why-most-quotes-skip-it", destination: "/blog/what-matters-more-paint-brand-or-prep-work", permanent: true },
+      // Paint-failure cluster -> "why paint jobs fail" pillar (the strong fade post is kept live, not merged)
+      { source: "/blog/this-is-why-your-paint-failed", destination: "/blog/why-paint-jobs-fail-after-23-years-and-how-to-avoid-it", permanent: true },
+      { source: "/blog/this-is-why-your-paint-is-fading", destination: "/blog/why-paint-jobs-fail-after-23-years-and-how-to-avoid-it", permanent: true },
+      // DIY-vs-hire: fold the clear duplicate into the better-ranking decision guide
+      { source: "/blog/should-you-paint-yourself-or-hire-a-pro-a-clear-decision-guide", destination: "/blog/diy-vs-professional-painting-when-to-hire-a-pro", permanent: true },
+      // When-to-paint cluster -> exterior post promoted to climate pillar
+      { source: "/blog/when-is-the-best-time-to-paint-my-interior", destination: "/blog/when-is-the-best-time-to-paint-my-exterior", permanent: true },
+      { source: "/blog/the-ultimate-guide-for-when-to-paint", destination: "/blog/when-is-the-best-time-to-paint-my-exterior", permanent: true },
       { source: "/painting-services/interior-painting", destination: "/interior-painting", permanent: true },
       { source: "/painting-services/exterior-painting", destination: "/exterior-painting", permanent: true },
       { source: "/painting-services/cabinet-painting", destination: "/cabinet-painting", permanent: true },
@@ -106,6 +126,7 @@ const nextConfig: NextConfig = {
       { source: "/exterior-prices", destination: "/pricing/exterior-prices", permanent: true },
       { source: "/cabinet-prices", destination: "/pricing/cabinet-prices", permanent: true },
       { source: "/employees", destination: "/careers", permanent: true },
+      { source: "/employees/:slug*", destination: "/careers", permanent: true },
       { source: "/blog/tag/:slug*", destination: "/blog", permanent: true },
     ];
   },

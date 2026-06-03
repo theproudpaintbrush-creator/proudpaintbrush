@@ -118,7 +118,11 @@ export default async function InteriorCityPage({
         {schemas.map((s, i) => (
           <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
         ))}
-        <ServiceDetail service={svc} related={related} />
+        <ServiceDetail
+          service={svc}
+          related={related}
+          areaLinks={CITIES.map((c) => ({ href: `/service-areas/${c.slug}`, label: `Painting services in ${c.name}` }))}
+        />
       </>
     );
   }
@@ -382,7 +386,14 @@ export default async function InteriorCityPage({
               Call {PHONE}
             </a>
           </div>
-          <p className="text-white/70 text-sm mt-8">
+          <p className="text-white/85 text-sm mt-8">
+            More in {city.name}:{" "}
+            <Link href={`/exterior-painting/${city.slug}`} className="underline hover:text-white">Exterior Painting in {city.name}</Link>{" · "}
+            <Link href={`/cabinet-painting/${city.slug}`} className="underline hover:text-white">Cabinet Painting in {city.name}</Link>{" · "}
+            <Link href={`/exterior-painting/fence-staining/${city.slug}`} className="underline hover:text-white">Fence Staining in {city.name}</Link>{" · "}
+            <Link href={`/service-areas/${city.slug}`} className="underline hover:text-white">All Painting Services in {city.name}</Link>
+          </p>
+          <p className="text-white/70 text-sm mt-4">
             Also serving:{" "}
             {CITIES.filter((c) => c.slug !== city.slug)
               .map((c) => (

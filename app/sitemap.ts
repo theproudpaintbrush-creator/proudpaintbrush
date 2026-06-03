@@ -42,6 +42,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  const fenceCityPages: MetadataRoute.Sitemap = CITIES.map((c) => ({
+    url: `${BASE_URL}/exterior-painting/fence-staining/${c.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
+  }));
+
   const interiorServicePages: MetadataRoute.Sitemap = getServiceSlugs("interior").map((slug) => ({
     url: `${BASE_URL}/interior-painting/${slug}`,
     lastModified: new Date(),
@@ -76,6 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...exteriorCityPages,
     ...interiorCityPages,
     ...cabinetCityPages,
+    ...fenceCityPages,
     ...interiorServicePages,
     ...exteriorServicePages,
     ...contentPages,

@@ -51,6 +51,11 @@ const OVERRIDES = {
     title: "Best Paint for Cabinets in 2026 (Pro Picks Ranked)",
     description: "The best paint for kitchen cabinets in 2026, ranked by pros. Compare Sherwin-Williams, Benjamin Moore & more for a hard, factory-smooth finish.",
   },
+  // Phase 4: promoted to the "when to paint" climate pillar (interior + ultimate-guide folded in)
+  "when-is-the-best-time-to-paint-my-exterior": {
+    title: "Best Time to Paint a House Exterior in Houston, TX",
+    description: "When is the best time to paint your home's exterior in the Houston & Sugar Land climate? How heat, humidity, and rain affect your repaint, plus the ideal window.",
+  },
 };
 
 // ---- build skip set: redirect sources + existing posts ----

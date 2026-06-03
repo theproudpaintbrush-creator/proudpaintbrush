@@ -247,7 +247,7 @@ export default function ServiceHub({
             <div className="flex flex-wrap justify-center gap-3">
               {cities.map((c) => (
                 <Link key={c.slug} href={`${parentPath}/${c.slug}`} className="bg-white border border-gray-200 hover:border-[#4B83B2] hover:text-[#4B83B2] text-[#111111] text-sm font-medium px-4 py-2 transition-colors">
-                  {c.name}
+                  {parentLabel} in {c.name}
                 </Link>
               ))}
             </div>

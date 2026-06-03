@@ -24,10 +24,15 @@ export default function ServiceDetail({
   service,
   related,
   reviews,
+  areaLinks,
 }: {
   service: ServiceContent;
   related: { slug: string; name: string }[];
   reviews?: Review[];
+  // Optional contextual links to the per-city service-area landing pages.
+  // Passed on sub-service pages to feed the otherwise link-starved
+  // /service-areas/<city> pages with keyword-rich anchors.
+  areaLinks?: { href: string; label: string }[];
 }) {
   const parentLabel = PARENT_LABEL[service.parent];
   const parentPath = PARENT_PATH[service.parent];
@@ -136,6 +141,31 @@ export default function ServiceDetail({
                   className="border border-gray-200 hover:border-[#4B83B2] hover:text-[#4B83B2] text-[#1a2e44] text-sm font-medium px-4 py-2 transition-colors"
                 >
                   {r.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SERVICE AREAS — contextual links to per-city landing pages */}
+      {areaLinks && areaLinks.length > 0 && (
+        <section className="bg-gray-50 py-14">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-2xl font-bold text-[#1a2e44] mb-3">
+              {parentLabel} Across Fort Bend &amp; Houston
+            </h2>
+            <p className="text-gray-600 mb-8">
+              Explore our painting services in the communities we serve:
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {areaLinks.map((a) => (
+                <Link
+                  key={a.href}
+                  href={a.href}
+                  className="bg-white border border-gray-200 hover:border-[#4B83B2] hover:text-[#4B83B2] text-[#1a2e44] text-sm font-medium px-4 py-2 transition-colors"
+                >
+                  {a.label}
                 </Link>
               ))}
             </div>
