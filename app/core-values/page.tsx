@@ -142,18 +142,33 @@ const faqs = [
   {
     question: "What areas do you serve?",
     answer:
-      "We serve Sugar Land, Missouri City, Richmond, Katy, Rosenberg, Stafford, Fulshear, Pearland, West Houston, Southwest Houston, and surrounding Fort Bend County communities.",
+      'We serve <a href="/service-areas">Sugar Land, Missouri City, Richmond, Katy, Rosenberg, Fulshear, West Houston, and Southwest Houston</a>, plus Stafford, Pearland, and surrounding Fort Bend County communities.',
   },
   {
     question: "What types of painting services do you offer?",
     answer:
-      "We offer interior painting, exterior painting, cabinet painting, drywall repair, fence staining, surface preparation, and related residential painting services.",
+      'We offer <a href="/interior-painting">interior painting</a>, <a href="/exterior-painting">exterior painting</a>, <a href="/cabinet-painting">cabinet painting</a>, <a href="/interior-painting/drywall-repair">drywall repair</a>, <a href="/exterior-painting/fence-staining">fence staining</a>, surface preparation, and related residential painting services.',
   },
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer.replace(/<[^>]+>/g, "") },
+  })),
+};
 
 export default function CoreValuesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* HERO */}
       <section className="relative w-full h-[90vh] min-h-[560px] flex items-center justify-center overflow-hidden">
         <Image
@@ -258,6 +273,12 @@ export default function CoreValuesPage() {
               </div>
             ))}
           </div>
+          <p className="text-center text-gray-600 mt-12 [&_a]:text-[#4B83B2] [&_a]:font-semibold [&_a:hover]:underline">
+            Explore our <Link href="/preparation-process">preparation process</Link>, browse{" "}
+            <Link href="/exterior-painting">exterior</Link> and{" "}
+            <Link href="/interior-painting">interior painting</Link> services, or read real{" "}
+            <Link href="/testimonials">customer reviews</Link>.
+          </p>
         </div>
       </section>
 
@@ -266,9 +287,9 @@ export default function CoreValuesPage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { src: "/images/cv-customer-exterior.jpg", alt: "Sugar Land homeowners satisfied after exterior painting project by The Proud Paintbrush" },
-              { src: "/images/cv-customer-office.jpg", alt: "Happy customer after office painting project by The Proud Paintbrush" },
-              { src: "/images/cv-luxury-living-room.jpg", alt: "Elegant living room with high ceilings after interior painting in Sugar Land, TX" },
+              { src: "/images/migrated/happy-homeowners-100-percent-satisfied-proud-paintbrush-west-houston-tx.webp", alt: "Happy West Houston homeowners holding a 100% satisfied sign after a painting project by The Proud Paintbrush" },
+              { src: "/images/migrated/richmond-tx-happy-homeowner-bedroom-painting.webp", alt: "Satisfied Richmond homeowner holding a 100% satisfied sign after a bedroom painting project by The Proud Paintbrush" },
+              { src: "/images/migrated/missouri-city-tx-happy-homeowner-interior-painting-testimonial.webp", alt: "Happy Missouri City homeowner holding a 100% satisfied sign after an interior painting project by The Proud Paintbrush" },
             ].map((img) => (
               <div key={img.src} className="relative h-64 overflow-hidden">
                 <Image src={img.src} alt={img.alt} fill className="object-cover object-center" quality={90} />
@@ -291,6 +312,11 @@ export default function CoreValuesPage() {
             community means more than completing projects. It means helping people feel cared for in
             the place they call home.
           </p>
+          <p className="text-center mt-8">
+            <Link href="/paint-it-forward" className="inline-block text-[#4B83B2] font-semibold hover:underline">
+              Learn more about Paint It Forward &rarr;
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -304,7 +330,10 @@ export default function CoreValuesPage() {
             {faqs.map((faq, i) => (
               <div key={i} className="border-b border-gray-200 pb-6">
                 <p className="font-semibold text-[#111111] mb-2">{faq.question}</p>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                <p
+                  className="text-gray-600 leading-relaxed [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline"
+                  dangerouslySetInnerHTML={{ __html: faq.answer }}
+                />
               </div>
             ))}
           </div>
