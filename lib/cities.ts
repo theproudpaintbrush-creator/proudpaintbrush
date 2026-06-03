@@ -105,7 +105,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "HkXdwkgfhCI",
+        youtubeId: "6P4_4GHaYP8",
         customerName: "Featured Sugar Land customer",
         customerNeighborhood: "Riverstone",
       },
@@ -420,7 +420,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "gY1VnnU308o",
+        youtubeId: "B3mAxVXwDoM",
         customerName: "Featured Katy customer",
         customerNeighborhood: "Cinco Ranch",
       },
@@ -578,7 +578,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "a20JwINRrNc",
+        youtubeId: "jF9-nlPZAYE",
         customerName: "Featured Rosenberg customer",
         customerNeighborhood: "Bonbrook Plantation",
       },
@@ -735,7 +735,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "JqY3L7IJOOY",
+        youtubeId: "gN2iVF5ig_8",
         customerName: "Featured Richmond customer",
         customerNeighborhood: "Aliana",
       },
@@ -1206,7 +1206,7 @@ export const CITIES: City[] = [
       ],
       featuredVideo: {
         variant: "featured",
-        youtubeId: "SItjnyqD0o8",
+        youtubeId: "sbTOOc-S7nE",
         customerName: "Featured Southwest Houston customer",
         customerNeighborhood: "Meyerland",
       },
