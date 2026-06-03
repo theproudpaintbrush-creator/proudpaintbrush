@@ -16,6 +16,9 @@ export type ServiceContent = {
   bodyHtml: string;
   faqs: ServiceFaq[];
   wordCount: number;
+  // Optional interactive before/after comparison shown in place of the feature
+  // image (used on the door-refinishing page).
+  beforeAfter?: { before: { src: string; alt: string }; after: { src: string; alt: string } };
 };
 
 const servicesDir = path.join(process.cwd(), "content", "services");

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ServiceContent, ServiceParent } from "@/lib/services";
 import { imageDims } from "@/lib/imageDims";
 import ReviewCards from "@/components/ReviewCards";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import type { Review } from "@/lib/reviews";
 
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
@@ -65,17 +66,23 @@ export default function ServiceDetail({
         </div>
       </section>
 
-      {/* FEATURE IMAGE */}
-      {service.ogImage && (
+      {/* FEATURE: before/after slider when provided, else the feature image */}
+      {service.beforeAfter ? (
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={service.ogImage}
-            alt={`${service.name} project in Sugar Land, TX by The Proud Paintbrush`}
-            {...(() => { const d = imageDims(service.ogImage); return d ? { width: d.w, height: d.h } : {}; })()}
-            className="w-full h-auto rounded-xl shadow-md object-cover max-h-[460px]"
-          />
+          <BeforeAfterSlider before={service.beforeAfter.before} after={service.beforeAfter.after} />
         </div>
+      ) : (
+        service.ogImage && (
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={service.ogImage}
+              alt={`${service.name} project in Sugar Land, TX by The Proud Paintbrush`}
+              {...(() => { const d = imageDims(service.ogImage); return d ? { width: d.w, height: d.h } : {}; })()}
+              className="w-full h-auto rounded-xl shadow-md object-cover max-h-[460px]"
+            />
+          </div>
+        )
       )}
 
       {/* BODY */}
@@ -88,7 +95,8 @@ export default function ServiceDetail({
               [&_p]:leading-relaxed [&_p]:mb-4
               [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul_li]:mb-1
               [&_strong]:text-[#1a2e44] [&_strong]:font-semibold
-              [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline"
+              [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline
+              [&_img]:w-full [&_img]:rounded-xl [&_img]:shadow-md [&_img]:my-8 [&_img]:object-cover [&_img]:max-h-[460px]"
             dangerouslySetInnerHTML={{ __html: service.bodyHtml }}
           />
         </div>
