@@ -183,9 +183,10 @@ export default async function InteriorCityPage({
           src={hero.src}
           alt={hero.alt}
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
-          quality={90}
+          quality={75}
         />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
