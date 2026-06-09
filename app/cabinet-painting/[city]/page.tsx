@@ -82,7 +82,20 @@ export default async function CabinetCityPage({ params }: { params: Promise<Rout
       {reviewSchema.map((s, i) => (
         <script key={`rev-${i}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
-      <ServiceDetail service={c} related={related} reviews={reviews} />
+      <ServiceDetail
+        service={c}
+        related={related}
+        reviews={reviews}
+        crossLinks={{
+          heading: `More Painting Services in ${c.name}`,
+          links: [
+            { href: `/interior-painting/${c.slug}`, label: `Interior Painting in ${c.name}` },
+            { href: `/exterior-painting/${c.slug}`, label: `Exterior Painting in ${c.name}` },
+            { href: `/exterior-painting/fence-staining/${c.slug}`, label: `Fence Staining in ${c.name}` },
+            { href: `/service-areas/${c.slug}`, label: `All Services in ${c.name}` },
+          ],
+        }}
+      />
     </>
   );
 }

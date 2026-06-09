@@ -88,6 +88,7 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
 
   const open = (label: string) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -99,6 +100,21 @@ export default function Header() {
   const closeMobile = () => {
     setMobileOpen(false);
     setMobileExpanded(null);
+  };
+
+  // Close a desktop dropdown on Escape and return focus to its trigger button.
+  const onMenuKeyDown = (e: React.KeyboardEvent, label: string) => {
+    if (e.key === "Escape") {
+      setOpenMenu(null);
+      buttonRefs.current[label]?.focus();
+    }
+  };
+  // Close when keyboard/focus leaves the menu entirely (not just moving between
+  // the trigger and its panel items).
+  const onMenuBlur = (e: React.FocusEvent) => {
+    if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+      setOpenMenu(null);
+    }
   };
 
   return (
@@ -150,17 +166,22 @@ export default function Header() {
                   className="relative"
                   onMouseEnter={() => open(menu.label)}
                   onMouseLeave={scheduleClose}
+                  onKeyDown={(e) => onMenuKeyDown(e, menu.label)}
+                  onBlur={onMenuBlur}
                 >
                   <button
+                    ref={(el) => { buttonRefs.current[menu.label] = el; }}
                     className="flex items-center gap-1 text-[#1a2e44] hover:text-[#4B83B2] font-medium text-sm transition-colors"
                     onClick={() => setOpenMenu((o) => (o === menu.label ? null : menu.label))}
                     aria-expanded={openMenu === menu.label}
+                    aria-haspopup="true"
+                    aria-controls={`menu-${menu.label}`}
                   >
                     {menu.label}
                     <Chevron open={openMenu === menu.label} />
                   </button>
                   {openMenu === menu.label && (
-                    <div className="absolute top-full left-0 w-56 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50">
+                    <div id={`menu-${menu.label}`} className="absolute top-full left-0 w-56 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50">
                       {menu.items.map((item) => (
                         <Link
                           key={item.href}
@@ -210,6 +231,7 @@ export default function Header() {
             onClick={() => setMobileOpen((o) => !o)}
             aria-label="Toggle navigation menu"
             aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
             {mobileOpen ? (
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -226,7 +248,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="xl:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
+        <div id="mobile-menu" className="xl:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
           {menus.map((menu) =>
             menu.items ? (
               <div key={menu.label}>

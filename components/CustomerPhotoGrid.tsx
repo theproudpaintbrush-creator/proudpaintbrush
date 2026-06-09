@@ -41,7 +41,7 @@ export default function CustomerPhotoGrid({ photos, city, heading, subheading }:
               className="relative aspect-[4/3] overflow-hidden bg-gray-100"
             >
               {placeholder ? (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-500 text-xs text-center px-4">
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-600 text-xs text-center px-4">
                   <div>
                     <div className="font-semibold mb-1">Customer photo placeholder</div>
                     <div className="font-mono opacity-70 break-all">
@@ -100,7 +100,7 @@ function BeforeAfterImage({ label, img, city }: { label: "Before" | "After"; img
         {label}
       </div>
       {placeholder ? (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-500 text-xs text-center px-4">
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-600 text-xs text-center px-4">
           <div>
             <div className="font-semibold mb-1">{label} photo placeholder</div>
             <div className="font-mono opacity-70 break-all">{img.src.split("/").pop()}</div>

@@ -25,6 +25,7 @@ export default function ServiceDetail({
   related,
   reviews,
   areaLinks,
+  crossLinks,
 }: {
   service: ServiceContent;
   related: { slug: string; name: string }[];
@@ -33,6 +34,10 @@ export default function ServiceDetail({
   // Passed on sub-service pages to feed the otherwise link-starved
   // /service-areas/<city> pages with keyword-rich anchors.
   areaLinks?: { href: string; label: string }[];
+  // Optional same-city sibling-service links (e.g. on a cabinet city page,
+  // link to interior/exterior/fence painting in that same city) so every city
+  // page connects to its siblings instead of sitting in a single-service silo.
+  crossLinks?: { heading: string; links: { href: string; label: string }[] };
 }) {
   const parentLabel = PARENT_LABEL[service.parent];
   const parentPath = PARENT_PATH[service.parent];
@@ -141,6 +146,28 @@ export default function ServiceDetail({
                   className="border border-gray-200 hover:border-[#4B83B2] hover:text-[#4B83B2] text-[#1a2e44] text-sm font-medium px-4 py-2 transition-colors"
                 >
                   {r.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SAME-CITY SIBLING SERVICES — connects this city page to its siblings */}
+      {crossLinks && crossLinks.links.length > 0 && (
+        <section className="bg-white py-14 border-t border-gray-100">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-2xl font-bold text-[#1a2e44] mb-8">
+              {crossLinks.heading}
+            </h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              {crossLinks.links.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="border border-gray-200 hover:border-[#4B83B2] hover:text-[#4B83B2] text-[#1a2e44] text-sm font-medium px-4 py-2 transition-colors"
+                >
+                  {l.label}
                 </Link>
               ))}
             </div>

@@ -190,7 +190,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+        <div className="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
           &copy; {new Date().getFullYear()} The Proud Paintbrush LLC. All rights reserved.
         </div>
       </div>

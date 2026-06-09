@@ -57,7 +57,7 @@ export default function PricingBand({
             {linkLabel}
           </Link>
         </div>
-        <p className="text-white/55 text-sm mt-6">
+        <p className="text-white/75 text-sm mt-6">
           Flexible financing available —{" "}
           <Link href="/financing" className="underline hover:text-white">see options</Link>.
         </p>
