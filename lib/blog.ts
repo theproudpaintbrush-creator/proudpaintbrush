@@ -10,6 +10,7 @@ export interface BlogPost {
   content: string;
   readTime: number;
   image?: string;
+  imageAlt?: string;
 }
 
 export interface BlogPostMeta {

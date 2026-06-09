@@ -171,7 +171,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={post.image}
-            alt={post.title}
+            alt={post.imageAlt || post.title}
             {...(() => { const d = imageDims(post.image); return d ? { width: d.w, height: d.h } : {}; })()}
             className="w-full h-auto rounded-xl shadow-md object-cover max-h-[460px]"
           />
