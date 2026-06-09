@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   description:
     "The Proud Paintbrush vision: to be Fort Bend County's most respected painting company. Community-focused, quality-driven, relationship-first.",
   alternates: { canonical: "https://www.theproudpaintbrush.com/our-vision" },
+  openGraph: {
+    title: "Our Vision | Residential Painters Sugar Land TX",
+    description:
+      "The Proud Paintbrush vision: to be Fort Bend County's most respected painting company. Community-focused, quality-driven, relationship-first.",
+    url: "https://www.theproudpaintbrush.com/our-vision",
+    type: "website",
+    images: [{ url: "https://www.theproudpaintbrush.com/images/paint-it-forward-community.jpg" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Vision | Residential Painters Sugar Land TX",
+    description: "Our vision for a more beautiful Fort Bend County, one home at a time.",
+    images: ["https://www.theproudpaintbrush.com/images/paint-it-forward-community.jpg"],
+  },
 };
 
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";

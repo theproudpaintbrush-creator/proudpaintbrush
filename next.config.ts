@@ -21,6 +21,24 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async headers() {
+    // Baseline security headers applied to every route. A strict Content-Security-
+    // Policy is intentionally omitted for now because the site embeds several
+    // third parties (youcanbook.me, YouTube, Google, squarespace-cdn) and a CSP
+    // needs per-source testing before it can be enabled without breaking them.
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+          { key: "Permissions-Policy", value: "geolocation=(), microphone=(), camera=()" },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       { source: "/blog/rfsxbwm1wuox5icg7tco32z3zgzgux", destination: "/blog/do-painters-negotiate-on-price-in-sugar-land", permanent: true },

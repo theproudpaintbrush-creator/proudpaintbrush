@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GlobalVideoTestimonials from "@/components/GlobalVideoTestimonials";
 import MobileCTABar from "@/components/MobileCTABar";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import AnalyticsEvents from "@/components/AnalyticsEvents";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Professional residential & commercial painting in Sugar Land, Fort Bend County & West Houston. Licensed, insured, 2-5 year warranty. Call (832) 605-0493.",
+    "Professional residential & commercial painting in Sugar Land, Fort Bend County & West Houston. Fully insured, 2 & 5-year warranties. Call (832) 605-0493.",
   metadataBase: new URL("https://www.theproudpaintbrush.com"),
   openGraph: {
     type: "website",
@@ -106,11 +108,19 @@ export default function RootLayout({
       <body
         className="min-h-full flex flex-col font-[family-name:var(--font-poppins)] antialiased pb-[60px] xl:pb-0"
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded focus:bg-[#1a2e44] focus:px-4 focus:py-2 focus:text-white focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <GlobalVideoTestimonials />
         <Footer />
         <MobileCTABar />
+        <GoogleAnalytics />
+        <AnalyticsEvents />
       </body>
     </html>
   );

@@ -4,14 +4,15 @@ import Image from "next/image";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import TrustBar from "@/components/TrustBar";
 import ProudProcess from "@/components/ProudProcess";
+import LiteYouTube from "@/components/LiteYouTube";
 
 export const metadata: Metadata = {
   title: "The Proud Paintbrush | Sugar Land Painting Contractor",
-  description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Licensed, insured, 2-5 year warranty. Get your free estimate today.",
+  description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Fully insured, 2 & 5-year warranties. Get your free estimate today.",
   alternates: { canonical: "https://www.theproudpaintbrush.com" },
   openGraph: {
     title: "The Proud Paintbrush | Sugar Land Painting Contractor",
-    description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Licensed, insured, 2-5 year warranty. Get your free estimate today.",
+    description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Fully insured, 2 & 5-year warranties. Get your free estimate today.",
     url: "https://www.theproudpaintbrush.com",
     type: "website",
     images: [{ url: "https://www.theproudpaintbrush.com/images/hero-stucco-richmond.webp" }],
@@ -51,8 +52,8 @@ const services = [
   { title: "Interior Painting", description: "Interior painting for walls, ceilings, trim, doors, and whole-home repaints.", href: "/interior-painting", img: "/images/service-interior.jpg", alt: "Modern living room interior painting in Sugar Land, TX" },
   { title: "Exterior Painting", description: "Exterior painting built for Texas weather with proper washing, prep, caulking, priming, and durable coatings.", href: "/exterior-painting", img: "/images/service-exterior.jpg", alt: "Spanish-style exterior house painting in Richmond, TX" },
   { title: "Cabinet Painting", description: "Factory-style cabinet finishes for kitchens, bathrooms, built-ins, and storage spaces.", href: "/cabinet-painting", img: "/images/service-cabinet.jpg", alt: "Kitchen cabinet painting in Missouri City, TX" },
-  { title: "Drywall Repair", description: "Holes, cracks, and water damage patched and textured to blend seamlessly before painting.", href: "/drywall-repair", img: "/images/service-drywall.jpg", alt: "Drywall repair and texture finishing in Sugar Land, TX" },
-  { title: "Fence Staining", description: "Professional-grade stains and sealers to protect and beautify your wood fence.", href: "/fence-staining", img: "/images/service-fence.jpg", alt: "Fence staining project in Katy, TX" },
+  { title: "Drywall Repair", description: "Holes, cracks, and water damage patched and textured to blend seamlessly before painting.", href: "/interior-painting/drywall-repair", img: "/images/service-drywall.jpg", alt: "Drywall repair and texture finishing in Sugar Land, TX" },
+  { title: "Fence Staining", description: "Professional-grade stains and sealers to protect and beautify your wood fence.", href: "/exterior-painting/fence-staining", img: "/images/service-fence.jpg", alt: "Fence staining project in Katy, TX" },
 ];
 
 const serviceAreas = ["Sugar Land", "Richmond", "Katy", "Missouri City", "Fulshear", "Rosenberg", "West Houston", "Southwest Houston"];
@@ -103,16 +104,8 @@ export default function HomePage() {
                 Dr. Tepper found us through a neighbor and said we did exactly what was promised.
               </p>
             </div>
-            <div className="aspect-video w-full rounded-sm overflow-hidden shadow-2xl">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/HkXdwkgfhCI"
-                title="Dr. Tepper testimonial — The Proud Paintbrush"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
+            <div className="relative aspect-video w-full rounded-sm overflow-hidden shadow-2xl">
+              <LiteYouTube id="HkXdwkgfhCI" label="Dr. Tepper testimonial — The Proud Paintbrush" />
             </div>
           </div>
         </div>
@@ -178,27 +171,11 @@ export default function HomePage() {
             Most painters skip the prep. We don&apos;t. Every project starts with surface cleaning, sanding, caulking, and priming — because that&apos;s what makes the finish last.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-            <div className="aspect-video w-full rounded-sm overflow-hidden shadow-md">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/4K_j8zfo2zQ"
-                title="Interior painting testimonial — The Proud Paintbrush"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
+            <div className="relative aspect-video w-full rounded-sm overflow-hidden shadow-md">
+              <LiteYouTube id="4K_j8zfo2zQ" label="Interior painting testimonial — The Proud Paintbrush" />
             </div>
-            <div className="aspect-video w-full rounded-sm overflow-hidden shadow-md">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/gxB9xw9m34U"
-                title="Interior painting testimonial 2 — The Proud Paintbrush"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
+            <div className="relative aspect-video w-full rounded-sm overflow-hidden shadow-md">
+              <LiteYouTube id="gxB9xw9m34U" label="Interior painting testimonial 2 — The Proud Paintbrush" />
             </div>
           </div>
           <div className="text-center">
@@ -301,7 +278,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center mt-6">
-            <Link href="/exterior-painting" className="text-[#4B83B2] font-semibold hover:underline">
+            <Link href="/service-areas" className="text-[#4B83B2] font-semibold hover:underline">
               See all service areas &rarr;
             </Link>
           </div>

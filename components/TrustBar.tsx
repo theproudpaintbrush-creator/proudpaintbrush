@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const BADGES = [
-  "Licensed & Insured",
-  "2-5 Year Warranty",
+  "Fully Insured",
+  "2 & 5-Year Warranty",
   "Sherwin-Williams Pro",
   "5.0★ · 113 Reviews",
   "Locally Owned Since 2020",

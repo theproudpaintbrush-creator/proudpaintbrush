@@ -61,7 +61,7 @@ export default function ReviewCards({
             <figcaption className="text-sm font-semibold">
               {r.author}
               {(r.neighborhood || r.city) && (
-                <span className={`block font-normal text-xs mt-0.5 ${dark ? "text-white/50" : "text-gray-500"}`}>
+                <span className={`block font-normal text-xs mt-0.5 ${dark ? "text-white/70" : "text-gray-600"}`}>
                   {[r.neighborhood, r.city].filter(Boolean).join(", ")}
                 </span>
               )}

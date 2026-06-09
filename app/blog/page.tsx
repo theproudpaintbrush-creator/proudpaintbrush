@@ -12,6 +12,15 @@ export const metadata: Metadata = {
     description:
       "Painting tips, color advice, and home improvement insights from The Proud Paintbrush — Sugar Land's trusted painting contractor.",
     url: "https://www.theproudpaintbrush.com/blog",
+    type: "website",
+    images: [{ url: "https://www.theproudpaintbrush.com/images/hero-stucco-richmond.webp" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Painting Tips & Advice Blog | The Proud Paintbrush",
+    description:
+      "Painting tips, color advice, and home improvement insights from Sugar Land's trusted painting contractor.",
+    images: ["https://www.theproudpaintbrush.com/images/hero-stucco-richmond.webp"],
   },
 };
 

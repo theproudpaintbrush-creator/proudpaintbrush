@@ -88,7 +88,7 @@ export default function BeforeAfterSlider({
           </div>
         </div>
       </div>
-      <p className="text-center text-sm text-gray-500 mt-3">Drag the slider to see the before &amp; after.</p>
+      <p className="text-center text-sm text-gray-600 mt-3">Drag the slider to see the before &amp; after.</p>
     </div>
   );
 }

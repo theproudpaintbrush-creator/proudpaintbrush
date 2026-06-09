@@ -89,7 +89,7 @@ export default function ServiceHub({
               <span className="text-white/70">· 113 Google reviews</span>
             </span>
             <span className="text-white/40" aria-hidden>•</span>
-            <span>Licensed &amp; Insured</span>
+            <span>Fully Insured</span>
             <span className="text-white/40" aria-hidden>•</span>
             <span>Locally Owned Since 2020</span>
           </div>

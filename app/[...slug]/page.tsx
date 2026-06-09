@@ -18,7 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<RouteParams
   if (!page) return {};
   const url = `${BASE_URL}/${page.key}`;
   const ogPath = (page.bodyHtml.match(/<img src="([^"]+)"/) || [])[1] || page.gallery?.[0]?.src || "/images/hero-stucco-richmond.webp";
-  const ogImage = `${BASE_URL}${ogPath}`;
+  // Guard against already-absolute image URLs (e.g. squarespace-cdn) so we don't
+  // produce a malformed "https://site.com/https://..." OG image URL.
+  const ogImage = /^https?:\/\//.test(ogPath) ? ogPath : `${BASE_URL}${ogPath}`;
   return {
     title: page.title,
     description: page.metaDescription,

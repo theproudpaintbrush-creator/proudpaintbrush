@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   description:
     "The story behind The Proud Paintbrush — a family business founded by Chris Petkau in Sugar Land, TX. Built on faith, perseverance, and pride in every home.",
   alternates: { canonical: "https://www.theproudpaintbrush.com/our-story" },
+  openGraph: {
+    title: "Our Story | The Proud Paintbrush Sugar Land",
+    description:
+      "The story behind The Proud Paintbrush — a family business founded by Chris Petkau in Sugar Land, TX. Built on faith, perseverance, and pride in every home.",
+    url: "https://www.theproudpaintbrush.com/our-story",
+    type: "website",
+    images: [{ url: "https://www.theproudpaintbrush.com/images/paint-it-forward-community.jpg" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Story | The Proud Paintbrush Sugar Land",
+    description: "The family story behind The Proud Paintbrush in Sugar Land, TX.",
+    images: ["https://www.theproudpaintbrush.com/images/paint-it-forward-community.jpg"],
+  },
 };
 
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";

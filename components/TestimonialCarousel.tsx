@@ -27,7 +27,11 @@ export default function TestimonialCarousel() {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    if (paused) return;
+    // Respect users who prefer reduced motion: don't auto-advance for them.
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (paused || reduceMotion) return;
     timerRef.current = setInterval(() => {
       setCurrent((c) => (c + 1) % allTestimonialPhotos.length);
     }, 3000);
@@ -38,7 +42,12 @@ export default function TestimonialCarousel() {
     allTestimonialPhotos[(current + offset) % allTestimonialPhotos.length];
 
   return (
-    <div onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+    <div
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={() => setPaused(false)}
+    >
       {/* Desktop: 6 across */}
       <div className="hidden lg:grid grid-cols-6 gap-3">
         {Array.from({ length: 6 }).map((_, i) => {

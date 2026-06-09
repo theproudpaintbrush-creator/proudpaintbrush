@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   description:
     "The Proud Paintbrush is built on Care for People, Attention to Detail, and Hard Work. See how our values shape every painting project in Sugar Land.",
   alternates: { canonical: "https://www.theproudpaintbrush.com/core-values" },
+  openGraph: {
+    title: "Core Values | The Proud Paintbrush Sugar Land TX",
+    description:
+      "The Proud Paintbrush is built on Care for People, Attention to Detail, and Hard Work. See how our values shape every painting project in Sugar Land.",
+    url: "https://www.theproudpaintbrush.com/core-values",
+    type: "website",
+    images: [{ url: "https://www.theproudpaintbrush.com/images/hero-stucco-richmond.webp" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Core Values | The Proud Paintbrush Sugar Land TX",
+    description: "Care for People, Attention to Detail, and Hard Work — on every project.",
+    images: ["https://www.theproudpaintbrush.com/images/hero-stucco-richmond.webp"],
+  },
 };
 
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
