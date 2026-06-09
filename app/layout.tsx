@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GlobalVideoTestimonials from "@/components/GlobalVideoTestimonials";
 import MobileCTABar from "@/components/MobileCTABar";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -117,6 +118,7 @@ export default function RootLayout({
         <GlobalVideoTestimonials />
         <Footer />
         <MobileCTABar />
+        <GoogleAnalytics />
       </body>
     </html>
   );
