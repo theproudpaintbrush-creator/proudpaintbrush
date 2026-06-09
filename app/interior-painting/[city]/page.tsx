@@ -203,7 +203,7 @@ export default async function InteriorCityPage({
             Local interior painters serving {city.name} and {city.county}.
           </p>
           <p className="text-sm sm:text-base text-white/70 mb-8">
-            Licensed · Insured · Locally owned · {city.aggregateRating.value}★ from {city.aggregateRating.count} Fort Bend County homeowners
+            Fully Insured · Locally owned · {city.aggregateRating.value}★ from {city.aggregateRating.count} Fort Bend County homeowners
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a

@@ -3,8 +3,8 @@ import Link from "next/link";
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 
 const CREDENTIALS = [
-  "Licensed & Insured",
-  "2–5 Year Written Warranty",
+  "Fully Insured · $1M Liability",
+  "2 & 5-Year Written Warranty",
   "Premium Sherwin-Williams Coatings",
   "Free On-Site Estimate",
 ];

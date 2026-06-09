@@ -134,7 +134,7 @@ export default function TestimonialsPage() {
             have trusted us with their homes. Here&apos;s what they had to say.
           </p>
           <p className="text-white/80 text-sm">
-            {AGGREGATE_RATING.value}★ average from {AGGREGATE_RATING.count}+ reviews · Licensed · Insured · Locally owned
+            {AGGREGATE_RATING.value}★ average from {AGGREGATE_RATING.count}+ reviews · Fully Insured · Locally owned
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center items-center">
             <a

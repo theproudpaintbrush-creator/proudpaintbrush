@@ -50,7 +50,7 @@ export default function ContentPage({ page }: { page: PageContent }) {
             <span className="hidden sm:inline text-gray-300" aria-hidden>·</span>
             <span>113 Google reviews</span>
             <span className="hidden sm:inline text-gray-300" aria-hidden>·</span>
-            <span>Licensed &amp; Insured</span>
+            <span>Fully Insured</span>
             <span className="hidden sm:inline text-gray-300" aria-hidden>·</span>
             <span>Locally Owned Since 2020</span>
           </div>

@@ -83,7 +83,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Sugar Land Homeowners Choose The Proud Paintbrush",
-        body: "We live and work in Sugar Land. That matters because we have already painted houses on the streets near yours, we know the color palettes your HOA accepts, and we can usually show you a finished home within ten minutes of your address. We are licensed, insured, and locally owned — not a franchise running off a national playbook. Every estimate is delivered by the person who will be running your job, and every project carries our written warranty.",
+        body: "We live and work in Sugar Land. That matters because we have already painted houses on the streets near yours, we know the color palettes your HOA accepts, and we can usually show you a finished home within ten minutes of your address. We are insured, and locally owned — not a franchise running off a national playbook. Every estimate is delivered by the person who will be running your job, and every project carries our written warranty.",
       },
       faqs: [
         {
@@ -156,7 +156,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Sugar Land Homeowners Choose The Proud Paintbrush",
-        body: "We are based in 77498 and interior repaints are a large share of what we do here. That means the crew taping off your baseboards has already painted homes on streets near yours, knows how the light moves through a Riverstone two-story by mid-afternoon, and can show you a finished interior nearby before you commit to a color. We are licensed, insured, and locally owned — not a franchise running a national script. The person who walks your home for the estimate is the same person running the job, every room is protected with drop cloths and plastic, and we clean up at the end of each day so you can live in the house while we work. We also keep the project on a clear schedule: most single rooms wrap in a day, a kitchen-cabinet refinish runs two to three days with proper dry time between coats, and a whole-home repaint in a Greatwood or New Territory two-story typically takes four to five working days. You get a written scope before we start, a daily walk-through if you want one, and a final inspection where we touch up anything you point out before we call the job done.",
+        body: "We are based in 77498 and interior repaints are a large share of what we do here. That means the crew taping off your baseboards has already painted homes on streets near yours, knows how the light moves through a Riverstone two-story by mid-afternoon, and can show you a finished interior nearby before you commit to a color. We are insured, and locally owned — not a franchise running a national script. The person who walks your home for the estimate is the same person running the job, every room is protected with drop cloths and plastic, and we clean up at the end of each day so you can live in the house while we work. We also keep the project on a clear schedule: most single rooms wrap in a day, a kitchen-cabinet refinish runs two to three days with proper dry time between coats, and a whole-home repaint in a Greatwood or New Territory two-story typically takes four to five working days. You get a written scope before we start, a daily walk-through if you want one, and a final inspection where we touch up anything you point out before we call the job done.",
       },
       faqs: [
         {
@@ -241,7 +241,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Missouri City Homeowners Choose The Proud Paintbrush",
-        body: "We are a local Sugar Land–Missouri City business, not a national franchise. The person who quotes your job is the person running your job, and we have already painted homes on most of the streets you would consider neighbors. We are licensed, insured, and every Missouri City project carries our written warranty.",
+        body: "We are a local Sugar Land–Missouri City business, not a national franchise. The person who quotes your job is the person running your job, and we have already painted homes on most of the streets you would consider neighbors. We are insured, and every Missouri City project carries our written warranty.",
       },
       faqs: [
         {
@@ -313,7 +313,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Missouri City Homeowners Choose The Proud Paintbrush",
-        body: "Sienna is one of our most active neighborhoods, so the crew working in your home has likely already painted a near-identical floor plan a few streets over. We move standard furniture, mask and protect your floors and remaining pieces, and seal off the rooms we are working in so the dust and smell stay contained. We are licensed, insured, and locally owned, the estimator is the person who runs your job, and we leave each room cleaner than we found it. We also keep you in the loop on timing: a single Missouri City bedroom is usually a one-day job, while a full repaint across an open Sienna floor plan runs three to five days depending on ceiling height and color count. Tall two-story family rooms add a day for safe staging, and we factor that into the written estimate up front rather than surprising you mid-project.",
+        body: "Sienna is one of our most active neighborhoods, so the crew working in your home has likely already painted a near-identical floor plan a few streets over. We move standard furniture, mask and protect your floors and remaining pieces, and seal off the rooms we are working in so the dust and smell stay contained. We are insured, and locally owned, the estimator is the person who runs your job, and we leave each room cleaner than we found it. We also keep you in the loop on timing: a single Missouri City bedroom is usually a one-day job, while a full repaint across an open Sienna floor plan runs three to five days depending on ceiling height and color count. Tall two-story family rooms add a day for safe staging, and we factor that into the written estimate up front rather than surprising you mid-project.",
       },
       faqs: [
         {
@@ -398,7 +398,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Katy Homeowners Choose The Proud Paintbrush",
-        body: "We are not a franchise running off a national script. We are a locally owned, Sugar Land–based crew that has been painting Katy homes for years, and the person you talk to on the estimate is the person who runs your job. Every project is licensed, insured, and backed by a written warranty.",
+        body: "We are not a franchise running off a national script. We are a locally owned, Sugar Land–based crew that has been painting Katy homes for years, and the person you talk to on the estimate is the person who runs your job. Every project is insured, and backed by a written warranty.",
       },
       faqs: [
         {
@@ -471,7 +471,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Katy Families Choose The Proud Paintbrush",
-        body: "We work efficiently room by room so families can stay in the house while we paint — we seal off the active work area, protect floors and furniture, and clean up every day rather than leaving a job-site mess overnight. We are licensed, insured, and locally owned, not a franchise, and the person who quotes your Katy home is the one running the crew inside it. Whether you are upgrading builder-grade paint, refreshing after years of family life, or prepping to sell, the finish is built to last. We schedule Katy projects around your family's routine, work the busiest shared spaces first or last depending on what disrupts you least, and keep the job contained to one zone at a time so the rest of the house stays livable. Every project is backed by our written warranty, and the final coat does not get signed off until you have walked it with us.",
+        body: "We work efficiently room by room so families can stay in the house while we paint — we seal off the active work area, protect floors and furniture, and clean up every day rather than leaving a job-site mess overnight. We are insured, and locally owned, not a franchise, and the person who quotes your Katy home is the one running the crew inside it. Whether you are upgrading builder-grade paint, refreshing after years of family life, or prepping to sell, the finish is built to last. We schedule Katy projects around your family's routine, work the busiest shared spaces first or last depending on what disrupts you least, and keep the job contained to one zone at a time so the rest of the house stays livable. Every project is backed by our written warranty, and the final coat does not get signed off until you have walked it with us.",
       },
       faqs: [
         {
@@ -556,7 +556,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Rosenberg Homeowners Choose The Proud Paintbrush",
-        body: "We are a local Fort Bend–based crew and we treat Rosenberg projects with the same level of prep and warranty as anything we do in Sugar Land. Licensed, insured, locally owned, and the person who estimates the job is the person who runs the crew on site.",
+        body: "We are a local Fort Bend–based crew and we treat Rosenberg projects with the same level of prep and warranty as anything we do in Sugar Land. Insured, locally owned, and the person who estimates the job is the person who runs the crew on site.",
       },
       faqs: [
         {
@@ -628,7 +628,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Rosenberg Homeowners Choose The Proud Paintbrush",
-        body: "We give Rosenberg the same quality our Sugar Land clients get — same crew, same products, same standards, same warranty. We show up on time, protect your belongings and floors, contain each work area, and leave the space cleaner than we found it. The Proud Paintbrush is fully licensed and insured for all interior work in Rosenberg and Fort Bend County, and the person who estimates your home is the one running the job. Being a Fort Bend–based crew means Rosenberg is a short drive, not an afterthought tacked onto the end of a route, so we show up when we say we will and finish on the timeline we quote. A single room is typically a one-day job; a whole-home interior runs three to five days depending on size and color count. We protect floors and furniture, contain dust to the active room, and back every interior project with the same written warranty we stand behind in Sugar Land.",
+        body: "We give Rosenberg the same quality our Sugar Land clients get — same crew, same products, same standards, same warranty. We show up on time, protect your belongings and floors, contain each work area, and leave the space cleaner than we found it. The Proud Paintbrush is fully insured for all interior work in Rosenberg and Fort Bend County, and the person who estimates your home is the one running the job. Being a Fort Bend–based crew means Rosenberg is a short drive, not an afterthought tacked onto the end of a route, so we show up when we say we will and finish on the timeline we quote. A single room is typically a one-day job; a whole-home interior runs three to five days depending on size and color count. We protect floors and furniture, contain dust to the active room, and back every interior project with the same written warranty we stand behind in Sugar Land.",
       },
       faqs: [
         {
@@ -644,8 +644,8 @@ export const CITIES: City[] = [
           a: "Yes. Trim, baseboards, doors, and window casings are included in our interior painting services throughout Rosenberg.",
         },
         {
-          q: "Is The Proud Paintbrush licensed and insured for interior work in Rosenberg?",
-          a: "Yes — fully licensed and insured for all interior painting in Rosenberg and Fort Bend County.",
+          q: "Is The Proud Paintbrush insured for interior work in Rosenberg?",
+          a: "Yes — fully insured for all interior painting in Rosenberg and Fort Bend County.",
         },
       ],
       featuredVideo: {
@@ -713,7 +713,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Richmond Homeowners Choose The Proud Paintbrush",
-        body: "We are local, licensed, insured, and not a franchise. Every Richmond project is run by the person who estimated it, and every job is backed by our written warranty. We have already painted homes on most Richmond streets you would consider neighbors.",
+        body: "We are local, insured, and not a franchise. Every Richmond project is run by the person who estimated it, and every job is backed by our written warranty. We have already painted homes on most Richmond streets you would consider neighbors.",
       },
       faqs: [
         {
@@ -785,7 +785,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Richmond Homeowners Choose The Proud Paintbrush",
-        body: "Richmond families take pride in how their homes look inside and out, and we bring the same prep, protection, and craftsmanship to an interior that we bring to an exterior. We are licensed, insured, and locally owned; we protect floors and furniture, contain dust and fumes room by room, and use family- and pet-safe products as the default. The person who estimates your Richmond home is the person running the job, and every project is backed by our written warranty. Timing in Richmond is straightforward: a single room is usually one day, cabinet painting runs two to three days with dry time between coats, and a full-home repaint takes four to five working days depending on size and ceiling height. You get that schedule in writing, a contained work zone so the rest of the house stays usable, and a final walk-through before we consider the job finished.",
+        body: "Richmond families take pride in how their homes look inside and out, and we bring the same prep, protection, and craftsmanship to an interior that we bring to an exterior. We are insured, and locally owned; we protect floors and furniture, contain dust and fumes room by room, and use family- and pet-safe products as the default. The person who estimates your Richmond home is the person running the job, and every project is backed by our written warranty. Timing in Richmond is straightforward: a single room is usually one day, cabinet painting runs two to three days with dry time between coats, and a full-home repaint takes four to five working days depending on size and ceiling height. You get that schedule in writing, a contained work zone so the rest of the house stays usable, and a final walk-through before we consider the job finished.",
       },
       faqs: [
         {
@@ -870,7 +870,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Fulshear Homeowners Choose The Proud Paintbrush",
-        body: "We are a local Fort Bend crew, not a national franchise. The person estimating your job is the person running the crew, and every Fulshear project is licensed, insured, and backed by our written warranty.",
+        body: "We are a local Fort Bend crew, not a national franchise. The person estimating your job is the person running the crew, and every Fulshear project is insured, and backed by our written warranty.",
       },
       faqs: [
         {
@@ -942,7 +942,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Fulshear Homeowners Choose The Proud Paintbrush",
-        body: "We are a local Fort Bend crew, not a franchise, and we treat a Fulshear interior with the same prep and protection standards we bring to any job. We protect floors and furniture, contain each work area, and clean up daily. The person who walks your home for the estimate is the one running the crew, every project is licensed and insured, and we help you pick colors that work with your home rather than handing you a fan deck and walking away. We keep Fulshear projects on a clear schedule — a single room in a day, an accent wall or trim refresh often the same, and a full interior in three to five working days — and we share that timeline in writing before we start. The work zone stays contained so the rest of your home stays livable, and we do a final walk-through together so anything you want touched up gets handled before we call it done.",
+        body: "We are a local Fort Bend crew, not a franchise, and we treat a Fulshear interior with the same prep and protection standards we bring to any job. We protect floors and furniture, contain each work area, and clean up daily. The person who walks your home for the estimate is the one running the crew, every project is insured, and we help you pick colors that work with your home rather than handing you a fan deck and walking away. We keep Fulshear projects on a clear schedule — a single room in a day, an accent wall or trim refresh often the same, and a full interior in three to five working days — and we share that timeline in writing before we start. The work zone stays contained so the rest of your home stays livable, and we do a final walk-through together so anything you want touched up gets handled before we call it done.",
       },
       faqs: [
         {
@@ -1027,7 +1027,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why West Houston Homeowners Choose The Proud Paintbrush",
-        body: "Older custom homes deserve a contractor who knows how to read what an elevation needs — not a franchise running a template. We are locally owned, licensed, insured, and every West Houston project carries our written warranty.",
+        body: "Older custom homes deserve a contractor who knows how to read what an elevation needs — not a franchise running a template. We are locally owned, insured, and every West Houston project carries our written warranty.",
       },
       faqs: [
         {
@@ -1099,7 +1099,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why West Houston Homeowners Choose The Proud Paintbrush",
-        body: "Homeowners in the area expect a high standard of workmanship, and pre-sale interior painting is one of our most-requested West Houston services because a fresh, well-executed interior measurably moves buyer perception and sale price. We are locally owned, licensed, and insured; the estimator is the person running the job, the work areas are protected and contained, and the finish is built to read clean from across a great room and up close on the millwork. We treat scheduling in higher-end West Houston homes as part of the service: we coordinate around your routine or your listing date, keep one zone active at a time so the home stays functional, and protect floors, runners, and finished surfaces throughout. Every project is backed by our written warranty, and we do not consider a job complete until you have walked every room with us and signed off on the detail work.",
+        body: "Homeowners in the area expect a high standard of workmanship, and pre-sale interior painting is one of our most-requested West Houston services because a fresh, well-executed interior measurably moves buyer perception and sale price. We are locally owned and insured; the estimator is the person running the job, the work areas are protected and contained, and the finish is built to read clean from across a great room and up close on the millwork. We treat scheduling in higher-end West Houston homes as part of the service: we coordinate around your routine or your listing date, keep one zone active at a time so the home stays functional, and protect floors, runners, and finished surfaces throughout. Every project is backed by our written warranty, and we do not consider a job complete until you have walked every room with us and signed off on the detail work.",
       },
       faqs: [
         {
@@ -1184,7 +1184,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Southwest Houston Homeowners Choose The Proud Paintbrush",
-        body: "Mid-century homes deserve a contractor who respects the architecture and brings real prep to the project. We are locally owned, licensed, insured, and every Southwest Houston job is backed by our written warranty.",
+        body: "Mid-century homes deserve a contractor who respects the architecture and brings real prep to the project. We are locally owned, insured, and every Southwest Houston job is backed by our written warranty.",
       },
       faqs: [
         {
@@ -1256,7 +1256,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Southwest Houston Homeowners Choose The Proud Paintbrush",
-        body: "Character homes deserve a contractor who treats them like more than a square-footage number. We work room by room in occupied homes, seal off the active area, protect floors and furniture, and clean up daily so you can keep living in the house through the project. We are locally owned, licensed, and insured, the estimator is the person running the crew, and the prep we bring is built for the plaster, woodwork, and history these Southwest Houston homes carry. We also keep older, occupied homes livable through the work: one zone active at a time, daily cleanup, and dust containment that matters more in a home with plaster and decades of settled material than in a sealed new build. Scheduling is honest — a single room in a day, larger plaster-and-woodwork projects longer because the prep is real — and we share that timeline in writing up front. Every project carries our written warranty.",
+        body: "Character homes deserve a contractor who treats them like more than a square-footage number. We work room by room in occupied homes, seal off the active area, protect floors and furniture, and clean up daily so you can keep living in the house through the project. We are locally owned and insured, the estimator is the person running the crew, and the prep we bring is built for the plaster, woodwork, and history these Southwest Houston homes carry. We also keep older, occupied homes livable through the work: one zone active at a time, daily cleanup, and dust containment that matters more in a home with plaster and decades of settled material than in a sealed new build. Scheduling is honest — a single room in a day, larger plaster-and-woodwork projects longer because the prep is real — and we share that timeline in writing up front. Every project carries our written warranty.",
       },
       faqs: [
         {

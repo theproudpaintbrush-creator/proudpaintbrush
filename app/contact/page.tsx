@@ -92,7 +92,7 @@ export default function ContactPage() {
         <div className="max-w-3xl mx-auto text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] mb-3">Request Your Free Estimate</h2>
           <p className="text-gray-600">
-            Pick a time below — licensed, insured, and locally owned since 2020. Every estimate is honest, detailed, and no-pressure.
+            Pick a time below — fully insured and locally owned since 2020. Every estimate is honest, detailed, and no-pressure.
           </p>
         </div>
         <div className="max-w-3xl mx-auto bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">

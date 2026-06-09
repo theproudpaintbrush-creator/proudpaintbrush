@@ -22,3 +22,31 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* Visible keyboard-focus indicator for all interactive elements.
+   Tailwind's reset removes default outlines on many styled elements, leaving
+   keyboard users with no focus cue; restore a consistent, high-contrast ring. */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--brand-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Respect users who prefer reduced motion: neutralize non-essential animation. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
