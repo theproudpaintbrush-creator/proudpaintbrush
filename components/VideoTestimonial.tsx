@@ -51,13 +51,9 @@ function FeaturedVideo({
             </div>
           )
         ) : (
-          <iframe
-            className="absolute inset-0 w-full h-full"
-            src={`https://www.youtube.com/embed/${youtubeId}?rel=0`}
-            title={`${customerName ?? "Customer"} video testimonial${city ? ` — ${city}` : ""}`}
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
+          <LiteYouTube
+            id={youtubeId}
+            label={`${customerName ?? "Customer"} video testimonial${city ? ` — ${city}` : ""}`}
           />
         )}
       </div>
