@@ -116,7 +116,7 @@ export default function TestimonialsPage() {
       />
 
       {/* HERO */}
-      <section className="bg-[#4B83B2] text-white pt-20 pb-4">
+      <section className="bg-[#3A6A96] text-white pt-20 pb-4">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <nav aria-label="Breadcrumb" className="mb-4 text-xs sm:text-sm text-white/60 tracking-wide uppercase">
             <Link href="/" className="hover:text-white">Home</Link>
@@ -141,7 +141,7 @@ export default function TestimonialsPage() {
               href="https://share.google/03zEeHzRVJW7NvE2Z"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white text-[#4B83B2] hover:bg-[#111111] hover:text-white font-semibold px-6 py-3 transition-colors"
+              className="inline-block bg-white text-[#3A6A96] hover:bg-[#111111] hover:text-white font-semibold px-6 py-3 transition-colors"
             >
               Read our Google reviews
             </a>
@@ -149,13 +149,13 @@ export default function TestimonialsPage() {
               href="https://g.page/r/CaafH5ZU7h7cEBM/review"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-6 py-3 transition-colors"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-6 py-3 transition-colors"
             >
               Leave a Google review
             </a>
           </div>
         </div>
-        <WaveDown from="bg-[#4B83B2]" to="#111111" />
+        <WaveDown from="bg-[#3A6A96]" to="#111111" />
       </section>
 
       {/* FEATURED VIDEO */}
@@ -217,7 +217,7 @@ export default function TestimonialsPage() {
       )}
 
       {/* CTA */}
-      <section className="bg-[#4B83B2] text-white py-20 px-4 text-center">
+      <section className="bg-[#3A6A96] text-white py-20 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
             Ready to Join Our Happy Customers?
@@ -231,13 +231,13 @@ export default function TestimonialsPage() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white text-[#4B83B2] hover:bg-[#111111] hover:text-white font-semibold px-10 py-4 text-lg transition-colors"
+              className="inline-block bg-white text-[#3A6A96] hover:bg-[#111111] hover:text-white font-semibold px-10 py-4 text-lg transition-colors"
             >
               Schedule Your Free Estimate
             </a>
             <a
               href={`tel:${PHONE_TEL}`}
-              className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-10 py-4 text-lg transition-colors"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors"
             >
               Call {PHONE}
             </a>

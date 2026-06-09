@@ -124,7 +124,7 @@ export default function OurVisionPage() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-10 py-4 text-lg transition-colors"
+            className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors"
           >
             Schedule Your Free Estimate
           </a>
@@ -156,7 +156,7 @@ export default function OurVisionPage() {
           <ul className="space-y-2 mb-8">
             {desireZoneList.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
-                <span className="text-[#4B83B2] font-bold mt-0.5">→</span>
+                <span className="text-[#3A6A96] font-bold mt-0.5">→</span>
                 <span className="text-gray-600">{item}</span>
               </li>
             ))}
@@ -165,7 +165,7 @@ export default function OurVisionPage() {
           <ol className="space-y-2 mb-6">
             {valuesOrderedList.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
-                <span className="text-[#4B83B2] font-bold">{i + 1}.</span>
+                <span className="text-[#3A6A96] font-bold">{i + 1}.</span>
                 <span className="text-gray-600">{item}</span>
               </li>
             ))}
@@ -197,7 +197,7 @@ export default function OurVisionPage() {
               <ul className="space-y-2 mb-10">
                 {paintItForwardList.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-[#4B83B2] font-bold mt-0.5">✓</span>
+                    <span className="text-[#3A6A96] font-bold mt-0.5">✓</span>
                     <span className="text-white/70">{item}</span>
                   </li>
                 ))}
@@ -210,7 +210,7 @@ export default function OurVisionPage() {
               <ul className="space-y-2">
                 {greatHomesList.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-[#4B83B2] font-bold mt-0.5">✓</span>
+                    <span className="text-[#3A6A96] font-bold mt-0.5">✓</span>
                     <span className="text-white/70">{item}</span>
                   </li>
                 ))}
@@ -243,7 +243,7 @@ export default function OurVisionPage() {
           <ul className="space-y-3 mb-6">
             {highEndServicesList.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
-                <span className="text-[#4B83B2] font-bold mt-0.5">→</span>
+                <span className="text-[#3A6A96] font-bold mt-0.5">→</span>
                 <span className="text-gray-600">{item}</span>
               </li>
             ))}
@@ -268,7 +268,7 @@ export default function OurVisionPage() {
               <ul className="space-y-3 mb-8">
                 {legacyList.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-[#4B83B2] font-bold mt-0.5">✓</span>
+                    <span className="text-[#3A6A96] font-bold mt-0.5">✓</span>
                     <span className="text-gray-600 leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -277,7 +277,7 @@ export default function OurVisionPage() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block border-2 border-[#4B83B2] text-[#4B83B2] hover:bg-[#4B83B2] hover:text-white font-semibold px-8 py-3 transition-colors"
+                className="inline-block border-2 border-[#3A6A96] text-[#3A6A96] hover:bg-[#3A6A96] hover:text-white font-semibold px-8 py-3 transition-colors"
               >
                 Book a Free Consultation
               </a>
@@ -313,8 +313,8 @@ export default function OurVisionPage() {
       </section>
 
       {/* BLUE CTA */}
-      <WaveUp from="bg-white" to="#4B83B2" />
-      <section className="bg-[#4B83B2] text-white py-16 px-4 text-center">
+      <WaveUp from="bg-white" to="#3A6A96" />
+      <section className="bg-[#3A6A96] text-white py-16 px-4 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">
           Ready to Work With a Team That Truly Cares?
         </h2>
@@ -325,12 +325,12 @@ export default function OurVisionPage() {
           href={BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-10 py-4 text-lg transition-colors"
+          className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors"
         >
           Schedule Your Free Estimate
         </a>
       </section>
-      <WaveDown from="bg-[#4B83B2]" to="#ffffff" />
+      <WaveDown from="bg-[#3A6A96]" to="#ffffff" />
       <div className="bg-white h-4" />
     </>
   );

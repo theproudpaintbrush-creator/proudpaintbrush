@@ -73,11 +73,13 @@ export default function TestimonialCarousel() {
         })}
       </div>
       {/* Dots */}
-      <div className="flex justify-center gap-2 mt-6">
+      <div className="flex flex-wrap justify-center gap-1 mt-5">
         {allTestimonialPhotos.map((_, i) => (
           <button key={i} onClick={() => setCurrent(i)}
-            className={`w-2 h-2 rounded-full transition-colors ${i === current ? "bg-[#4B83B2]" : "bg-gray-300"}`}
-            aria-label={`Go to photo ${i + 1}`} />
+            className="p-2 flex items-center justify-center"
+            aria-label={`Go to photo ${i + 1}`}>
+            <span className={`block w-2 h-2 rounded-full transition-colors ${i === current ? "bg-[#3A6A96]" : "bg-gray-300"}`} />
+          </button>
         ))}
       </div>
     </div>

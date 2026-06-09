@@ -90,17 +90,17 @@ export default function HomePage() {
       <TrustBar />
 
       {/* ── DR. TEPPER VIDEO TESTIMONIAL BANNER ── */}
-      <section className="bg-[#4B83B2] text-white pt-10 pb-0">
+      <section className="bg-[#3A6A96] text-white pt-10 pb-0">
         <div className="max-w-6xl mx-auto px-4 pb-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-white/70 mb-2">
+              <p className="text-sm font-semibold uppercase tracking-widest text-white/90 mb-2">
                 Dr. Tepper — Avalon · Exterior House Painting
               </p>
               <blockquote className="text-2xl sm:text-3xl font-light italic leading-snug mb-4">
                 &ldquo;You guys did great.&rdquo;
               </blockquote>
-              <p className="text-white/80 leading-relaxed">
+              <p className="text-white/90 leading-relaxed">
                 Dr. Tepper found us through a neighbor and said we did exactly what was promised.
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <WaveDown from="bg-[#4B83B2]" to="#eef1f5" />
+        <WaveDown from="bg-[#3A6A96]" to="#eef1f5" />
       </section>
 
       {/* ── REQUEST A FREE ESTIMATE (booking embed) ── */}
@@ -148,7 +148,7 @@ export default function HomePage() {
                 <div className="relative w-full h-56 overflow-hidden mb-5">
                   <Image src={s.img} alt={s.alt} fill className="object-cover object-center group-hover:scale-105 transition-transform duration-500" quality={85} />
                 </div>
-                <h3 className="text-2xl font-semibold mb-2 group-hover:text-[#4B83B2] transition-colors">
+                <h3 className="text-2xl font-semibold mb-2 group-hover:text-[#3A6A96] transition-colors">
                   {s.title}
                 </h3>
                 <p className="text-white/60 text-sm leading-relaxed">{s.description}</p>
@@ -183,7 +183,7 @@ export default function HomePage() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border-2 border-[#4B83B2] text-[#4B83B2] hover:bg-[#4B83B2] hover:text-white font-semibold px-8 py-3 transition-colors"
+              className="inline-block border-2 border-[#3A6A96] text-[#3A6A96] hover:bg-[#3A6A96] hover:text-white font-semibold px-8 py-3 transition-colors"
             >
               Schedule Your Free Estimate
             </a>
@@ -193,18 +193,18 @@ export default function HomePage() {
 
       {/* ── BLUE CTA ── */}
       <section className="bg-white pb-0">
-        <WaveUp from="bg-white" to="#4B83B2" />
-        <div className="bg-[#4B83B2] text-white py-16 px-4 text-center">
+        <WaveUp from="bg-white" to="#3A6A96" />
+        <div className="bg-[#3A6A96] text-white py-16 px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Talk About Your Project?</h2>
-          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
             Most painting estimates take 30–40 minutes. We&apos;ll walk the space with you, answer every question, and leave you with a clear, honest quote.
           </p>
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
-            className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-10 py-4 text-lg transition-colors">
+            className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors">
             Schedule Your Free Estimate
           </a>
         </div>
-        <WaveDown from="bg-[#4B83B2]" to="#ffffff" />
+        <WaveDown from="bg-[#3A6A96]" to="#ffffff" />
       </section>
 
       {/* ── TESTIMONIAL PHOTO CAROUSEL ── */}
@@ -217,7 +217,7 @@ export default function HomePage() {
           <TestimonialCarousel />
           <div className="text-center mt-10">
             <Link href="/testimonials"
-              className="border-2 border-[#4B83B2] text-[#4B83B2] hover:bg-[#4B83B2] hover:text-white font-semibold px-8 py-3 transition-colors inline-block">
+              className="border-2 border-[#3A6A96] text-[#3A6A96] hover:bg-[#3A6A96] hover:text-white font-semibold px-8 py-3 transition-colors inline-block">
               See All Testimonials
             </Link>
           </div>
@@ -239,7 +239,7 @@ export default function HomePage() {
               <p className="text-white/70 leading-relaxed mb-4">Those experiences shaped who we became. They taught us patience. They taught us perseverance. And they reinforced something we already believed: do things the right way — even when it&apos;s harder.</p>
               <p className="text-white/70 leading-relaxed mb-8">Today we&apos;re proud parents to Isaac and Samuel, and those same values guide how we serve our customers. To us, painting isn&apos;t just paint.</p>
               <Link href="/our-story"
-                className="inline-block border-2 border-[#4B83B2] text-[#4B83B2] hover:bg-[#4B83B2] hover:text-white font-semibold px-8 py-3 transition-colors">
+                className="inline-block border-2 border-[#3A6A96] text-[#3A6A96] hover:bg-[#3A6A96] hover:text-white font-semibold px-8 py-3 transition-colors">
                 Read Our Story
               </Link>
             </div>
@@ -278,7 +278,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center mt-6">
-            <Link href="/service-areas" className="text-[#4B83B2] font-semibold hover:underline">
+            <Link href="/service-areas" className="text-[#3A6A96] font-semibold hover:underline">
               See all service areas &rarr;
             </Link>
           </div>
@@ -286,7 +286,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FINAL CTA with painter photo ── */}
-      <section className="relative bg-[#4B83B2] text-white overflow-hidden">
+      <section className="relative bg-[#3A6A96] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/cta-painter-trim.jpg"
@@ -303,11 +303,11 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-10 py-4 text-lg transition-colors">
+              className="border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors">
               Schedule Your Free Estimate
             </a>
             <a href="tel:+18326050493"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-10 py-4 text-lg transition-colors">
+              className="border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors">
               Call (832) 605-0493
             </a>
           </div>

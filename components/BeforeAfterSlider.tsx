@@ -74,7 +74,7 @@ export default function BeforeAfterSlider({
         <span className="absolute top-3 left-3 bg-[#1a2e44]/90 text-white text-xs font-bold px-2.5 py-1 rounded">
           BEFORE
         </span>
-        <span className="absolute top-3 right-3 bg-[#4B83B2]/90 text-white text-xs font-bold px-2.5 py-1 rounded">
+        <span className="absolute top-3 right-3 bg-[#3A6A96]/90 text-white text-xs font-bold px-2.5 py-1 rounded">
           AFTER
         </span>
 

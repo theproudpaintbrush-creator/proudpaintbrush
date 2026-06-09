@@ -181,7 +181,7 @@ export default function FaqPage() {
       />
 
       {/* HERO */}
-      <section className="bg-[#4B83B2] text-white pt-20 pb-4">
+      <section className="bg-[#3A6A96] text-white pt-20 pb-4">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70 mb-3">
             Frequently Asked Questions
@@ -194,7 +194,7 @@ export default function FaqPage() {
             our warranty — answered honestly, before you ever book.
           </p>
         </div>
-        <WaveDown from="bg-[#4B83B2]" to="#ffffff" />
+        <WaveDown from="bg-[#3A6A96]" to="#ffffff" />
       </section>
 
       {/* FAQ GROUPS */}
@@ -202,7 +202,7 @@ export default function FaqPage() {
         <div className="max-w-3xl mx-auto px-4">
           {faqGroups.map((group) => (
             <div key={group.heading} className="mb-14 last:mb-0">
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] mb-8 pb-3 border-b-2 border-[#4B83B2]">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] mb-8 pb-3 border-b-2 border-[#3A6A96]">
                 {group.heading}
               </h2>
               <div className="space-y-6">
@@ -210,7 +210,7 @@ export default function FaqPage() {
                   <div key={faq.q} className="border-b border-gray-200 pb-6 last:border-0">
                     <h3 className="font-semibold text-lg text-[#111111] mb-2">{faq.q}</h3>
                     <p
-                      className="text-gray-600 leading-relaxed [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline"
+                      className="text-gray-600 leading-relaxed [&_a]:text-[#3A6A96] [&_a]:font-medium [&_a:hover]:underline"
                       dangerouslySetInnerHTML={{ __html: faq.a }}
                     />
                   </div>
@@ -234,7 +234,7 @@ export default function FaqPage() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#4B83B2] text-white hover:bg-white hover:text-[#111111] font-semibold px-10 py-4 text-lg transition-colors"
+              className="inline-block bg-[#3A6A96] text-white hover:bg-white hover:text-[#111111] font-semibold px-10 py-4 text-lg transition-colors"
             >
               Schedule Your Free Estimate
             </a>

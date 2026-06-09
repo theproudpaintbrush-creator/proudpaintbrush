@@ -59,7 +59,7 @@ export default function BlogIndexPage() {
                   key={post.slug}
                   className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow flex flex-col"
                 >
-                  <Link href={`/blog/${post.slug}`} className="block aspect-[16/10] overflow-hidden bg-gray-100">
+                  <Link href={`/blog/${post.slug}`} aria-label={post.title} className="block aspect-[16/10] overflow-hidden bg-gray-100">
                     {post.image && (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={post.image} alt={post.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
@@ -80,7 +80,7 @@ export default function BlogIndexPage() {
                     <h2 className="text-lg font-bold text-[#1a2e44] mb-2 leading-tight">
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="hover:text-[#4B83B2] transition-colors"
+                        className="hover:text-[#3A6A96] transition-colors"
                       >
                         {post.title}
                       </Link>
@@ -90,7 +90,7 @@ export default function BlogIndexPage() {
                     </p>
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="text-[#4B83B2] font-semibold text-sm hover:underline"
+                      className="text-[#3A6A96] font-semibold text-sm hover:underline"
                     >
                       Read more &rarr;
                     </Link>
@@ -116,7 +116,7 @@ export default function BlogIndexPage() {
             href="https://theproudpaintbrush.youcanbook.me"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#4B83B2] hover:bg-[#3a6a96] text-white font-semibold px-8 py-3 rounded-lg transition-colors inline-block"
+            className="bg-[#3A6A96] hover:bg-[#2D5479] text-white font-semibold px-8 py-3 rounded-lg transition-colors inline-block"
           >
             Schedule Free Estimate
           </a>

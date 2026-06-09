@@ -65,7 +65,7 @@ export default function GlobalVideoTestimonials() {
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link
             href="/testimonials"
-            className="inline-block bg-white text-[#111111] hover:bg-[#4B83B2] hover:text-white font-semibold px-8 py-3 transition-colors"
+            className="inline-block bg-white text-[#111111] hover:bg-[#3A6A96] hover:text-white font-semibold px-8 py-3 transition-colors"
           >
             See all 113 five-star reviews &rarr;
           </Link>

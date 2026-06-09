@@ -62,7 +62,7 @@ export default function ServiceDetail({
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#4B83B2] hover:bg-[#3a6a96] text-white font-semibold px-7 py-3 rounded-lg transition-colors"
+              className="inline-block bg-[#3A6A96] hover:bg-[#2D5479] text-white font-semibold px-7 py-3 rounded-lg transition-colors"
             >
               Book My Free Estimate &rarr;
             </a>
@@ -105,7 +105,7 @@ export default function ServiceDetail({
               [&_p]:leading-relaxed [&_p]:mb-4
               [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul_li]:mb-1
               [&_strong]:text-[#1a2e44] [&_strong]:font-semibold
-              [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline
+              [&_a]:text-[#3A6A96] [&_a]:font-medium [&_a:hover]:underline
               [&_img]:w-full [&_img]:rounded-xl [&_img]:shadow-md [&_img]:my-8 [&_img]:object-cover [&_img]:max-h-[460px]"
             dangerouslySetInnerHTML={{ __html: service.bodyHtml }}
           />
@@ -143,7 +143,7 @@ export default function ServiceDetail({
                 <Link
                   key={r.slug}
                   href={`${parentPath}/${r.slug}`}
-                  className="border border-gray-200 hover:border-[#4B83B2] hover:text-[#4B83B2] text-[#1a2e44] text-sm font-medium px-4 py-2 transition-colors"
+                  className="border border-gray-200 hover:border-[#3A6A96] hover:text-[#3A6A96] text-[#1a2e44] text-sm font-medium px-4 py-2 transition-colors"
                 >
                   {r.name}
                 </Link>
@@ -165,7 +165,7 @@ export default function ServiceDetail({
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="border border-gray-200 hover:border-[#4B83B2] hover:text-[#4B83B2] text-[#1a2e44] text-sm font-medium px-4 py-2 transition-colors"
+                  className="border border-gray-200 hover:border-[#3A6A96] hover:text-[#3A6A96] text-[#1a2e44] text-sm font-medium px-4 py-2 transition-colors"
                 >
                   {l.label}
                 </Link>
@@ -190,7 +190,7 @@ export default function ServiceDetail({
                 <Link
                   key={a.href}
                   href={a.href}
-                  className="bg-white border border-gray-200 hover:border-[#4B83B2] hover:text-[#4B83B2] text-[#1a2e44] text-sm font-medium px-4 py-2 transition-colors"
+                  className="bg-white border border-gray-200 hover:border-[#3A6A96] hover:text-[#3A6A96] text-[#1a2e44] text-sm font-medium px-4 py-2 transition-colors"
                 >
                   {a.label}
                 </Link>
@@ -214,7 +214,7 @@ export default function ServiceDetail({
       )}
 
       {/* CTA */}
-      <section className="bg-[#4B83B2] text-white py-16 px-4 text-center">
+      <section className="bg-[#3A6A96] text-white py-16 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             Ready to Get Started?
@@ -227,13 +227,13 @@ export default function ServiceDetail({
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white text-[#4B83B2] hover:bg-[#1a2e44] hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+              className="inline-block bg-white text-[#3A6A96] hover:bg-[#1a2e44] hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors"
             >
               Request a Free Estimate
             </a>
             <a
               href={`tel:${PHONE_TEL}`}
-              className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-8 py-3 rounded-lg transition-colors"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-8 py-3 rounded-lg transition-colors"
             >
               Call {PHONE}
             </a>

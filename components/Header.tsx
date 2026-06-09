@@ -135,7 +135,7 @@ export default function Header() {
           </a>
           <div className="flex items-center gap-3 sm:gap-4">
             <a href="tel:+18326050493" className="hover:text-white/80 font-medium">(832) 605-0493</a>
-            <Link href="/contact" className="hidden sm:inline bg-[#4B83B2] hover:bg-[#3a6a96] px-3 py-1 rounded font-semibold transition-colors">
+            <Link href="/contact" className="hidden sm:inline bg-[#3A6A96] hover:bg-[#2D5479] px-3 py-1 rounded font-semibold transition-colors">
               Free Estimate
             </Link>
           </div>
@@ -171,7 +171,7 @@ export default function Header() {
                 >
                   <button
                     ref={(el) => { buttonRefs.current[menu.label] = el; }}
-                    className="flex items-center gap-1 text-[#1a2e44] hover:text-[#4B83B2] font-medium text-sm transition-colors"
+                    className="flex items-center gap-1 text-[#1a2e44] hover:text-[#3A6A96] font-medium text-sm transition-colors"
                     onClick={() => setOpenMenu((o) => (o === menu.label ? null : menu.label))}
                     aria-expanded={openMenu === menu.label}
                     aria-haspopup="true"
@@ -186,7 +186,7 @@ export default function Header() {
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="block px-4 py-2 text-sm text-[#1a2e44] hover:bg-[#f8f9fa] hover:text-[#4B83B2] transition-colors"
+                          className="block px-4 py-2 text-sm text-[#1a2e44] hover:bg-[#f8f9fa] hover:text-[#3A6A96] transition-colors"
                           onClick={() => setOpenMenu(null)}
                         >
                           {item.label}
@@ -199,7 +199,7 @@ export default function Header() {
                 <Link
                   key={menu.label}
                   href={menu.href!}
-                  className="text-[#1a2e44] hover:text-[#4B83B2] font-medium text-sm transition-colors"
+                  className="text-[#1a2e44] hover:text-[#3A6A96] font-medium text-sm transition-colors"
                 >
                   {menu.label}
                 </Link>
@@ -211,7 +211,7 @@ export default function Header() {
           <div className="hidden xl:flex items-center gap-4">
             <a
               href="tel:+18326050493"
-              className="text-[#1a2e44] font-semibold text-sm hover:text-[#4B83B2] transition-colors"
+              className="text-[#1a2e44] font-semibold text-sm hover:text-[#3A6A96] transition-colors"
             >
               {PHONE}
             </a>
@@ -219,7 +219,7 @@ export default function Header() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#4B83B2] hover:bg-[#3a6a96] text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors whitespace-nowrap"
+              className="bg-[#3A6A96] hover:bg-[#2D5479] text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors whitespace-nowrap"
             >
               Schedule Your Estimate
             </a>
@@ -227,7 +227,7 @@ export default function Header() {
 
           {/* Mobile hamburger */}
           <button
-            className="xl:hidden p-2 text-[#1a2e44] hover:text-[#4B83B2] transition-colors"
+            className="xl:hidden p-2 text-[#1a2e44] hover:text-[#3A6A96] transition-colors"
             onClick={() => setMobileOpen((o) => !o)}
             aria-label="Toggle navigation menu"
             aria-expanded={mobileOpen}
@@ -253,7 +253,7 @@ export default function Header() {
             menu.items ? (
               <div key={menu.label}>
                 <button
-                  className="flex items-center justify-between w-full text-[#1a2e44] font-medium py-2 hover:text-[#4B83B2] transition-colors"
+                  className="flex items-center justify-between w-full text-[#1a2e44] font-medium py-2 hover:text-[#3A6A96] transition-colors"
                   onClick={() =>
                     setMobileExpanded((m) => (m === menu.label ? null : menu.label))
                   }
@@ -268,7 +268,7 @@ export default function Header() {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="block text-sm text-[#4B83B2] py-1.5 hover:text-[#3a6a96] transition-colors"
+                        className="block text-sm text-[#3A6A96] py-1.5 hover:text-[#2D5479] transition-colors"
                         onClick={closeMobile}
                       >
                         {item.label}
@@ -281,7 +281,7 @@ export default function Header() {
               <Link
                 key={menu.label}
                 href={menu.href!}
-                className="block text-[#1a2e44] font-medium py-2 hover:text-[#4B83B2] transition-colors"
+                className="block text-[#1a2e44] font-medium py-2 hover:text-[#3A6A96] transition-colors"
                 onClick={closeMobile}
               >
                 {menu.label}
@@ -296,7 +296,7 @@ export default function Header() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-[#4B83B2] hover:bg-[#3a6a96] text-white font-semibold text-sm px-5 py-3 rounded-lg text-center transition-colors"
+              className="block bg-[#3A6A96] hover:bg-[#2D5479] text-white font-semibold text-sm px-5 py-3 rounded-lg text-center transition-colors"
             >
               Schedule Your Estimate
             </a>
