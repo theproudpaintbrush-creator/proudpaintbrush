@@ -190,8 +190,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} The Proud Paintbrush LLC. All rights reserved.
+        <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-2 text-center text-sm text-gray-400">
+          <span>&copy; {new Date().getFullYear()} The Proud Paintbrush LLC. All rights reserved.</span>
+          <span className="hidden sm:inline text-gray-600" aria-hidden>·</span>
+          <Link href="/privacy" className="hover:text-white transition-colors">
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>
