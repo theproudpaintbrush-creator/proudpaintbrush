@@ -24,6 +24,23 @@ export const metadata: Metadata = {
 };
 
 const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
+const BASE_URL = "https://www.theproudpaintbrush.com";
+
+// Founder entity, resolved by the same @id the LocalBusiness `founder` and the
+// blog author attributions point to, so Chris Petkau is one entity sitewide.
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${BASE_URL}/our-story#chris-petkau`,
+  name: "Chris Petkau",
+  jobTitle: "Founder & Owner",
+  worksFor: { "@id": `${BASE_URL}/#business` },
+  homeLocation: { "@type": "Place", name: "Sugar Land, TX" },
+  birthPlace: { "@type": "Place", name: "Vancouver, Canada" },
+  url: `${BASE_URL}/our-story`,
+  description:
+    "Chris Petkau is the founder and owner of The Proud Paintbrush, a locally owned painting company serving Sugar Land and Fort Bend County since 2020.",
+};
 
 function WaveDown({ from, to }: { from: string; to: string }) {
   return (
@@ -90,6 +107,10 @@ const faqs = [
 export default function OurStoryPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       {/* HERO */}
       <section className="relative w-full h-[90vh] min-h-[560px] flex items-center justify-center overflow-hidden">
         <Image

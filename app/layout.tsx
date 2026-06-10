@@ -7,6 +7,12 @@ import GlobalVideoTestimonials from "@/components/GlobalVideoTestimonials";
 import MobileCTABar from "@/components/MobileCTABar";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import AnalyticsEvents from "@/components/AnalyticsEvents";
+import { SITE_URL, RATING_VALUE, REVIEW_COUNT } from "@/lib/site";
+
+// Stable @id for the founder Person entity. Defined in full on /our-story and
+// referenced from the business node and blog author attributions so search
+// engines resolve a single Chris Petkau entity across the site.
+export const FOUNDER_ID = `${SITE_URL}/our-story#chris-petkau`;
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -69,7 +75,9 @@ const localBusinessSchema = {
     "Southwest Houston, TX",
   ],
   priceRange: "$$",
-  aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 113 },
+  foundingDate: "2020",
+  founder: { "@type": "Person", "@id": FOUNDER_ID, name: "Chris Petkau" },
+  aggregateRating: { "@type": "AggregateRating", ratingValue: RATING_VALUE, reviewCount: REVIEW_COUNT },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

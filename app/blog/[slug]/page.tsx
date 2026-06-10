@@ -84,7 +84,16 @@ export default async function BlogPostPage({ params }: PageProps) {
     "@type": "Article",
     headline: post.title,
     description: post.description,
-    author: AUTHOR_BIOS[post.author]
+    author: post.author === "Chris Petkau"
+      ? {
+          "@type": "Person",
+          "@id": "https://www.theproudpaintbrush.com/our-story#chris-petkau",
+          name: post.author,
+          description: AUTHOR_BIOS[post.author].bio,
+          url: "https://www.theproudpaintbrush.com/our-story",
+          worksFor: { "@id": "https://www.theproudpaintbrush.com/#business" },
+        }
+      : AUTHOR_BIOS[post.author]
       ? {
           "@type": "Person",
           name: post.author,
