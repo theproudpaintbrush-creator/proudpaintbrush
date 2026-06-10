@@ -31,12 +31,15 @@ const menus: NavMenu[] = [
       { label: "Interior Prices", href: "/pricing/interior-prices" },
       { label: "Exterior Prices", href: "/pricing/exterior-prices" },
       { label: "Cabinet Prices", href: "/pricing/cabinet-prices" },
+      { label: "Drywall Prices", href: "/pricing/drywall-prices" },
+      { label: "Fence Staining Prices", href: "/pricing/fence-staining-prices" },
     ],
   },
   {
     label: "Portfolio",
     items: [
       { label: "All Projects", href: "/portfolio" },
+      { label: "Recent Projects", href: "/projects" },
       { label: "Interior", href: "/portfolio/interior-painting" },
       { label: "Exterior", href: "/portfolio/exterior-painting" },
       { label: "Cabinet", href: "/portfolio/cabinet-painting" },

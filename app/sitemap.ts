@@ -3,6 +3,7 @@ import { getAllPosts } from "@/lib/blog";
 import { CITIES } from "@/lib/cities";
 import { getServiceSlugs } from "@/lib/services";
 import { getAllPageKeys } from "@/lib/pages";
+import { getAllProjects } from "@/lib/projects";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
 
@@ -19,7 +20,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/faq`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE_URL}/projects`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
   ];
+
+  const projectPages: MetadataRoute.Sitemap = getAllProjects().map((p) => ({
+    url: `${BASE_URL}/projects/${p.slug}`,
+    lastModified: new Date(p.date),
+    changeFrequency: "yearly" as const,
+    priority: 0.65,
+  }));
 
   const exteriorCityPages: MetadataRoute.Sitemap = CITIES.map((c) => ({
     url: `${BASE_URL}/exterior-painting/${c.slug}`,
@@ -87,6 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...interiorServicePages,
     ...exteriorServicePages,
     ...contentPages,
+    ...projectPages,
     ...blogPages,
   ];
 }
