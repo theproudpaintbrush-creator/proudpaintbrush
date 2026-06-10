@@ -73,4 +73,7 @@ in `.next/server/app`. Checked against `/content/brand-facts.md`.
 - **TODO constants** in `lib/site.ts`: `BOOKING_URL` (swap to
   `book.theproudpaintbrush.com` after DNS) and `REVIEW_URL` (paste the direct
   Google Maps reviews URL). GA4 measurement ID is already live (`G-3VBQEW7TD7`).
-- **Fence-staining cost figures** remain TODO placeholders pending the proposal data.
+- **Fence-staining page — completed.** Figures derived from the owner's pricing
+  model (gallons = ceil(L×H/280) × $70 materials; $390 + $0.70×L labor; **no tax**)
+  and an interactive `FenceEstimator` calculator is embedded under the hero.
+  Published range: ~$4–$7/linear ft for a 6 ft fence, most jobs $670–$1,100+.

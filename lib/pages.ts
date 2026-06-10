@@ -39,6 +39,9 @@ export type PageContent = {
   relatedLinks?: PageRelatedLinks;
   cityCards?: PageCityCards;
   priceTeaser?: PagePriceTeaser;
+  // Opt-in interactive calculator rendered after the body (currently only the
+  // fence-staining cost page uses "fence").
+  calculator?: "fence";
   // Optional custom call-to-action that REPLACES the default estimate CTA at the
   // bottom of the page (e.g. a prominent "Apply" button on the careers page).
   cta?: { heading?: string; note?: string; label: string; href: string };
