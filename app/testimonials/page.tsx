@@ -5,9 +5,9 @@ import VideoTestimonial, { AuthenticVideoGrid } from "@/components/VideoTestimon
 import { TESTIMONIAL_VIDEOS } from "@/lib/testimonialVideos";
 import { getReviews } from "@/lib/reviews";
 import ReviewCards from "@/components/ReviewCards";
+import { REVIEW_URL, BOOKING_URL } from "@/lib/site";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
 
@@ -138,7 +138,7 @@ export default function TestimonialsPage() {
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center items-center">
             <a
-              href="https://share.google/03zEeHzRVJW7NvE2Z"
+              href={REVIEW_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-white text-[#4B83B2] hover:bg-[#111111] hover:text-white font-semibold px-6 py-3 transition-colors"

@@ -3,8 +3,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
+import { REVIEW_URL, BOOKING_URL } from "@/lib/site";
 const PHONE = "(832) 605-0493";
 const LOGO_URL = "/images/logo.png";
 
@@ -123,7 +122,7 @@ export default function Header() {
       <div className="bg-[#1a2e44] text-white text-xs sm:text-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between">
           <a
-            href="https://share.google/03zEeHzRVJW7NvE2Z"
+            href={REVIEW_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 hover:text-white/80"

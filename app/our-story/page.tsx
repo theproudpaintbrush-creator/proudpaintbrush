@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { BOOKING_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Our Story | The Proud Paintbrush Sugar Land",
@@ -22,8 +23,6 @@ export const metadata: Metadata = {
     images: ["https://www.theproudpaintbrush.com/images/paint-it-forward-community.jpg"],
   },
 };
-
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const BASE_URL = "https://www.theproudpaintbrush.com";
 
 // Founder entity, resolved by the same @id the LocalBusiness `founder` and the

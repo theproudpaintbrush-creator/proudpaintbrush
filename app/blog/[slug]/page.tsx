@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPostBySlug, getAllPosts, getAllSlugs } from "@/lib/blog";
 import { imageDims } from "@/lib/imageDims";
+import { BOOKING_URL } from "@/lib/site";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -297,7 +298,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             contractor.
           </p>
           <a
-            href="https://theproudpaintbrush.youcanbook.me"
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#4B83B2] hover:bg-[#3a6a96] text-white font-semibold px-8 py-3 rounded-lg transition-colors inline-block"

@@ -5,6 +5,7 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 import TrustBar from "@/components/TrustBar";
 import ProudProcess from "@/components/ProudProcess";
 import LiteYouTube from "@/components/LiteYouTube";
+import { BOOKING_EMBED_URL, BOOKING_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "The Proud Paintbrush | Sugar Land Painting Contractor",
@@ -24,8 +25,6 @@ export const metadata: Metadata = {
     images: ["https://www.theproudpaintbrush.com/images/hero-stucco-richmond.webp"],
   },
 };
-
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const HERO_IMAGE = "/images/hero-stucco-richmond.webp";
 
 function WaveDown({ from, to }: { from: string; to: string }) {
@@ -122,7 +121,7 @@ export default function HomePage() {
           </p>
           <div className="bg-white rounded-2xl shadow-2xl max-w-3xl mx-auto p-3 sm:p-6">
             <iframe
-              src="https://theproudpaintbrush.youcanbook.me/?noframe=true&skipHeaderFooter=true"
+              src={BOOKING_EMBED_URL}
               title="Book your free painting estimate — The Proud Paintbrush"
               className="w-full rounded-lg overflow-hidden"
               style={{ minHeight: "640px", border: "none" }}

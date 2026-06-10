@@ -6,6 +6,8 @@ import ProjectGallery from "@/components/ProjectGallery";
 import PricingBand from "@/components/PricingBand";
 import ReviewCards from "@/components/ReviewCards";
 import type { Review } from "@/lib/reviews";
+import EstimatePrompt from "@/components/EstimatePrompt";
+import { BOOKING_URL } from "@/lib/site";
 
 // Pick a simple line-icon for a "why choose us" card based on its title.
 function CardIcon({ title }: { title: string }) {
@@ -28,8 +30,6 @@ function CardIcon({ title }: { title: string }) {
     </svg>
   );
 }
-
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
 
@@ -303,6 +303,7 @@ export default function ServiceHub({
           </div>
         </div>
       </section>
+      <EstimatePrompt />
     </>
   );
 }

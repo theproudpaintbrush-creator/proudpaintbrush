@@ -1,8 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
+import { BOOKING_URL } from "@/lib/site";
 const PHONE_TEL = "+18326050493";
 
 // Fixed bottom call/estimate bar for mobile. Hidden on xl+ (desktop has the
