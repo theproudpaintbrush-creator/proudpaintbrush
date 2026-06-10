@@ -146,7 +146,7 @@ export default function HomePage() {
             {services.map((s) => (
               <Link key={s.href} href={s.href} className="group flex flex-col hover:opacity-90 transition-opacity">
                 <div className="relative w-full h-56 overflow-hidden mb-5">
-                  <Image src={s.img} alt={s.alt} fill className="object-cover object-center group-hover:scale-105 transition-transform duration-500" quality={85} />
+                  <Image src={s.img} alt={s.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-center group-hover:scale-105 transition-transform duration-500" quality={85} />
                 </div>
                 <h3 className="text-2xl font-semibold mb-2 group-hover:text-[#4B83B2] transition-colors">
                   {s.title}
@@ -246,7 +246,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-80 lg:h-[480px] overflow-hidden rounded-sm">
               <Image src="/images/paint-it-forward-community.jpg" alt="The Proud Paintbrush Paint It Forward community project in Sugar Land, TX"
-                fill className="object-cover object-center" quality={90} />
+                fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center" quality={90} />
             </div>
           </div>
         </div>

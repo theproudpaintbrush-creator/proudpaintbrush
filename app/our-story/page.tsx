@@ -96,6 +96,7 @@ export default function OurStoryPage() {
           src="/images/story-family-1.jpg"
           alt="The Proud Paintbrush family — Chris Petkau with his wife and sons in Sugar Land, TX"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
           quality={90}
@@ -163,6 +164,7 @@ export default function OurStoryPage() {
                 src="/images/story-family-2.jpg"
                 alt="Chris Petkau, owner of The Proud Paintbrush, with his family"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"
                 quality={90}
               />
@@ -230,7 +232,7 @@ export default function OurStoryPage() {
               { src: "/images/story-family-3.jpg", alt: "The Petkau family — the heart of The Proud Paintbrush" },
             ].map((img) => (
               <div key={img.src} className="relative h-64 overflow-hidden">
-                <Image src={img.src} alt={img.alt} fill className="object-cover object-center" quality={90} />
+                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-center" quality={90} />
               </div>
             ))}
           </div>

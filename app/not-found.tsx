@@ -9,6 +9,7 @@ const links = [
   { href: "/cabinet-painting", label: "Cabinet Painting" },
   { href: "/pricing", label: "Pricing" },
   { href: "/service-areas", label: "Service Areas" },
+  { href: "/contact", label: "Contact" },
   { href: "/blog", label: "Blog" },
 ];
 

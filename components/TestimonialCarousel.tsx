@@ -55,6 +55,7 @@ export default function TestimonialCarousel() {
           return (
             <div key={i} className="aspect-square overflow-hidden">
               <Image src={photo.src} alt={photo.alt} width={300} height={300}
+                sizes="(max-width: 1024px) 50vw, 16vw" loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" quality={85} />
             </div>
           );
@@ -67,6 +68,7 @@ export default function TestimonialCarousel() {
           return (
             <div key={i} className="aspect-square overflow-hidden">
               <Image src={photo.src} alt={photo.alt} width={300} height={300}
+                sizes="50vw" loading="lazy"
                 className="w-full h-full object-cover" quality={85} />
             </div>
           );

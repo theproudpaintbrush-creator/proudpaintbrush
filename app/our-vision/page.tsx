@@ -111,6 +111,7 @@ export default function OurVisionPage() {
           src="/images/migrated/satisfied-customer-richmond-exterior-painting.webp"
           alt="Satisfied Richmond, TX homeowners in front of their freshly painted home by The Proud Paintbrush"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
           quality={90}
@@ -221,6 +222,7 @@ export default function OurVisionPage() {
                 src="/images/vision-paint-it-forward.jpg"
                 alt="The Proud Paintbrush team at the Paint It Forward event in Sugar Land, TX"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"
                 quality={90}
               />
@@ -287,6 +289,7 @@ export default function OurVisionPage() {
                 src="/images/vision-team.jpg"
                 alt="The Proud Paintbrush team"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"
                 quality={90}
               />

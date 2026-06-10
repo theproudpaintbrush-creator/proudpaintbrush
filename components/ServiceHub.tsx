@@ -64,7 +64,7 @@ export default function ServiceHub({
     <>
       {/* HERO */}
       <section className="relative w-full h-[70vh] min-h-[480px] flex items-center justify-center overflow-hidden">
-        <Image src={hub.heroImage} alt={hub.heroAlt} fill className="object-cover object-center" priority quality={90} />
+        <Image src={hub.heroImage} alt={hub.heroAlt} fill sizes="100vw" className="object-cover object-center" priority quality={90} />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-4 text-xs sm:text-sm text-white/60 tracking-wide uppercase">

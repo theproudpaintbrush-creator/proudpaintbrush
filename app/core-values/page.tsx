@@ -189,6 +189,7 @@ export default function CoreValuesPage() {
           src="/images/cv-team.jpg"
           alt="The Proud Paintbrush team — Sugar Land painting company built on core values"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
           quality={90}
@@ -306,7 +307,7 @@ export default function CoreValuesPage() {
               { src: "/images/migrated/missouri-city-tx-happy-homeowner-interior-painting-testimonial.webp", alt: "Happy Missouri City homeowner holding a 100% satisfied sign after an interior painting project by The Proud Paintbrush" },
             ].map((img) => (
               <div key={img.src} className="relative h-64 overflow-hidden">
-                <Image src={img.src} alt={img.alt} fill className="object-cover object-center" quality={90} />
+                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-center" quality={90} />
               </div>
             ))}
           </div>
