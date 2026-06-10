@@ -132,14 +132,15 @@ export default function OurStoryPage() {
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Chris grew up in Vancouver, Canada, with a strong foundation in construction
-                inspired by his father's concrete business. After moving to Texas in 2020, he
-                turned this hands-on experience into a passion for painting and a clear vision for
-                helping homeowners bring pride back to their homes.
+                inspired by his father's concrete business. He moved to the United States in 2007,
+                and over the years that followed he turned that hands-on experience into a passion
+                for painting and a clear vision for helping homeowners bring pride back to their
+                homes.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 In 2020, during the uncertainty of COVID, Chris and Sarah made the decision to move
-                to Houston and start a new chapter of their lives. That same year, The Proud
-                Paintbrush was born.
+                to the Houston area and start a new chapter of their lives. That same year, they
+                settled in Sugar Land and The Proud Paintbrush was born.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Around that same time, they also learned they were facing infertility and began the

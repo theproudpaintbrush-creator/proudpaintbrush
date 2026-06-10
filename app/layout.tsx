@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Professional residential & commercial painting in Sugar Land, Fort Bend County & West Houston. Fully insured, 2 & 5-year warranties. Call (832) 605-0493.",
+    "Professional residential & commercial painting in Sugar Land, Fort Bend County & West Houston. Fully insured, 2 & 5-Year Written Warranty. Call (832) 605-0493.",
   metadataBase: new URL("https://www.theproudpaintbrush.com"),
   openGraph: {
     type: "website",

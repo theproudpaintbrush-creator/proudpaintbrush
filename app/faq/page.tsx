@@ -132,7 +132,7 @@ const faqGroups: FaqGroup[] = [
       },
       {
         q: "What kind of warranty do you offer?",
-        a: 'We offer both 2-year and 5-year <a href="/warranty">workmanship warranties</a> depending on the project scope.',
+        a: 'We back every project with a <a href="/warranty">2 & 5-Year Written Warranty</a> — a 2-year standard workmanship warranty, with a 5-year upgrade available on qualifying projects.',
       },
       {
         q: "Do you actually honor your painting warranty?",

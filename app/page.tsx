@@ -8,11 +8,11 @@ import LiteYouTube from "@/components/LiteYouTube";
 
 export const metadata: Metadata = {
   title: "The Proud Paintbrush | Sugar Land Painting Contractor",
-  description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Fully insured, 2 & 5-year warranties. Get your free estimate today.",
+  description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Fully insured, 2 & 5-Year Written Warranty. Get your free estimate today.",
   alternates: { canonical: "https://www.theproudpaintbrush.com" },
   openGraph: {
     title: "The Proud Paintbrush | Sugar Land Painting Contractor",
-    description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Fully insured, 2 & 5-year warranties. Get your free estimate today.",
+    description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Fully insured, 2 & 5-Year Written Warranty. Get your free estimate today.",
     url: "https://www.theproudpaintbrush.com",
     type: "website",
     images: [{ url: "https://www.theproudpaintbrush.com/images/hero-stucco-richmond.webp" }],
@@ -235,6 +235,7 @@ export default function HomePage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">
                 We&apos;ve Painted Hundreds of Homes Across Fort Bend County &amp; West Houston
               </h2>
+              <p className="text-white/70 leading-relaxed mb-4">But the company we built is a reflection of the family behind it — and our story didn&apos;t start easy.</p>
               <p className="text-white/70 leading-relaxed mb-4">We walked through infertility, IVF, uncertainty, and a lot of hard years.</p>
               <p className="text-white/70 leading-relaxed mb-4">Those experiences shaped who we became. They taught us patience. They taught us perseverance. And they reinforced something we already believed: do things the right way — even when it&apos;s harder.</p>
               <p className="text-white/70 leading-relaxed mb-8">Today we&apos;re proud parents to Isaac and Samuel, and those same values guide how we serve our customers. To us, painting isn&apos;t just paint.</p>
