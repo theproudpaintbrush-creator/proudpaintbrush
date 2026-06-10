@@ -59,12 +59,14 @@ in `.next/server/app`. Checked against `/content/brand-facts.md`.
 - Title `<br/>` bug on exterior/our-vision is not present here (titles are clean).
 
 ## Flags for the owner to reconcile (outside code scope)
-- **Exterior & cabinet cost pages already exist with deliberate published pricing**
-  (exterior `$2,500–$16,000+`; cabinet `$2,000–$10,000+`). These differ from the
-  audit's "confirmed" exterior figure (`typical 2,000 sq ft $5,000–$8,000`,
-  whole-project `$4,500–$15,000+`). I did **not** overwrite live business prices.
-  Decide which set is current and update `content/pages/pricing/exterior-prices.json`
-  / `cabinet-prices.json` if the audit figures should win.
+- **Exterior & cabinet cost pages — reconciled with audit figures.** The broad
+  exterior whole-project span (`$2,500–$16,000+`) is kept on purpose: Texas homes
+  range ~1,800 → 7,000–8,000 sq ft, so it does not conflict with the audit anchor.
+  Added the confirmed **typical 2,000 sq ft → $5,000–$8,000** and
+  **whole-home $4,500–$15,000+** figures (body + FAQ + meta). Cabinet pricing was
+  updated to the confirmed per-unit figures: **doors $120–$145**, **drawers
+  $110–$135**, **$650 minimum**, **vanity $650–$1,200**, **typical kitchen
+  $4,100–$5,000**, **large kitchen + island $5,500–$7,500+**.
 - **Review count (113)** is centralized in `lib/site.ts` (`REVIEW_COUNT`) for the
   LocalBusiness schema, but several display strings still hardcode "113 Google
   reviews"; update `REVIEW_COUNT` and those strings together when the GBP total changes.
