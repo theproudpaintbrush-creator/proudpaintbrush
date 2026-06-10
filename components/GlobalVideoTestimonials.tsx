@@ -4,8 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AuthenticVideoGrid } from "@/components/VideoTestimonial";
 import { STRIP_VIDEOS, SERVICE_STRIP_VIDEOS } from "@/lib/testimonialVideos";
-
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
+import { BOOKING_URL } from "@/lib/site";
 
 const SERVICE_HEADING: Record<string, string> = {
   interior: "Hear From Our Interior Painting Customers",

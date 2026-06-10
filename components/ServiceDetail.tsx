@@ -4,8 +4,8 @@ import { imageDims } from "@/lib/imageDims";
 import ReviewCards from "@/components/ReviewCards";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import type { Review } from "@/lib/reviews";
-
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
+import EstimatePrompt from "@/components/EstimatePrompt";
+import { BOOKING_URL } from "@/lib/site";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
 
@@ -240,6 +240,7 @@ export default function ServiceDetail({
           </div>
         </div>
       </section>
+      <EstimatePrompt />
     </>
   );
 }

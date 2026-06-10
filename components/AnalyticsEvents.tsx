@@ -17,7 +17,8 @@ declare global {
  *
  * Resulting GA4 events — mark these as "key events" in the GA4 admin:
  *   - phone_call_click
- *   - booking_click
+ *   - booking_click   (includes a page_location param)
+ *   - form_submit
  */
 export default function AnalyticsEvents() {
   useEffect(() => {
@@ -29,14 +30,34 @@ export default function AnalyticsEvents() {
 
       if (href.startsWith("tel:")) {
         window.gtag?.("event", "phone_call_click", { link_url: href });
-      } else if (href.includes("youcanbook.me")) {
-        window.gtag?.("event", "booking_click", { link_url: href });
+      } else if (
+        href.includes("youcanbook.me") ||
+        href.includes("book.theproudpaintbrush.com")
+      ) {
+        // page_location lets us see WHICH page drove each booking click in GA4.
+        window.gtag?.("event", "booking_click", {
+          link_url: href,
+          page_location: window.location.href,
+        });
       }
+    }
+
+    function onSubmit(e: SubmitEvent) {
+      const form = e.target as HTMLFormElement | null;
+      if (!form || form.tagName !== "FORM") return;
+      window.gtag?.("event", "form_submit", {
+        form_id: form.id || undefined,
+        page_location: window.location.href,
+      });
     }
 
     // Capture phase so the event still fires even if a handler stops propagation.
     document.addEventListener("click", onClick, true);
-    return () => document.removeEventListener("click", onClick, true);
+    document.addEventListener("submit", onSubmit, true);
+    return () => {
+      document.removeEventListener("click", onClick, true);
+      document.removeEventListener("submit", onSubmit, true);
+    };
   }, []);
 
   return null;

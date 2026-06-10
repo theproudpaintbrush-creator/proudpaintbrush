@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { BOOKING_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Core Values | The Proud Paintbrush Sugar Land TX",
@@ -22,8 +23,6 @@ export const metadata: Metadata = {
     images: ["https://www.theproudpaintbrush.com/images/hero-stucco-richmond.webp"],
   },
 };
-
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 
 function WaveDown({ from, to }: { from: string; to: string }) {
   return (
@@ -189,6 +188,7 @@ export default function CoreValuesPage() {
           src="/images/cv-team.jpg"
           alt="The Proud Paintbrush team — Sugar Land painting company built on core values"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
           quality={90}
@@ -306,7 +306,7 @@ export default function CoreValuesPage() {
               { src: "/images/migrated/missouri-city-tx-happy-homeowner-interior-painting-testimonial.webp", alt: "Happy Missouri City homeowner holding a 100% satisfied sign after an interior painting project by The Proud Paintbrush" },
             ].map((img) => (
               <div key={img.src} className="relative h-64 overflow-hidden">
-                <Image src={img.src} alt={img.alt} fill className="object-cover object-center" quality={90} />
+                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-center" quality={90} />
               </div>
             ))}
           </div>

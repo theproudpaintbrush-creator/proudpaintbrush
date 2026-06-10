@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
   images: {
     // Image quality values used across the site (default is [75]).
     qualities: [75, 80, 85, 90],
+    // Cap the largest generated width at 1920 (full-bleed hero max). The Next
+    // default includes 2048 and 3840, which made full-bleed `fill` images on 4K
+    // displays request a 3840px transform of source art that is never larger
+    // than ~1920 — wasted bytes with no visual gain. Removing them guarantees no
+    // image is ever requested at w=3840.
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     remotePatterns: [
       {
         protocol: "https",
@@ -41,6 +47,16 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Canonical host consolidation: force the apex (non-www) host to www so the
+      // site is only ever indexed under one origin. Evaluated first; only fires
+      // when the request host is the bare apex, then the path-specific redirects
+      // below apply on the resulting www request.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "theproudpaintbrush.com" }],
+        destination: "https://www.theproudpaintbrush.com/:path*",
+        permanent: true,
+      },
       { source: "/blog/rfsxbwm1wuox5icg7tco32z3zgzgux", destination: "/blog/do-painters-negotiate-on-price-in-sugar-land", permanent: true },
       { source: "/blog/bbz6d1fi1tpw2dc54r4aj7one4ip49", destination: "/blog/behr-vs-sherwin-williams", permanent: true },
       { source: "/blog/re0coari0bpmqn5bkrghkaq6n53ix6", destination: "/blog/how-much-do-painting-companies-charge", permanent: true },

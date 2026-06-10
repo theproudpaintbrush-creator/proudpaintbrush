@@ -32,7 +32,7 @@ function FeaturedVideo({
         {placeholder ? (
           posterImage ? (
             <>
-              <Image src={posterImage} alt={`${customerName ?? "Customer"} video testimonial poster`} fill className="object-cover" />
+              <Image src={posterImage} alt={`${customerName ?? "Customer"} video testimonial poster`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                 <div className="w-20 h-20 rounded-full bg-white/90 flex items-center justify-center">
                   <div

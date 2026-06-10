@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
+import { BOOKING_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Painting Tips & Advice Blog",
@@ -113,7 +114,7 @@ export default function BlogIndexPage() {
             contractor.
           </p>
           <a
-            href="https://theproudpaintbrush.youcanbook.me"
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#4B83B2] hover:bg-[#3a6a96] text-white font-semibold px-8 py-3 rounded-lg transition-colors inline-block"

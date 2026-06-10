@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { BOOKING_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Our Story | The Proud Paintbrush Sugar Land",
@@ -22,8 +23,23 @@ export const metadata: Metadata = {
     images: ["https://www.theproudpaintbrush.com/images/paint-it-forward-community.jpg"],
   },
 };
+const BASE_URL = "https://www.theproudpaintbrush.com";
 
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
+// Founder entity, resolved by the same @id the LocalBusiness `founder` and the
+// blog author attributions point to, so Chris Petkau is one entity sitewide.
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${BASE_URL}/our-story#chris-petkau`,
+  name: "Chris Petkau",
+  jobTitle: "Founder & Owner",
+  worksFor: { "@id": `${BASE_URL}/#business` },
+  homeLocation: { "@type": "Place", name: "Sugar Land, TX" },
+  birthPlace: { "@type": "Place", name: "Vancouver, Canada" },
+  url: `${BASE_URL}/our-story`,
+  description:
+    "Chris Petkau is the founder and owner of The Proud Paintbrush, a locally owned painting company serving Sugar Land and Fort Bend County since 2020.",
+};
 
 function WaveDown({ from, to }: { from: string; to: string }) {
   return (
@@ -90,12 +106,17 @@ const faqs = [
 export default function OurStoryPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       {/* HERO */}
       <section className="relative w-full h-[90vh] min-h-[560px] flex items-center justify-center overflow-hidden">
         <Image
           src="/images/story-family-1.jpg"
           alt="The Proud Paintbrush family — Chris Petkau with his wife and sons in Sugar Land, TX"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
           quality={90}
@@ -132,14 +153,15 @@ export default function OurStoryPage() {
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Chris grew up in Vancouver, Canada, with a strong foundation in construction
-                inspired by his father's concrete business. After moving to Texas in 2020, he
-                turned this hands-on experience into a passion for painting and a clear vision for
-                helping homeowners bring pride back to their homes.
+                inspired by his father's concrete business. He moved to the United States in 2007,
+                and over the years that followed he turned that hands-on experience into a passion
+                for painting and a clear vision for helping homeowners bring pride back to their
+                homes.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 In 2020, during the uncertainty of COVID, Chris and Sarah made the decision to move
-                to Houston and start a new chapter of their lives. That same year, The Proud
-                Paintbrush was born.
+                to the Houston area and start a new chapter of their lives. That same year, they
+                settled in Sugar Land and The Proud Paintbrush was born.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Around that same time, they also learned they were facing infertility and began the
@@ -162,6 +184,7 @@ export default function OurStoryPage() {
                 src="/images/story-family-2.jpg"
                 alt="Chris Petkau, owner of The Proud Paintbrush, with his family"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"
                 quality={90}
               />
@@ -229,7 +252,7 @@ export default function OurStoryPage() {
               { src: "/images/story-family-3.jpg", alt: "The Petkau family — the heart of The Proud Paintbrush" },
             ].map((img) => (
               <div key={img.src} className="relative h-64 overflow-hidden">
-                <Image src={img.src} alt={img.alt} fill className="object-cover object-center" quality={90} />
+                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-center" quality={90} />
               </div>
             ))}
           </div>

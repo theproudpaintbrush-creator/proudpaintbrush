@@ -1,0 +1,43 @@
+{
+  "slug": "gail-west-houston-interior-restoration",
+  "title": "Gail's Home — West Houston Interior Restoration | Projects",
+  "metaDescription": "A West Houston interior restoration: walls, hallway, and bedrooms repaired and repainted with Sherwin-Williams interior coatings as part of Paint It Forward.",
+  "h1": "Gail's Home — West Houston Interior Restoration",
+  "neighborhood": "West Houston",
+  "city": "West Houston, TX",
+  "completed": "2026",
+  "date": "2026-03-25",
+  "services": [
+    "Interior Painting",
+    "Drywall Repair",
+    "Wall Restoration",
+    "Trim Painting"
+  ],
+  "products": [
+    "Sherwin-Williams interior acrylic latex",
+    "Sherwin-Williams interior primer",
+    "Drywall patching compound and texture"
+  ],
+  "narrative": [
+    "Gail's 2026 Paint It Forward project didn't stop at the exterior. Inside, the home needed the same care — tired walls, worn trim, and surfaces that hadn't been refreshed in years.",
+    "We restored the interior room by room: patching and repairing the drywall, smoothing and texturing where needed, and repainting walls, hallway, and bedrooms with a clean, durable Sherwin-Williams interior system.",
+    "The finished interior matched the transformation outside — bright, even, and ready for everyday life. It's the kind of project that reminds us why Paint It Forward exists."
+  ],
+  "photos": [
+    {
+      "src": "/images/migrated/paint-it-forward-2026-freshly-painted-interior-west-houston-tx.webp",
+      "alt": "Freshly painted interior living space in Gail's West Houston home",
+      "caption": "After — freshly painted living space"
+    },
+    {
+      "src": "/images/migrated/paint-it-forward-2026-freshly-painted-bedroom-west-houston-tx.webp",
+      "alt": "Freshly painted bedroom in Gail's West Houston home",
+      "caption": "After — bedroom"
+    },
+    {
+      "src": "/images/migrated/paint-it-forward-2026-freshly-painted-hallway-west-houston-tx.webp",
+      "alt": "Freshly painted hallway in Gail's West Houston home",
+      "caption": "After — hallway"
+    }
+  ]
+}

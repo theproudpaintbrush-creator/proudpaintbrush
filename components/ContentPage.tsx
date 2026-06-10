@@ -3,8 +3,8 @@ import type { PageContent } from "@/lib/pages";
 import { getReviewsForPage } from "@/lib/reviews";
 import ReviewCards from "@/components/ReviewCards";
 import PricingBand from "@/components/PricingBand";
-
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
+import FenceEstimator from "@/components/FenceEstimator";
+import { BOOKING_URL } from "@/lib/site";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
 
@@ -56,6 +56,9 @@ export default function ContentPage({ page }: { page: PageContent }) {
           </div>
         </div>
       )}
+
+      {/* INTERACTIVE CALCULATOR (opt-in) — sits right under the hero */}
+      {page.calculator === "fence" && <FenceEstimator />}
 
       {/* BODY */}
       <article className="py-14">

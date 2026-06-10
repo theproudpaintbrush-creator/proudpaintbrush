@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CITIES } from "@/lib/cities";
+import { BOOKING_EMBED_URL, REVIEW_URL, BOOKING_URL } from "@/lib/site";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
 const EMAIL = "info@theproudpaintbrush.com";
@@ -98,7 +98,7 @@ export default function ContactPage() {
         <div className="max-w-3xl mx-auto bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
           <iframe
             title="Book a free painting estimate with The Proud Paintbrush"
-            src="https://theproudpaintbrush.youcanbook.me/?noframe=true&skipHeaderFooter=true"
+            src={BOOKING_EMBED_URL}
             className="w-full"
             style={{ minHeight: "780px", border: 0 }}
             loading="lazy"
@@ -129,7 +129,7 @@ export default function ContactPage() {
               Leave a Google review
             </a>
             <a
-              href="https://share.google/03zEeHzRVJW7NvE2Z"
+              href={REVIEW_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-6 py-3 transition-colors"

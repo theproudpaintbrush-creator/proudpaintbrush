@@ -6,6 +6,8 @@ import ProjectGallery from "@/components/ProjectGallery";
 import PricingBand from "@/components/PricingBand";
 import ReviewCards from "@/components/ReviewCards";
 import type { Review } from "@/lib/reviews";
+import EstimatePrompt from "@/components/EstimatePrompt";
+import { BOOKING_URL } from "@/lib/site";
 
 // Pick a simple line-icon for a "why choose us" card based on its title.
 function CardIcon({ title }: { title: string }) {
@@ -28,8 +30,6 @@ function CardIcon({ title }: { title: string }) {
     </svg>
   );
 }
-
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
 
@@ -64,7 +64,7 @@ export default function ServiceHub({
     <>
       {/* HERO */}
       <section className="relative w-full h-[70vh] min-h-[480px] flex items-center justify-center overflow-hidden">
-        <Image src={hub.heroImage} alt={hub.heroAlt} fill className="object-cover object-center" priority quality={90} />
+        <Image src={hub.heroImage} alt={hub.heroAlt} fill sizes="100vw" className="object-cover object-center" priority quality={90} />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-4 text-xs sm:text-sm text-white/60 tracking-wide uppercase">
@@ -303,6 +303,7 @@ export default function ServiceHub({
           </div>
         </div>
       </section>
+      <EstimatePrompt />
     </>
   );
 }

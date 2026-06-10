@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { BOOKING_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Our Vision | Residential Painters Sugar Land TX",
@@ -22,8 +23,6 @@ export const metadata: Metadata = {
     images: ["https://www.theproudpaintbrush.com/images/paint-it-forward-community.jpg"],
   },
 };
-
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 
 function WaveDown({ from, to }: { from: string; to: string }) {
   return (
@@ -111,6 +110,7 @@ export default function OurVisionPage() {
           src="/images/migrated/satisfied-customer-richmond-exterior-painting.webp"
           alt="Satisfied Richmond, TX homeowners in front of their freshly painted home by The Proud Paintbrush"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
           quality={90}
@@ -221,6 +221,7 @@ export default function OurVisionPage() {
                 src="/images/vision-paint-it-forward.jpg"
                 alt="The Proud Paintbrush team at the Paint It Forward event in Sugar Land, TX"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"
                 quality={90}
               />
@@ -287,6 +288,7 @@ export default function OurVisionPage() {
                 src="/images/vision-team.jpg"
                 alt="The Proud Paintbrush team"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"
                 quality={90}
               />

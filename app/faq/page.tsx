@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/site";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
 
@@ -132,7 +132,7 @@ const faqGroups: FaqGroup[] = [
       },
       {
         q: "What kind of warranty do you offer?",
-        a: 'We offer both 2-year and 5-year <a href="/warranty">workmanship warranties</a> depending on the project scope.',
+        a: 'We back every project with a <a href="/warranty">2 & 5-Year Written Warranty</a> — a 2-year standard workmanship warranty, with a 5-year upgrade available on qualifying projects.',
       },
       {
         q: "Do you actually honor your painting warranty?",

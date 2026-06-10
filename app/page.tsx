@@ -5,14 +5,15 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 import TrustBar from "@/components/TrustBar";
 import ProudProcess from "@/components/ProudProcess";
 import LiteYouTube from "@/components/LiteYouTube";
+import { BOOKING_EMBED_URL, BOOKING_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "The Proud Paintbrush | Sugar Land Painting Contractor",
-  description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Fully insured, 2 & 5-year warranties. Get your free estimate today.",
+  description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Fully insured, 2 & 5-Year Written Warranty. Get your free estimate today.",
   alternates: { canonical: "https://www.theproudpaintbrush.com" },
   openGraph: {
     title: "The Proud Paintbrush | Sugar Land Painting Contractor",
-    description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Fully insured, 2 & 5-year warranties. Get your free estimate today.",
+    description: "Top-rated residential & commercial painters in Sugar Land & Fort Bend County. Fully insured, 2 & 5-Year Written Warranty. Get your free estimate today.",
     url: "https://www.theproudpaintbrush.com",
     type: "website",
     images: [{ url: "https://www.theproudpaintbrush.com/images/hero-stucco-richmond.webp" }],
@@ -24,8 +25,6 @@ export const metadata: Metadata = {
     images: ["https://www.theproudpaintbrush.com/images/hero-stucco-richmond.webp"],
   },
 };
-
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const HERO_IMAGE = "/images/hero-stucco-richmond.webp";
 
 function WaveDown({ from, to }: { from: string; to: string }) {
@@ -122,7 +121,7 @@ export default function HomePage() {
           </p>
           <div className="bg-white rounded-2xl shadow-2xl max-w-3xl mx-auto p-3 sm:p-6">
             <iframe
-              src="https://theproudpaintbrush.youcanbook.me/?noframe=true&skipHeaderFooter=true"
+              src={BOOKING_EMBED_URL}
               title="Book your free painting estimate — The Proud Paintbrush"
               className="w-full rounded-lg overflow-hidden"
               style={{ minHeight: "640px", border: "none" }}
@@ -146,7 +145,7 @@ export default function HomePage() {
             {services.map((s) => (
               <Link key={s.href} href={s.href} className="group flex flex-col hover:opacity-90 transition-opacity">
                 <div className="relative w-full h-56 overflow-hidden mb-5">
-                  <Image src={s.img} alt={s.alt} fill className="object-cover object-center group-hover:scale-105 transition-transform duration-500" quality={85} />
+                  <Image src={s.img} alt={s.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-center group-hover:scale-105 transition-transform duration-500" quality={85} />
                 </div>
                 <h3 className="text-2xl font-semibold mb-2 group-hover:text-[#4B83B2] transition-colors">
                   {s.title}
@@ -235,6 +234,7 @@ export default function HomePage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">
                 We&apos;ve Painted Hundreds of Homes Across Fort Bend County &amp; West Houston
               </h2>
+              <p className="text-white/70 leading-relaxed mb-4">But the company we built is a reflection of the family behind it — and our story didn&apos;t start easy.</p>
               <p className="text-white/70 leading-relaxed mb-4">We walked through infertility, IVF, uncertainty, and a lot of hard years.</p>
               <p className="text-white/70 leading-relaxed mb-4">Those experiences shaped who we became. They taught us patience. They taught us perseverance. And they reinforced something we already believed: do things the right way — even when it&apos;s harder.</p>
               <p className="text-white/70 leading-relaxed mb-8">Today we&apos;re proud parents to Isaac and Samuel, and those same values guide how we serve our customers. To us, painting isn&apos;t just paint.</p>
@@ -245,7 +245,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-80 lg:h-[480px] overflow-hidden rounded-sm">
               <Image src="/images/paint-it-forward-community.jpg" alt="The Proud Paintbrush Paint It Forward community project in Sugar Land, TX"
-                fill className="object-cover object-center" quality={90} />
+                fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center" quality={90} />
             </div>
           </div>
         </div>

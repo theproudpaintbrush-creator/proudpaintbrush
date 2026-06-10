@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPostBySlug, getAllPosts, getAllSlugs } from "@/lib/blog";
 import { imageDims } from "@/lib/imageDims";
+import { BOOKING_URL } from "@/lib/site";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -84,7 +85,16 @@ export default async function BlogPostPage({ params }: PageProps) {
     "@type": "Article",
     headline: post.title,
     description: post.description,
-    author: AUTHOR_BIOS[post.author]
+    author: post.author === "Chris Petkau"
+      ? {
+          "@type": "Person",
+          "@id": "https://www.theproudpaintbrush.com/our-story#chris-petkau",
+          name: post.author,
+          description: AUTHOR_BIOS[post.author].bio,
+          url: "https://www.theproudpaintbrush.com/our-story",
+          worksFor: { "@id": "https://www.theproudpaintbrush.com/#business" },
+        }
+      : AUTHOR_BIOS[post.author]
       ? {
           "@type": "Person",
           name: post.author,
@@ -288,7 +298,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             contractor.
           </p>
           <a
-            href="https://theproudpaintbrush.youcanbook.me"
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#4B83B2] hover:bg-[#3a6a96] text-white font-semibold px-8 py-3 rounded-lg transition-colors inline-block"

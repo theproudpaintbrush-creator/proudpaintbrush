@@ -8,9 +8,9 @@ import VideoTestimonial from "@/components/VideoTestimonial";
 import CustomerPhotoGrid, { BeforeAfterGrid } from "@/components/CustomerPhotoGrid";
 import ServiceDetail from "@/components/ServiceDetail";
 import { buildServiceSchemas } from "@/lib/serviceSchema";
+import { BOOKING_URL } from "@/lib/site";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
 

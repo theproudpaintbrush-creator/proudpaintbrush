@@ -1,6 +1,5 @@
 import Link from "next/link";
-
-const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
+import { BOOKING_URL } from "@/lib/site";
 
 const CREDENTIALS = [
   "Fully Insured · $1M Liability",
