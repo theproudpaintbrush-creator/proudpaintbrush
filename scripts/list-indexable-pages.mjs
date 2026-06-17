@@ -43,23 +43,39 @@ const dirSlugs = (...p) => {
 const projectSlugs = dirSlugs("content", "projects");
 const blogSlugs = dirSlugs("content", "blog");
 
-// --- Build groups (mirrors sitemap.ts order) ---
+// --- Build groups (mirrors sitemap.ts order + priorities) ---
+// Each group: [name, paths, priority]. Priority matches app/sitemap.ts so the
+// "high priority" tier below is derived from the same numbers Google sees.
+const HIGH_PRIORITY = 0.9; // pages at or above this are the money pages
 const groups = [
   ["Static pages", [
     "", "/exterior-painting", "/interior-painting", "/cabinet-painting",
     "/our-story", "/our-vision", "/core-values", "/testimonials",
     "/faq", "/contact", "/blog", "/projects",
-  ]],
-  ["Exterior — city pages", citySlugs.map((c) => `/exterior-painting/${c}`)],
-  ["Interior — city pages", citySlugs.map((c) => `/interior-painting/${c}`)],
-  ["Cabinet — city pages", citySlugs.map((c) => `/cabinet-painting/${c}`)],
-  ["Fence staining — city pages", citySlugs.map((c) => `/exterior-painting/fence-staining/${c}`)],
-  ["Interior — service detail pages", serviceSlugs("interior").map((s) => `/interior-painting/${s}`)],
-  ["Exterior — service detail pages", serviceSlugs("exterior").map((s) => `/exterior-painting/${s}`)],
-  ["Content pages", pageKeys.map((k) => `/${k}`)],
-  ["Project case studies", projectSlugs.map((s) => `/projects/${s}`)],
-  ["Blog posts", blogSlugs.map((s) => `/blog/${s}`)],
+  ], null], // mixed priority — handled per-URL below
+  ["Exterior — city pages", citySlugs.map((c) => `/exterior-painting/${c}`), 0.95],
+  ["Interior — city pages", citySlugs.map((c) => `/interior-painting/${c}`), 0.95],
+  ["Cabinet — city pages", citySlugs.map((c) => `/cabinet-painting/${c}`), 0.9],
+  ["Fence staining — city pages", citySlugs.map((c) => `/exterior-painting/fence-staining/${c}`), 0.9],
+  ["Interior — service detail pages", serviceSlugs("interior").map((s) => `/interior-painting/${s}`), 0.85],
+  ["Exterior — service detail pages", serviceSlugs("exterior").map((s) => `/exterior-painting/${s}`), 0.85],
+  ["Content pages", pageKeys.map((k) => `/${k}`), 0.7],
+  ["Project case studies", projectSlugs.map((s) => `/projects/${s}`), 0.65],
+  ["Blog posts", blogSlugs.map((s) => `/blog/${s}`), 0.7],
 ];
+
+// Per-URL priority for the mixed "Static pages" group (matches sitemap.ts).
+const staticPriority = (p) => {
+  if (p === "") return 1.0;
+  if (["/exterior-painting", "/interior-painting", "/cabinet-painting"].includes(p)) return 0.9;
+  if (p === "/contact" || p === "/blog") return 0.8;
+  return 0.7; // our-story, our-vision, core-values, testimonials, projects, faq
+};
+
+// Resolve the high-priority subset (priority >= HIGH_PRIORITY).
+const highPriorityUrls = groups.flatMap(([, paths, prio]) =>
+  paths.filter((p) => (prio ?? staticPriority(p)) >= HIGH_PRIORITY).map((p) => `${BASE_URL}${p}`)
+);
 
 const total = groups.reduce((n, [, paths]) => n + paths.length, 0);
 
@@ -83,5 +99,8 @@ fs.writeFileSync(path.join(ROOT, "INDEXABLE-PAGES.md"), md.join("\n"));
 const urls = groups.flatMap(([, paths]) => paths.map((p) => `${BASE_URL}${p}`));
 fs.writeFileSync(path.join(ROOT, "indexable-urls.txt"), urls.join("\n") + "\n");
 
+// --- Write high-priority submission list (priority >= 0.9) ---
+fs.writeFileSync(path.join(ROOT, "high-priority-urls.txt"), highPriorityUrls.join("\n") + "\n");
+
 console.log(`cities=${citySlugs.length} interiorSvc=${serviceSlugs("interior").length} exteriorSvc=${serviceSlugs("exterior").length} pages=${pageKeys.length} projects=${projectSlugs.length} blog=${blogSlugs.length}`);
-console.log(`Wrote INDEXABLE-PAGES.md and indexable-urls.txt — ${total} URLs total.`);
+console.log(`Wrote INDEXABLE-PAGES.md (${total} URLs), indexable-urls.txt (${total}), high-priority-urls.txt (${highPriorityUrls.length}).`);
