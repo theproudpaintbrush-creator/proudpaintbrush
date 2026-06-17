@@ -9,6 +9,7 @@ const services = [
   { label: "Interior Painting", href: "/interior-painting" },
   { label: "Exterior Painting", href: "/exterior-painting" },
   { label: "Cabinet Painting", href: "/cabinet-painting" },
+  { label: "Commercial Painting", href: "/commercial-painting" },
   { label: "Drywall Repair", href: "/interior-painting/drywall-repair" },
   { label: "Fence Staining", href: "/exterior-painting/fence-staining" },
 ];
