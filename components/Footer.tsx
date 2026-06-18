@@ -37,6 +37,19 @@ const serviceAreas = [
   "Southwest Houston",
 ];
 
+// Per-city service pages. Linking these site-wide from the footer gives every
+// city/service page an inbound link from every page (removes orphan status).
+const cityServiceAreas = [
+  { name: "Sugar Land", slug: "sugar-land" },
+  { name: "Missouri City", slug: "missouri-city" },
+  { name: "Katy", slug: "katy" },
+  { name: "Rosenberg", slug: "rosenberg" },
+  { name: "Richmond", slug: "richmond" },
+  { name: "Fulshear", slug: "fulshear" },
+  { name: "West Houston", slug: "west-houston" },
+  { name: "Southwest Houston", slug: "southwest-houston" },
+];
+
 const socials = [
   {
     label: "Instagram",
@@ -189,6 +202,49 @@ export default function Footer() {
                       className="hover:text-white transition-colors"
                     >
                       {area}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Painting by city — links every per-city service page from the site-wide footer */}
+        <div className="mt-12 pt-8 border-t border-gray-700">
+          <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-300 mb-6 text-center">
+            Painting by City
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <div>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">
+                Exterior Painting
+              </h4>
+              <ul className="grid grid-cols-2 gap-x-6 gap-y-1.5">
+                {cityServiceAreas.map((c) => (
+                  <li key={`ext-${c.slug}`}>
+                    <Link
+                      href={`/exterior-painting/${c.slug}`}
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      {c.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">
+                Interior Painting
+              </h4>
+              <ul className="grid grid-cols-2 gap-x-6 gap-y-1.5">
+                {cityServiceAreas.map((c) => (
+                  <li key={`int-${c.slug}`}>
+                    <Link
+                      href={`/interior-painting/${c.slug}`}
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      {c.name}
                     </Link>
                   </li>
                 ))}
