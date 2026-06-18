@@ -1,10 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AuthenticVideoGrid } from "@/components/VideoTestimonial";
 import { STRIP_VIDEOS, SERVICE_STRIP_VIDEOS } from "@/lib/testimonialVideos";
-import { BOOKING_URL } from "@/lib/site";
+import { BOOKING_URL, REVIEW_URL } from "@/lib/site";
 
 const SERVICE_HEADING: Record<string, string> = {
   interior: "Hear From Our Interior Painting Customers",
@@ -62,12 +61,14 @@ export default function GlobalVideoTestimonials() {
         <AuthenticVideoGrid videos={videos} city="Sugar Land" />
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link
-            href="/testimonials"
+          <a
+            href={REVIEW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-white text-[#111111] hover:bg-[#4B83B2] hover:text-white font-semibold px-8 py-3 transition-colors"
           >
             See all 113 five-star reviews &rarr;
-          </Link>
+          </a>
           <a
             href={BOOKING_URL}
             target="_blank"

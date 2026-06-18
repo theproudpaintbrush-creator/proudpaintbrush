@@ -129,20 +129,36 @@ export default function HomePage() {
 
       {/* ── REQUEST A FREE ESTIMATE (booking embed) ── */}
       <section className="bg-[#eef1f5] text-[#1a2e44] pt-12 pb-0">
-        <div className="max-w-4xl mx-auto px-4 pb-14 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-3">Request Your Free Estimate</h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-8">
-            Pick a time that works for you — most estimates take 30&ndash;40 minutes. We&apos;ll walk the
-            space with you, answer every question, and leave you with a clear, honest quote.
-          </p>
-          <div className="bg-white rounded-2xl shadow-2xl max-w-3xl mx-auto p-3 sm:p-6">
-            <iframe
-              src={BOOKING_EMBED_URL}
-              title="Book your free painting estimate — The Proud Paintbrush"
-              className="w-full rounded-lg overflow-hidden"
-              style={{ minHeight: "640px", border: "none" }}
-              loading="lazy"
-            />
+        <div className="max-w-6xl mx-auto px-4 pb-14">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+            {/* LEFT: copy + booking form */}
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-3">Request Your Free Estimate</h2>
+              <p className="text-gray-600 text-lg mb-8">
+                Pick a time that works for you — most estimates take 30&ndash;40 minutes. We&apos;ll walk the
+                space with you, answer every question, and leave you with a clear, honest quote.
+              </p>
+              <div className="bg-white rounded-2xl shadow-2xl p-3 sm:p-6">
+                <iframe
+                  src={BOOKING_EMBED_URL}
+                  title="Book your free painting estimate — The Proud Paintbrush"
+                  className="w-full rounded-lg overflow-hidden"
+                  style={{ minHeight: "640px", border: "none" }}
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            {/* RIGHT: trust-building photo */}
+            <div className="relative min-h-[360px] lg:min-h-full rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/exterior-house-painting-after-the-proud-paintbrush.jpg"
+                alt="Freshly painted two-story home exterior by The Proud Paintbrush in Fort Bend County, TX"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
+                quality={85}
+              />
+            </div>
           </div>
         </div>
         <WaveDown from="bg-[#eef1f5]" to="#111111" />
