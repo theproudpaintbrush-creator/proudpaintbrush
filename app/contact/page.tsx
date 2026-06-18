@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CITIES } from "@/lib/cities";
-import { BOOKING_EMBED_URL, REVIEW_URL, BOOKING_URL } from "@/lib/site";
+import { BOOKING_EMBED_URL, REVIEW_URL, BOOKING_URL, WEB3FORMS_ACCESS_KEY } from "@/lib/site";
+import LeadForm from "@/components/LeadForm";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
 const PHONE = "(832) 605-0493";
@@ -87,23 +88,46 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* BOOKING EMBED */}
+      {/* BOOKING + LEAD FORM */}
       <section id="book" className="bg-gray-50 py-16 px-4">
         <div className="max-w-3xl mx-auto text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] mb-3">Request Your Free Estimate</h2>
           <p className="text-gray-600">
-            Pick a time below — fully insured and locally owned since 2020. Every estimate is honest, detailed, and no-pressure.
+            {WEB3FORMS_ACCESS_KEY
+              ? "Two easy ways: leave your details and we'll call you, or book a time right now. Fully insured and locally owned since 2020 — every estimate is honest, detailed, and no-pressure."
+              : "Pick a time below — fully insured and locally owned since 2020. Every estimate is honest, detailed, and no-pressure."}
           </p>
         </div>
-        <div className="max-w-3xl mx-auto bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-          <iframe
-            title="Book a free painting estimate with The Proud Paintbrush"
-            src={BOOKING_EMBED_URL}
-            className="w-full"
-            style={{ minHeight: "780px", border: 0 }}
-            loading="lazy"
-          />
-        </div>
+        {WEB3FORMS_ACCESS_KEY ? (
+          <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div>
+              <h3 className="text-lg font-bold text-[#1a2e44] mb-3">Tell us about your project</h3>
+              <LeadForm />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-[#1a2e44] mb-3">Or book a walkthrough now</h3>
+              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                <iframe
+                  title="Book a free painting estimate with The Proud Paintbrush"
+                  src={BOOKING_EMBED_URL}
+                  className="w-full"
+                  style={{ minHeight: "780px", border: 0 }}
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="max-w-3xl mx-auto bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+            <iframe
+              title="Book a free painting estimate with The Proud Paintbrush"
+              src={BOOKING_EMBED_URL}
+              className="w-full"
+              style={{ minHeight: "780px", border: 0 }}
+              loading="lazy"
+            />
+          </div>
+        )}
         <p className="text-center text-sm text-gray-500 mt-4">
           Prefer a new tab?{" "}
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-[#4B83B2] font-medium hover:underline">

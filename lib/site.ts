@@ -26,6 +26,13 @@ export const PHONE_TEL = "+18326050493";
 
 export const EMAIL = "info@theproudpaintbrush.com";
 
+// Web3Forms access key for the /contact lead form. Create a free key (tied to
+// the inbox you want leads in) at https://web3forms.com — it's safe to commit
+// (it only authorizes sending TO your email; spam-protected). The lead form on
+// /contact stays hidden until this is set to a real key.
+// TODO(web3forms): paste the access key from web3forms.com here.
+export const WEB3FORMS_ACCESS_KEY = "";
+
 // Review aggregate. 5.0★ rating; the count is the live Google Business Profile
 // total (larger than the attributable reviews kept in content/reviews.json).
 // Update REVIEW_COUNT when the GBP total changes.
