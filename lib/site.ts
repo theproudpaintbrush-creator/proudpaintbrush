@@ -31,7 +31,7 @@ export const EMAIL = "info@theproudpaintbrush.com";
 // (it only authorizes sending TO your email; spam-protected). The lead form on
 // /contact stays hidden until this is set to a real key.
 // TODO(web3forms): paste the access key from web3forms.com here.
-export const WEB3FORMS_ACCESS_KEY = "";
+export const WEB3FORMS_ACCESS_KEY = "3e961faa-6e6b-4ef0-adaf-4b8f1aa434c3";
 
 // Review aggregate. 5.0★ rating; the count is the live Google Business Profile
 // total (larger than the attributable reviews kept in content/reviews.json).
