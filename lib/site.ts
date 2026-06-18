@@ -15,11 +15,10 @@ export const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
 // BOOKING_URL so it tracks the subdomain swap automatically.
 export const BOOKING_EMBED_URL = `${BOOKING_URL}/?noframe=true&skipHeaderFooter=true`;
 
-// Direct Google Maps reviews URL. The header/testimonials links currently use a
-// share.google short link, which 302-redirects (bad for crawlers and slow for
-// users). Paste the canonical Maps "?...&reviews" URL from the GBP dashboard.
-// TODO(review-link): replace with the direct Google Maps reviews URL from GBP.
-export const REVIEW_URL = "https://share.google/03zEeHzRVJW7NvE2Z";
+// Direct Google reviews URL — the canonical g.page link used by the testimonials
+// and contact pages. Standardized here so every review CTA is redirect-free
+// (the old share.google short link 302-redirected).
+export const REVIEW_URL = "https://g.page/r/CaafH5ZU7h7cEBM/review";
 
 // Phone — display form for humans, tel: form for the href.
 export const PHONE_DISPLAY = "(832) 605-0493";

@@ -1,7 +1,17 @@
 import type { ServiceContent, ServiceParent } from "@/lib/services";
+import { RATING_VALUE, REVIEW_COUNT } from "@/lib/site";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
 const BUSINESS_ID = `${BASE_URL}/#business`;
+// Business-wide rating, attached to each Service so service results are
+// eligible for review stars (matches the rating shown in on-page text).
+const AGGREGATE_RATING = {
+  "@type": "AggregateRating",
+  ratingValue: RATING_VALUE,
+  reviewCount: REVIEW_COUNT,
+  bestRating: "5",
+  worstRating: "1",
+};
 
 const PARENT_LABEL: Record<ServiceParent, string> = {
   interior: "Interior Painting",
@@ -41,6 +51,7 @@ export function buildServiceSchemas(
     provider: { "@id": BUSINESS_ID },
     areaServed: { "@type": "City", name: areaCity, address: { "@type": "PostalAddress", addressRegion: "TX", addressCountry: "US" } },
     description: service.metaDescription,
+    aggregateRating: AGGREGATE_RATING,
   };
 
   const faqSchema = service.faqs.length
@@ -93,6 +104,7 @@ export function buildHubSchemas(
     provider: { "@id": BUSINESS_ID },
     areaServed: { "@type": "City", name: "Sugar Land", address: { "@type": "PostalAddress", addressRegion: "TX", addressCountry: "US" } },
     description: metaDescription,
+    aggregateRating: AGGREGATE_RATING,
   };
   const itemList = subServices.length
     ? {

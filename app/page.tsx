@@ -5,7 +5,7 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 import TrustBar from "@/components/TrustBar";
 import ProudProcess from "@/components/ProudProcess";
 import LiteYouTube from "@/components/LiteYouTube";
-import { BOOKING_EMBED_URL, BOOKING_URL } from "@/lib/site";
+import { BOOKING_EMBED_URL, BOOKING_URL, PHONE_TEL, PHONE_DISPLAY } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "The Proud Paintbrush | Sugar Land Painting Contractor",
@@ -83,6 +83,22 @@ export default function HomePage() {
           <p className="text-lg sm:text-xl text-white/90 drop-shadow">
             Interior, exterior &amp; cabinet painting done right — prep-first, warranty-backed, locally owned.
           </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#4B83B2] hover:bg-white hover:text-[#1a2e44] text-white font-bold text-lg px-8 py-4 rounded-xl shadow-xl ring-2 ring-white/30 transition-colors"
+            >
+              Get a Free Estimate
+            </a>
+            <a
+              href={`tel:${PHONE_TEL}`}
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#1a2e44] font-bold text-lg px-8 py-4 rounded-xl transition-colors"
+            >
+              Call {PHONE_DISPLAY}
+            </a>
+          </div>
         </div>
       </section>
 

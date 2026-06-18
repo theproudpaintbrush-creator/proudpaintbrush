@@ -15,7 +15,7 @@ const services = [
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/interior-painting" },
+  { label: "Services", href: "/services" },
   { label: "About", href: "/our-story" },
   { label: "Blog", href: "/blog" },
   { label: "Testimonials", href: "/testimonials" },
@@ -184,7 +184,12 @@ export default function Footer() {
               <ul className="space-y-1">
                 {serviceAreas.map((area) => (
                   <li key={area} className="text-sm text-gray-400">
-                    {area}
+                    <Link
+                      href={`/service-areas/${area.toLowerCase().replace(/\s+/g, "-")}`}
+                      className="hover:text-white transition-colors"
+                    >
+                      {area}
+                    </Link>
                   </li>
                 ))}
               </ul>

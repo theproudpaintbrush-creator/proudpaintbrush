@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
   // on the same WiFi (Next 16 blocks cross-origin LAN dev access by default).
   allowedDevOrigins: ["192.168.254.68"],
   images: {
+    // Serve AVIF first (≈20-30% smaller than WebP), then WebP, then the original.
+    formats: ["image/avif", "image/webp"],
+    // Cache optimized images for a year so /_next/image stops revalidating on
+    // every view — big repeat-visit LCP win.
+    minimumCacheTTL: 31536000,
     // Image quality values used across the site (default is [75]).
     qualities: [75, 80, 85, 90],
     // Cap the largest generated width at 1920 (full-bleed hero max). The Next
@@ -42,6 +47,13 @@ const nextConfig: NextConfig = {
           { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
           { key: "Permissions-Policy", value: "geolocation=(), microphone=(), camera=()" },
         ],
+      },
+      {
+        // Static images in /public are served with no cache by default; pin them
+        // to a year (filenames are stable/content-specific) so repeat views and
+        // raw <img> assets don't re-download every navigation.
+        source: "/images/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
     ];
   },

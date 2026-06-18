@@ -112,7 +112,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       url: "https://www.theproudpaintbrush.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://images.squarespace-cdn.com/content/v1/6245121c345d9b583ef8e7b7/8ab85515-fa22-4454-a968-a8b8add58e5b/Logo-06-1+png.png",
+        url: "https://www.theproudpaintbrush.com/images/logo.png",
       },
     },
     datePublished: post.date,

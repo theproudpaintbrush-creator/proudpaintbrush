@@ -46,14 +46,13 @@ const localBusinessSchema = {
   "@type": ["LocalBusiness", "PaintingContractor"],
   "@id": "https://www.theproudpaintbrush.com/#business",
   name: "The Proud Paintbrush",
-  image:
-    "https://images.squarespace-cdn.com/content/v1/6245121c345d9b583ef8e7b7/8ab85515-fa22-4454-a968-a8b8add58e5b/Logo-06-1+png.png",
+  image: "https://www.theproudpaintbrush.com/images/logo.png",
+  logo: "https://www.theproudpaintbrush.com/images/logo.png",
   telephone: "+18326050493",
   email: "info@theproudpaintbrush.com",
   url: "https://www.theproudpaintbrush.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "",
     addressLocality: "Sugar Land",
     addressRegion: "TX",
     postalCode: "77498",

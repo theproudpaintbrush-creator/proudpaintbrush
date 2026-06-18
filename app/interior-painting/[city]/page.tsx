@@ -149,6 +149,13 @@ export default async function InteriorCityPage({
       },
     },
     description: content.description,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: city.aggregateRating.value,
+      reviewCount: city.aggregateRating.count,
+      bestRating: "5",
+      worstRating: "1",
+    },
   };
 
   const faqSchema = {
