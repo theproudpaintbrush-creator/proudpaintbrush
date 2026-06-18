@@ -68,12 +68,39 @@ export default async function CatchAllContentPage({ params }: { params: Promise<
     : null;
   // Real customer reviews tied to the global business entity (opt-in via page.reviews)
   const reviewSchema = page.reviews ? buildReviewSchema(getReviewsForPage(page.reviews)) : [];
+  // Service structured data (opt-in via page.serviceSchema) so service-style
+  // pages rank as a Service with provider, areaServed, and rating.
+  const serviceSchema = page.serviceSchema
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: page.serviceSchema.name,
+        ...(page.serviceSchema.serviceType ? { serviceType: page.serviceSchema.serviceType } : {}),
+        provider: { "@id": `${BASE_URL}/#business` },
+        url,
+        ...(page.serviceSchema.areaServed?.length
+          ? { areaServed: page.serviceSchema.areaServed.map((name) => ({ "@type": "City", name })) }
+          : {}),
+        ...(page.serviceSchema.aggregateRating
+          ? {
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: page.serviceSchema.aggregateRating.value,
+                reviewCount: page.serviceSchema.aggregateRating.count,
+                bestRating: "5",
+                worstRating: "1",
+              },
+            }
+          : {}),
+      }
+    : null;
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+      {serviceSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />}
       {reviewSchema.map((s, i) => (
         <script key={`rev-${i}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}

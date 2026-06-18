@@ -24,6 +24,16 @@ export type PageCityCard = {
 };
 export type PageCityCards = { heading?: string; intro?: string; cards: PageCityCard[] };
 export type PagePriceTeaser = { heading: string; range: string; note: string; href: string; linkLabel: string };
+// Optional Service structured-data block. When present, the route emits a
+// schema.org/Service JSON-LD node (provider = the global business @id) with
+// areaServed and an optional AggregateRating. Used by service-style pages
+// like /commercial-painting so they rank as a service, not just a WebPage.
+export type PageServiceSchema = {
+  name: string;
+  serviceType?: string;
+  areaServed?: string[];
+  aggregateRating?: { value: string; count: number };
+};
 
 export type PageContent = {
   key: string; // URL path without leading slash, e.g. "pricing/interior-prices"
@@ -42,6 +52,7 @@ export type PageContent = {
   // Opt-in interactive calculator rendered after the body (currently only the
   // fence-staining cost page uses "fence").
   calculator?: "fence";
+  serviceSchema?: PageServiceSchema;
   // Optional custom call-to-action that REPLACES the default estimate CTA at the
   // bottom of the page (e.g. a prominent "Apply" button on the careers page).
   cta?: { heading?: string; note?: string; label: string; href: string };
