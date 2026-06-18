@@ -88,46 +88,23 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* BOOKING + LEAD FORM */}
+      {/* BOOKING (primary) */}
       <section id="book" className="bg-gray-50 py-16 px-4">
         <div className="max-w-3xl mx-auto text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] mb-3">Request Your Free Estimate</h2>
           <p className="text-gray-600">
-            {WEB3FORMS_ACCESS_KEY
-              ? "Two easy ways: leave your details and we'll call you, or book a time right now. Fully insured and locally owned since 2020 — every estimate is honest, detailed, and no-pressure."
-              : "Pick a time below — fully insured and locally owned since 2020. Every estimate is honest, detailed, and no-pressure."}
+            Pick a time below — fully insured and locally owned since 2020. Every estimate is honest, detailed, and no-pressure.
           </p>
         </div>
-        {WEB3FORMS_ACCESS_KEY ? (
-          <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            <div>
-              <h3 className="text-lg font-bold text-[#1a2e44] mb-3">Tell us about your project</h3>
-              <LeadForm />
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-[#1a2e44] mb-3">Or book a walkthrough now</h3>
-              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-                <iframe
-                  title="Book a free painting estimate with The Proud Paintbrush"
-                  src={BOOKING_EMBED_URL}
-                  className="w-full"
-                  style={{ minHeight: "780px", border: 0 }}
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="max-w-3xl mx-auto bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-            <iframe
-              title="Book a free painting estimate with The Proud Paintbrush"
-              src={BOOKING_EMBED_URL}
-              className="w-full"
-              style={{ minHeight: "780px", border: 0 }}
-              loading="lazy"
-            />
-          </div>
-        )}
+        <div className="max-w-3xl mx-auto bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+          <iframe
+            title="Book a free painting estimate with The Proud Paintbrush"
+            src={BOOKING_EMBED_URL}
+            className="w-full"
+            style={{ minHeight: "780px", border: 0 }}
+            loading="lazy"
+          />
+        </div>
         <p className="text-center text-sm text-gray-500 mt-4">
           Prefer a new tab?{" "}
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-[#4B83B2] font-medium hover:underline">
@@ -135,6 +112,21 @@ export default function ContactPage() {
           </a>
         </p>
       </section>
+
+      {/* LEAD FORM (secondary — only when configured) */}
+      {WEB3FORMS_ACCESS_KEY && (
+        <section className="bg-white py-16 px-4 border-t border-gray-100">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] mb-3">Rather not pick a time?</h2>
+              <p className="text-gray-600">
+                Leave your details and we&apos;ll reach out within one business day to set up your free estimate.
+              </p>
+            </div>
+            <LeadForm />
+          </div>
+        </section>
+      )}
 
       {/* GOOGLE REVIEW CTA */}
       <section className="bg-[#4B83B2] text-white py-12 px-4 text-center">
