@@ -1,17 +1,12 @@
 import type { ServiceContent, ServiceParent } from "@/lib/services";
-import { RATING_VALUE, REVIEW_COUNT } from "@/lib/site";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
 const BUSINESS_ID = `${BASE_URL}/#business`;
-// Business-wide rating, attached to each Service so service results are
-// eligible for review stars (matches the rating shown in on-page text).
-const AGGREGATE_RATING = {
-  "@type": "AggregateRating",
-  ratingValue: RATING_VALUE,
-  reviewCount: REVIEW_COUNT,
-  bestRating: "5",
-  worstRating: "1",
-};
+// NOTE: aggregateRating must NOT be attached to a schema.org/Service node.
+// Service is not a type Google supports for review snippets, so doing so
+// triggers the Search Console error "Invalid object type for field
+// '<parent_node>'". The business-wide rating lives on the LocalBusiness
+// (#business) node in app/layout.tsx, which renders on every page.
 
 const PARENT_LABEL: Record<ServiceParent, string> = {
   interior: "Interior Painting",
@@ -25,7 +20,8 @@ const PARENT_PATH: Record<ServiceParent, string> = {
 };
 
 // Builds the JSON-LD graph for a service detail page:
-// LocalBusiness (+aggregateRating), Service, optional FAQPage, BreadcrumbList.
+// Service, optional FAQPage, BreadcrumbList. (The business-wide rating lives on
+// the LocalBusiness node in layout.tsx — never attach it to a Service node.)
 export function buildServiceSchemas(
   service: ServiceContent,
   opts?: {
@@ -51,7 +47,6 @@ export function buildServiceSchemas(
     provider: { "@id": BUSINESS_ID },
     areaServed: { "@type": "City", name: areaCity, address: { "@type": "PostalAddress", addressRegion: "TX", addressCountry: "US" } },
     description: service.metaDescription,
-    aggregateRating: AGGREGATE_RATING,
   };
 
   const faqSchema = service.faqs.length
@@ -104,7 +99,6 @@ export function buildHubSchemas(
     provider: { "@id": BUSINESS_ID },
     areaServed: { "@type": "City", name: "Sugar Land", address: { "@type": "PostalAddress", addressRegion: "TX", addressCountry: "US" } },
     description: metaDescription,
-    aggregateRating: AGGREGATE_RATING,
   };
   const itemList = subServices.length
     ? {

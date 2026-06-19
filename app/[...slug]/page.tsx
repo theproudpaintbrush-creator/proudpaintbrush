@@ -81,17 +81,9 @@ export default async function CatchAllContentPage({ params }: { params: Promise<
         ...(page.serviceSchema.areaServed?.length
           ? { areaServed: page.serviceSchema.areaServed.map((name) => ({ "@type": "City", name })) }
           : {}),
-        ...(page.serviceSchema.aggregateRating
-          ? {
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: page.serviceSchema.aggregateRating.value,
-                reviewCount: page.serviceSchema.aggregateRating.count,
-                bestRating: "5",
-                worstRating: "1",
-              },
-            }
-          : {}),
+        // No aggregateRating here: schema.org/Service is not a Google-supported
+        // review-snippet type (it triggers "Invalid object type for field
+        // '<parent_node>'"). The rating lives on the LocalBusiness node in layout.tsx.
       }
     : null;
 
