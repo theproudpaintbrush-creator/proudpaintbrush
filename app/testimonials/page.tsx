@@ -63,39 +63,15 @@ function WaveUp({ from, to }: { from: string; to: string }) {
   );
 }
 
+// Individual customer reviews for the review-snippet rich result. These attach
+// to the single site-wide business entity — which already carries its
+// aggregateRating in app/layout.tsx — via the shared @id. We deliberately do
+// NOT re-declare a second LocalBusiness node or a second aggregateRating here;
+// two rated #business nodes on one page is what triggers GSC's "Review has
+// multiple aggregate ratings" error (the bug fixed on /contact).
 const testimonialsSchema = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "PaintingContractor"],
   "@id": `${BASE_URL}/#business`,
-  name: "The Proud Paintbrush",
-  image: `${BASE_URL}/images/happy-customers-the-proud-paintbrush-sugar-land-tx.jpg`,
-  url: `${BASE_URL}/testimonials`,
-  telephone: PHONE_TEL,
-  priceRange: "$$",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Sugar Land",
-    addressRegion: "TX",
-    postalCode: "77498",
-    addressCountry: "US",
-  },
-  areaServed: [
-    "Sugar Land, TX",
-    "Missouri City, TX",
-    "Katy, TX",
-    "Richmond, TX",
-    "Fulshear, TX",
-    "Rosenberg, TX",
-    "West Houston, TX",
-    "Southwest Houston, TX",
-  ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: AGGREGATE_RATING.value,
-    reviewCount: AGGREGATE_RATING.count,
-    bestRating: "5",
-    worstRating: "1",
-  },
   // Real, attributable reviews from content/reviews.json. Never fabricate.
   review: getReviews().map((r) => ({
     "@type": "Review",

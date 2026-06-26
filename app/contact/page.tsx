@@ -29,26 +29,27 @@ export const metadata: Metadata = {
   },
 };
 
+// ContactPage schema only. The rated business entity (LocalBusiness +
+// aggregateRating) is emitted once site-wide from app/layout.tsx; we reference
+// it here by @id rather than re-declaring it, so /contact never renders a second
+// aggregateRating (which triggered GSC's "multiple aggregate ratings" error).
 const schema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": `${BASE_URL}/#business`,
-  name: "The Proud Paintbrush",
-  url: BASE_URL,
-  telephone: PHONE_TEL,
-  email: EMAIL,
-  priceRange: "$$",
-  address: { "@type": "PostalAddress", addressLocality: "Sugar Land", addressRegion: "TX", postalCode: "77498", addressCountry: "US" },
-  areaServed: CITIES.map((c) => ({ "@type": "City", name: c.name })),
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: PHONE_TEL,
-    email: EMAIL,
-    contactType: "customer service",
-    areaServed: "US-TX",
-    availableLanguage: "English",
+  "@type": "ContactPage",
+  "@id": `${BASE_URL}/contact#contactpage`,
+  url: `${BASE_URL}/contact`,
+  name: "Contact The Proud Paintbrush",
+  mainEntity: {
+    "@id": `${BASE_URL}/#business`,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: PHONE_TEL,
+      email: EMAIL,
+      contactType: "customer service",
+      areaServed: "US-TX",
+      availableLanguage: "English",
+    },
   },
-  aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: 113 },
 };
 
 export default function ContactPage() {
