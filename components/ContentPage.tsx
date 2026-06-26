@@ -71,7 +71,7 @@ export default function ContentPage({ page }: { page: PageContent }) {
               [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul_li]:mb-1
               [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4 [&_ol_li]:mb-1
               [&_strong]:text-[#1a2e44] [&_strong]:font-semibold
-              [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline
+              [&_a]:text-[#3A6A96] [&_a]:font-medium [&_a:hover]:underline
               [&_img]:rounded-xl [&_img]:my-6 [&_img]:w-full [&_img]:h-auto [&_img]:shadow-sm
               [&_table]:w-full [&_table]:my-6 [&_table]:text-sm [&_th]:bg-gray-100 [&_th]:p-2 [&_th]:text-left [&_td]:border [&_td]:border-gray-200 [&_td]:p-2 [&_th]:border [&_th]:border-gray-200"
             dangerouslySetInnerHTML={{ __html: page.bodyHtml }}
@@ -94,7 +94,7 @@ export default function ContentPage({ page }: { page: PageContent }) {
                 <Link
                   key={c.href}
                   href={c.href}
-                  className="group block overflow-hidden rounded-xl border border-gray-200 bg-white hover:border-[#4B83B2] hover:shadow-md transition-all"
+                  className="group block overflow-hidden rounded-xl border border-gray-200 bg-white hover:border-[#3A6A96] hover:shadow-md transition-all"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -137,7 +137,7 @@ export default function ContentPage({ page }: { page: PageContent }) {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="block bg-white border border-gray-200 rounded-xl p-6 hover:border-[#4B83B2] hover:shadow-md transition-all"
+                  className="block bg-white border border-gray-200 rounded-xl p-6 hover:border-[#3A6A96] hover:shadow-md transition-all"
                 >
                   <span className="text-lg font-bold text-[#1a2e44]">
                     {l.label} <span aria-hidden>&rarr;</span>
@@ -203,20 +203,20 @@ export default function ContentPage({ page }: { page: PageContent }) {
               href={page.cta.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#4B83B2] hover:bg-white hover:text-[#1a2e44] text-white font-bold text-xl sm:text-2xl px-14 py-6 rounded-xl shadow-xl ring-2 ring-white/30 transition-colors"
+              className="inline-block bg-[#3A6A96] hover:bg-white hover:text-[#1a2e44] text-white font-bold text-xl sm:text-2xl px-14 py-6 rounded-xl shadow-xl ring-2 ring-white/30 transition-colors"
             >
               {page.cta.label} <span aria-hidden>&rarr;</span>
             </a>
           </div>
         </section>
       ) : (
-        <section className="bg-[#4B83B2] text-white py-14 px-4 text-center">
+        <section className="bg-[#3A6A96] text-white py-14 px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Get Started?</h2>
             <p className="text-white/90 mb-8">Get a free, no-pressure estimate from Sugar Land&apos;s top-rated, locally owned painting company.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#4B83B2] hover:bg-[#1a2e44] hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors">Request a Free Estimate</a>
-              <a href={`tel:${PHONE_TEL}`} className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-8 py-3 rounded-lg transition-colors">Call {PHONE}</a>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#3A6A96] hover:bg-[#1a2e44] hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors">Request a Free Estimate</a>
+              <a href={`tel:${PHONE_TEL}`} className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-8 py-3 rounded-lg transition-colors">Call {PHONE}</a>
             </div>
           </div>
         </section>

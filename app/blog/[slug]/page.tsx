@@ -151,7 +151,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="mb-4">
             <Link
               href="/blog"
-              className="text-[#4B83B2] hover:underline text-sm font-medium"
+              className="text-[#3A6A96] hover:underline text-sm font-medium"
             >
               &larr; Back to Blog
             </Link>
@@ -199,7 +199,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul_li]:mb-1
               [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4 [&_ol_li]:mb-1
               [&_strong]:text-[#1a2e44] [&_strong]:font-semibold
-              [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline
+              [&_a]:text-[#3A6A96] [&_a]:font-medium [&_a:hover]:underline
               [&_img]:rounded-xl [&_img]:my-6 [&_img]:w-full [&_img]:h-auto [&_img]:shadow-sm"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
@@ -209,7 +209,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       {/* Contextual service spotlight */}
       <section className="py-2">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#4B83B2] text-white rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="bg-[#3A6A96] text-white rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <p className="text-white/80 text-sm font-semibold uppercase tracking-widest mb-1">Thinking about a project?</p>
               <p className="text-lg font-bold">
@@ -217,10 +217,10 @@ export default async function BlogPostPage({ params }: PageProps) {
               </p>
             </div>
             <div className="flex flex-shrink-0 gap-3">
-              <Link href={spotlight.href} className="bg-white text-[#4B83B2] hover:bg-[#1a2e44] hover:text-white font-semibold px-5 py-3 rounded-lg transition-colors whitespace-nowrap">
+              <Link href={spotlight.href} className="bg-white text-[#3A6A96] hover:bg-[#1a2e44] hover:text-white font-semibold px-5 py-3 rounded-lg transition-colors whitespace-nowrap">
                 {spotlight.href === "/contact" ? "Free Estimate" : spotlight.label}
               </Link>
-              <Link href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-5 py-3 rounded-lg transition-colors whitespace-nowrap">
+              <Link href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-5 py-3 rounded-lg transition-colors whitespace-nowrap">
                 Get a Quote
               </Link>
             </div>
@@ -232,7 +232,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       <section className="bg-[#f8f9fa] py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-start gap-4 bg-white rounded-xl p-6 shadow-sm">
-            <div className="w-12 h-12 bg-[#4B83B2] rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+            <div className="w-12 h-12 bg-[#3A6A96] rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
               {(AUTHOR_BIOS[post.author] || DEFAULT_BIO).initials}
             </div>
             <div>
@@ -272,7 +272,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                   <h3 className="font-bold text-[#1a2e44] mb-2 leading-tight">
                     <Link
                       href={`/blog/${related.slug}`}
-                      className="hover:text-[#4B83B2] transition-colors"
+                      className="hover:text-[#3A6A96] transition-colors"
                     >
                       {related.title}
                     </Link>
@@ -301,7 +301,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#4B83B2] hover:bg-[#3a6a96] text-white font-semibold px-8 py-3 rounded-lg transition-colors inline-block"
+            className="bg-[#3A6A96] hover:bg-[#2D5479] text-white font-semibold px-8 py-3 rounded-lg transition-colors inline-block"
           >
             Schedule Free Estimate
           </a>

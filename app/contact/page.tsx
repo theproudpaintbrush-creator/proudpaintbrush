@@ -79,9 +79,9 @@ export default function ContactPage() {
             <a
               key={m.label}
               href={m.href}
-              className="block border border-gray-200 hover:border-[#4B83B2] p-6 transition-colors text-center"
+              className="block border border-gray-200 hover:border-[#3A6A96] p-6 transition-colors text-center"
             >
-              <div className="text-sm font-semibold uppercase tracking-widest text-[#4B83B2] mb-2">{m.label}</div>
+              <div className="text-sm font-semibold uppercase tracking-widest text-[#3A6A96] mb-2">{m.label}</div>
               <div className="text-base sm:text-lg font-bold text-[#1a2e44] mb-1 break-words">{m.value}</div>
               <div className="text-sm text-gray-500">{m.note}</div>
             </a>
@@ -108,7 +108,7 @@ export default function ContactPage() {
         </div>
         <p className="text-center text-sm text-gray-500 mt-4">
           Prefer a new tab?{" "}
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-[#4B83B2] font-medium hover:underline">
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-[#3A6A96] font-medium hover:underline">
             Open the scheduler &rarr;
           </a>
         </p>
@@ -130,7 +130,7 @@ export default function ContactPage() {
       )}
 
       {/* GOOGLE REVIEW CTA */}
-      <section className="bg-[#4B83B2] text-white py-12 px-4 text-center">
+      <section className="bg-[#3A6A96] text-white py-12 px-4 text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold mb-3">Already worked with us?</h2>
           <p className="text-white/90 mb-6">
@@ -141,7 +141,7 @@ export default function ContactPage() {
               href="https://g.page/r/CaafH5ZU7h7cEBM/review"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white text-[#4B83B2] hover:bg-[#1a2e44] hover:text-white font-semibold px-6 py-3 transition-colors"
+              className="inline-block bg-white text-[#3A6A96] hover:bg-[#1a2e44] hover:text-white font-semibold px-6 py-3 transition-colors"
             >
               Leave a Google review
             </a>
@@ -149,7 +149,7 @@ export default function ContactPage() {
               href={REVIEW_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-6 py-3 transition-colors"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-6 py-3 transition-colors"
             >
               Read our reviews
             </a>
@@ -167,7 +167,7 @@ export default function ContactPage() {
               <Link
                 key={c.slug}
                 href={`/service-areas/${c.slug}`}
-                className="border border-gray-200 hover:border-[#4B83B2] hover:text-[#4B83B2] text-[#1a2e44] text-sm font-medium px-4 py-2 transition-colors"
+                className="border border-gray-200 hover:border-[#3A6A96] hover:text-[#3A6A96] text-[#1a2e44] text-sm font-medium px-4 py-2 transition-colors"
               >
                 {c.name}
               </Link>

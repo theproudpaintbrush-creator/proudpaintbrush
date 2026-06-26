@@ -366,7 +366,7 @@ export default async function InteriorCityPage({
       </section>
 
       {/* CLOSING CTA */}
-      <section className="bg-[#4B83B2] text-white py-20 px-4 text-center">
+      <section className="bg-[#3A6A96] text-white py-20 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
             Ready to Refresh Your {city.name} Interior?
@@ -379,13 +379,13 @@ export default async function InteriorCityPage({
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white text-[#4B83B2] hover:bg-[#111111] hover:text-white font-semibold px-10 py-4 text-lg transition-colors"
+              className="inline-block bg-white text-[#3A6A96] hover:bg-[#111111] hover:text-white font-semibold px-10 py-4 text-lg transition-colors"
             >
               Request a Free Estimate
             </a>
             <a
               href={`tel:${PHONE_TEL}`}
-              className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-10 py-4 text-lg transition-colors"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors"
             >
               Call {PHONE}
             </a>

@@ -205,7 +205,7 @@ export default function CoreValuesPage() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-10 py-4 text-lg transition-colors"
+            className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors"
           >
             Schedule Your Free Estimate
           </a>
@@ -232,7 +232,7 @@ export default function CoreValuesPage() {
           <ul className="space-y-2 mb-6">
             {valuesAffectList.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
-                <span className="text-[#4B83B2] font-bold mt-0.5">✓</span>
+                <span className="text-[#3A6A96] font-bold mt-0.5">✓</span>
                 <span className="text-gray-600">{item}</span>
               </li>
             ))}
@@ -254,12 +254,12 @@ export default function CoreValuesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {coreValues.map((value) => (
               <div key={value.title} className="bg-white/5 border border-white/10 p-6">
-                <h3 className="text-xl font-bold text-[#4B83B2] mb-4">{value.title}</h3>
+                <h3 className="text-xl font-bold text-[#3A6A96] mb-4">{value.title}</h3>
                 <p className="text-white/70 leading-relaxed mb-4 text-sm">{value.intro}</p>
                 <ul className="space-y-2 mb-4">
                   {value.list.map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#4B83B2] font-bold mt-0.5 text-sm">✓</span>
+                      <span className="text-[#3A6A96] font-bold mt-0.5 text-sm">✓</span>
                       <span className="text-white/70 text-sm">{item}</span>
                     </li>
                   ))}
@@ -280,14 +280,14 @@ export default function CoreValuesPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {processSteps.map((step, i) => (
-              <div key={step.title} className="border-l-4 border-[#4B83B2] pl-4">
-                <p className="text-sm text-[#4B83B2] font-semibold mb-1">Step {i + 1}</p>
+              <div key={step.title} className="border-l-4 border-[#3A6A96] pl-4">
+                <p className="text-sm text-[#3A6A96] font-semibold mb-1">Step {i + 1}</p>
                 <h3 className="text-lg font-bold text-[#111111] mb-2">{step.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
-          <p className="text-center text-gray-600 mt-12 [&_a]:text-[#4B83B2] [&_a]:font-semibold [&_a:hover]:underline">
+          <p className="text-center text-gray-600 mt-12 [&_a]:text-[#3A6A96] [&_a]:font-semibold [&_a:hover]:underline">
             Explore our <Link href="/preparation-process">preparation process</Link>, browse{" "}
             <Link href="/exterior-painting">exterior</Link> and{" "}
             <Link href="/interior-painting">interior painting</Link> services, or read real{" "}
@@ -327,7 +327,7 @@ export default function CoreValuesPage() {
             the place they call home.
           </p>
           <p className="text-center mt-8">
-            <Link href="/paint-it-forward" className="inline-block text-[#4B83B2] font-semibold hover:underline">
+            <Link href="/paint-it-forward" className="inline-block text-[#3A6A96] font-semibold hover:underline">
               Learn more about Paint It Forward &rarr;
             </Link>
           </p>
@@ -345,7 +345,7 @@ export default function CoreValuesPage() {
               <div key={i} className="border-b border-gray-200 pb-6">
                 <p className="font-semibold text-[#111111] mb-2">{faq.question}</p>
                 <p
-                  className="text-gray-600 leading-relaxed [&_a]:text-[#4B83B2] [&_a]:font-medium [&_a:hover]:underline"
+                  className="text-gray-600 leading-relaxed [&_a]:text-[#3A6A96] [&_a]:font-medium [&_a:hover]:underline"
                   dangerouslySetInnerHTML={{ __html: faq.answer }}
                 />
               </div>
@@ -355,8 +355,8 @@ export default function CoreValuesPage() {
       </section>
 
       {/* BLUE CTA */}
-      <WaveUp from="bg-white" to="#4B83B2" />
-      <section className="bg-[#4B83B2] text-white py-16 px-4 text-center">
+      <WaveUp from="bg-white" to="#3A6A96" />
+      <section className="bg-[#3A6A96] text-white py-16 px-4 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">Schedule Your Free Estimate</h2>
         <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
           Experience the difference that care, craftsmanship, and hard work can make. Let&apos;s
@@ -366,12 +366,12 @@ export default function CoreValuesPage() {
           href={BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-10 py-4 text-lg transition-colors"
+          className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors"
         >
           Schedule Your Free Estimate
         </a>
       </section>
-      <WaveDown from="bg-[#4B83B2]" to="#ffffff" />
+      <WaveDown from="bg-[#3A6A96]" to="#ffffff" />
       <div className="bg-white h-4" />
     </>
   );

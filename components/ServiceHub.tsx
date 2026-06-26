@@ -25,7 +25,7 @@ function CardIcon({ title }: { title: string }) {
     path = "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"; // check-badge (prep / default)
   }
   return (
-    <svg className="w-7 h-7 text-[#4B83B2] mb-3" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden>
+    <svg className="w-7 h-7 text-[#3A6A96] mb-3" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden>
       <path strokeLinecap="round" strokeLinejoin="round" d={path} />
     </svg>
   );
@@ -145,10 +145,10 @@ export default function ServiceHub({
                 <Link
                   key={s.slug}
                   href={`${parentPath}/${s.slug}`}
-                  className="group bg-white border border-gray-200 hover:border-[#4B83B2] p-5 flex items-center justify-between transition-colors"
+                  className="group bg-white border border-gray-200 hover:border-[#3A6A96] p-5 flex items-center justify-between transition-colors"
                 >
-                  <span className="text-[#111111] font-medium text-sm group-hover:text-[#4B83B2]">{s.name}</span>
-                  <span className="text-[#4B83B2] ml-2">&rarr;</span>
+                  <span className="text-[#111111] font-medium text-sm group-hover:text-[#3A6A96]">{s.name}</span>
+                  <span className="text-[#3A6A96] ml-2">&rarr;</span>
                 </Link>
               ))}
             </div>
@@ -163,7 +163,7 @@ export default function ServiceHub({
             <h2 className="text-3xl sm:text-4xl font-bold text-[#111111] text-center mb-12">{hub.whyHeading}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {hub.whyCards.map((c) => (
-                <div key={c.title} className="border border-gray-200 p-6 hover:border-[#4B83B2] transition-colors">
+                <div key={c.title} className="border border-gray-200 p-6 hover:border-[#3A6A96] transition-colors">
                   <CardIcon title={c.title} />
                   <h3 className="font-bold text-[#111111] mb-3 text-lg">{c.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{c.desc}</p>
@@ -182,7 +182,7 @@ export default function ServiceHub({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {hub.process.map((step, i) => (
                 <div key={step.title} className="flex gap-5">
-                  <div className="flex-shrink-0 w-10 h-10 bg-[#4B83B2] text-white rounded-full flex items-center justify-center font-bold">{i + 1}</div>
+                  <div className="flex-shrink-0 w-10 h-10 bg-[#3A6A96] text-white rounded-full flex items-center justify-center font-bold">{i + 1}</div>
                   <div>
                     <h3 className="font-bold text-[#111111] mb-2">{step.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
@@ -215,7 +215,7 @@ export default function ServiceHub({
             columns={2}
           />
           <div className="text-center mt-8">
-            <Link href="/testimonials" className="text-[#4B83B2] font-semibold hover:underline">
+            <Link href="/testimonials" className="text-[#3A6A96] font-semibold hover:underline">
               Read all 113 reviews &rarr;
             </Link>
           </div>
@@ -229,7 +229,7 @@ export default function ServiceHub({
             <h2 className="text-2xl font-bold text-[#111111] mb-8">Related Services &amp; Resources</h2>
             <div className="flex flex-wrap justify-center gap-3">
               {hub.relatedLinks.map((l) => (
-                <Link key={l.href} href={l.href} className="border border-gray-200 hover:border-[#4B83B2] hover:text-[#4B83B2] text-[#111111] text-sm font-medium px-4 py-2 transition-colors">
+                <Link key={l.href} href={l.href} className="border border-gray-200 hover:border-[#3A6A96] hover:text-[#3A6A96] text-[#111111] text-sm font-medium px-4 py-2 transition-colors">
                   {l.label}
                 </Link>
               ))}
@@ -246,7 +246,7 @@ export default function ServiceHub({
             <p className="text-gray-600 mb-8">We bring {parentLabel.toLowerCase()} to homes throughout the area:</p>
             <div className="flex flex-wrap justify-center gap-3">
               {cities.map((c) => (
-                <Link key={c.slug} href={`${parentPath}/${c.slug}`} className="bg-white border border-gray-200 hover:border-[#4B83B2] hover:text-[#4B83B2] text-[#111111] text-sm font-medium px-4 py-2 transition-colors">
+                <Link key={c.slug} href={`${parentPath}/${c.slug}`} className="bg-white border border-gray-200 hover:border-[#3A6A96] hover:text-[#3A6A96] text-[#111111] text-sm font-medium px-4 py-2 transition-colors">
                   {parentLabel} in {c.name}
                 </Link>
               ))}
@@ -279,8 +279,8 @@ export default function ServiceHub({
             <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] text-center mb-8">From the Blog</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {relatedPosts.map((p) => (
-                <Link key={p.slug} href={`/blog/${p.slug}`} className="block bg-gray-50 border border-gray-200 hover:border-[#4B83B2] p-5 transition-colors">
-                  <span className="text-[#111111] font-medium text-sm hover:text-[#4B83B2] leading-snug">{p.title}</span>
+                <Link key={p.slug} href={`/blog/${p.slug}`} className="block bg-gray-50 border border-gray-200 hover:border-[#3A6A96] p-5 transition-colors">
+                  <span className="text-[#111111] font-medium text-sm hover:text-[#3A6A96] leading-snug">{p.title}</span>
                 </Link>
               ))}
             </div>
@@ -289,15 +289,15 @@ export default function ServiceHub({
       )}
 
       {/* CTA */}
-      <section className="bg-[#4B83B2] text-white py-20 px-4 text-center">
+      <section className="bg-[#3A6A96] text-white py-20 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-white/90 text-lg mb-10">Get a free, no-pressure estimate from Sugar Land&apos;s top-rated, locally owned painting company.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#4B83B2] hover:bg-[#111111] hover:text-white font-semibold px-10 py-4 text-lg transition-colors">
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#3A6A96] hover:bg-[#111111] hover:text-white font-semibold px-10 py-4 text-lg transition-colors">
               Request a Free Estimate
             </a>
-            <a href={`tel:${PHONE_TEL}`} className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-10 py-4 text-lg transition-colors">
+            <a href={`tel:${PHONE_TEL}`} className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors">
               Call {PHONE}
             </a>
           </div>

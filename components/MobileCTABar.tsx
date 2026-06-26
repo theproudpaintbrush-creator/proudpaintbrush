@@ -27,7 +27,7 @@ export default function MobileCTABar() {
         href={BOOKING_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 bg-[#4B83B2] text-white font-semibold py-4 text-sm"
+        className="flex items-center justify-center gap-2 bg-[#3A6A96] text-white font-semibold py-4 text-sm"
       >
         Free Estimate &rarr;
       </a>

@@ -130,7 +130,7 @@ export default function OurStoryPage() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-10 py-4 text-lg transition-colors"
+            className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors"
           >
             Schedule Your Free Estimate
           </a>
@@ -201,7 +201,7 @@ export default function OurStoryPage() {
           <ul className="space-y-4">
             {whatSetsUsApart.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
-                <span className="text-[#4B83B2] font-bold text-lg mt-0.5">✓</span>
+                <span className="text-[#3A6A96] font-bold text-lg mt-0.5">✓</span>
                 <span className="text-white/80 leading-relaxed">{item}</span>
               </li>
             ))}
@@ -221,7 +221,7 @@ export default function OurStoryPage() {
               <ul className="space-y-3">
                 {visionList.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-[#4B83B2] font-bold mt-0.5">→</span>
+                    <span className="text-[#3A6A96] font-bold mt-0.5">→</span>
                     <span className="text-gray-600 leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -232,7 +232,7 @@ export default function OurStoryPage() {
               <ul className="space-y-3">
                 {coreValuesList.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-[#4B83B2] font-bold mt-0.5">→</span>
+                    <span className="text-[#3A6A96] font-bold mt-0.5">→</span>
                     <span className="text-gray-600 leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -277,8 +277,8 @@ export default function OurStoryPage() {
       </section>
 
       {/* BLUE CTA */}
-      <WaveUp from="bg-[#f8f9fa]" to="#4B83B2" />
-      <section className="bg-[#4B83B2] text-white py-16 px-4 text-center">
+      <WaveUp from="bg-[#f8f9fa]" to="#3A6A96" />
+      <section className="bg-[#3A6A96] text-white py-16 px-4 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">
           See How We Approach Every Project
         </h2>
@@ -287,12 +287,12 @@ export default function OurStoryPage() {
         </p>
         <Link
           href="/interior-painting"
-          className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#4B83B2] font-semibold px-10 py-4 text-lg transition-colors"
+          className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors"
         >
           See How We Approach Every Project
         </Link>
       </section>
-      <WaveDown from="bg-[#4B83B2]" to="#ffffff" />
+      <WaveDown from="bg-[#3A6A96]" to="#ffffff" />
       <div className="bg-white h-4" />
     </>
   );
