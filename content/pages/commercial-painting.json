@@ -96,8 +96,7 @@
   "serviceSchema": {
     "name": "Commercial Painting",
     "serviceType": "Commercial Painting",
-    "areaServed": ["Sugar Land", "Missouri City", "Katy", "Richmond", "Rosenberg", "Fulshear", "Fort Bend County"],
-    "aggregateRating": { "value": "5.0", "count": 113 }
+    "areaServed": ["Sugar Land", "Missouri City", "Katy", "Richmond", "Rosenberg", "Fulshear", "Fort Bend County"]
   },
   "cta": {
     "heading": "Ready for a Commercial Quote?",

@@ -145,13 +145,9 @@ export default async function ExteriorCityPage({
       },
     },
     description: ext.description,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: city.aggregateRating.value,
-      reviewCount: city.aggregateRating.count,
-      bestRating: "5",
-      worstRating: "1",
-    },
+    // No aggregateRating here: schema.org/Service is not a Google-supported
+    // review-snippet type (it triggers "Invalid object type for field
+    // '<parent_node>'"). The rating lives on the LocalBusiness node in layout.tsx.
   };
 
   const faqSchema = {

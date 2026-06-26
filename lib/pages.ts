@@ -26,13 +26,15 @@ export type PageCityCards = { heading?: string; intro?: string; cards: PageCityC
 export type PagePriceTeaser = { heading: string; range: string; note: string; href: string; linkLabel: string };
 // Optional Service structured-data block. When present, the route emits a
 // schema.org/Service JSON-LD node (provider = the global business @id) with
-// areaServed and an optional AggregateRating. Used by service-style pages
-// like /commercial-painting so they rank as a service, not just a WebPage.
+// areaServed. Used by service-style pages like /commercial-painting so they
+// rank as a service, not just a WebPage.
+// NOTE: no aggregateRating here — Service is not a Google-supported
+// review-snippet type (it triggers "Invalid object type for field
+// '<parent_node>'"). The rating lives on the LocalBusiness node in layout.tsx.
 export type PageServiceSchema = {
   name: string;
   serviceType?: string;
   areaServed?: string[];
-  aggregateRating?: { value: string; count: number };
 };
 
 export type PageContent = {
