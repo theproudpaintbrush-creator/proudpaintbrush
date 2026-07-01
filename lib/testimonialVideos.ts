@@ -38,6 +38,7 @@ export const TESTIMONIAL_VIDEOS: TestimonialVideo[] = [
   { youtubeId: "JqY3L7IJOOY" },
   { youtubeId: "xHFK54C4mc0" },
   { youtubeId: "Z208PaNZY4U" },
+  { youtubeId: "TBdxdXB6T74", customerNeighborhood: "Cabinet Painting" },
 ];
 
 // Curated 3-up subset for the sitewide strip on non-service pages (home, blog,
@@ -66,5 +67,6 @@ export const SERVICE_STRIP_VIDEOS: Record<"interior" | "exterior" | "cabinet", T
   cabinet: [
     { youtubeId: "N9c6vXqTht4", customerNeighborhood: "Cabinet Painting" },
     { youtubeId: "bzbgrgyHxow", customerNeighborhood: "Clement · Cabinets" },
+    { youtubeId: "TBdxdXB6T74", customerNeighborhood: "Cabinet Painting" },
   ],
 };
