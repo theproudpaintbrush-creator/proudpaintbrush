@@ -173,9 +173,19 @@ export default function HomePage() {
           <p className="text-white/60 text-center max-w-2xl mx-auto mb-14 text-lg">
             Interior painting that actually lasts — and exterior work built for Texas.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {services.map((s) => (
-              <Link key={s.href} href={s.href} className="group flex flex-col hover:opacity-90 transition-opacity">
+          <div className="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-6 gap-10">
+            {services.map((s, i) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className={[
+                  "group flex flex-col hover:opacity-90 transition-opacity sm:col-span-2",
+                  i === 3 && "lg:col-start-2",
+                  i === 4 && "sm:col-start-2 lg:col-start-4",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+              >
                 <div className="relative w-full h-56 overflow-hidden mb-5">
                   <Image src={s.img} alt={s.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-center group-hover:scale-105 transition-transform duration-500" quality={85} />
                 </div>
@@ -193,20 +203,29 @@ export default function HomePage() {
       <ProudProcess />
 
       {/* ── INTERIOR PAINTING + 2 VIDEO TESTIMONIALS ── */}
-      <section className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-4">
+      <section className="bg-[#eef1f5] pt-16 pb-0">
+        <div className="max-w-6xl mx-auto px-4 pb-20">
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#3A6A96] text-center mb-3">
+            Real Customers, Real Results
+          </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#111111] text-center mb-4">
             Interior Painting That Actually Lasts
           </h2>
-          <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12 text-lg">
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12 text-lg">
             Most painters skip the prep. We don&apos;t. Every project starts with surface cleaning, sanding, caulking, and priming — because that&apos;s what makes the finish last.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-            <div className="relative aspect-video w-full rounded-sm overflow-hidden shadow-md">
-              <LiteYouTube id="4K_j8zfo2zQ" label="Interior painting testimonial — The Proud Paintbrush" />
+            <div>
+              <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-2xl ring-1 ring-black/5">
+                <LiteYouTube id="4K_j8zfo2zQ" label="Interior painting testimonial — The Olsons — The Proud Paintbrush" />
+              </div>
+              <p className="text-center text-gray-500 text-sm mt-3 font-medium">The Olsons — Interior Repaint</p>
             </div>
-            <div className="relative aspect-video w-full rounded-sm overflow-hidden shadow-md">
-              <LiteYouTube id="gxB9xw9m34U" label="Interior painting testimonial 2 — The Proud Paintbrush" />
+            <div>
+              <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-2xl ring-1 ring-black/5">
+                <LiteYouTube id="gxB9xw9m34U" label="Interior painting testimonial — The Lopezs — The Proud Paintbrush" />
+              </div>
+              <p className="text-center text-gray-500 text-sm mt-3 font-medium">The Lopezs — Interior Repaint</p>
             </div>
           </div>
           <div className="text-center">
@@ -214,7 +233,7 @@ export default function HomePage() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border-2 border-[#3A6A96] text-[#3A6A96] hover:bg-[#3A6A96] hover:text-white font-semibold px-8 py-3 transition-colors"
+              className="inline-block bg-[#3A6A96] hover:bg-[#2d5478] text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition-colors"
             >
               Schedule Your Free Estimate
             </a>
@@ -223,8 +242,8 @@ export default function HomePage() {
       </section>
 
       {/* ── BLUE CTA ── */}
-      <section className="bg-white pb-0">
-        <WaveUp from="bg-white" to="#3A6A96" />
+      <section className="bg-[#eef1f5] pb-0">
+        <WaveUp from="bg-[#eef1f5]" to="#3A6A96" />
         <div className="bg-[#3A6A96] text-white py-16 px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Talk About Your Project?</h2>
           <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
