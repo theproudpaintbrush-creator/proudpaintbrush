@@ -39,6 +39,7 @@ export const TESTIMONIAL_VIDEOS: TestimonialVideo[] = [
   { youtubeId: "xHFK54C4mc0" },
   { youtubeId: "Z208PaNZY4U" },
   { youtubeId: "TBdxdXB6T74", customerNeighborhood: "Cabinet Painting" },
+  { youtubeId: "tPna-OleItA", customerNeighborhood: "Judy · Lake House, Katy" },
 ];
 
 // Curated 3-up subset for the sitewide strip on non-service pages (home, blog,
