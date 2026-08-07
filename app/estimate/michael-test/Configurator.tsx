@@ -332,7 +332,9 @@ export default function Configurator() {
               >
                 {currency(total)}
               </div>
-              <div className="text-xs text-gray-500">{currency(monthly)}/mo — 0% for 25 months*</div>
+              <div className="text-base font-bold text-[#3A6A96]">
+                {currency(monthly)}/mo <span className="text-xs font-normal text-gray-500">— 0% for 25 months*</span>
+              </div>
             </div>
           </div>
 
@@ -344,7 +346,9 @@ export default function Configurator() {
             >
               {currency(total)}
             </div>
-            <div className="text-xs sm:text-sm text-gray-500">{currency(monthly)}/mo — 0% for 25 months*</div>
+            <div className="text-base sm:text-lg font-bold text-[#3A6A96]">
+              {currency(monthly)}/mo <span className="text-xs sm:text-sm font-normal text-gray-500">— 0% for 25 months*</span>
+            </div>
           </div>
 
           <a
