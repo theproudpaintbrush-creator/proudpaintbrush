@@ -27,7 +27,7 @@ launch-ready** (181 pages, 89 redirects, clean build, 13 commits). Nothing below
 - [ ] Provide your **Google Business Profile URL** — the header rating strip and "5.0★" links
       currently point to `/testimonials`; they can point straight to your Google reviews instead.
 - [ ] Consider matching a competitor's **5-year cabinet guarantee** as a marketing angle
-      (you currently offer 2- and 4-year workmanship warranties).
+      (you currently offer 2- and 5-year workmanship warranties).
 - [ ] Confirm the **5.0★ / 87 reviews** figure used sitewide is accurate, or update it.
 
 ## 5. Optional polish (nice-to-have, low impact)
