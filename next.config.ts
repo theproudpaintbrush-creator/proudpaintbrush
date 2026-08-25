@@ -173,7 +173,20 @@ const nextConfig: NextConfig = {
       { source: "/cabinet-prices", destination: "/pricing/cabinet-prices", permanent: true },
       { source: "/employees", destination: "/careers", permanent: true },
       { source: "/employees/:slug*", destination: "/careers", permanent: true },
-      { source: "/blog/tag/:slug*", destination: "/blog", permanent: true },
+      // /blog/tag/* is handled as a 410 in middleware.ts, not redirected — a
+      // zero-value taxonomy URL shouldn't 301 into an unrelated page.
+      // ---- Sprint 1, Task 3: typo/duplicate/alias cleanup ----
+      { source: "/fence-staini", destination: "/exterior-painting/fence-staining", permanent: true },
+      { source: "/frence-paint", destination: "/exterior-painting/fence-staining", permanent: true },
+      { source: "/service-areas/null", destination: "/service-areas", permanent: true },
+      { source: "/service-areas/richmond-tx", destination: "/service-areas/richmond", permanent: true },
+      { source: "/Testimonials", destination: "/testimonials", permanent: true },
+      { source: "/projectexpectations", destination: "/project-expectations", permanent: true },
+      { source: "/warranty-1", destination: "/warranty", permanent: true },
+      { source: "/pricing/cabinet-pricing", destination: "/pricing/cabinet-prices", permanent: true },
+      { source: "/pricing/interior-pricing", destination: "/pricing/interior-prices", permanent: true },
+      { source: "/pricing/exterior", destination: "/pricing/exterior-prices", permanent: true },
+      { source: "/color-tips", destination: "/color-consultation", permanent: true },
     ];
   },
 };

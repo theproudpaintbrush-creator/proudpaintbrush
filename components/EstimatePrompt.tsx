@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BOOKING_URL } from "@/lib/site";
+import BookingButton from "@/components/BookingButton";
 
 const DISMISS_KEY = "tpp:estimate-prompt-dismissed";
 
@@ -63,14 +63,10 @@ export default function EstimatePrompt() {
         </button>
         <h3 className="text-lg font-bold text-[#1a2e44] mb-2 pr-4">Ready for an exact quote?</h3>
         <p className="text-sm text-gray-600 mb-4">Free 30&ndash;40 minute on-site estimate. No pressure.</p>
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+        <BookingButton
+          label={<>Book My Free Estimate &rarr;</>}
           className="inline-block w-full text-center bg-[#4B83B2] text-white hover:bg-[#1a2e44] font-semibold px-5 py-3 rounded-lg transition-colors"
-        >
-          Book My Free Estimate &rarr;
-        </a>
+        />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { BOOKING_URL } from "@/lib/site";
+import BookingButton from "@/components/BookingButton";
 const PHONE_TEL = "+18326050493";
 
 // Fixed bottom call/estimate bar for mobile. Hidden on xl+ (desktop has the
@@ -23,14 +23,10 @@ export default function MobileCTABar() {
         </svg>
         Call Now
       </a>
-      <a
-        href={BOOKING_URL}
-        target="_blank"
-        rel="noopener noreferrer"
+      <BookingButton
+        label={<>Free Estimate &rarr;</>}
         className="flex items-center justify-center gap-2 bg-[#3A6A96] text-white font-semibold py-4 text-sm"
-      >
-        Free Estimate &rarr;
-      </a>
+      />
     </div>
   );
 }

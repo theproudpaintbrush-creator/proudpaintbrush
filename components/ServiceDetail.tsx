@@ -5,7 +5,7 @@ import ReviewCards from "@/components/ReviewCards";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import type { Review } from "@/lib/reviews";
 import EstimatePrompt from "@/components/EstimatePrompt";
-import { BOOKING_URL } from "@/lib/site";
+import BookingButton from "@/components/BookingButton";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
 
@@ -58,14 +58,10 @@ export default function ServiceDetail({
             {service.h1}
           </h1>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <BookingButton
+              label={<>Book My Free Estimate &rarr;</>}
               className="inline-block bg-[#3A6A96] hover:bg-[#2D5479] text-white font-semibold px-7 py-3 rounded-lg transition-colors"
-            >
-              Book My Free Estimate &rarr;
-            </a>
+            />
             <a
               href={`tel:${PHONE_TEL}`}
               className="inline-block border-2 border-white/70 text-white hover:bg-white hover:text-[#1a2e44] font-semibold px-7 py-3 rounded-lg transition-colors"
@@ -223,14 +219,10 @@ export default function ServiceDetail({
             Get a free estimate from Sugar Land&apos;s top-rated painting contractor.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <BookingButton
+              label="Request a Free Estimate"
               className="inline-block bg-white text-[#3A6A96] hover:bg-[#1a2e44] hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors"
-            >
-              Request a Free Estimate
-            </a>
+            />
             <a
               href={`tel:${PHONE_TEL}`}
               className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-8 py-3 rounded-lg transition-colors"

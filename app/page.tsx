@@ -5,7 +5,8 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 import TrustBar from "@/components/TrustBar";
 import ProudProcess from "@/components/ProudProcess";
 import LiteYouTube from "@/components/LiteYouTube";
-import { BOOKING_EMBED_URL, BOOKING_URL, PHONE_TEL, PHONE_DISPLAY } from "@/lib/site";
+import { BOOKING_EMBED_URL, PHONE_TEL, PHONE_DISPLAY } from "@/lib/site";
+import BookingButton from "@/components/BookingButton";
 
 export const metadata: Metadata = {
   title: "The Proud Paintbrush | Sugar Land Painting Contractor",
@@ -84,14 +85,10 @@ export default function HomePage() {
             Interior, exterior &amp; cabinet painting done right — prep-first, warranty-backed, locally owned.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <BookingButton
+              label="Get a Free Estimate"
               className="inline-block bg-[#4B83B2] hover:bg-white hover:text-[#1a2e44] text-white font-bold text-lg px-8 py-4 rounded-xl shadow-xl ring-2 ring-white/30 transition-colors"
-            >
-              Get a Free Estimate
-            </a>
+            />
             <a
               href={`tel:${PHONE_TEL}`}
               className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#1a2e44] font-bold text-lg px-8 py-4 rounded-xl transition-colors"
@@ -230,14 +227,10 @@ export default function HomePage() {
             </div>
           </div>
           <div className="text-center">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <BookingButton
+              label="Schedule Your Free Estimate"
               className="inline-block bg-[#3A6A96] hover:bg-[#2d5478] text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition-colors"
-            >
-              Schedule Your Free Estimate
-            </a>
+            />
           </div>
         </div>
       </section>
@@ -250,10 +243,10 @@ export default function HomePage() {
           <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
             Most painting estimates take 30–40 minutes. We&apos;ll walk the space with you, answer every question, and leave you with a clear, honest quote.
           </p>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
-            className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors">
-            Schedule Your Free Estimate
-          </a>
+          <BookingButton
+            label="Schedule Your Free Estimate"
+            className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors"
+          />
         </div>
         <WaveDown from="bg-[#3A6A96]" to="#ffffff" />
       </section>
@@ -354,10 +347,10 @@ export default function HomePage() {
             Get a free estimate from Fort Bend County&apos;s most trusted painting team.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors">
-              Schedule Your Free Estimate
-            </a>
+            <BookingButton
+              label="Schedule Your Free Estimate"
+              className="border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors"
+            />
             <a href="tel:+18326050493"
               className="border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors">
               Call (832) 605-0493

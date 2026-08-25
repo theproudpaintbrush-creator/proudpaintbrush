@@ -7,7 +7,7 @@ import PricingBand from "@/components/PricingBand";
 import ReviewCards from "@/components/ReviewCards";
 import type { Review } from "@/lib/reviews";
 import EstimatePrompt from "@/components/EstimatePrompt";
-import { BOOKING_URL } from "@/lib/site";
+import BookingButton from "@/components/BookingButton";
 
 // Pick a simple line-icon for a "why choose us" card based on its title.
 function CardIcon({ title }: { title: string }) {
@@ -75,9 +75,10 @@ export default function ServiceHub({
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-5">{hub.h1}</h1>
           <p className="text-lg sm:text-xl text-white/85 mb-8 max-w-2xl mx-auto">{hub.intro[0]}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#111111] hover:bg-transparent hover:text-white border-2 border-white font-semibold px-8 py-4 transition-colors">
-              Schedule a Free Estimate &rarr;
-            </a>
+            <BookingButton
+              label={<>Schedule a Free Estimate &rarr;</>}
+              className="inline-block bg-white text-[#111111] hover:bg-transparent hover:text-white border-2 border-white font-semibold px-8 py-4 transition-colors"
+            />
             <a href={`tel:${PHONE_TEL}`} className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#111111] font-semibold px-8 py-4 transition-colors">
               Call {PHONE}
             </a>
@@ -294,9 +295,10 @@ export default function ServiceHub({
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-white/90 text-lg mb-10">Get a free, no-pressure estimate from Sugar Land&apos;s top-rated, locally owned painting company.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#3A6A96] hover:bg-[#111111] hover:text-white font-semibold px-10 py-4 text-lg transition-colors">
-              Request a Free Estimate
-            </a>
+            <BookingButton
+              label="Request a Free Estimate"
+              className="inline-block bg-white text-[#3A6A96] hover:bg-[#111111] hover:text-white font-semibold px-10 py-4 text-lg transition-colors"
+            />
             <a href={`tel:${PHONE_TEL}`} className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#3A6A96] font-semibold px-10 py-4 text-lg transition-colors">
               Call {PHONE}
             </a>
