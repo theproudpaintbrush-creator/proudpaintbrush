@@ -9,6 +9,7 @@ export type TestimonialVideo = {
 };
 
 export const TESTIMONIAL_VIDEOS: TestimonialVideo[] = [
+  { youtubeId: "5EHTLQCh5tM", customerNeighborhood: "Amy · Kitchen Painting" },
   { youtubeId: "N9c6vXqTht4", customerNeighborhood: "Cabinet Painting" },
   { youtubeId: "4K_j8zfo2zQ", customerNeighborhood: "The Olsons" },
   { youtubeId: "gxB9xw9m34U", customerNeighborhood: "The Lopezs" },

@@ -104,23 +104,24 @@ export default function HomePage() {
 
       <TrustBar />
 
-      {/* ── DR. TEPPER VIDEO TESTIMONIAL BANNER ── */}
+      {/* ── AMY VIDEO TESTIMONIAL BANNER ── */}
       <section className="bg-[#3A6A96] text-white pt-10 pb-0">
         <div className="max-w-6xl mx-auto px-4 pb-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-white/90 mb-2">
-                Dr. Tepper — Avalon · Exterior House Painting
+                Amy — Kitchen Painting
               </p>
               <blockquote className="text-2xl sm:text-3xl font-light italic leading-snug mb-4">
-                &ldquo;You guys did great.&rdquo;
+                &ldquo;I did not know paint could make me so happy.&rdquo;
               </blockquote>
               <p className="text-white/90 leading-relaxed">
-                Dr. Tepper found us through a neighbor and said we did exactly what was promised.
+                Amy&apos;s kitchen was dated 15-plus years — new paint alone transformed it. She highly,
+                highly, highly recommends The Proud Paintbrush.
               </p>
             </div>
             <div className="relative aspect-video w-full rounded-sm overflow-hidden shadow-2xl">
-              <LiteYouTube id="HkXdwkgfhCI" label="Dr. Tepper testimonial — The Proud Paintbrush" />
+              <LiteYouTube id="5EHTLQCh5tM" label="Amy testimonial — The Proud Paintbrush" />
             </div>
           </div>
         </div>
@@ -223,9 +224,9 @@ export default function HomePage() {
             </div>
             <div>
               <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-2xl ring-1 ring-black/5">
-                <LiteYouTube id="gxB9xw9m34U" label="Interior painting testimonial — The Lopezs — The Proud Paintbrush" />
+                <LiteYouTube id="HkXdwkgfhCI" label="Dr. Tepper testimonial — The Proud Paintbrush" />
               </div>
-              <p className="text-center text-gray-500 text-sm mt-3 font-medium">The Lopezs — Interior Repaint</p>
+              <p className="text-center text-gray-500 text-sm mt-3 font-medium">Dr. Tepper — Exterior Repaint</p>
             </div>
           </div>
           <div className="text-center">
