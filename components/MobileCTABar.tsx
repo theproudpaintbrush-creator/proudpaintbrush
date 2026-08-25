@@ -9,8 +9,9 @@ const PHONE_TEL = "+18326050493";
 // never covers footer content.
 export default function MobileCTABar() {
   const pathname = usePathname();
-  // Avoid double CTAs on the contact page (it's already a booking page).
-  if (pathname === "/contact") return null;
+  // Avoid double CTAs on the contact page (it's already a booking page) and on
+  // the estimate configurator, which pins its own live-total bar to the bottom.
+  if (pathname === "/contact" || pathname === "/estimate/michael-test") return null;
 
   return (
     <div className="xl:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-2 border-t border-white/10 shadow-[0_-4px_12px_rgba(0,0,0,0.15)]">
