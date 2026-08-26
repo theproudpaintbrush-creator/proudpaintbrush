@@ -7,7 +7,10 @@ import { getService, getServiceSlugs, getServicesByParent } from "@/lib/services
 import VideoTestimonial from "@/components/VideoTestimonial";
 import CustomerPhotoGrid, { BeforeAfterGrid } from "@/components/CustomerPhotoGrid";
 import ServiceDetail from "@/components/ServiceDetail";
+import ReviewCards from "@/components/ReviewCards";
 import { buildServiceSchemas } from "@/lib/serviceSchema";
+import { getReviewsForService, buildReviewSchema } from "@/lib/reviews";
+import { getReviewsForCity } from "@/lib/cityReviewAuthors";
 import { BOOKING_URL } from "@/lib/site";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
@@ -111,14 +114,20 @@ export default async function ExteriorCityPage({
       .filter((s) => s.slug !== svc.slug)
       .map((s) => ({ slug: s.slug, name: s.name }));
     const schemas = buildServiceSchemas(svc);
+    const svcReviews = getReviewsForService(svc.parent, 3);
+    const svcReviewSchema = buildReviewSchema(svcReviews);
     return (
       <>
         {schemas.map((s, i) => (
           <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
         ))}
+        {svcReviewSchema.map((s, i) => (
+          <script key={`rev-${i}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+        ))}
         <ServiceDetail
           service={svc}
           related={related}
+          reviews={svcReviews}
           areaLinks={CITIES.map((c) => ({ href: `/service-areas/${c.slug}`, label: `Painting services in ${c.name}` }))}
         />
       </>
@@ -127,6 +136,9 @@ export default async function ExteriorCityPage({
 
   const url = `${BASE_URL}/exterior-painting/${city.slug}`;
   const ext = city.exterior;
+  // Fulshear is a controlled Sprint 2 pilot page — never add new content/schema to it.
+  const cityReviews = city.slug === "fulshear" ? [] : getReviewsForCity(city.slug);
+  const cityReviewSchema = buildReviewSchema(cityReviews);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -175,6 +187,9 @@ export default async function ExteriorCityPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {cityReviewSchema.map((s, i) => (
+        <script key={`rev-${i}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
 
       {/* HERO + ABOVE-FOLD CTA */}
       <section className="relative w-full h-[78vh] min-h-[520px] flex items-center justify-center overflow-hidden">
@@ -343,6 +358,19 @@ export default async function ExteriorCityPage({
           </p>
         </div>
       </section>
+
+      {/* GOOGLE REVIEWS */}
+      {cityReviews.length > 0 && (
+        <section className="bg-white py-20">
+          <ReviewCards
+            reviews={cityReviews}
+            heading={`What ${city.name} Homeowners Say`}
+            intro="Verified five-star Google reviews from real Proud Paintbrush customers."
+            columns={3}
+            masonry
+          />
+        </section>
+      )}
 
       {/* FAQS */}
       <section className="bg-gray-50 py-20">
