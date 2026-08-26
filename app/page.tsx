@@ -5,8 +5,61 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 import TrustBar from "@/components/TrustBar";
 import ProudProcess from "@/components/ProudProcess";
 import LiteYouTube from "@/components/LiteYouTube";
+import ReviewCards from "@/components/ReviewCards";
+import CostTable from "@/components/CostTable";
+import MechanismSection from "@/components/MechanismSection";
+import FaqSection from "@/components/FaqSection";
+import { getReviews } from "@/lib/reviews";
 import { BOOKING_EMBED_URL, PHONE_TEL, PHONE_DISPLAY } from "@/lib/site";
 import BookingButton from "@/components/BookingButton";
+
+// A balanced cross-section: general, exterior, interior, and cabinet reviews,
+// pulled from the same real, verified set used sitewide.
+const HOMEPAGE_REVIEW_AUTHORS = [
+  "Joshua D. Randall",
+  "Derrick McCain",
+  "Catherine Harter",
+  "Jeff Deurlein",
+  "Travis Phillips",
+  "Satrice Morris",
+];
+
+const HOMEPAGE_FAQS = [
+  {
+    q: "What painting services do you offer?",
+    a: "Interior painting, exterior painting, cabinet painting, drywall repair, and fence staining — for whole-home repaints, single rooms, or a specific problem area. Every project starts with the same prep-first process regardless of size.",
+  },
+  {
+    q: "How much does painting cost in Fort Bend County?",
+    a: "Based on 97 real, closed jobs across Fort Bend County (excluding touch-ups under $800), the median project runs about $2,500, with most falling between $837 and $21,078 depending on size and scope. Every project gets its own written quote after a free on-site walkthrough — see the table above for a fuller breakdown by city.",
+  },
+  {
+    q: "Do you offer a warranty?",
+    a: "Yes. Every project is backed by our 2 & 5-Year Written Warranty — a Standard 2-year package on every job, with a Premium 5-year upgrade available for homeowners who want maximum long-term protection.",
+  },
+  {
+    q: "Why does Gulf Coast weather matter for a paint job?",
+    a: "Heat, humidity, UV exposure, and our shrink-swell clay soil all work against a coating that wasn't chosen and applied for this specific climate. That is why prep — washing, scraping, caulking, and priming the right way — matters more here than the paint brand itself.",
+  },
+  {
+    q: "What areas do you serve?",
+    a: "Sugar Land, Missouri City, Katy, Richmond, Rosenberg, Fulshear, West Houston, and Southwest Houston, plus the surrounding Fort Bend County communities.",
+  },
+  {
+    q: "Are you insured, and how long have you been in business?",
+    a: "Yes — Fully Insured with $1M in liability coverage. The Proud Paintbrush has been locally owned and operated in Sugar Land since 2020.",
+  },
+];
+
+const homepageFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: HOMEPAGE_FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 
 export const metadata: Metadata = {
   title: "The Proud Paintbrush | Sugar Land Painting Contractor",
@@ -48,23 +101,45 @@ function WaveUp({ from, to }: { from: string; to: string }) {
   );
 }
 
-const services = [
+// The 3 money services get the prominent grid; drywall/fence are real
+// services but shown as a smaller secondary strip beneath them.
+const coreServices = [
   { title: "Interior Painting", description: "Interior painting for walls, ceilings, trim, doors, and whole-home repaints.", href: "/interior-painting", img: "/images/service-interior.jpg", alt: "Modern living room interior painting in Sugar Land, TX" },
   { title: "Exterior Painting", description: "Exterior painting built for Texas weather with proper washing, prep, caulking, priming, and durable coatings.", href: "/exterior-painting", img: "/images/service-exterior.jpg", alt: "Spanish-style exterior house painting in Richmond, TX" },
   { title: "Cabinet Painting", description: "Factory-style cabinet finishes for kitchens, bathrooms, built-ins, and storage spaces.", href: "/cabinet-painting", img: "/images/service-cabinet.jpg", alt: "Kitchen cabinet painting in Missouri City, TX" },
-  { title: "Drywall Repair", description: "Holes, cracks, and water damage patched and textured to blend seamlessly before painting.", href: "/interior-painting/drywall-repair", img: "/images/service-drywall.jpg", alt: "Drywall repair and texture finishing in Sugar Land, TX" },
-  { title: "Fence Staining", description: "Professional-grade stains and sealers to protect and beautify your wood fence.", href: "/exterior-painting/fence-staining", img: "/images/service-fence.jpg", alt: "Fence staining project in Katy, TX" },
+];
+const secondaryServices = [
+  { title: "Drywall Repair", href: "/interior-painting/drywall-repair" },
+  { title: "Fence Staining", href: "/exterior-painting/fence-staining" },
 ];
 
-const serviceAreas = ["Sugar Land", "Richmond", "Katy", "Missouri City", "Fulshear", "Rosenberg", "West Houston", "Southwest Houston"];
+// Fulshear intentionally stays a plain (non-linked) badge here — it's a
+// controlled Sprint 2 pilot page and new inbound links from the highest-
+// traffic page on the site would confound its measurement.
+const serviceAreas = [
+  { name: "Sugar Land", slug: "sugar-land" },
+  { name: "Richmond", slug: "richmond" },
+  { name: "Katy", slug: "katy" },
+  { name: "Missouri City", slug: "missouri-city" },
+  { name: "Fulshear", slug: null },
+  { name: "Rosenberg", slug: "rosenberg" },
+  { name: "West Houston", slug: "west-houston" },
+  { name: "Southwest Houston", slug: "southwest-houston" },
+];
 
 // The canonical business entity (@id #business) is emitted once globally in
 // app/layout.tsx and referenced by every page's Service/Breadcrumb nodes, so
 // the homepage does not redefine it here.
 
 export default function HomePage() {
+  const homepageReviews = HOMEPAGE_REVIEW_AUTHORS
+    .map((author) => getReviews().find((r) => r.author === author))
+    .filter((r): r is NonNullable<typeof r> => Boolean(r));
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqSchema) }} />
+
       {/* ── HERO ── */}
       <section className="relative w-full h-[90vh] min-h-[560px] flex items-center justify-center overflow-hidden">
         <Image
@@ -171,19 +246,9 @@ export default function HomePage() {
           <p className="text-white/60 text-center max-w-2xl mx-auto mb-14 text-lg">
             Interior painting that actually lasts — and exterior work built for Texas.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-6 gap-10">
-            {services.map((s, i) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                className={[
-                  "group flex flex-col hover:opacity-90 transition-opacity sm:col-span-2",
-                  i === 3 && "lg:col-start-2",
-                  i === 4 && "sm:col-start-2 lg:col-start-4",
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-              >
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
+            {coreServices.map((s) => (
+              <Link key={s.href} href={s.href} className="group flex flex-col hover:opacity-90 transition-opacity">
                 <div className="relative w-full h-56 overflow-hidden mb-5">
                   <Image src={s.img} alt={s.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-center group-hover:scale-105 transition-transform duration-500" quality={85} />
                 </div>
@@ -194,8 +259,40 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
+          <div className="mt-12 pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+            <span className="text-white/50 text-sm uppercase tracking-widest">Also available</span>
+            {secondaryServices.map((s) => (
+              <Link key={s.href} href={s.href} className="text-white/80 hover:text-[#3A6A96] font-medium transition-colors">
+                {s.title} &rarr;
+              </Link>
+            ))}
+          </div>
         </div>
         <WaveDown from="bg-[#111111]" to="#ffffff" />
+      </section>
+
+      {/* ── WHY GULF COAST CONDITIONS ARE HARD ON PAINT ── */}
+      <section className="bg-white py-20">
+        <MechanismSection
+          heading="Why Gulf Coast Conditions Punish a Paint Job"
+          body="Fort Bend County sits on shrink-swell clay that expands and contracts with every wet-to-dry cycle, pulling at fascia, siding, and stucco joints year after year. Add summer heat and UV that break down lower-grade coatings in five to seven years, and humidity that pushes moisture into caulk lines, bathrooms, and closets on exterior walls, and the paint on a Texas home is under real, constant pressure. Most repaints that fail early didn't fail because of a bad paint brand — they failed because the surface wasn't washed, scraped, caulked, and primed correctly before the first coat went on. That prep-first standard is what we build every project around, on every surface, every time."
+        />
+      </section>
+
+      {/* ── COST ANCHORING ── */}
+      <section className="bg-[#eef1f5] py-20">
+        <CostTable
+          heading="What Painting Costs in Fort Bend County"
+          intro="Based on 97 real, closed painting jobs across Fort Bend County, excluding touch-ups and single-item jobs under $800 that would skew the range low."
+          rows={[
+            { area: "Fort Bend County (all jobs)", median: "$2,500", low: "$837", high: "$21,078", sample: "97 jobs" },
+            { area: "Missouri City", median: "$3,841", low: "—", high: "—", sample: "12 jobs" },
+            { area: "Katy", median: "$2,735", low: "—", high: "—", sample: "17 jobs" },
+            { area: "Richmond", median: "$2,029", low: "—", high: "—", sample: "11 jobs" },
+            { area: "Sugar Land", median: "$1,534", low: "—", high: "—", sample: "10 jobs" },
+          ]}
+          note="Every project gets its own written quote after a free on-site walkthrough — these numbers are a starting reference, not a substitute for a real estimate."
+        />
       </section>
 
       <ProudProcess />
@@ -250,6 +347,19 @@ export default function HomePage() {
         </div>
         <WaveDown from="bg-[#3A6A96]" to="#ffffff" />
       </section>
+
+      {/* ── WRITTEN GOOGLE REVIEWS ── */}
+      {homepageReviews.length > 0 && (
+        <section className="bg-white pt-16 pb-4">
+          <ReviewCards
+            reviews={homepageReviews}
+            heading="What Fort Bend County Homeowners Say"
+            intro="Real, verified five-star Google reviews from Proud Paintbrush customers."
+            columns={3}
+            masonry
+          />
+        </section>
+      )}
 
       {/* ── TESTIMONIAL PHOTO CAROUSEL ── */}
       <section className="bg-white py-16">
@@ -316,11 +426,21 @@ export default function HomePage() {
             />
           </div>
           <div className="flex flex-wrap justify-center gap-3">
-            {serviceAreas.map((area) => (
-              <span key={area} className="bg-gray-100 text-[#111111] text-sm font-medium px-5 py-2 rounded-full">
-                {area}
-              </span>
-            ))}
+            {serviceAreas.map((area) =>
+              area.slug ? (
+                <Link
+                  key={area.name}
+                  href={`/service-areas/${area.slug}`}
+                  className="bg-gray-100 hover:bg-[#3A6A96] text-[#111111] hover:text-white text-sm font-medium px-5 py-2 rounded-full transition-colors"
+                >
+                  {area.name}
+                </Link>
+              ) : (
+                <span key={area.name} className="bg-gray-100 text-[#111111] text-sm font-medium px-5 py-2 rounded-full">
+                  {area.name}
+                </span>
+              )
+            )}
           </div>
           <div className="text-center mt-6">
             <Link href="/service-areas" className="text-[#3A6A96] font-semibold hover:underline">
@@ -328,6 +448,11 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="bg-gray-50 py-20">
+        <FaqSection heading="Common Questions About Painting in Fort Bend County" faqs={HOMEPAGE_FAQS} />
       </section>
 
       {/* ── FINAL CTA with painter photo ── */}

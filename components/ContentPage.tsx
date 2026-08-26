@@ -5,7 +5,10 @@ import ReviewCards from "@/components/ReviewCards";
 import PricingBand from "@/components/PricingBand";
 import FenceEstimator from "@/components/FenceEstimator";
 import BookingButton from "@/components/BookingButton";
-import { BOOKING_URL } from "@/lib/site";
+import CostTable from "@/components/CostTable";
+import MechanismSection from "@/components/MechanismSection";
+import FaqSection from "@/components/FaqSection";
+import { BOOKING_URL, REVIEW_COUNT } from "@/lib/site";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
 
@@ -63,7 +66,7 @@ export default function ContentPage({ page }: { page: PageContent }) {
               <strong className="text-[#1a2e44]">5.0</strong>
             </span>
             <span className="hidden sm:inline text-gray-300" aria-hidden>·</span>
-            <span>113 Google reviews</span>
+            <span>{REVIEW_COUNT} Google reviews</span>
             <span className="hidden sm:inline text-gray-300" aria-hidden>·</span>
             <span>Fully Insured</span>
             <span className="hidden sm:inline text-gray-300" aria-hidden>·</span>
@@ -126,53 +129,19 @@ export default function ContentPage({ page }: { page: PageContent }) {
       {/* MECHANISM SECTION — why this is hard here (climate, etc.) (opt-in) */}
       {page.mechanismSection && (
         <section className="bg-white py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] text-center mb-6">
-              {page.mechanismSection.heading}
-            </h2>
-            <p className="text-gray-700 leading-relaxed text-lg">{page.mechanismSection.body}</p>
-          </div>
+          <MechanismSection heading={page.mechanismSection.heading} body={page.mechanismSection.body} />
         </section>
       )}
 
       {/* COST TABLE — scannable, AI-Overview-friendly (opt-in) */}
       {page.costTable && page.costTable.rows.length > 0 && (
         <section className="bg-gray-50 py-16 border-t border-gray-100">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] text-center mb-2">
-              {page.costTable.heading}
-            </h2>
-            {page.costTable.intro && (
-              <p className="text-center text-gray-600 max-w-2xl mx-auto mb-8">{page.costTable.intro}</p>
-            )}
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm bg-white border border-gray-200 rounded-xl overflow-hidden">
-                <thead>
-                  <tr className="bg-[#1a2e44] text-white">
-                    <th className="text-left p-3 font-semibold">Area</th>
-                    <th className="text-left p-3 font-semibold">Median Job Cost</th>
-                    <th className="text-left p-3 font-semibold">Low</th>
-                    <th className="text-left p-3 font-semibold">High</th>
-                    <th className="text-left p-3 font-semibold">Sample</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {page.costTable.rows.map((row) => (
-                    <tr key={row.area} className="border-t border-gray-200">
-                      <td className="p-3 font-medium text-[#1a2e44]">{row.area}</td>
-                      <td className="p-3">{row.median}</td>
-                      <td className="p-3">{row.low ?? "—"}</td>
-                      <td className="p-3">{row.high ?? "—"}</td>
-                      <td className="p-3">{row.sample}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            {page.costTable.note && (
-              <p className="text-gray-600 text-sm mt-5 leading-relaxed">{page.costTable.note}</p>
-            )}
-          </div>
+          <CostTable
+            heading={page.costTable.heading}
+            intro={page.costTable.intro}
+            rows={page.costTable.rows}
+            note={page.costTable.note}
+          />
         </section>
       )}
 
@@ -218,19 +187,7 @@ export default function ContentPage({ page }: { page: PageContent }) {
           inline within bodyHtml. */}
       {page.showFaqs && page.faqs.length > 0 && (
         <section className="bg-white py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] text-center mb-10">
-              Frequently Asked Questions
-            </h2>
-            <div className="space-y-5">
-              {page.faqs.map((faq) => (
-                <div key={faq.q} className="bg-gray-50 border border-gray-200 p-6 rounded-xl">
-                  <h3 className="font-bold text-[#1a2e44] mb-2 text-lg">{faq.q}</h3>
-                  <p className="text-gray-700 leading-relaxed">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <FaqSection faqs={page.faqs} />
         </section>
       )}
 
