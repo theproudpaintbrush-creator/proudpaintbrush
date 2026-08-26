@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GlobalVideoTestimonials from "@/components/GlobalVideoTestimonials";
 import MobileCTABar from "@/components/MobileCTABar";
+import ChatWidget from "@/components/ChatWidget";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import AnalyticsEvents from "@/components/AnalyticsEvents";
 import { SITE_URL, RATING_VALUE, REVIEW_COUNT } from "@/lib/site";
@@ -126,6 +127,7 @@ export default function RootLayout({
         <GlobalVideoTestimonials />
         <Footer />
         <MobileCTABar />
+        <ChatWidget />
         <GoogleAnalytics />
         <AnalyticsEvents />
       </body>

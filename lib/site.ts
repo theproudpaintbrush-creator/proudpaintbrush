@@ -6,14 +6,18 @@
 
 export const SITE_URL = "https://www.theproudpaintbrush.com";
 
-// Online booking (YouCanBook.me). When the book.theproudpaintbrush.com CNAME is
-// live (external task), change ONLY this constant — every CTA picks it up.
-// TODO(booking-subdomain): swap to "https://book.theproudpaintbrush.com" once DNS resolves.
-export const BOOKING_URL = "https://theproudpaintbrush.youcanbook.me";
+// Online booking (Routemize). Change ONLY this constant when the link changes —
+// every CTA site-wide picks it up.
+export const BOOKING_URL = "https://theproudpaintbrush.routemize.com/e/sales-appointment-copy";
 
-// The booking embed iframe needs the chrome-stripping query string. Derived from
-// BOOKING_URL so it tracks the subdomain swap automatically.
-export const BOOKING_EMBED_URL = `${BOOKING_URL}/?noframe=true&skipHeaderFooter=true`;
+// The Routemize form page already renders chrome-free (no site header/nav), so
+// the embed iframe just points at the same URL as the plain link.
+export const BOOKING_EMBED_URL = BOOKING_URL;
+
+// Routemize's conversational booking flow, used by the floating chat bubble
+// (components/ChatWidget.tsx). The conversion variant skips the intro screen
+// and drops straight into the first qualifying question.
+export const CHATBOT_URL = "https://theproudpaintbrush.routemize.com/chatbot/sales-appointment-copy?variant=conversion";
 
 // Direct Google reviews URL — the canonical g.page link used by the testimonials
 // and contact pages. Standardized here so every review CTA is redirect-free

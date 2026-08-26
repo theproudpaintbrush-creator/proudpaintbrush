@@ -35,7 +35,7 @@ const nextConfig: NextConfig = {
   async headers() {
     // Baseline security headers applied to every route. A strict Content-Security-
     // Policy is intentionally omitted for now because the site embeds several
-    // third parties (youcanbook.me, YouTube, Google, squarespace-cdn) and a CSP
+    // third parties (routemize.com, YouTube, Google, squarespace-cdn) and a CSP
     // needs per-source testing before it can be enabled without breaking them.
     return [
       {

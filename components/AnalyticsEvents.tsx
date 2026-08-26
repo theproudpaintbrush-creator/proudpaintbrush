@@ -30,10 +30,7 @@ export default function AnalyticsEvents() {
 
       if (href.startsWith("tel:")) {
         window.gtag?.("event", "phone_call_click", { link_url: href });
-      } else if (
-        href.includes("youcanbook.me") ||
-        href.includes("book.theproudpaintbrush.com")
-      ) {
+      } else if (href.includes("routemize.com")) {
         // page_location lets us see WHICH page drove each booking click in GA4.
         window.gtag?.("event", "booking_click", {
           link_url: href,
