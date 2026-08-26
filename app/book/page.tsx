@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BOOKING_EMBED_URL, BOOKING_URL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
 
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
 export default function BookPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Book Now", path: "/book" }]} />
       <section className="bg-[#1a2e44] text-white py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Book Your Free Estimate</h1>

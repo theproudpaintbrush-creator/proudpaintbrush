@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { AuthenticVideoGrid } from "@/components/VideoTestimonial";
 import { STRIP_VIDEOS, SERVICE_STRIP_VIDEOS } from "@/lib/testimonialVideos";
-import { BOOKING_URL, REVIEW_URL } from "@/lib/site";
+import { BOOKING_URL, REVIEW_URL, REVIEW_COUNT } from "@/lib/site";
 
 const SERVICE_HEADING: Record<string, string> = {
   interior: "Hear From Our Interior Painting Customers",
@@ -67,7 +67,7 @@ export default function GlobalVideoTestimonials() {
             rel="noopener noreferrer"
             className="inline-block bg-white text-[#111111] hover:bg-[#3A6A96] hover:text-white font-semibold px-8 py-3 transition-colors"
           >
-            See all 113 five-star reviews &rarr;
+            See all {REVIEW_COUNT} five-star reviews &rarr;
           </a>
           <a
             href={BOOKING_URL}

@@ -41,4 +41,4 @@ export const WEB3FORMS_ACCESS_KEY = "3e961faa-6e6b-4ef0-adaf-4b8f1aa434c3";
 // total (larger than the attributable reviews kept in content/reviews.json).
 // Update REVIEW_COUNT when the GBP total changes.
 export const RATING_VALUE = "5.0";
-export const REVIEW_COUNT = 113;
+export const REVIEW_COUNT = 124;

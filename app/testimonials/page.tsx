@@ -5,14 +5,15 @@ import VideoTestimonial, { AuthenticVideoGrid } from "@/components/VideoTestimon
 import { TESTIMONIAL_VIDEOS } from "@/lib/testimonialVideos";
 import { getReviews } from "@/lib/reviews";
 import ReviewCards from "@/components/ReviewCards";
-import { REVIEW_URL, BOOKING_URL } from "@/lib/site";
+import { REVIEW_URL, BOOKING_URL, RATING_VALUE, REVIEW_COUNT } from "@/lib/site";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
 
-// Real Google review count as of 2026-06-01 (5.0★). Update when it grows.
-const AGGREGATE_RATING = { value: "5.0", count: 113 };
+// Single source of truth for the rating/count lives in lib/site.ts.
+const AGGREGATE_RATING = { value: RATING_VALUE, count: REVIEW_COUNT };
 
 export const metadata: Metadata = {
   title: "Customer Reviews & Testimonials | Sugar Land Painter",
@@ -86,6 +87,7 @@ export default function TestimonialsPage() {
   const reviews = getReviews();
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Testimonials", path: "/testimonials" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(testimonialsSchema) }}

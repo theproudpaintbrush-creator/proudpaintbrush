@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { BOOKING_URL } from "@/lib/site";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Our Story | The Proud Paintbrush Sugar Land",
@@ -106,6 +107,7 @@ const faqs = [
 export default function OurStoryPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Our Story", path: "/our-story" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

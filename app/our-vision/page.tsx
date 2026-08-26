@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { BOOKING_URL } from "@/lib/site";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Our Vision | Residential Painters Sugar Land TX",
@@ -104,6 +105,7 @@ const faqs = [
 export default function OurVisionPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Our Vision", path: "/our-vision" }]} />
       {/* HERO */}
       <section className="relative w-full h-[90vh] min-h-[560px] flex items-center justify-center overflow-hidden">
         <Image

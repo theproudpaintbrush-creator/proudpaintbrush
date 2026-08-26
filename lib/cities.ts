@@ -59,7 +59,7 @@ export const CITIES: City[] = [
       alt: "Exterior house painting in Sugar Land TX with two-story brick home and freshly painted trim",
     },
     ogImage: "/images/exterior-painting-happy-customer-sugar-land-tx.jpg",
-    aggregateRating: { value: "5.0", count: 113 },
+    aggregateRating: { value: "5.0", count: 124 },
     exterior: {
       title: "Exterior Painting in Sugar Land TX | Proud Paintbrush",
       description:
@@ -217,7 +217,7 @@ export const CITIES: City[] = [
       alt: "Exterior painting customer in Missouri City TX standing in front of freshly painted home",
     },
     ogImage: "/images/customer-missouri-city.webp",
-    aggregateRating: { value: "5.0", count: 113 },
+    aggregateRating: { value: "5.0", count: 124 },
     exterior: {
       title: "Exterior Painting in Missouri City TX | Proud Paintbrush",
       description:
@@ -374,7 +374,7 @@ export const CITIES: City[] = [
       alt: "Exterior painting customer in Katy TX in front of freshly painted brick home",
     },
     ogImage: "/images/happy-customer-exterior-brick-painting-katy-tc.jpg",
-    aggregateRating: { value: "5.0", count: 113 },
+    aggregateRating: { value: "5.0", count: 124 },
     exterior: {
       title: "Exterior Painting in Katy TX | The Proud Paintbrush",
       description:
@@ -532,7 +532,7 @@ export const CITIES: City[] = [
       alt: "Exterior painting customer in Rosenberg TX area in front of freshly painted home",
     },
     ogImage: "/images/exterior-painting-happy-customer-richmond-tx.jpg",
-    aggregateRating: { value: "5.0", count: 113 },
+    aggregateRating: { value: "5.0", count: 124 },
     exterior: {
       title: "Exterior Painting in Rosenberg TX | The Proud Paintbrush",
       description:
@@ -689,7 +689,7 @@ export const CITIES: City[] = [
       alt: "Exterior painting on a stucco home in Richmond TX with freshly painted trim",
     },
     ogImage: "/images/exterior-painting-happy-customer-richmond-tx.jpg",
-    aggregateRating: { value: "5.0", count: 113 },
+    aggregateRating: { value: "5.0", count: 124 },
     exterior: {
       title: "Exterior Painting in Richmond TX | The Proud Paintbrush",
       description:
@@ -846,7 +846,7 @@ export const CITIES: City[] = [
       alt: "Exterior painting customer in Fulshear TX in front of freshly painted home and refinished door",
     },
     ogImage: "/images/happy-customer-fulshear-tx-door-refinishing.jpg",
-    aggregateRating: { value: "5.0", count: 113 },
+    aggregateRating: { value: "5.0", count: 124 },
     exterior: {
       title: "Exterior Painting in Fulshear TX | The Proud Paintbrush",
       description:
@@ -1003,7 +1003,7 @@ export const CITIES: City[] = [
       alt: "Exterior house painting in West Houston TX with mature trees and freshly painted siding",
     },
     ogImage: "/images/exterior-west-houston.jpg",
-    aggregateRating: { value: "5.0", count: 113 },
+    aggregateRating: { value: "5.0", count: 124 },
     exterior: {
       title: "Exterior Painting in West Houston TX | Proud Paintbrush",
       description:
@@ -1160,7 +1160,7 @@ export const CITIES: City[] = [
       alt: "Exterior house painting in Southwest Houston TX on a mid-century ranch home with freshly painted brick",
     },
     ogImage: "/images/exterior-southwest-houston.jpg",
-    aggregateRating: { value: "5.0", count: 113 },
+    aggregateRating: { value: "5.0", count: 124 },
     exterior: {
       title: "Exterior Painting Southwest Houston TX | Proud Paintbrush",
       description:

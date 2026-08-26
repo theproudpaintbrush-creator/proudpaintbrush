@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BOOKING_URL } from "@/lib/site";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
 const PHONE = "(832) 605-0493";
@@ -175,6 +176,7 @@ function WaveDown({ from, to }: { from: string; to: string }) {
 export default function FaqPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "FAQ", path: "/faq" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

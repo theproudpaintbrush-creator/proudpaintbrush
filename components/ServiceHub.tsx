@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { HubContent, ServiceParent } from "@/lib/services";
+import { REVIEW_COUNT } from "@/lib/site";
 import TrustBar from "@/components/TrustBar";
 import ProjectGallery from "@/components/ProjectGallery";
 import PricingBand from "@/components/PricingBand";
@@ -87,7 +88,7 @@ export default function ServiceHub({
             <span className="flex items-center gap-1.5">
               <span className="text-yellow-400" aria-hidden>★★★★★</span>
               <span className="font-semibold">5.0</span>
-              <span className="text-white/70">· 113 Google reviews</span>
+              <span className="text-white/70">· {REVIEW_COUNT} Google reviews</span>
             </span>
             <span className="text-white/40" aria-hidden>•</span>
             <span>Fully Insured</span>
@@ -217,7 +218,7 @@ export default function ServiceHub({
           />
           <div className="text-center mt-8">
             <Link href="/testimonials" className="text-[#3A6A96] font-semibold hover:underline">
-              Read all 113 reviews &rarr;
+              Read all {REVIEW_COUNT} reviews &rarr;
             </Link>
           </div>
         </section>

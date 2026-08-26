@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CITIES } from "@/lib/cities";
 import { BOOKING_EMBED_URL, REVIEW_URL, BOOKING_URL, WEB3FORMS_ACCESS_KEY } from "@/lib/site";
 import LeadForm from "@/components/LeadForm";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const BASE_URL = "https://www.theproudpaintbrush.com";
 const PHONE = "(832) 605-0493";
@@ -55,6 +56,7 @@ const schema = {
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Contact", path: "/contact" }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* HERO */}

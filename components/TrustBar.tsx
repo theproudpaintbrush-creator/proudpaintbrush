@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { RATING_VALUE, REVIEW_COUNT } from "@/lib/site";
 
 const BADGES = [
   "Fully Insured",
   "2 & 5-Year Written Warranty",
   "Sherwin-Williams Pro",
-  "5.0★ · 113 Reviews",
+  `${RATING_VALUE}★ · ${REVIEW_COUNT} Reviews`,
   "Locally Owned Since 2020",
 ];
 
