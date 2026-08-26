@@ -123,7 +123,7 @@ const nextConfig: NextConfig = {
       { source: "/blog/-whats-the-best-paint-for-cabinets", destination: "/blog/whats-the-best-paint-brand-for-cabinets", permanent: true },
       { source: "/blog/-whats-the-best-paint-brand-for-cabinets", destination: "/blog/whats-the-best-paint-brand-for-cabinets", permanent: true },
       { source: "/blog/title-painting-and-health-understanding-low-voc-and-zero-voc-paints", destination: "/blog/painting-and-health-understanding-low-voc-and-zero-voc-paints", permanent: true },
-      { source: "/blog/who-owns-behr-paint-company", destination: "/blog/-who-owns-behr-paint-company", permanent: true },
+      { source: "/blog/-who-owns-behr-paint-company", destination: "/blog/who-owns-behr-paint-company", permanent: true },
       { source: "/staining-lacquering-sealing", destination: "/interior-painting/staining-lacquering-sealing", permanent: true },
       { source: "/painting-services/service-areas", destination: "/service-areas", permanent: true },
       { source: "/painting-services/portfolio", destination: "/portfolio", permanent: true },
@@ -180,7 +180,12 @@ const nextConfig: NextConfig = {
       { source: "/frence-paint", destination: "/exterior-painting/fence-staining", permanent: true },
       { source: "/service-areas/null", destination: "/service-areas", permanent: true },
       { source: "/service-areas/richmond-tx", destination: "/service-areas/richmond", permanent: true },
-      { source: "/Testimonials", destination: "/testimonials", permanent: true },
+      // NOTE: a "/Testimonials" -> "/testimonials" rule used to live here. Next's
+      // redirect source matching is case-insensitive, so it also matched the
+      // canonical lowercase path and sent /testimonials into an infinite
+      // self-redirect loop — the real, deployed reviews page was completely
+      // unreachable in production. Removed; the near-zero legacy capitalized
+      // traffic isn't worth re-breaking the live page over.
       { source: "/projectexpectations", destination: "/project-expectations", permanent: true },
       { source: "/warranty-1", destination: "/warranty", permanent: true },
       { source: "/pricing/cabinet-pricing", destination: "/pricing/cabinet-prices", permanent: true },

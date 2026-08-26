@@ -4,6 +4,22 @@ import Link from "next/link";
 import { getPostBySlug, getAllPosts, getAllSlugs } from "@/lib/blog";
 import { imageDims } from "@/lib/imageDims";
 import { BOOKING_URL } from "@/lib/site";
+import LocalAreaModule from "@/components/LocalAreaModule";
+
+// The 9 national-paint-brand posts driving most blog traffic but almost no
+// conversions (Sprint 3, Task 2). Single allowlist, single component — revert
+// by deleting this set (or the import) in one commit.
+const LOCAL_AREA_MODULE_SLUGS = new Set([
+  "is-behr-paint-good",
+  "which-exterior-paint-color-fades-the-fastest",
+  "cost-to-paint-bathroom",
+  "who-owns-benjamin-moore-paint-company",
+  "best-exterior-paint-texas",
+  "who-owns-behr-paint-company",
+  "oil-or-latex-how-to-identify-your-trims-paint-like-a-pro",
+  "how-to-tell-if-paint-is-oil-based-or-latex-without-guessing",
+  "whats-the-best-paint-brand-for-cabinets",
+]);
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -205,6 +221,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           />
         </div>
       </article>
+
+      {LOCAL_AREA_MODULE_SLUGS.has(post.slug) && <LocalAreaModule />}
 
       {/* Contextual service spotlight */}
       <section className="py-2">
