@@ -24,6 +24,16 @@ export type PageCityCard = {
 };
 export type PageCityCards = { heading?: string; intro?: string; cards: PageCityCard[] };
 export type PagePriceTeaser = { heading: string; range: string; note: string; href: string; linkLabel: string };
+// Opt-in rich blocks added for the "definitive city page" pattern (piloted on
+// /service-areas/fulshear) — each renders only when present so existing plain
+// content pages are unaffected.
+export type PageServiceSectionItem = { heading: string; body: string; href?: string; linkLabel?: string };
+export type PageServiceSections = { heading?: string; intro?: string; items: PageServiceSectionItem[] };
+export type PageMechanismSection = { heading: string; body: string };
+export type PageCostTableRow = { area: string; median: string; low?: string; high?: string; sample: string };
+export type PageCostTable = { heading: string; intro?: string; rows: PageCostTableRow[]; note?: string };
+export type PageNeighborhoodGrid = { heading?: string; intro?: string; neighborhoods: string[] };
+export type PageBeforeAfterPlaceholder = { heading?: string; note: string };
 // Optional Service structured-data block. When present, the route emits a
 // schema.org/Service JSON-LD node (provider = the global business @id) with
 // areaServed. Used by service-style pages like /commercial-painting so they
@@ -58,6 +68,25 @@ export type PageContent = {
   // Optional custom call-to-action that REPLACES the default estimate CTA at the
   // bottom of the page (e.g. a prominent "Apply" button on the careers page).
   cta?: { heading?: string; note?: string; label: string; href: string };
+  // Dual CTA (book + call) rendered directly under the H1, above the fold —
+  // matches the treatment on service-detail pages instead of only appearing
+  // at the bottom of the page.
+  heroCta?: boolean;
+  // Per-service scope breakdown (e.g. interior/exterior/cabinets/fence on a
+  // city hub page) so a single page can cover multiple services with real
+  // detail instead of one generic blob.
+  serviceSections?: PageServiceSections;
+  // Single "why this is hard here" explainer (climate, mechanism, etc.).
+  mechanismSection?: PageMechanismSection;
+  // Scannable cost table, structured for AI Overview extraction.
+  costTable?: PageCostTable;
+  // Named neighborhood chips.
+  neighborhoodGrid?: PageNeighborhoodGrid;
+  // Clearly-marked placeholder for a future before/after slider.
+  beforeAfterPlaceholder?: PageBeforeAfterPlaceholder;
+  // Render `faqs` as a visible Q&A section (in addition to the FAQPage schema
+  // the route already emits from the same array).
+  showFaqs?: boolean;
 };
 
 const pagesDir = path.join(process.cwd(), "content", "pages");

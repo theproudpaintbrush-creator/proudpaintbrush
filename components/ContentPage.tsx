@@ -4,6 +4,7 @@ import { getReviewsForPage } from "@/lib/reviews";
 import ReviewCards from "@/components/ReviewCards";
 import PricingBand from "@/components/PricingBand";
 import FenceEstimator from "@/components/FenceEstimator";
+import BookingButton from "@/components/BookingButton";
 import { BOOKING_URL } from "@/lib/site";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
@@ -36,6 +37,20 @@ export default function ContentPage({ page }: { page: PageContent }) {
             ))}
           </nav>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">{page.h1}</h1>
+          {page.heroCta && (
+            <div className="flex flex-col sm:flex-row gap-4 mt-7">
+              <BookingButton
+                label={<>Book My Free Estimate &rarr;</>}
+                className="inline-block bg-[#3A6A96] hover:bg-[#2D5479] text-white font-semibold px-7 py-3 rounded-lg transition-colors"
+              />
+              <a
+                href={`tel:${PHONE_TEL}`}
+                className="inline-block border-2 border-white/70 text-white hover:bg-white hover:text-[#1a2e44] font-semibold px-7 py-3 rounded-lg transition-colors"
+              >
+                Call {PHONE}
+              </a>
+            </div>
+          )}
         </div>
       </section>
 
@@ -78,6 +93,146 @@ export default function ContentPage({ page }: { page: PageContent }) {
           />
         </div>
       </article>
+
+      {/* SERVICE SECTIONS — per-service scope breakdown (opt-in, city hub pages) */}
+      {page.serviceSections && page.serviceSections.items.length > 0 && (
+        <section className="bg-gray-50 py-16 border-t border-gray-100">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            {page.serviceSections.heading && (
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] text-center mb-2">
+                {page.serviceSections.heading}
+              </h2>
+            )}
+            {page.serviceSections.intro && (
+              <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10">{page.serviceSections.intro}</p>
+            )}
+            <div className="grid sm:grid-cols-2 gap-6">
+              {page.serviceSections.items.map((item) => (
+                <div key={item.heading} className="bg-white border border-gray-200 rounded-xl p-6">
+                  <h3 className="text-lg font-bold text-[#1a2e44] mb-3">{item.heading}</h3>
+                  <p className="text-gray-700 leading-relaxed mb-3">{item.body}</p>
+                  {item.href && item.linkLabel && (
+                    <Link href={item.href} className="text-[#3A6A96] font-medium hover:underline">
+                      {item.linkLabel} &rarr;
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* MECHANISM SECTION — why this is hard here (climate, etc.) (opt-in) */}
+      {page.mechanismSection && (
+        <section className="bg-white py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] text-center mb-6">
+              {page.mechanismSection.heading}
+            </h2>
+            <p className="text-gray-700 leading-relaxed text-lg">{page.mechanismSection.body}</p>
+          </div>
+        </section>
+      )}
+
+      {/* COST TABLE — scannable, AI-Overview-friendly (opt-in) */}
+      {page.costTable && page.costTable.rows.length > 0 && (
+        <section className="bg-gray-50 py-16 border-t border-gray-100">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] text-center mb-2">
+              {page.costTable.heading}
+            </h2>
+            {page.costTable.intro && (
+              <p className="text-center text-gray-600 max-w-2xl mx-auto mb-8">{page.costTable.intro}</p>
+            )}
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm bg-white border border-gray-200 rounded-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-[#1a2e44] text-white">
+                    <th className="text-left p-3 font-semibold">Area</th>
+                    <th className="text-left p-3 font-semibold">Median Job Cost</th>
+                    <th className="text-left p-3 font-semibold">Low</th>
+                    <th className="text-left p-3 font-semibold">High</th>
+                    <th className="text-left p-3 font-semibold">Sample</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {page.costTable.rows.map((row) => (
+                    <tr key={row.area} className="border-t border-gray-200">
+                      <td className="p-3 font-medium text-[#1a2e44]">{row.area}</td>
+                      <td className="p-3">{row.median}</td>
+                      <td className="p-3">{row.low ?? "—"}</td>
+                      <td className="p-3">{row.high ?? "—"}</td>
+                      <td className="p-3">{row.sample}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {page.costTable.note && (
+              <p className="text-gray-600 text-sm mt-5 leading-relaxed">{page.costTable.note}</p>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* NEIGHBORHOOD GRID — named local areas (opt-in) */}
+      {page.neighborhoodGrid && page.neighborhoodGrid.neighborhoods.length > 0 && (
+        <section className="bg-white py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            {page.neighborhoodGrid.heading && (
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] mb-3">{page.neighborhoodGrid.heading}</h2>
+            )}
+            {page.neighborhoodGrid.intro && (
+              <p className="text-gray-600 max-w-2xl mx-auto mb-8">{page.neighborhoodGrid.intro}</p>
+            )}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
+              {page.neighborhoodGrid.neighborhoods.map((n) => (
+                <div
+                  key={n}
+                  className="bg-gray-50 border border-gray-200 px-4 py-3 text-[#1a2e44] text-sm font-medium"
+                >
+                  {n}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* BEFORE / AFTER PLACEHOLDER — clearly marked, no slider yet (opt-in) */}
+      {page.beforeAfterPlaceholder && (
+        <section className="bg-gray-50 py-16 border-t border-b border-dashed border-gray-300">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Coming Soon</p>
+            <h2 className="text-xl sm:text-2xl font-bold text-[#1a2e44] mb-3">
+              {page.beforeAfterPlaceholder.heading ?? "Before & After"}
+            </h2>
+            <p className="text-gray-600 leading-relaxed">{page.beforeAfterPlaceholder.note}</p>
+          </div>
+        </section>
+      )}
+
+      {/* VISIBLE FAQ SECTION (opt-in) — reuses the same `faqs` array the route
+          already emits as FAQPage schema, rendered visibly instead of only
+          inline within bodyHtml. */}
+      {page.showFaqs && page.faqs.length > 0 && (
+        <section className="bg-white py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a2e44] text-center mb-10">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-5">
+              {page.faqs.map((faq) => (
+                <div key={faq.q} className="bg-gray-50 border border-gray-200 p-6 rounded-xl">
+                  <h3 className="font-bold text-[#1a2e44] mb-2 text-lg">{faq.q}</h3>
+                  <p className="text-gray-700 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CITY CARDS — photo directory of service-area cities (opt-in, hub page) */}
       {page.cityCards && page.cityCards.cards.length > 0 && (
