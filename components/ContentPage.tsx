@@ -40,7 +40,19 @@ export default function ContentPage({ page }: { page: PageContent }) {
             ))}
           </nav>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">{page.h1}</h1>
-          {page.heroCta && (
+          {page.heroCta && page.cta && (
+            <div className="mt-7">
+              <a
+                href={page.cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#3A6A96] hover:bg-white hover:text-[#1a2e44] text-white font-bold text-lg sm:text-xl px-10 py-4 rounded-xl shadow-xl ring-2 ring-white/30 transition-colors"
+              >
+                {page.cta.label} <span aria-hidden>&rarr;</span>
+              </a>
+            </div>
+          )}
+          {page.heroCta && !page.cta && (
             <div className="flex flex-col sm:flex-row gap-4 mt-7">
               <BookingButton
                 label={<>Book My Free Estimate &rarr;</>}
