@@ -72,6 +72,9 @@ export type PageContent = {
   // matches the treatment on service-detail pages instead of only appearing
   // at the bottom of the page.
   heroCta?: boolean;
+  // Big "Apply" button directly under the H1, reusing `cta.label`/`cta.href`
+  // so the careers page has the same button above the fold as at the bottom.
+  heroApply?: boolean;
   // Per-service scope breakdown (e.g. interior/exterior/cabinets/fence on a
   // city hub page) so a single page can cover multiple services with real
   // detail instead of one generic blob.

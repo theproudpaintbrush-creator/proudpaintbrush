@@ -40,6 +40,18 @@ export default function ContentPage({ page }: { page: PageContent }) {
             ))}
           </nav>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">{page.h1}</h1>
+          {page.heroApply && page.cta && (
+            <div className="mt-8">
+              <a
+                href={page.cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#3A6A96] hover:bg-white hover:text-[#1a2e44] text-white font-bold text-xl sm:text-2xl px-14 py-6 rounded-xl shadow-xl ring-2 ring-white/30 transition-colors"
+              >
+                {page.cta.label} <span aria-hidden>&rarr;</span>
+              </a>
+            </div>
+          )}
           {page.heroCta && (
             <div className="flex flex-col sm:flex-row gap-4 mt-7">
               <BookingButton
