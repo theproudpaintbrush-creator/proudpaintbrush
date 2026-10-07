@@ -7,11 +7,12 @@ import { BOOKING_URL } from "@/lib/site";
 //   gallons = ceil(length * height / 280)
 //   materials = gallons * $70
 //   labor = $390 base + $0.70 * length
-//   total = materials + labor   (no tax applied)
+//   total = max(materials + labor, $650 job minimum)   (no tax applied)
 const COVERAGE_SQFT_PER_GAL = 280;
 const PRICE_PER_GAL = 70;
 const LABOR_BASE = 390;
 const LABOR_PER_FT = 0.7;
+const JOB_MINIMUM = 650;
 
 function money(n: number) {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -25,13 +26,14 @@ export default function FenceEstimator() {
   const h = parseFloat(height);
   const valid = l > 0 && h > 0;
 
-  let result: { gallons: number; materials: number; labor: number; total: number; perFoot: number } | null = null;
+  let result: { gallons: number; materials: number; labor: number; total: number; perFoot: number; minApplied: boolean } | null = null;
   if (valid) {
     const gallons = Math.ceil((l * h) / COVERAGE_SQFT_PER_GAL);
     const materials = gallons * PRICE_PER_GAL;
     const labor = LABOR_BASE + l * LABOR_PER_FT;
-    const total = materials + labor;
-    result = { gallons, materials, labor, total, perFoot: total / l };
+    const minApplied = materials + labor < JOB_MINIMUM;
+    const total = Math.max(materials + labor, JOB_MINIMUM);
+    result = { gallons, materials, labor, total, perFoot: total / l, minApplied };
   }
 
   return (
@@ -94,6 +96,9 @@ export default function FenceEstimator() {
                   <p className="text-white/60 text-xs mt-2">
                     ≈ {money(result.perFoot)}/linear ft · ballpark only, plus applicable tax
                   </p>
+                  {result.minApplied && (
+                    <p className="text-white/80 text-xs mt-1">{money(JOB_MINIMUM)} job minimum applied</p>
+                  )}
                 </>
               ) : (
                 <p className="text-white/70 text-center">Enter your fence length and height to see an estimate.</p>
