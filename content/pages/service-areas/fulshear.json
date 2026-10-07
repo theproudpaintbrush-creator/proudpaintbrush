@@ -39,17 +39,8 @@
     "heading": "Why Fulshear's Climate Is Hard on Paint",
     "body": "Fulshear sits on the same shrink-swell clay that runs through the rest of Fort Bend County, but it adds a wrinkle the more established cities don't have as much of: newer subdivisions with young landscaping mean far less mature tree canopy, so exteriors and fences take a heavier direct-UV load through most of the day. Combine that with Gulf Coast humidity that pushes moisture into caulk lines and end grain, hard summer heat that stresses fresh coatings if applied at the wrong time of day, and south- and west-facing elevations that fade and check years before a shaded wall does, and even a home that is only a few years old can show real wear. Indoors, the same humidity drives AC condensation into closets and bathrooms on exterior walls, which is why thin builder-grade paint in those rooms is often the first thing to fail. We choose primers, coatings, and application timing around these specific conditions rather than treating every surface the same."
   },
-  "costTable": {
-    "heading": "What House Painting Costs Near Fulshear",
-    "intro": "Fulshear itself has too few completed jobs on record (2) to publish a reliable city-specific range. These figures come from 97 real, closed painting jobs across Fort Bend County, excluding touch-ups and single-item jobs under $800 that would skew the range low.",
-    "rows": [
-      { "area": "Fort Bend County (all jobs)", "median": "$2,500", "low": "$837", "high": "$21,078", "sample": "97 jobs" },
-      { "area": "Missouri City", "median": "$3,841", "low": "—", "high": "—", "sample": "12 jobs" },
-      { "area": "Katy", "median": "$2,735", "low": "—", "high": "—", "sample": "17 jobs" },
-      { "area": "Richmond", "median": "$2,029", "low": "—", "high": "—", "sample": "11 jobs" },
-      { "area": "Sugar Land", "median": "$1,534", "low": "—", "high": "—", "sample": "10 jobs" }
-    ],
-    "note": "Every Fulshear project gets its own written quote after a free on-site walkthrough — these numbers are a starting reference, not a substitute for a real estimate."
+  "priceSummary": {
+    "heading": "What House Painting Costs in Fulshear"
   },
   "neighborhoodGrid": {
     "heading": "Fulshear Neighborhoods We Work In",

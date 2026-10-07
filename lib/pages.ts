@@ -57,6 +57,7 @@ export type PageContent = {
   gallery?: { src: string; alt: string }[];
   // optional rich blocks (service-areas pages opt in)
   trustRow?: boolean;
+  priceSummary?: { heading?: string };
   reviews?: PageReviewSpec;
   relatedLinks?: PageRelatedLinks;
   cityCards?: PageCityCards;

@@ -6,7 +6,7 @@ import TrustBar from "@/components/TrustBar";
 import ProudProcess from "@/components/ProudProcess";
 import LiteYouTube from "@/components/LiteYouTube";
 import ReviewCards from "@/components/ReviewCards";
-import CostTable from "@/components/CostTable";
+import PriceSummary from "@/components/PriceSummary";
 import MechanismSection from "@/components/MechanismSection";
 import FaqSection from "@/components/FaqSection";
 import { getReviews } from "@/lib/reviews";
@@ -31,7 +31,7 @@ const HOMEPAGE_FAQS = [
   },
   {
     q: "How much does painting cost in Fort Bend County?",
-    a: "Based on 97 real, closed jobs across Fort Bend County (excluding touch-ups under $800), the median project runs about $2,500, with most falling between $837 and $21,078 depending on size and scope. Every project gets its own written quote after a free on-site walkthrough — see the table above for a fuller breakdown by city.",
+    a: "It depends on the service: a full interior typically runs $3,000–$20,000+, a whole-home exterior $2,500–$16,000+ (about $5,000–$8,000 for a typical 2,000 sq ft home), cabinet painting $650–$7,500+ (about $4,100–$5,000 for a typical kitchen), drywall repair $95–$259 per repair with a $650 minimum, and fence staining about $4–$7 per linear foot. Every project gets its own written quote after a free on-site walkthrough — see our pricing pages for full rate sheets.",
   },
   {
     q: "Do you offer a warranty?",
@@ -281,18 +281,7 @@ export default function HomePage() {
 
       {/* ── COST ANCHORING ── */}
       <section className="bg-[#eef1f5] py-20">
-        <CostTable
-          heading="What Painting Costs in Fort Bend County"
-          intro="Based on 97 real, closed painting jobs across Fort Bend County, excluding touch-ups and single-item jobs under $800 that would skew the range low."
-          rows={[
-            { area: "Fort Bend County (all jobs)", median: "$2,500", low: "$837", high: "$21,078", sample: "97 jobs" },
-            { area: "Missouri City", median: "$3,841", low: "—", high: "—", sample: "12 jobs" },
-            { area: "Katy", median: "$2,735", low: "—", high: "—", sample: "17 jobs" },
-            { area: "Richmond", median: "$2,029", low: "—", high: "—", sample: "11 jobs" },
-            { area: "Sugar Land", median: "$1,534", low: "—", high: "—", sample: "10 jobs" },
-          ]}
-          note="Every project gets its own written quote after a free on-site walkthrough — these numbers are a starting reference, not a substitute for a real estimate."
-        />
+        <PriceSummary heading="What Painting Costs in Fort Bend County" />
       </section>
 
       <ProudProcess />

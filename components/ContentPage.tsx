@@ -6,6 +6,7 @@ import PricingBand from "@/components/PricingBand";
 import FenceEstimator from "@/components/FenceEstimator";
 import BookingButton from "@/components/BookingButton";
 import CostTable from "@/components/CostTable";
+import PriceSummary from "@/components/PriceSummary";
 import MechanismSection from "@/components/MechanismSection";
 import FaqSection from "@/components/FaqSection";
 import { BOOKING_URL, REVIEW_COUNT } from "@/lib/site";
@@ -154,6 +155,13 @@ export default function ContentPage({ page }: { page: PageContent }) {
             rows={page.costTable.rows}
             note={page.costTable.note}
           />
+        </section>
+      )}
+
+      {/* PRICE SUMMARY — per-service ranges linking to the pricing pages (opt-in) */}
+      {page.priceSummary && (
+        <section className="bg-gray-50 py-16 border-t border-gray-100">
+          <PriceSummary heading={page.priceSummary.heading} />
         </section>
       )}
 
