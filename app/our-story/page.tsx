@@ -15,13 +15,13 @@ export const metadata: Metadata = {
       "The story behind The Proud Paintbrush — a family business founded by Chris Petkau in Sugar Land, TX. Built on faith, perseverance, and pride in every home.",
     url: "https://www.theproudpaintbrush.com/our-story",
     type: "website",
-    images: [{ url: "https://www.theproudpaintbrush.com/images/paint-it-forward-community.jpg" }],
+    images: [{ url: "https://www.theproudpaintbrush.com/images/petkau-family-live-oak-banner-sugar-land-house-painters.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Our Story | The Proud Paintbrush Sugar Land",
     description: "The family story behind The Proud Paintbrush in Sugar Land, TX.",
-    images: ["https://www.theproudpaintbrush.com/images/paint-it-forward-community.jpg"],
+    images: ["https://www.theproudpaintbrush.com/images/petkau-family-live-oak-banner-sugar-land-house-painters.jpg"],
   },
 };
 const BASE_URL = "https://www.theproudpaintbrush.com";
@@ -115,11 +115,11 @@ export default function OurStoryPage() {
       {/* HERO */}
       <section className="relative w-full h-[90vh] min-h-[560px] flex items-center justify-center overflow-hidden">
         <Image
-          src="/images/story-family-1.jpg"
-          alt="The Proud Paintbrush family — Chris Petkau with his wife and sons in Sugar Land, TX"
+          src="/images/petkau-family-live-oak-banner-sugar-land-house-painters.jpg"
+          alt="Chris and Sarah Petkau with sons Isaac and Samuel under a live oak in Sugar Land, TX — the family behind The Proud Paintbrush"
           fill
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-[center_70%]"
           priority
           quality={90}
         />
@@ -181,15 +181,27 @@ export default function OurStoryPage() {
                 attention to every home we work in.
               </p>
             </div>
-            <div className="relative h-96 lg:h-[520px] overflow-hidden">
-              <Image
-                src="/images/story-family-2.jpg"
-                alt="Chris Petkau, owner of The Proud Paintbrush, with his family"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center"
-                quality={90}
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+              <div className="relative h-96 lg:h-[400px] overflow-hidden">
+                <Image
+                  src="/images/chris-petkau-couple-portrait-sugar-land-painting-contractor.jpg"
+                  alt="Chris and Sarah Petkau, founders of The Proud Paintbrush painting company in Sugar Land, TX"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 576px"
+                  className="object-cover object-[center_35%]"
+                  quality={90}
+                />
+              </div>
+              <div className="relative h-96 lg:h-[400px] overflow-hidden">
+                <Image
+                  src="/images/chris-petkau-with-sons-proud-paintbrush-sugar-land.jpg"
+                  alt="Chris Petkau, owner of The Proud Paintbrush, with his sons Isaac and Samuel in Sugar Land, TX"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 576px"
+                  className="object-cover object-[center_45%]"
+                  quality={90}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -198,16 +210,28 @@ export default function OurStoryPage() {
       {/* WHAT SETS US APART */}
       <WaveUp from="bg-white" to="#111111" />
       <section className="bg-[#111111] text-white py-16">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10">What Sets Us Apart</h2>
-          <ul className="space-y-4">
-            {whatSetsUsApart.map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <span className="text-[#3A6A96] font-bold text-lg mt-0.5">✓</span>
-                <span className="text-white/80 leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-10 items-center">
+          <div className="relative h-96 md:h-[480px] overflow-hidden">
+            <Image
+              src="/images/petkau-family-oak-tree-portrait-sugar-land-texas.jpg"
+              alt="The Petkau family portrait under an oak tree in Sugar Land, Texas — owners of The Proud Paintbrush"
+              fill
+              sizes="(max-width: 768px) 100vw, 40vw"
+              className="object-cover object-[center_55%]"
+              quality={90}
+            />
+          </div>
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-10">What Sets Us Apart</h2>
+            <ul className="space-y-4">
+              {whatSetsUsApart.map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="text-[#3A6A96] font-bold text-lg mt-0.5">✓</span>
+                  <span className="text-white/80 leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
       <WaveDown from="bg-[#111111]" to="#ffffff" />
@@ -247,14 +271,15 @@ export default function OurStoryPage() {
       {/* PHOTO ROW */}
       <section className="bg-white pb-20">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { src: "/images/story-family-1.jpg", alt: "The Proud Paintbrush family in Sugar Land, TX" },
-              { src: "/images/story-family-2.jpg", alt: "Chris Petkau and family" },
-              { src: "/images/story-family-3.jpg", alt: "The Petkau family — the heart of The Proud Paintbrush" },
+              { src: "/images/petkau-family-walking-meadow-sugar-land-tx.jpg", alt: "The Petkau family walking through a meadow in Sugar Land, TX" },
+              { src: "/images/petkau-boys-live-oak-family-owned-painting-company.jpg", alt: "Isaac and Samuel Petkau under a live oak — the family behind a family-owned painting company" },
+              { src: "/images/petkau-brothers-oak-tree-sugar-land-texas-painting-company.jpg", alt: "The Petkau brothers by an oak tree in Sugar Land, Texas" },
+              { src: "/images/petkau-son-oak-tree-family-owned-painters-sugar-land.jpg", alt: "Petkau son at an oak tree — the next generation of The Proud Paintbrush, family-owned painters in Sugar Land" },
             ].map((img) => (
-              <div key={img.src} className="relative h-64 overflow-hidden">
-                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-center" quality={90} />
+              <div key={img.src} className="relative h-64 sm:h-80 overflow-hidden">
+                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover object-[center_60%]" quality={90} />
               </div>
             ))}
           </div>
