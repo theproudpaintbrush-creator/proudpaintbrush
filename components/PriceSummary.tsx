@@ -19,8 +19,8 @@ const SERVICES = [
   },
   {
     name: "Cabinet Painting",
-    range: "$650 – $7,500+",
-    rangeLabel: "vanity to large kitchen",
+    range: "$2,000 – $10,000+",
+    rangeLabel: "most projects",
     details: ["Typical kitchen: $4,100 – $5,000", "Doors: $120 – $145 each", "Drawers: $110 – $135 each"],
     href: "/pricing/cabinet-prices",
   },
