@@ -8,7 +8,7 @@ file wins.
 - **Founded:** 2020, Sugar Land, TX (locally owned since 2020)
 - **Owner:** Chris Petkau (originally from Vancouver, Canada; moved to the US in 2007)
 - **Phone:** (832) 605-0493
-- **Email:** info@theproudpaintbrush.com
+- **Email:** sales@theproudpaintbrush.com
 - **Location:** Sugar Land, TX 77498
 - **Warranty phrase (ONLY approved version):** "2 & 5-Year Written Warranty"
 - **Insurance phrase:** "Fully Insured · $1M Liability"

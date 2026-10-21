@@ -8,7 +8,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 const BASE_URL = "https://www.theproudpaintbrush.com";
 const PHONE = "(832) 605-0493";
 const PHONE_TEL = "+18326050493";
-const EMAIL = "info@theproudpaintbrush.com";
+const EMAIL = "sales@theproudpaintbrush.com";
 
 export const metadata: Metadata = {
   title: "Contact The Proud Paintbrush | Sugar Land, TX Painters",

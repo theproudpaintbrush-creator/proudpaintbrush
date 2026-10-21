@@ -50,7 +50,7 @@ const localBusinessSchema = {
   image: "https://www.theproudpaintbrush.com/images/logo.png",
   logo: "https://www.theproudpaintbrush.com/images/logo.png",
   telephone: "+18326050493",
-  email: "info@theproudpaintbrush.com",
+  email: "sales@theproudpaintbrush.com",
   url: "https://www.theproudpaintbrush.com",
   address: {
     "@type": "PostalAddress",

@@ -28,7 +28,7 @@ export const REVIEW_URL = "https://g.page/r/CaafH5ZU7h7cEBM/review";
 export const PHONE_DISPLAY = "(832) 605-0493";
 export const PHONE_TEL = "+18326050493";
 
-export const EMAIL = "info@theproudpaintbrush.com";
+export const EMAIL = "sales@theproudpaintbrush.com";
 
 // Web3Forms access key for the /contact lead form. Create a free key (tied to
 // the inbox you want leads in) at https://web3forms.com — it's safe to commit

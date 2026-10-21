@@ -182,10 +182,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="mailto:info@theproudpaintbrush.com"
+                    href="mailto:sales@theproudpaintbrush.com"
                     className="hover:text-white transition-colors"
                   >
-                    info@theproudpaintbrush.com
+                    sales@theproudpaintbrush.com
                   </a>
                 </li>
                 <li>Sugar Land, TX 77498</li>
