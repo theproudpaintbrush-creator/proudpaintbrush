@@ -49,6 +49,8 @@ export type HubContent = {
   h1: string;
   heroImage: string;
   heroAlt: string;
+  /** Optional crew/process photo shown under the intro paragraphs. */
+  introImage?: { src: string; alt: string };
   intro: string[];
   servicesHeading: string;
   servicesIntro: string;

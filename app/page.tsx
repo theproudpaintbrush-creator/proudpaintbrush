@@ -448,8 +448,8 @@ export default function HomePage() {
       <section className="relative bg-[#3A6A96] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/crew/painter-cutting-in-bedroom-baseboard-line-katy-tx-the-proud-paintbrush.webp"
-            alt="Proud Paintbrush painter cutting in a crisp line above a taped baseboard in Katy, TX"
+            src="/images/crew/estimator-reviewing-exterior-with-painter-sugar-land-tx-the-proud-paintbrush.webp"
+            alt="Owner Chris Petkau walking a home exterior with a Proud Paintbrush painter during a free estimate in Sugar Land, TX"
             fill
             className="object-cover object-center opacity-20"
             quality={80}
