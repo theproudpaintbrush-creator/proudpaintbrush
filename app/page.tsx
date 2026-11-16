@@ -104,7 +104,7 @@ function WaveUp({ from, to }: { from: string; to: string }) {
 // The 3 money services get the prominent grid; drywall/fence are real
 // services but shown as a smaller secondary strip beneath them.
 const coreServices = [
-  { title: "Interior Painting", description: "Interior painting for walls, ceilings, trim, doors, and whole-home repaints.", href: "/interior-painting", img: "/images/service-interior.jpg", alt: "Modern living room interior painting in Sugar Land, TX" },
+  { title: "Interior Painting", description: "Interior painting for walls, ceilings, trim, doors, and whole-home repaints.", href: "/interior-painting", img: "/images/crew/lead-painter-cutting-in-wall-corner-by-window-katy-tx-the-proud-paintbrush.webp", alt: "Proud Paintbrush lead painter cutting in a wall corner by a window during an interior repaint in Katy, TX" },
   { title: "Exterior Painting", description: "Exterior painting built for Texas weather with proper washing, prep, caulking, priming, and durable coatings.", href: "/exterior-painting", img: "/images/service-exterior.jpg", alt: "Spanish-style exterior house painting in Richmond, TX" },
   { title: "Cabinet Painting", description: "Factory-style cabinet finishes for kitchens, bathrooms, built-ins, and storage spaces.", href: "/cabinet-painting", img: "/images/service-cabinet.jpg", alt: "Kitchen cabinet painting in Missouri City, TX" },
 ];
@@ -448,8 +448,8 @@ export default function HomePage() {
       <section className="relative bg-[#3A6A96] text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/cta-painter-trim.jpg"
-            alt="Painter working on exterior trim in Sugar Land, TX"
+            src="/images/crew/painter-cutting-in-bedroom-baseboard-line-katy-tx-the-proud-paintbrush.webp"
+            alt="Proud Paintbrush painter cutting in a crisp line above a taped baseboard in Katy, TX"
             fill
             className="object-cover object-center opacity-20"
             quality={80}
