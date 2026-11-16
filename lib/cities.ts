@@ -175,7 +175,7 @@ export const CITIES: City[] = [
         },
         {
           q: "How long does an interior paint job take in Sugar Land?",
-          a: "A single room typically takes one day. A whole-home repaint runs 3-5 days depending on size, prep needed, and number of colors.",
+          a: "A single room typically takes one day. A whole-home repaint runs 4–7 days depending on size, prep needed, and number of colors.",
         },
       ],
       featuredVideo: {
@@ -315,7 +315,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Missouri City Homeowners Choose The Proud Paintbrush",
-        body: "Sienna is one of our most active neighborhoods, so the crew working in your home has likely already painted a near-identical floor plan a few streets over. We move standard furniture, mask and protect your floors and remaining pieces, and seal off the rooms we are working in so the dust and smell stay contained. We are insured, and locally owned, the estimator is the person who runs your job, and we leave each room cleaner than we found it. We also keep you in the loop on timing: a single Missouri City bedroom is usually a one-day job, while a full repaint across an open Sienna floor plan runs three to five days depending on ceiling height and color count. Tall two-story family rooms add a day for safe staging, and we factor that into the written estimate up front rather than surprising you mid-project.",
+        body: "Sienna is one of our most active neighborhoods, so the crew working in your home has likely already painted a near-identical floor plan a few streets over. We move standard furniture, mask and protect your floors and remaining pieces, and seal off the rooms we are working in so the dust and smell stay contained. We are insured, and locally owned, the estimator is the person who runs your job, and we leave each room cleaner than we found it. We also keep you in the loop on timing: a single Missouri City bedroom is usually a one-day job, while a full repaint across an open Sienna floor plan runs four to seven days depending on ceiling height and color count. Tall two-story family rooms add a day for safe staging, and we factor that into the written estimate up front rather than surprising you mid-project.",
       },
       faqs: [
         {
@@ -630,7 +630,7 @@ export const CITIES: City[] = [
       },
       whyLocalSection: {
         heading: "Why Rosenberg Homeowners Choose The Proud Paintbrush",
-        body: "We give Rosenberg the same quality our Sugar Land clients get — same crew, same products, same standards, same warranty. We show up on time, protect your belongings and floors, contain each work area, and leave the space cleaner than we found it. The Proud Paintbrush is fully insured for all interior work in Rosenberg and Fort Bend County, and the person who estimates your home is the one running the job. Being a Fort Bend–based crew means Rosenberg is a short drive, not an afterthought tacked onto the end of a route, so we show up when we say we will and finish on the timeline we quote. A single room is typically a one-day job; a whole-home interior runs three to five days depending on size and color count. We protect floors and furniture, contain dust to the active room, and back every interior project with the same written warranty we stand behind in Sugar Land.",
+        body: "We give Rosenberg the same quality our Sugar Land clients get — same crew, same products, same standards, same warranty. We show up on time, protect your belongings and floors, contain each work area, and leave the space cleaner than we found it. The Proud Paintbrush is fully insured for all interior work in Rosenberg and Fort Bend County, and the person who estimates your home is the one running the job. Being a Fort Bend–based crew means Rosenberg is a short drive, not an afterthought tacked onto the end of a route, so we show up when we say we will and finish on the timeline we quote. A single room is typically a one-day job; a whole-home interior runs four to seven days depending on size and color count. We protect floors and furniture, contain dust to the active room, and back every interior project with the same written warranty we stand behind in Sugar Land.",
       },
       faqs: [
         {
