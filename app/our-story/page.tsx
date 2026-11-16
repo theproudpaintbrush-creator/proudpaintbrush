@@ -298,7 +298,7 @@ export default function OurStoryPage() {
               { slug: "chris-petkau-owner", name: "Chris Petkau", role: "Owner" },
               { slug: "chris-lead-painter", name: "Chris", role: "Lead Painter" },
               { slug: "luis-painter", name: "Luis", role: "Painter" },
-              { slug: "leo-painter", name: "Leo", role: "Painter" },
+              { slug: "leo-painter", name: "Leo", role: "Lead Painter" },
               { slug: "eddy-painter", name: "Eddy", role: "Painter" },
               { slug: "alex-painter", name: "Alex", role: "Painter" },
             ].map((p) => (
