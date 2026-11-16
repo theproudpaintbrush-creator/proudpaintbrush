@@ -82,26 +82,35 @@ const localBusinessSchema = {
   foundingDate: "2020",
   founder: { "@type": "Person", "@id": FOUNDER_ID, name: "Chris Petkau" },
   aggregateRating: { "@type": "AggregateRating", ratingValue: RATING_VALUE, reviewCount: REVIEW_COUNT },
+  // Office hours — must match the Google Business Profile. (The AI assistant
+  // answers 24/7, but that isn't office hours, so it doesn't go here.)
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "08:00",
-      closes: "18:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "09:00",
-      closes: "14:00",
+      closes: "17:00",
     },
   ],
   sameAs: [
+    // Google Business Profile, by its Knowledge Graph ID (/g/11sx4429k0). This is
+    // where the share.google link resolves; the kgmid form is the stable one.
+    "https://www.google.com/search?kgmid=/g/11sx4429k0",
     "https://www.instagram.com/theproudpaintbrushllc",
     "https://www.facebook.com/theproudpaintbrush",
     "https://www.linkedin.com/company/the-proud-paintbrush",
     "https://www.youtube.com/@theproudpaintbrush",
   ],
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: "The Proud Paintbrush",
+  url: SITE_URL,
+  publisher: { "@id": `${SITE_URL}/#business` },
+  inLanguage: "en-US",
 };
 
 export default function RootLayout({
@@ -115,6 +124,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
       </head>
       <body

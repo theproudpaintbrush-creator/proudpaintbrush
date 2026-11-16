@@ -130,7 +130,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 hover:text-white/80"
-            aria-label="Read our 5.0-star Google reviews (opens in a new tab)"
+            aria-label="Read our 4.9-star Google reviews (opens in a new tab)"
           >
             <span className="text-yellow-400 tracking-tight" aria-hidden>★★★★★</span>
             <span className="font-semibold">5.0</span>

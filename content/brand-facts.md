@@ -16,10 +16,10 @@ file wins.
 - **Services:** Interior Painting, Exterior Painting, Cabinet Painting, Drywall Repair, Fence Staining
 - **Service areas:** Sugar Land, Richmond, Katy, Missouri City, Fulshear, Rosenberg, West Houston, Southwest Houston
 - **Paint partner:** Sherwin-Williams
-- **Reviews:** pull count dynamically where possible; otherwise "5.0★ Google rating"
+- **Reviews:** pull count dynamically where possible; otherwise "4.9★ Google rating"
 - **Community program:** Paint It Forward
 
 ## Approved short forms
 
 - Insurance (tight space): "Fully Insured"
-- Reviews (no count available): "5.0★ Google rating"
+- Reviews (no count available): "4.9★ Google rating"

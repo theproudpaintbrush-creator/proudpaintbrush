@@ -5,7 +5,7 @@ const BADGES = [
   "Fully Insured",
   "2 & 5-Year Written Warranty",
   "Sherwin-Williams Pro",
-  `${RATING_VALUE}★ · ${REVIEW_COUNT} Reviews`,
+  `${RATING_VALUE}★ · ${REVIEW_COUNT} Google Reviews`,
   "Locally Owned Since 2020",
 ];
 

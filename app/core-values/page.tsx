@@ -185,8 +185,8 @@ export default function CoreValuesPage() {
       {/* HERO */}
       <section className="relative w-full h-[90vh] min-h-[560px] flex items-center justify-center overflow-hidden">
         <Image
-          src="/images/cv-team.jpg"
-          alt="The Proud Paintbrush team — Sugar Land painting company built on core values"
+          src="/images/crew/painter-certification-handshake-in-painted-bedroom-katy-tx-the-proud-paintbrush.webp"
+          alt="Owner Chris Petkau shaking hands with a lead painter after presenting his trade best-practice certificate"
           fill
           sizes="100vw"
           className="object-cover object-center"

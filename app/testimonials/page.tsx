@@ -188,7 +188,7 @@ export default function TestimonialsPage() {
           <ReviewCards
             reviews={reviews}
             heading="In Their Own Words"
-            intro={`A sample of our ${AGGREGATE_RATING.count}+ five-star Google reviews from Sugar Land and Fort Bend County homeowners.`}
+            intro={`A sample of our ${AGGREGATE_RATING.count}+ Google reviews from Sugar Land and Fort Bend County homeowners.`}
             masonry
           />
         </section>
