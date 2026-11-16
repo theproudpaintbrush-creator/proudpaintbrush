@@ -192,6 +192,14 @@ const nextConfig: NextConfig = {
       { source: "/pricing/interior-pricing", destination: "/pricing/interior-prices", permanent: true },
       { source: "/pricing/exterior", destination: "/pricing/exterior-prices", permanent: true },
       { source: "/color-tips", destination: "/color-consultation", permanent: true },
+      // Old blog posts consolidated into newer, stronger posts on the same topic (Nov 2026).
+      { source: "/blog/colors-to-paint-your-house-for-2023", destination: "/blog/exterior-color-that-wont-fade-in-texas-heat", permanent: true },
+      { source: "/blog/heres-a-quick-way-to-sell-your-house-for-5000-more", destination: "/blog/is-painting-before-selling-your-home-actually-worth-it", permanent: true },
+      { source: "/blog/to-prime-or-not-to-prime", destination: "/blog/what-happens-if-you-skip-primer", permanent: true },
+      { source: "/blog/oil-or-latex-how-to-identify-your-trims-paint-like-a-pro", destination: "/blog/how-to-tell-if-paint-is-oil-based-or-latex-without-guessing", permanent: true },
+      { source: "/blog/warning-not-all-quotes-are-created-equal", destination: "/blog/why-painting-quotes-are-so-different", permanent: true },
+      { source: "/blog/how-often-should-i-pay-my-interior", destination: "/blog/how-long-a-professional-paint-job-should-actually-last", permanent: true },
+      { source: "/blog/this-is-why-you-cant-trust-your-painting-contractor", destination: "/blog/5-red-flags-when-comparing-painting-companies-in-sugar-land", permanent: true },
     ];
   },
 };

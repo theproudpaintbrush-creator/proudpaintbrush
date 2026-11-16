@@ -16,7 +16,6 @@ const LOCAL_AREA_MODULE_SLUGS = new Set([
   "who-owns-benjamin-moore-paint-company",
   "best-exterior-paint-texas",
   "who-owns-behr-paint-company",
-  "oil-or-latex-how-to-identify-your-trims-paint-like-a-pro",
   "how-to-tell-if-paint-is-oil-based-or-latex-without-guessing",
   "whats-the-best-paint-brand-for-cabinets",
 ]);
