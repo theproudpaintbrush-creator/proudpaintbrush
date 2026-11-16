@@ -286,6 +286,40 @@ export default function OurStoryPage() {
         </div>
       </section>
 
+      {/* MEET THE CREW */}
+      <section className="bg-white pb-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#111111] mb-4 text-center">Meet the Crew</h2>
+          <p className="text-gray-600 text-lg text-center max-w-2xl mx-auto mb-12">
+            The people behind The Proud Paintbrush, and the faces you&apos;ll see at your home.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10">
+            {[
+              { slug: "chris-petkau-owner", name: "Chris Petkau", role: "Owner" },
+              { slug: "chris-lead-painter", name: "Chris", role: "Lead Painter" },
+              { slug: "leo-painter", name: "Leo", role: "Lead Painter" },
+              { slug: "luis-painter", name: "Luis", role: "Painter" },
+              { slug: "eddy-painter", name: "Eddy", role: "Painter" },
+              { slug: "alex-painter", name: "Alex", role: "Painter" },
+            ].map((p) => (
+              <div key={p.slug} className="text-center">
+                <div className="relative aspect-square overflow-hidden rounded-xl shadow-md mb-4">
+                  <Image
+                    src={`/images/crew/team/${p.slug}-the-proud-paintbrush.webp`}
+                    alt={`${p.name}, ${p.role} at The Proud Paintbrush`}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <p className="font-bold text-[#111111] text-lg">{p.name}</p>
+                <p className="text-[#3A6A96] text-sm font-medium">{p.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQS */}
       <section className="bg-[#f8f9fa] py-20">
         <div className="max-w-3xl mx-auto px-4">
