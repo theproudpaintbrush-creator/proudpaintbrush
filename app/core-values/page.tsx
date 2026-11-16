@@ -189,7 +189,7 @@ export default function CoreValuesPage() {
           alt="Owner Chris Petkau with two Proud Paintbrush painters outside a client home in Sugar Land, TX"
           fill
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-top"
           priority
           quality={90}
         />
