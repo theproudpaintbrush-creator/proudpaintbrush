@@ -82,18 +82,14 @@ const localBusinessSchema = {
   foundingDate: "2020",
   founder: { "@type": "Person", "@id": FOUNDER_ID, name: "Chris Petkau" },
   aggregateRating: { "@type": "AggregateRating", ratingValue: RATING_VALUE, reviewCount: REVIEW_COUNT },
+  // Office hours — must match the Google Business Profile. (The AI assistant
+  // answers 24/7, but that isn't office hours, so it doesn't go here.)
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "08:00",
-      closes: "18:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "09:00",
-      closes: "14:00",
+      closes: "17:00",
     },
   ],
   sameAs: [
