@@ -131,7 +131,7 @@ export const CITIES: City[] = [
     interior: {
       title: "Interior Painting in Sugar Land TX | Proud Paintbrush",
       description:
-        "Expert interior painting in Sugar Land, TX. Serving Greatwood, Riverstone, First Colony & more. Locally owned, 5-star rated. Get your free estimate today!",
+        "Expert interior painting in Sugar Land, TX. Serving Greatwood, Riverstone, First Colony & more. Locally owned, 4.9★ rated. Get your free estimate today!",
       h1: "Interior Painting in Sugar Land, TX",
       hero: {
         src: "/images/interior-painting-happy-customer-sugar-land-tx.jpg",
@@ -288,7 +288,7 @@ export const CITIES: City[] = [
     interior: {
       title: "Interior Painting in Missouri City TX | Proud Paintbrush",
       description:
-        "Professional interior painting in Missouri City, TX. Serving Sienna, Quail Valley, Lake Olympia & more. Locally owned, 5-star rated. Free estimates.",
+        "Professional interior painting in Missouri City, TX. Serving Sienna, Quail Valley, Lake Olympia & more. Locally owned, 4.9★ rated. Free estimates.",
       h1: "Interior Painting in Missouri City, TX",
       hero: {
         src: "/images/customer-satisfied-interior.jpg",
@@ -603,7 +603,7 @@ export const CITIES: City[] = [
     interior: {
       title: "Interior Painting in Rosenberg TX | The Proud Paintbrush",
       description:
-        "Expert interior painting in Rosenberg, TX. Serving Kingdom Heights, Bonbrook, Seabourne area & more. Locally owned, 5-star rated. Free estimates.",
+        "Expert interior painting in Rosenberg, TX. Serving Kingdom Heights, Bonbrook, Seabourne area & more. Locally owned, 4.9★ rated. Free estimates.",
       h1: "Interior Painting in Rosenberg, TX",
       hero: {
         src: "/images/warranty-white-cabinets.jpg",
@@ -760,7 +760,7 @@ export const CITIES: City[] = [
     interior: {
       title: "Interior Painting in Richmond TX | The Proud Paintbrush",
       description:
-        "Expert interior painting in Richmond, TX. Serving Long Meadow Farms, Harvest Green, Aliana & more. Locally owned, 5-star rated. Free estimates.",
+        "Expert interior painting in Richmond, TX. Serving Long Meadow Farms, Harvest Green, Aliana & more. Locally owned, 4.9★ rated. Free estimates.",
       h1: "Interior Painting in Richmond, TX",
       hero: {
         src: "/images/cabinet-kitchen-richmond.jpg",
@@ -917,7 +917,7 @@ export const CITIES: City[] = [
     interior: {
       title: "Interior Painting in Fulshear TX | The Proud Paintbrush",
       description:
-        "Professional interior painting in Fulshear, TX. Serving Cross Creek Ranch & surrounding communities. Locally owned, 5-star rated. Free estimates.",
+        "Professional interior painting in Fulshear, TX. Serving Cross Creek Ranch & surrounding communities. Locally owned, 4.9★ rated. Free estimates.",
       h1: "Interior Painting in Fulshear, TX",
       hero: {
         src: "/images/cabinet-fulshear.webp",

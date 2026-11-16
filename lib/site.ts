@@ -37,8 +37,8 @@ export const EMAIL = "sales@theproudpaintbrush.com";
 // TODO(web3forms): paste the access key from web3forms.com here.
 export const WEB3FORMS_ACCESS_KEY = "3e961faa-6e6b-4ef0-adaf-4b8f1aa434c3";
 
-// Review aggregate. 5.0★ rating; the count is the live Google Business Profile
+// Review aggregate. 4.9★ rating (Google, Nov 2026); the count is the live Google Business Profile
 // total (larger than the attributable reviews kept in content/reviews.json).
 // Update REVIEW_COUNT when the GBP total changes.
-export const RATING_VALUE = "5.0";
-export const REVIEW_COUNT = 124;
+export const RATING_VALUE = "4.9";
+export const REVIEW_COUNT = 137;

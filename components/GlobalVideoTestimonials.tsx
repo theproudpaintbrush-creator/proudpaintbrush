@@ -67,7 +67,7 @@ export default function GlobalVideoTestimonials() {
             rel="noopener noreferrer"
             className="inline-block bg-white text-[#111111] hover:bg-[#3A6A96] hover:text-white font-semibold px-8 py-3 transition-colors"
           >
-            See all {REVIEW_COUNT} five-star reviews &rarr;
+            See all {REVIEW_COUNT} Google reviews &rarr;
           </a>
           <a
             href={BOOKING_URL}
