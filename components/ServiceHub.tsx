@@ -107,6 +107,11 @@ export default function ServiceHub({
             {hub.intro.slice(1).map((p, i) => (
               <p key={i} className="text-gray-700 leading-relaxed mb-5 text-lg">{p}</p>
             ))}
+            {hub.introImage && (
+              <div className="relative mt-8 aspect-[3/2] overflow-hidden rounded-xl shadow-md">
+                <Image src={hub.introImage.src} alt={hub.introImage.alt} fill sizes="(max-width: 896px) 100vw, 896px" className="object-cover" />
+              </div>
+            )}
           </div>
         </section>
       )}
