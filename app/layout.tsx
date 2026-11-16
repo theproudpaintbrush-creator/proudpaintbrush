@@ -104,6 +104,16 @@ const localBusinessSchema = {
   ],
 };
 
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: "The Proud Paintbrush",
+  url: SITE_URL,
+  publisher: { "@id": `${SITE_URL}/#business` },
+  inLanguage: "en-US",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -115,6 +125,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
       </head>
       <body

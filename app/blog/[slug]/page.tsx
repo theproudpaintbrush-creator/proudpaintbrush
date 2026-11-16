@@ -122,17 +122,11 @@ export default async function BlogPostPage({ params }: PageProps) {
           name: post.author,
           url: "https://www.theproudpaintbrush.com",
         },
-    publisher: {
-      "@type": "Organization",
-      name: "The Proud Paintbrush",
-      url: "https://www.theproudpaintbrush.com",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.theproudpaintbrush.com/images/logo.png",
-      },
-    },
+    // Reference the sitewide business entity (defined in app/layout.tsx) so the
+    // publisher resolves to the same node instead of a second, separate org.
+    publisher: { "@id": "https://www.theproudpaintbrush.com/#business" },
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated ?? post.date,
     url: `https://www.theproudpaintbrush.com/blog/${post.slug}`,
     mainEntityOfPage: {
       "@type": "WebPage",

@@ -6,6 +6,9 @@ export interface BlogPost {
   title: string;
   description: string;
   date: string;
+  // Optional last-updated date (YYYY-MM-DD). Set it when a post is refreshed so
+  // schema dateModified and the sitemap lastmod reflect the update.
+  updated?: string;
   author: string;
   content: string;
   readTime: number;
@@ -18,6 +21,7 @@ export interface BlogPostMeta {
   title: string;
   description: string;
   date: string;
+  updated?: string;
   author: string;
   readTime: number;
   image?: string;
@@ -45,6 +49,7 @@ export function getAllPosts(): BlogPostMeta[] {
       title: data.title,
       description: data.description,
       date: data.date,
+      updated: data.updated,
       author: data.author,
       readTime: data.readTime,
       image: data.image,

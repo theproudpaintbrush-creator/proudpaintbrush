@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       "Before-and-after painting projects across Sugar Land, West Houston & Fort Bend County.",
     url: `${SITE_URL}/projects`,
     type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/images/happy-customers-the-proud-paintbrush-sugar-land-tx.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Happy customers of The Proud Paintbrush in Sugar Land, TX",
+      },
+    ],
   },
 };
 
