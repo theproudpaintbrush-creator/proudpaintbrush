@@ -97,6 +97,9 @@ const localBusinessSchema = {
     },
   ],
   sameAs: [
+    // Google Business Profile, by its Knowledge Graph ID (/g/11sx4429k0). This is
+    // where the share.google link resolves; the kgmid form is the stable one.
+    "https://www.google.com/search?kgmid=/g/11sx4429k0",
     "https://www.instagram.com/theproudpaintbrushllc",
     "https://www.facebook.com/theproudpaintbrush",
     "https://www.linkedin.com/company/the-proud-paintbrush",
