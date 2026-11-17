@@ -7,12 +7,12 @@ import { BOOKING_URL } from "@/lib/site";
 //   gallons = ceil(length * height / 280)
 //   materials = gallons * $70
 //   labor = $390 base + $0.70 * length
-//   total = max(materials + labor, $650 job minimum)   (no tax applied)
+//   total = max(materials + labor, $1,950 job minimum)   (no tax applied)
 const COVERAGE_SQFT_PER_GAL = 280;
 const PRICE_PER_GAL = 70;
 const LABOR_BASE = 390;
 const LABOR_PER_FT = 0.7;
-const JOB_MINIMUM = 650;
+const JOB_MINIMUM = 1950;
 
 function money(n: number) {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });

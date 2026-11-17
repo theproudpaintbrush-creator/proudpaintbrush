@@ -19,7 +19,7 @@ const SERVICES = [
   },
   {
     name: "Cabinet Painting",
-    range: "$2,000 – $10,000+",
+    range: "$1,950 – $10,000+",
     rangeLabel: "most projects",
     details: ["Typical kitchen: $4,100 – $5,000", "Doors: $120 – $145 each", "Drawers: $110 – $135 each"],
     href: "/pricing/cabinet-prices",
@@ -28,14 +28,14 @@ const SERVICES = [
     name: "Drywall Repair",
     range: "$95 – $259",
     rangeLabel: "per repair",
-    details: ["Nail pops & cracks: $95 – $160", "Holes 4–8 sq ft: $25 – $32 / sq ft", "$650 job minimum"],
+    details: ["Nail pops & cracks: $95 – $160", "Holes 4–8 sq ft: $25 – $32 / sq ft", "$1,950 job minimum"],
     href: "/pricing/drywall-prices",
   },
   {
     name: "Fence Staining",
     range: "$650 – $1,100+",
     rangeLabel: "standard 6 ft fence",
-    details: ["About $4 – $7 / linear ft", "Average fence (100–200 ft): $670 – $880", "$650 job minimum"],
+    details: ["About $4 – $7 / linear ft", "Average fence (100–200 ft): $670 – $880", "$1,950 job minimum"],
     href: "/pricing/fence-staining-prices",
   },
 ];
