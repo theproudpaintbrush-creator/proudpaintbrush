@@ -108,7 +108,7 @@ const faqGroups: FaqGroup[] = [
       },
       {
         q: "How much does it cost to paint kitchen cabinets?",
-        a: "Cabinet painting typically ranges from $2,000 to $10,000+ based on size, prep, and finish quality.",
+        a: "Cabinet painting typically ranges from $1,950 to $10,000+ based on size, prep, and finish quality.",
       },
       {
         q: "What affects the cost of a painting job?",
