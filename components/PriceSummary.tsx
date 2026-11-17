@@ -33,9 +33,9 @@ const SERVICES = [
   },
   {
     name: "Fence Staining",
-    range: "$650 – $1,100+",
+    range: "$1,950+",
     rangeLabel: "standard 6 ft fence",
-    details: ["About $4 – $7 / linear ft", "Average fence (100–200 ft): $670 – $880", "$1,950 job minimum"],
+    details: ["Most residential fences: $1,950", "Fences over ~700 ft priced by footage", "$1,950 job minimum"],
     href: "/pricing/fence-staining-prices",
   },
 ];

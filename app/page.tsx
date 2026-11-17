@@ -31,7 +31,7 @@ const HOMEPAGE_FAQS = [
   },
   {
     q: "How much does painting cost in Fort Bend County?",
-    a: "It depends on the service: a full interior typically runs $3,000–$20,000+, a whole-home exterior $2,500–$16,000+ (about $5,000–$8,000 for a typical 2,000 sq ft home), cabinet painting $1,950–$10,000+ (about $4,100–$5,000 for a typical kitchen), drywall repair $95–$259 per repair with a $1,950 minimum, and fence staining about $4–$7 per linear foot with a $1,950 minimum. Every project gets its own written quote after a free on-site walkthrough — see our pricing pages for full rate sheets.",
+    a: "It depends on the service: a full interior typically runs $3,000–$20,000+, a whole-home exterior $2,500–$16,000+ (about $5,000–$8,000 for a typical 2,000 sq ft home), cabinet painting $1,950–$10,000+ (about $4,100–$5,000 for a typical kitchen), drywall repair $95–$259 per repair with a $1,950 minimum, and fence staining $1,950 for most residential fences (our job minimum). Every project gets its own written quote after a free on-site walkthrough — see our pricing pages for full rate sheets.",
   },
   {
     q: "Do you offer a warranty?",
