@@ -275,7 +275,7 @@ export default function OurStoryPage() {
             {[
               { src: "/images/petkau-family-walking-meadow-sugar-land-tx.jpg", alt: "The Petkau family walking through a meadow in Sugar Land, TX" },
               { src: "/images/petkau-boys-live-oak-family-owned-painting-company.jpg", alt: "Isaac and Samuel Petkau under a live oak — the family behind a family-owned painting company" },
-              { src: "/images/crew/painting-crew-team-portrait-sugar-land-tx-the-proud-paintbrush.webp", alt: "Chris Petkau, owner of The Proud Paintbrush, with two of his painters outside a client home in Sugar Land, TX" },
+              { src: "/images/petkau-brothers-oak-tree-sugar-land-texas-painting-company.jpg", alt: "The Petkau brothers by an oak tree in Sugar Land, Texas" },
               { src: "/images/petkau-son-oak-tree-family-owned-painters-sugar-land.jpg", alt: "Petkau son at an oak tree — the next generation of The Proud Paintbrush, family-owned painters in Sugar Land" },
             ].map((img) => (
               <div key={img.src} className="relative h-64 sm:h-80 overflow-hidden">
